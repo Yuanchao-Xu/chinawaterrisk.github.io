@@ -1,0 +1,211 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<script src="https://code.highcharts.com/highcharts.js"></script>
+		<script src="https://code.highcharts.com/modules/annotations.js"></script>
+		<title>2006-2015 Beans Production in Heilongjiang</title>
+		<style type="text/css">
+
+			#container {
+				min-width: 300px;
+				height: 300px;
+				margin: 0 auto;
+			}
+			footer {
+				font-family:Arial;
+			}			
+		</style>
+	</head>
+	<body>
+		<div id="container"></div>
+	
+		<script type="text/javascript">
+			Highcharts.chart('container', {
+				credits: {
+					enabled: false
+				},							
+				chart: {
+					style: {
+						fontFamily: 'Arial',
+						fontSize: '10px'
+					},
+					alignTicks: false,
+					spacingTop: 0,
+					spacingRight: 0,
+					spacingBottom: 0,
+					spacingLeft: 0
+				},			
+				title: {
+					text: "2006-2015 Beans Production in Heilongjiang",
+					align: 'left',
+					style: {
+						color: 'black',
+						fontSize: '12px',
+						fontWeight: 'bold'
+					}
+				},
+				xAxis: {
+					className: 'x-axis',
+					tickInterval: 1,					
+					labels: {
+						style: {
+							color: 'black',
+							fontSize:'8px'
+						}
+					},
+					lineColor: 'black',
+					tickLength: 0				
+			//		categories: ['2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015']
+				},
+				yAxis: [{
+					className: 'y-axis-0',
+					tickInterval: 100,
+					min: 350,
+					max: 750,
+					gridLineWidth: 0,
+					gridLineColor: '#D3D3D3',					
+					labels: {						
+						style: {
+							color: 'black',
+							fontSize:'10px'
+						}
+					},
+					title: {
+						text: 'Unit: 10,000 tons'
+					}					
+				}, {
+					className: 'y-axis-1',
+					opposite: true,			
+					tickInterval: 5,
+					min: 20,
+					max: 35,
+					gridLineWidth: 0,
+					gridLineColor: '#D3D3D3',					
+					labels: {						
+						style: {
+							color: 'black',
+							fontSize:'10px'
+						},
+						formatter: function() {
+						   return this.value + '%';
+						}						
+					},
+					title: {
+						text: ''
+					}					
+				}],
+				legend : {
+					itemStyle: {
+						color: 'black',
+						'cursor': 'default',
+						fontSize: '10px',
+						fontWeight: null
+					}
+				},
+				tooltip: {
+					headerFormat: '<b>{point.x}</b><br/>',
+					pointFormat: '{series.name}: {point.y:.1f}',
+					borderColor: 'black'
+				},		
+				plotOptions: {
+					column: {
+				        animation: false,
+						enableMouseTracking: false,	
+						stacking: 'normal',
+						pointPadding: 0,
+						borderWidth: 0,						
+						dataLabels: {
+							enabled: false
+						},
+						tooltip: {
+							headerFormat: '<b>{point.x}</b><br/>',
+							pointFormat: '{series.name}',
+							borderColor: 'black'
+						},
+						events: {
+							legendItemClick: function () {
+								return false; 
+							}
+						}						
+					},
+					line: {
+				        animation: false,
+						enableMouseTracking: false,	
+						marker: {
+							enabled: false,
+							symbol: 'circle',
+							radius: 2,
+							states: {
+								hover: {
+									enabled: true
+								}
+							}
+						},
+						events: {
+							legendItemClick: function () {
+								return false; 
+							}
+						}						
+					},
+					series: {
+						groupPadding: 0,
+						label: {
+							connectorAllowed: false
+						},
+						pointStart: 2006						
+					}					
+				},
+				series: [{				
+					name: 'Severe Crop Failure due to Floods',
+					type: 'column',
+					yAxis: 1,					
+					data: [0, 0, 0, 0, 0, 0, 0, {y: 35,
+								dataLabels: {
+									enabled: true,
+									format: 'Rank<br>No.1',
+									color: '#094677',
+									style: {
+										fontSize: '7px',
+										textOutline: false ,
+										fontWeight: 'bold'
+									},
+									y: -150
+								}}, 0, 0],
+					color: '#DCE6F2'
+				}, {				
+					name: 'Severe Crop Failure due to Droughts',
+					type: 'column',
+					yAxis: 1,					
+					data: [0, {y: 35,
+								dataLabels: {
+									enabled: true,
+									format: 'Rank<br>No.2',
+									color: '#9F171E',
+									style: {
+										fontSize: '7px',
+										textOutline: false ,
+										fontWeight: 'bold'
+									},
+									y: -150
+								}}, 0, 0, 0, 0, 0, 0, 0, 0],
+					color: '#FFDDDD'
+				}, {
+					name: 'Beans Production',
+					type: 'line',			
+					data: [689.26,	442.67,	667,	618.49,	601.85,	577.78,	479.6,	400.17,	469.59,	437.33],
+					color: '#6B8033'
+				}, {
+					name: 'Beans Production (% of China, RHS)',
+					type: 'line',
+					yAxis: 1,					
+					data: [34.4,	25.7,	32.6,	32,	31.7,	30.3,	27.7,	25.1,	28.9,	27.5],
+					color: '#DAB83C'
+				}]
+			});
+		</script>
+	</body>
+	<footer><font size='1'><em>Sources: China Water Risk, NBSC Website</em>
+	</font>
+	</footer>	
+</html>

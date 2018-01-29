@@ -1,0 +1,158 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<script src="https://code.highcharts.com/highcharts.js"></script>
+		<title>2007-2016 Overall Overall Crop Failure due to Flooding and Droughts in China</title>
+		<style type="text/css">
+			#container {
+			//	min-width: 300px;
+				height: 300px;
+				margin: 0 auto;
+			}
+	
+			footer {
+				font-family:Arial;
+			}	
+		</style>
+	</head>
+	<body>
+		<div id="container"></div>
+	
+		<script type="text/javascript">
+			Highcharts.chart('container', {
+				credits: {
+					enabled: false
+				},					
+				chart: {
+					style: {
+						fontFamily: 'Arial',
+						fontSize: '10px'
+					},
+					alignTicks: false,					
+					spacingTop: 0,
+					spacingRight: 0,
+					spacingBottom: 0,
+					spacingLeft: 0
+				},
+				title: {
+					text: '2007-2016 Overall Crop Failure due to Flooding and Droughts in China',
+					align: 'left',
+					style: {
+						color: 'black',
+						fontSize: '12px',
+						fontWeight: 'bold'
+					}
+				},
+				xAxis: {
+					className: 'x-axis',
+					tickInterval: 1,					
+					labels: {
+						style: {
+							color: 'black',
+							fontSize:'10px'
+						}
+					},
+					lineColor: 'black',
+					tickLength: 0					
+			//		categories: ['2000', '2005', '2010', '2015', '2020', '2025', '2030']
+				},
+				yAxis: [{
+					className: 'y-axis-0',
+					labels: {
+					//	formatter: function() {
+					//	   return this.value;
+					//	},						
+						style: {
+							color: 'black',
+							fontSize:'10px'
+						}
+					},
+					gridLineWidth: 0,
+					gridLineColor: '#D3D3D3',
+					tickInterval: 1000,
+					min: 0,
+					max: 5000,
+					title: {
+						text: 'Unit: 1,000 hectares'
+					}
+				}],				
+				tooltip: {
+					headerFormat: '<b>{series.name}</b><br/>',
+					pointFormat: '{point.x}: {point.y:.1f}',
+					borderColor: 'black'
+				},
+		//		labels: {
+		//			items: [{
+		//				html: '2014',
+		//				style: {
+		//					left: '610px',
+		//					top: '75px',
+		//					color: 'black',
+		//					fontSize: '15px',
+		//					fontWeight: 'bold'
+		//				}
+		//			}]
+		//		},
+				legend: {
+						itemStyle: {
+							'cursor': 'default',
+							color: 'black',
+							fontSize:'10px',
+							fontWeight: null
+						}					
+				},
+				plotOptions: {
+					area: {
+						animation: false,
+						stacking: 'normal',
+						fillOpacity: 1,
+						enableMouseTracking: false,
+						marker: {
+							enabled: false,
+							symbol: 'circle',
+							radius: 2,
+							states: {
+								hover: {
+									enabled: true
+								}
+							}							
+						},        
+						events: {
+							legendItemClick: function () {
+								return false; 
+							}
+						}
+					},
+					series: {
+						label: {
+							connectorAllowed: false
+						},
+						pointStart: 2007
+					},
+					spline: {
+						animation: false,
+						enableMouseTracking: false,
+						marker: {
+							enabled: false
+						}
+					}					
+				},				
+				series: [{
+					type: 'area',
+					name: 'Crop failure due to Droughts',
+					data: [	3190,	811.8,	3268.8,	2672.3,	1505.4,	374,	1416.1,	1484.7, 1046.1, 1018.3],
+					color: '#7C8388'				
+				}, {
+					type: 'area',
+					name: 'Crop failure due to Flooding',
+					data: [	1642,	756,	780.9,	1657.5,	872.8,	1095.3,	1828.9,	976.9, 841, 1442.4],
+					color: '#0D77B9'					
+				}]
+			});
+		</script>
+	</body>
+	<footer><font size='1'><em>Sources: China Water Risk, China Environment Statistical Yearbook, China Statistical Yearbook</em>
+	</font>
+	</footer>
+</html>

@@ -1,9 +1,5 @@
-The json and/or shape file is downloaded from http://www.gadm.org/download and then modified
+simplified_smoothed_cleaned_provinces.json is downloaded and modified from http://www.gadm.org/download
+This json is only for non-commercial purposes. Please do not redistribute it.
 
-The json and/or shape file is only for non-commercial purposes.
-
-The following sentences are copied from http://www.gadm.org/download
-
-"These data can be used for non-commercial purposes only.
-It is not allowed to redistribute these data, or use them for commercial purposes, without prior consent.
-Using these data to create maps for academic publishing is allowed."
+echarts_final_3857.json is downloaded and modified from https://github.com/ecomfe/echarts-map-tool/blob/gh-pages/maker/raw/china.json
+This json file is only for non-commercial purposes. Please do not redistribute it.

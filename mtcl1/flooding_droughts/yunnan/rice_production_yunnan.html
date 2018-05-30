@@ -1,0 +1,173 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<script src="https://code.highcharts.com/highcharts.js"></script>
+		<script src="https://code.highcharts.com/modules/annotations.js"></script>
+		<title>2006-2015 Rice Production in Yunnan</title>
+		<style type="text/css">
+
+			#container {
+				min-width: 300px;
+				height: 400px;
+				margin: 0 auto;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="container"></div>
+	
+		<script type="text/javascript">
+			Highcharts.chart('container', {
+				credits: {
+					enabled: false
+				},				
+				colors: ['#FFDDDD', '#6B8033', '#DAB83C'],			
+				chart: {
+					style: {
+						fontFamily: 'Arial'
+					},
+					alignTicks: false,
+					spacingTop: 0,
+					spacingRight: 0,
+					spacingBottom: 0,
+					spacingLeft: 0
+				},			
+				title: {
+					text: "2006-2015 Rice Production in Yunnan",
+					align: 'left',
+					style: {
+						color: 'black',
+						fontSize: '20px',
+						fontWeight: 'bold'
+					}
+				},
+				xAxis: {
+					className: 'x-axis',
+					tickInterval: 2,					
+					labels: {
+						style: {
+							color: 'black',
+							fontSize:'12px'
+						//	rotation: -90,
+						},
+					},
+					lineColor: 'black',
+					tickLength: 0				
+			//		categories: ['2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015']
+				},
+				yAxis: [{
+					className: 'y-axis-0',
+					tickInterval: 50,
+					min: 550,
+					max: 700,
+					gridLineWidth: 0,
+					gridLineColor: '#D3D3D3',					
+					labels: {						
+						style: {
+							color: 'black',
+							fontSize:'12px'
+						}
+					},
+					title: {
+						text: 'Unit: 10,000 tons'
+					}					
+				}, {
+					className: 'y-axis-1',
+					opposite: true,			
+					tickInterval: 0.5,
+					min: 2,
+					max: 4,
+					gridLineWidth: 0,
+					gridLineColor: '#D3D3D3',					
+					labels: {						
+						style: {
+							color: 'black',
+							fontSize:'12px'
+						},
+						formatter: function() {
+						   return this.value + '%';
+						}						
+					},
+					title: {
+						text: ''
+					}					
+				}],
+				legend : {
+					itemStyle: {
+						color: 'black',
+						fontSize: '15px',
+						fontWeight: null
+					}
+				},
+				tooltip: {
+					headerFormat: '<b>{point.x}</b><br/>',
+					pointFormat: '{series.name}: {point.y:.1f}',
+					borderColor: 'black'
+				},		
+				plotOptions: {
+					column: {
+						stacking: 'normal',
+						pointPadding: 0,
+						borderWidth: 0,						
+						dataLabels: {
+							enabled: false
+						},
+						tooltip: {
+							headerFormat: '<b>{point.x}</b><br/>',
+							pointFormat: '{series.name}',
+							borderColor: 'black'
+						}						
+					},
+					line: {
+						marker: {
+							enabled: false,
+							symbol: 'circle',
+							radius: 2,
+							states: {
+								hover: {
+									enabled: true
+								}
+							}
+						},
+					},
+					series: {
+						groupPadding: 0,
+						label: {
+							connectorAllowed: false
+						},
+						pointStart: 2006						
+					}
+				},	
+				series: [{					
+					name: 'Severe Crop Failure due to Droughts',
+					type: 'column',
+					yAxis: 1,					
+					data: [0, 0, 0, 0, {y: 4,
+								dataLabels: {
+									enabled: true,
+									format: 'First<br>in 2010',
+									color: '#9F171E',
+									style: {
+										color: '#9F171E',
+										fontSize: '7px',
+										textOutline: false ,
+										fontWeight: 'bold'
+									},
+									y: -180
+								}}, 0, 0, 0, 0, 0]
+				}, {
+					name: 'Rice Production',
+					type: 'line',			
+					data: [612.9,	589.68,	621.01,	636.23,	616.57,	668.67,	644.6,	667.9,	666.1,	659.7]
+				}, {
+					name: 'Rice Production (% of China, RHS)',
+					type: 'line',
+					yAxis: 1,					
+					data: [3.4,	3.2,	3.2,	3.3,	3.1,	3.3,	3.2,	3.3,	3.2,	3.2]			
+				}]
+			});
+		</script>
+	</body>
+</html>

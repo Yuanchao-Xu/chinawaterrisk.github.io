@@ -1,0 +1,126 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<script src="https://code.highcharts.com/highcharts.js"></script>
+		<title>2006-2015 Agricultural Production in Southern and Northern China (By Crop Type)</title>
+		<style type="text/css">
+
+			#container {
+				min-width: 300px;
+				height: 300px;
+				margin: 0 auto;
+			}
+			footer {
+				font-family:Arial;
+			}			
+			
+		</style>
+	</head>
+	<body>
+		<div id="container"></div>
+	
+		<script type="text/javascript">
+			Highcharts.chart('container', {
+				credits: {
+					enabled: false
+				},			
+				colors: ['#6B8033', '#0F1C11'],			
+				chart: {
+					type: 'bar',
+					style: {
+						fontFamily: 'Arial',
+						fontSize: '10px'
+					},
+					spacingTop: 0,
+					spacingRight: 0,
+					spacingBottom: 0,
+					spacingLeft: 0
+				},
+				title: {
+					text: '2006-2015 Agricultural Production in Southern and Northern China (By Crop Type)',
+					align: 'left',
+					style: {
+						color: 'black',
+						fontSize:'12px',
+						fontWeight: 'bold'
+					}
+				},
+				xAxis: {
+					className: 'x-axis',
+					labels: {
+						style: {
+							color: 'black',
+							fontSize:'10px'
+						}
+					},
+					lineWidth: 0,
+					lineColor: 'black',
+					tickLength: 0,					
+					categories: ['Corn', 'Wheat', 'Vegetables', 'Others', 'Rice', 'Fiber Crops']
+				},
+				yAxis: {
+					className: 'y-axis',
+					labels: {
+						formatter: function() {
+						   return this.value+"%";
+						},						
+						style: {
+							color: 'black',
+							fontSize:'10px'
+						}
+					},
+					gridLineWidth: 0,
+					gridLineColor: '#D3D3D3',
+					tickInterval: 20,
+					min: 0,
+					max: 100,
+					title: {
+						text: ''
+					}
+				},
+				legend : {
+					itemStyle: {
+						color: 'black',
+						'cursor': 'default',
+						fontSize: '10px',
+						fontWeight: null
+					}
+				},
+				tooltip: {
+					headerFormat: '<b>{point.x}</b><br/>',
+					pointFormat: '{series.name}: {point.y:.1f}%',
+					borderColor: 'black'
+				},
+				plotOptions: {
+					bar: {
+						animation: false,
+						enableMouseTracking: false,	
+						stacking: 'normal',
+						pointPadding: 0,
+						borderWidth: 0,						
+						dataLabels: {
+							enabled: false
+						},
+						events: {
+							legendItemClick: function () {
+								return false; 
+							}
+						}							
+					}
+				},
+				series: [{
+					name: 'Southern China',
+					data: [17, 28, 47, 51, 81, 93]
+				}, {
+					name: 'Northern China',
+					data: [83, 72, 53, 49, 19, 7]
+				}]
+			});
+		</script>
+	</body>
+	<footer><font size='1'><em>Sources: China Water Risk, NBSC Website<br>Note: North-south division is based on this <a href="http://www.world-agriculture.net/article/cereal-and-soya-bean-production-and-food-security-in-china-challenges-and-opportunities">article</a>
+	; As vegetables data in 2016 are not available yet, 2006-2015 crop data are shown instead of 2007-2016. This holds true for the remaining parts of the article.</em>
+	</font>
+	</footer>
+</html>

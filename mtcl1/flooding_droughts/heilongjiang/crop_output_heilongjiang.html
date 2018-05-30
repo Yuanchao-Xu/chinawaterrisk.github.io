@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<script src="https://code.highcharts.com/highcharts.js"></script>
+		<title>2015 Crop Production in Heilongjiang</title>
+		<style type="text/css">
+			#container {
+			//	min-width: 300px;
+				height: 400px;
+				margin: 0 auto;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="container"></div>
+	
+		<script type="text/javascript">
+			Highcharts.chart('container', {
+				credits: {
+					enabled: false
+				},					
+				chart: {
+					type: 'pie',
+					style: {
+						fontFamily: 'Arial'
+					},
+					spacingTop: 0,
+					spacingRight: 0,
+					spacingBottom: 0,
+					spacingLeft: 0
+				},
+				title: {
+					text: '2015 Crop Production in Heilongjiang',
+					align: 'center',
+					style: {
+						color: 'black',
+						fontSize: '20px',
+						fontWeight: 'bold'
+					}
+				},
+				tooltip: {
+					headerFormat: '<b>{point.name}</b><br/>',
+					pointFormat: '<b>{point.name}</b>: {point.y:.1f}%',
+					borderColor: 'black'
+				},
+				plotOptions: {
+					pie: {
+						allowPointSelect: true,
+						borderWidth: 2,		
+						innerSize: '40%',						
+						dataLabels: {
+							enabled: true,
+							format: '<b>{point.name}</b>: {point.y:.1f}%',
+							distance: 10,
+							style: {
+								fontSize: '8px'
+							}
+						}
+					}
+				},
+				series: [{
+					data: [
+							{name: 'Corn', y: 48.7, color: '#6B8033'},
+							{name: 'Rice', y: 30.2, color: '#818B35'},
+							{name: 'Vegetables', y: 13.2, color: '#979637'},
+							{name: 'Beans', y: 6, color: '#AEA238'},
+							{name: 'Tubers', y: 1.4, color: '#C4AD3A'},
+							{name: 'Others', y: 0.6, color: '#DAB83C'}
+					]
+				}]
+			});
+		</script>
+	</body>
+</html>

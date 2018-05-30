@@ -1,0 +1,200 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<script src="https://code.highcharts.com/highcharts.js"></script>
+		<script src="https://code.highcharts.com/modules/annotations.js"></script>
+		<title>Completed Investment of Water Projects</title>
+		<style type="text/css">
+
+			#container {
+				min-width: 300px;
+				height: 300px;
+				margin: 0 auto;
+			}
+			
+			footer {
+				font-family:Arial;
+			}			
+			
+		</style>
+	</head>
+	<body>
+		<div id="container"></div>
+	
+		<script type="text/javascript">
+		//	var categories =  ['2000', '2005', '2010', '2015', '2020F'];
+			Highcharts.chart('container', {
+				credits: {
+					enabled: false
+				},						
+				chart: {
+					style: {
+						fontFamily: 'Arial',
+						fontSize: '10px'
+					},
+					alignTicks: false,
+					spacingTop: 0,
+					spacingRight: 0,
+					spacingBottom: 0,
+					spacingLeft: 0
+
+					
+				},
+				title: {
+					text: "2011-2016 Funding of Water Projects",
+					align: 'left',
+					style: {
+						color: 'black',
+						fontSize: '12px',
+						fontWeight: 'bold'
+					}
+				},
+				xAxis: {
+					className: 'x-axis',
+					tickInterval: 1,					
+					labels: {
+						style: {
+							color: 'black',
+							fontSize:'10px',
+						}
+				//		formatter: function() {
+				//			return categories[this.value];
+				//		}
+					},
+					lineColor: 'black',
+					tickLength: 0,					
+					
+				},
+				yAxis: [{
+					className: 'y-axis-0',
+					labels: {					
+						style: {
+							color: 'black',
+							fontSize:'10px'
+						}
+					},
+					gridLineWidth: 0,					
+					gridLineColor: '#D3D3D3',
+					tickInterval: 1000,
+					min: 0,
+					max: 6200,
+					title: {
+						text: 'Unit: 100 Million RMB'
+					}
+				}, {
+					className: 'y-axis-1',
+					labels: {					
+						style: {
+							color: 'black',
+							fontSize:'10px'
+						},
+						formatter: function() {
+						   return this.value + '%';
+						}						
+					},
+					opposite: true,
+					gridLineColor: null,
+					tickInterval: 20,
+					min: 0,
+					max: 100,
+					visible: true,
+					title: {
+						text: ''
+					}					
+				}],
+				legend : {
+					itemStyle: {
+						color: 'black',
+						'cursor': 'default',						
+						fontSize: '10px',
+						fontWeight: null
+					}
+				},
+				tooltip: {
+					headerFormat: '<b>{series.name}</b><br/>',
+					pointFormat: '{point.x}: {point.y:.1f}',
+					borderColor: 'black'
+				},		
+				plotOptions: {
+					area: {
+						animation: false,
+						stacking: 'normal',
+						fillOpacity: 1,
+						enableMouseTracking: false,						
+						marker: {
+							enabled: false,
+							symbol: 'circle',
+							radius: 2,
+							states: {
+								hover: {
+									enabled: true
+								}
+							}
+						},
+						pointPadding: 0,
+						borderWidth: 0,
+						events: {
+							legendItemClick: function () {
+								return false; 
+							}
+						}						
+					},
+					spline: {
+						animation: false,
+						enableMouseTracking: false,	
+						marker: {
+							enabled: false
+						},
+						events: {
+							legendItemClick: function () {
+								return false; 
+							}
+						}						
+					},
+					series: {
+						label: {
+							connectorAllowed: false
+						},
+						pointStart: 2011
+					}					
+				},
+				series: [{
+					name: 'Enterprises and private investment',
+					type: 'area',			
+					data: [74.9,	113.4,	160.7,	89.9,	187.9,	424.7],
+					color: '#9F171E'
+					}, {					
+					name: 'Others',
+					type: 'area',
+					data: [81.7,	87.6,	152.4,	182.5,	139.7,	217.9],
+					color: '#0D77B9'
+					}, {					
+					name: 'Domestic loan',
+					type: 'area',
+					data: [270.3,	265.6,	172.7,	299.6,	338.6,	879.6],
+					color: '#0C67A3'
+					},  {
+					name: 'Central government investment',
+					type: 'area',			
+					data: [1435.4,	2033.2,	1729.8,	1648.5,	2231.2,	1679.2],
+					color: '#0A568D'
+					}, {
+					name: 'Local government investment',
+					type: 'area',			
+					data: [1223.7,	1464.5,	1542,	1862.5,	2554.6,	2898.2],
+					color: '#094677'
+					}, {
+					name: 'Percentage of funds used in flood control project (RHS)',
+					type: 'spline',
+					yAxis: 1,
+					data: [33,	35.97,	35.55,	37.29,	35.41, 34.05],
+					color: '#DAB83C'
+					}]
+			});
+		</script>
+	</body>
+	<footer><font size='1'><em>Sources: China Water Risk, 2016 Statistic Bulletin on China Water Activities from MWR</em>
+	</font>
+	</footer>	
+</html>

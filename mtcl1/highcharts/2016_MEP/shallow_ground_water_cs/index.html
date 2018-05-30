@@ -1,0 +1,111 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<script src="https://code.highcharts.com/highcharts.js"></script>
+		<title>Shallow Groundwater Quality of China's Major River Basins 2016</title>
+		<style type="text/css">
+
+			#container {
+			//	min-width: 300px;
+				height: 400px;
+				margin: 0 auto;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="container"></div>
+	
+		<script type="text/javascript">
+			Highcharts.chart('container', {
+				credits: {
+					enabled: false
+				},				
+				colors: ['black', '#7C8388', '#0D77B9'],			
+				chart: {
+					type: 'column',
+					style: {
+						fontFamily: 'serif'
+					},
+					spacingTop: 0,
+					spacingRight: 0,
+					spacingBottom: 0,
+					spacingLeft: 0
+				},
+				title: {
+					text: "Shallow Groundwater Quality of China's Major River Basins 2016",
+					align: 'left',
+					style: {
+						color: 'black',
+						fontSize:'20px',
+						fontWeight: 'bold'
+					}
+				},
+				xAxis: {
+					className: 'x-axis',
+					labels: {
+						style: {
+							color: 'black',
+							fontSize:'12px'
+						}
+					},
+					lineColor: 'black',
+					tickLength: 0,					
+					categories: ['Yangtze', 'Yellow', 'Songhua', 'Huai', 'Hai', 'Liao', 'Inland Rivers', 'National']
+				},
+				yAxis: {
+					className: 'y-axis',
+					labels: {
+						formatter: function() {
+						   return this.value+"%";
+						},						
+						style: {
+							color: 'black',
+							fontSize:'12px'
+						}
+					},
+					gridLineColor: '#D3D3D3',
+					tickInterval: 20,
+					min: 0,
+					max: 100,
+					title: {
+						text: ''
+					}
+				},
+				legend : {
+					itemStyle: {
+						color: 'black',
+						fontSize: '15px',
+						fontWeight: null
+					}
+				},
+				tooltip: {
+					headerFormat: '<b>{point.x}</b><br/>',
+					pointFormat: '{series.name}: {point.y:.1f}%',
+					borderColor: 'black'
+				},
+				plotOptions: {
+					column: {
+						stacking: 'normal',
+						pointPadding: 0,
+						borderWidth: 0,						
+						dataLabels: {
+							enabled: false
+						}
+					}
+				},
+				series: [{
+					name: 'Very Bad',
+					data: [14.3, 30.5, 15.1, 9.5, 16.9, 28.8, 25.4, 19.8]
+				}, {
+					name: 'Bad',
+					data: [65.7, 44.1, 72, 65.4, 52, 60.6, 48.6, 56.2]
+				}, {
+					name: 'Good or Excellent',
+					data: [20, 25.5, 12.9, 25.1, 31.1, 10.6, 26.1, 24]
+				}]
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<script src="https://code.highcharts.com/highcharts.js"></script>
+		<title>2015 Beans Production in China</title>
+		<style type="text/css">
+			#container {
+			//	min-width: 300px;
+				height: 300px;
+				margin: 0 auto;
+			}
+			footer {
+				font-family:Arial;
+			}			
+		</style>
+	</head>
+	<body>
+		<div id="container"></div>
+	
+		<script type="text/javascript">
+			Highcharts.chart('container', {
+				credits: {
+					enabled: false
+				},					
+				chart: {
+					type: 'pie',
+					style: {
+						fontFamily: 'Arial',
+						fontSize: '10px'
+					},
+					spacingTop: 0,
+					spacingRight: 0,
+					spacingBottom: 0,
+					spacingLeft: 0
+				},
+				title: {
+					text: '2015 Beans Production in China',
+					align: 'center',
+					style: {
+						color: 'black',
+						fontSize: '12px',
+						fontWeight: 'bold'
+					}
+				},
+				tooltip: {
+					headerFormat: '<b>{point.name}</b><br/>',
+					pointFormat: '<b>{point.name}</b>: {point.y:.1f}%',
+					borderColor: 'black'
+				},
+				plotOptions: {
+					pie: {
+						animation: false,
+						enableMouseTracking: false,	
+						allowPointSelect: true,
+						borderWidth: 2,		
+						innerSize: '40%',						
+						dataLabels: {
+							enabled: true,
+							distance: 10,
+							format: '<b>{point.name}</b>: {point.y:.1f}%',
+							style: {
+								fontSize: '8px'
+							}
+						}
+					}
+				},
+				series: [{
+					data: [
+							{name: 'Heilongjiang', y: 27.51, color: '#6B8033'},
+							{name: 'Yunnan', y: 8.58, color: '#818B35'},
+							{name: 'Anhui', y: 8.43, color: '#979637'},
+							{name: 'Inner Mongolia', y: 6.48, color: '#AEA238'},
+							{name: 'Sichuan', y: 6.28, color: '#C4AD3A'},
+							{name: 'Others', y: 42.72, color: '#DAB83C'}
+					]
+				}]
+			});
+		</script>
+	</body>
+	<footer><font size='1'><em>Sources: China Water Risk, NBSC Website</em>
+	</font>
+	</footer>		
+</html>

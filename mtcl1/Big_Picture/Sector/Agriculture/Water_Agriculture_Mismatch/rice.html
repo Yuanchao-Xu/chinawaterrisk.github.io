@@ -1,0 +1,103 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<script src="https://code.highcharts.com/highcharts.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<title>2016 Rice</title>
+		<style type="text/css">
+			#container {
+				width: 100px;
+				height: 100px;
+				margin: 0 auto;
+				position:absolute;
+				left:30px;
+				top:30px;
+			}
+			#addText {
+				position:absolute;
+				left:0px;
+				top:0px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="container"></div>
+		<div id="addText"></div>
+	
+		<script type="text/javascript">
+		$(function() {
+			var chart = new Highcharts.chart('container', {
+													credits: {
+														enabled: false
+													},					
+													chart: {
+														type: 'pie',
+														style: {
+															fontFamily: 'Arial'
+														},
+														spacingTop: 0,
+														spacingRight: 0,
+														spacingBottom: 0,
+														spacingLeft: 0,
+														backgroundColor: null
+													},
+													title: {
+														text: '',
+														align: 'center',
+														style: {
+															color: 'black',
+															fontSize: '20px',
+															fontWeight: 'bold'
+														}
+													},
+													tooltip: {
+														headerFormat: '<b>Corn</b><br/>',
+														pointFormat: '<b>{point.name}</b>: {point.y:.1f}%',
+														borderColor: 'black',
+														hideDelay: 0
+													},
+													plotOptions: {
+														pie: {
+															allowPointSelect: true,
+															borderWidth: 2,		
+															innerSize: '40%',						
+															dataLabels: {
+																enabled: false,
+																format: '<b>{point.name}</b>: {point.y:.1f}%',
+																style: {
+																	fontSize: '15px'
+																}
+															}
+														}
+													},				
+													series: [{
+														slicedOffset: 0,
+														stickyTracking: false,
+														data: [
+																{name: 'Dry 11', y: 15.76, color: '#D3D6DB'},
+																{name: 'At Risk 9', y: 40.33, color: '#415F9D'},
+																{name: 'Safe 11', y: 43.91, color: '#233B6E'}
+														]
+													}]
+			},
+			function(chart) { // on complete
+				var textX = chart.plotLeft +30+ (chart.plotWidth  * 0.5);
+				var textY = chart.plotTop  +30+ (chart.plotHeight * 0.5);
+
+				var span = '<span id="pieChartInfoText" style="position:absolute; text-align:center; font-family: Arial; color:#233B6E;">';
+				span += '<span style="font-size: 10px">Rice</span><br>';
+			//	span += '<span style="font-size: 16px">Output in 2016</span>';
+				span += '</span>';
+
+				$("#addText").append(span);
+				span = $('#pieChartInfoText');
+				span.css('left', textX + (span.width() * -0.5));
+				span.css('top', textY + (span.height() * -0.5));
+			});				
+		});
+		
+		</script>
+	</body>
+</html>

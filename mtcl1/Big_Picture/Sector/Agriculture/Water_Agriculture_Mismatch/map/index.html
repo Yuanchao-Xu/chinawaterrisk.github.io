@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<meta charset = 'utf-8'>
+	<title>Water-agriculture Mismatch Map</title>
+	<script type = 'text/javascript' src='https://d3js.org/d3.v4.min.js'></script>
+	<style type = 'text/css'>
+	
+		#main{
+		//	width:960px;
+			margin:0 auto;
+		}
+		
+		footer {
+			font-family:Arial;
+		}
+
+		#bubble {
+		  fill-opacity: 0.8;
+		  stroke-opacity: 1;
+		}
+
+		#bubble-text {
+			font-family:Arial Narrow;
+			font-size:11px;
+			text-anchor: middle;
+		}
+		
+		.svg-container {
+			display: inline-block;
+			position: relative;
+			width: 100%;
+			padding-bottom: 70%;
+			vertical-align: top;
+			overflow: hidden;
+		}
+		.svg-content {
+			display: inline-block;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}		
+	</style>
+</head>
+<body>
+	<div id = 'main'>
+
+	<div id = 'map' class="svg-container"></div>
+	<!--
+	<footer>
+		<p><em>Sources: NBSC Website, China Statistical Yearbook</em><br><em>Note: Taiwan Province, HKSAR, MSAR and South China Sea are not shown because of no data</em></p>
+	</footer>	
+	//-->
+	</div>
+
+
+	<script type = 'text/javascript'>
+		var ValueByProvince = d3.map();
+
+		var formatTotal = d3.format(',.0f');
+	
+		var width = 960,
+			height = 700;
+		
+		var projection = d3.geoMercator()
+							.center([107, 31])
+							.scale(850)
+							.translate([width/2+30, height/2+110]);
+							
+		var path = d3.geoPath()
+					.projection(projection);
+					
+		var svg = d3.select('#map')
+					.append('svg')
+			  .attr("preserveAspectRatio", "xMinYMin meet")
+			  .attr("viewBox", "0 0 960 700")
+			  .classed("svg-content", true);
+					
+		var maxValue = 15000;
+		var minValue = 0;
+	
+		var colorBubble = d3.scaleLinear()
+						.domain([minValue, maxValue])
+						.range(["#EFF0F4"])
+						.interpolate(d3.interpolateHcl);
+						
+		var colorDry = d3.scaleLinear()
+						.domain([1, 2, 3])
+						.range(["#D3D6DB", "#415F9D", "#233B6E"])
+						.interpolate(d3.interpolateHcl);
+		
+		var radius = d3.scaleSqrt()
+						.domain([minValue, maxValue])
+						.range([5, 31]);								
+							
+		d3.json('simplified_smoothed_provinces.json', function(error, provinces){
+			d3.csv('sown_area.csv', function(error, data){
+			d3.csv('dry_11.csv', function(error, dataDry){
+			
+				var value = {};
+				var valueDry = {};				
+				
+				data.forEach(function(d){
+					value[d.Province] = +d.Cumulative;				
+					ValueByProvince.set(d.Province, d);
+				});
+				
+				dataDry.forEach(function(d){
+					valueDry[d.Province] = +d['2015'];
+				});				
+				
+				svg.selectAll('#province')
+					.data(provinces.features)
+					.enter()
+					.append('path')
+					.attr('id', 'province')
+					.attr('d', path)
+					.style('fill', function(d){
+												return colorDry(valueDry[d.properties.NAME_1]);
+										})
+					.style('stroke', 'white')	 
+					.style('stroke-width', 0.5);
+					
+				svg.selectAll('#bubble')
+					.data(provinces.features)
+					.enter()
+					.append('circle')
+					.attr('id', 'bubble')					
+					.attr('transform', function(d) { return 'translate(' + path.centroid(d) + ')'; })
+					.attr('r', function(d){
+										return radius(value[d.properties.NAME_1]);
+										})
+					.style('fill', function(d) {
+										return colorBubble(value[d.properties.NAME_1])
+										})
+					.style('stroke', function(d){
+									if(d.properties.NAME_1=='Jiangsu' || d.properties.NAME_1=='Henan' || d.properties.NAME_1=='Shandong'|| d.properties.NAME_1=='Hebei'){
+										return '#CADC4F'; 
+									}else{
+										return colorBubble(value[d.properties.NAME_1]);
+									}
+									})
+					.style('stroke-width', function(d){
+									if(d.properties.NAME_1=='Jiangsu' || d.properties.NAME_1=='Henan' || d.properties.NAME_1=='Shandong'|| d.properties.NAME_1=='Hebei'){
+										return 3; 
+									}else{
+										return 0;
+									}
+									});					
+			
+		//		svg.selectAll('#bubble-text')
+		//			.data(provinces.features)
+		//			.enter()
+		//			.append('text')
+		//			.attr('id', 'bubble-text')
+		//			.attr('transform', function(d) { return 'translate(' + path.centroid(d) + ')'; })
+		//			.text(function(d) { return d.properties.NAME_1; });	
+					
+
+				console.log(value);
+				console.log(ValueByProvince.get('Beijing'));
+				
+			});
+		});
+		});
+		
+
+		
+
+		
+		
+	</script>
+</body>
+</html>

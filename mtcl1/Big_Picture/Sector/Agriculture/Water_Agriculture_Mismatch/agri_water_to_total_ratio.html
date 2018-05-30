@@ -1,0 +1,110 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<script src="https://code.highcharts.com/highcharts.js"></script>
+		<title>2016 Agricultural Water Use to Total Water Resources Ratio</title>
+		<style type="text/css">
+
+			#container {
+				width: 250px;
+				height: 150px;
+				margin: 0 auto;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="container"></div>
+	
+		<script type="text/javascript">
+			Highcharts.chart('container', {
+				credits: {
+					enabled: false
+				},			
+			//	colors: ['#233B6E', '#415F9D', '#D3D6DB'],			
+				chart: {
+					type: 'bar',
+					style: {
+						fontFamily: 'Arial'
+					},
+					spacingTop: 0,
+					spacingRight: 0,
+					spacingBottom: 0,
+					spacingLeft: 0,
+					backgroundColor: null
+				},
+				title: {
+					text: '2016 Agricultural Water Use to Total Water Resources Ratio',
+					align: 'left',
+					style: {
+						color: '#233B6E',
+						fontSize:'12px',
+						fontWeight: 'bold'
+					}
+				},
+				xAxis: {
+					className: 'x-axis',
+					labels: {
+						style: {						
+							color: '#233B6E',
+							fontSize:'10px'
+						}
+					},
+					lineWidth: 0,
+					lineColor: 'black',
+					tickLength: 0,					
+					categories: ['Dry 11', 'At Risk 9', 'Safe 11']
+				},
+				yAxis: {
+					className: 'y-axis',
+					labels: {
+						enabled: false,
+						formatter: function() {
+						   return this.value+"%";
+						},						
+						style: {
+							color: 'black',
+							fontSize:'5px'
+						}
+					},
+					gridLineWidth: 0,
+					gridLineColor: '#D3D3D3',
+					tickInterval: 20,
+					min: 0,
+					max: 50,
+					title: {
+						text: ''
+					}
+				},
+				tooltip: {
+					headerFormat: '<b>{point.x}</b><br/>',
+					pointFormat: '{point.y:.1f}%',
+					borderColor: 'black',
+					hideDelay: 0
+				},
+				legend: {
+					enabled: false
+				},
+				plotOptions: {
+					bar: {
+						stacking: 'normal',
+						pointPadding: 0,
+						borderWidth: 0,						
+						dataLabels: {
+							enabled: false
+						}
+					}
+				},
+				series: [{
+					stickyTracking: false,
+					data: [
+					{y: 43.29, color: '#D3D6DB'},
+					{y: 13.36, color: '#415F9D'},
+					{y: 7.43, color: '#233B6E'}
+					]
+				}]
+			});
+		</script>
+	</body>
+</html>

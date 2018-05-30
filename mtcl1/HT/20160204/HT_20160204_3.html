@@ -1,0 +1,203 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<script src="https://code.highcharts.com/highcharts.js"></script>
+		<title>2000-2030F Non-Fossil Fuel in Primary Energy Consumption</title>
+		<style type="text/css">
+			#container {
+			//	min-width: 300px;
+				height: 400px;
+				margin: 0 auto;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="container"></div>
+	
+		<script type="text/javascript">
+			Highcharts.chart('container', {
+				credits: {
+					enabled: false
+				},					
+				chart: {
+					style: {
+						fontFamily: 'serif'
+					},
+					spacingTop: 0,
+					spacingRight: 0,
+					spacingBottom: 0,
+					spacingLeft: 0
+				},
+				title: {
+					text: '2000-2030F Non-Fossil Fuel in Primary Energy Consumption',
+					align: 'left',
+					style: {
+						color: 'black',
+						fontSize: '20px',
+						fontWeight: 'bold'
+					}
+				},
+				xAxis: {
+					className: 'x-axis',
+					labels: {
+						style: {
+							color: 'black',
+							fontSize:'12px'
+						}
+					},
+					lineColor: 'black',
+					tickLength: 0					
+			//		categories: ['2000', '2005', '2010', '2015', '2020', '2025', '2030']
+				},
+				yAxis: {
+					className: 'y-axis',
+					labels: {
+						formatter: function() {
+						   return this.value+"%";
+						},						
+						style: {
+							color: 'black',
+							fontSize:'12px'
+						}
+					},
+					gridLineColor: '#D3D3D3',
+					tickInterval: 5,
+					min: 0,
+					max: 25,
+					title: {
+						text: ''
+					}
+				},				
+				tooltip: {
+					headerFormat: '<b>{series.name}</b><br/>',
+					pointFormat: '{point.x}: {point.y:.1f}%',
+					borderColor: 'black'
+				},
+		//		labels: {
+		//			items: [{
+		//				html: '2014',
+		//				style: {
+		//					left: '610px',
+		//					top: '75px',
+		//					color: 'black',
+		//					fontSize: '15px',
+		//					fontWeight: 'bold'
+		//				}
+		//			}]
+		//		},				
+				plotOptions: {
+					pie: {
+						allowPointSelect: true,
+						borderWidth: 2,		
+						innerSize: '40%',						
+						dataLabels: {
+							enabled: false,
+						},
+						tooltip: {
+							headerFormat: '<b>{point.name}</b><br/>',
+							pointFormat: '<b>{point.name}</b>: {point.y:.1f}%',
+							borderColor: 'black'
+						}						
+					},
+					line: {
+						marker: {
+							enabled: false
+						}					
+					},
+					series: {
+						label: {
+							connectorAllowed: false
+						},
+						pointStart: 2000
+					}					
+				},				
+				series: [{
+					type: 'line',
+					name: 'Actual',
+					showInLegend: false,
+					data: [7.3,	8.4,	8.2,	7.4,	7.6,	7.4,	7.4,	7.5,	8.4,	8.5,	9.4,	8.4,	9.7,	10.2,	11.2],
+					color: '#9F171E'
+				},{
+					type: 'line',
+					name: 'Forecast',
+					showInLegend: false, 
+					data: [{
+								x: 2014,
+								y: 11.2,
+								dataLabels: {
+									enabled: true,
+									format: '2014',
+									color: 'black',
+									style: {
+										color: 'black',
+										fontSize: '15px',
+										textOutline: false ,
+										fontWeight: 'bold'
+									},
+								y: 255
+								}							
+							},
+						//	{x: 4, y: 15},
+							{x: 2020, y: 15},
+							{
+								x: 2030,
+								y: 20,
+								dataLabels: {
+									enabled: true,
+									format: 'INDC 2030 target: 20%',
+									color: '#9F171E',
+									style: {
+										color: '#9F171E',
+										fontSize: '15px',
+										textOutline: false ,
+										fontWeight: null
+									}
+								}
+					}],
+					color: '#9F171E',
+					dashStyle: 'dash'
+					
+				},{
+					type: 'pie',
+					data: [{
+						name: 'Coal',
+						y: 66,
+						color: 'black'
+					},{
+						name: 'Oil',
+						y: 17.1,
+						color: '#7b8288'
+					},{
+						name: 'Gas',
+						y: 5.7,
+						color: '#ccccd1'
+					},{
+						name: 'Hydropower',
+						y: 7.9,
+						color: '#0e77b9'
+					},{
+						name: 'Solar+Wind',
+						y: 1.4,
+						color: '#6a8434'
+					},{
+						name: 'Nuclear',
+						y: 1,
+						color: '#ff6916'
+					},{
+						name: 'Others',
+						y: 0.9,
+						color: '#63b1df'
+					}],
+					center: ["46.5%", "20%"],
+					size: 170,
+					showInLegend: false,
+					dataLabels: {
+						enabled: false
+					}					
+				}]
+			});
+		</script>
+	</body>
+</html>

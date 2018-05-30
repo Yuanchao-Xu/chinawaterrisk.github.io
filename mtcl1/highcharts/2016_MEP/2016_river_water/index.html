@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<script src="https://code.highcharts.com/highcharts.js"></script>
+		<title>2016 Overall Quality of the Main River Basins</title>
+		<style type="text/css">
+
+			#container {
+			//	min-width: 300px;
+				height: 400px;
+				margin: 0 auto;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="container"></div>
+	
+		<script type="text/javascript">
+			Highcharts.chart('container', {
+				credits: {
+					enabled: false
+				},					
+				chart: {
+					type: 'pie',
+					style: {
+						fontFamily: 'serif'
+					},
+					spacingTop: 0,
+					spacingRight: 0,
+					spacingBottom: 0,
+					spacingLeft: 0
+				},
+				title: {
+					text: '2016 Overall Quality of the Main River Basins',
+					align: 'center',
+					style: {
+						color: 'black',
+						fontSize: '20px',
+						fontWeight: 'bold'
+					}
+				},
+				tooltip: {
+					headerFormat: '<b>{point.name}</b><br/>',
+					pointFormat: '<b>{point.name}</b>: {point.y:.1f}%',
+					borderColor: 'black'
+				},
+				plotOptions: {
+					pie: {
+						allowPointSelect: true,
+						borderWidth: 2,		
+						innerSize: '40%',						
+						dataLabels: {
+							enabled: true,
+							format: '<b>{point.name}</b>: {point.y:.1f}%',
+							style: {
+								fontSize: '15px'
+							}
+						}
+					}
+				},
+				series: [{
+					data: [
+							{name: 'Grade V+', y: 9.1, color: 'black'},
+							{name: 'Grade IV-V', y: 19.7, color: '#7C8388'},
+							{name: 'Grade I-III', y: 71.2, color: '#0D77B9'}
+					]
+				}]
+			});
+		</script>
+	</body>
+</html>

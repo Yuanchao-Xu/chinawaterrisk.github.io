@@ -1,0 +1,185 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<script src="https://code.highcharts.com/highcharts.js"></script>
+		<title>2015-2050F China's Installed Capacity of Renewable Energy</title>
+		<style type="text/css">
+
+			#container {
+				min-width: 300px;
+				height: 400px;
+				margin: 0 auto;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="container"></div>
+	
+		<script type="text/javascript">
+			Highcharts.chart('container', {
+				credits: {
+					enabled: false
+				},				
+				colors: ['#7C8388', '#aec670', '#6B8033', '#0D77B9'],			
+				chart: {
+					type: 'column',
+					style: {
+						fontFamily: 'serif'
+					},
+					spacingTop: 0,
+					spacingRight: 0,
+					spacingBottom: 0,
+					spacingLeft: 0
+				},
+				title: {
+					text: "2015-2050F China's Installed Capacity of Renewable Energy",
+					align: 'left',
+					style: {
+						color: 'black',
+						fontSize:'20px',
+						fontWeight: 'bold'
+					}
+				},
+				xAxis: {
+					className: 'x-axis',
+					labels: {
+						style: {
+							color: 'black',
+							fontSize:'12px'
+						}
+					},
+					lineColor: 'black',
+					tickLength: 0,					
+					categories: ['Germany', 'US', 'China', 'ERI', 'DDPP*' ,'WWF', 'EF/ERI']
+				},
+				yAxis: {
+					className: 'y-axis',
+					labels: {						
+						style: {
+							color: 'black',
+							fontSize:'12px'
+						}
+					},
+					gridLineColor: '#D3D3D3',
+					tickInterval: 1000,
+					min: 0,
+					max: 7000,
+					title: {
+						text: 'Unit: GW'
+					}
+				},
+				legend : {
+					itemStyle: {
+						color: 'black',
+						fontSize: '15px',
+						fontWeight: null
+					}
+				},
+				tooltip: {
+					headerFormat: '<b>{point.x}</b><br/>',
+					pointFormat: '{series.name}: {point.y:.1f}%',
+					borderColor: 'black'
+				},
+				plotOptions: {
+					column: {
+						stacking: 'normal',
+						pointPadding: 0,
+						borderWidth: 0,						
+						dataLabels: {
+							enabled: false
+						}
+					}
+				},
+				series: [{
+					name: 'Others',
+					data: [{
+								y: 8.79
+							}, {
+								y: 5.59
+							}, {
+								y: 0,
+								dataLabels: {
+									enabled: true,
+									format: '1X<br>-',
+									color: '#9F171E',
+									style: {
+										color: '#9F171E',
+										fontSize: '15px',
+										textOutline: false ,
+										fontWeight: 'bold'
+									},
+									y: 270
+								}								
+							}, {
+								y: 0,
+								dataLabels: {
+									enabled: true,
+									format: '12X<br>+7.4%/yr',
+									color: '#9F171E',
+									style: {
+										color: '#9F171E',
+										fontSize: '15px',
+										textOutline: false ,
+										fontWeight: 'bold'
+									},
+									y: 270
+								}								
+							}, {
+								y: 0,
+								dataLabels: {
+									enabled: true,
+									format: '15X<br>+8.0%/yr<br>+64GW/yr',
+									color: '#9F171E',
+									style: {
+										color: '#9F171E',
+										fontSize: '15px',
+										textOutline: false ,
+										fontWeight: 'bold'
+									},
+									y: 255
+								}								
+							}, {
+								y: 49,
+								dataLabels: {
+									enabled: true,
+									format: '23X<br>+9.4%/yr<br>+104GW/yr',
+									color: '#9F171E',
+									style: {
+										color: '#9F171E',
+										fontSize: '15px',
+										textOutline: false ,
+										fontWeight: 'bold'
+									},
+									y: 255
+								}								
+							}, {
+								y: 226.314,
+								dataLabels: {
+									enabled: true,
+									format: '31X<br>+10.3%/yr<br>+141GW/yr',
+									color: '#9F171E',
+									style: {
+										color: '#9F171E',
+										fontSize: '15px',
+										textOutline: false ,
+										fontWeight: 'bold'
+									},
+									y: 255
+								}								
+							}]
+				}, {
+					name: 'Solar',
+					data: [39.55,	21.62552,	43,	1040,	1200,	1800,	2696.164]
+				}, {
+					name: 'Wind',
+					data: [41.36,	72.79996,	120,	930,	1200,	2005,	2396.591]
+				}, {
+					name: 'Hydropower',
+					data: [5.59,	79.14468,	320,	520,	500,	435,	554.14]
+				}]
+			});
+		</script>
+	</body>
+</html>

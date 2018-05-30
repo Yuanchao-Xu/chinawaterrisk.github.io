@@ -1,0 +1,1001 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<script src="https://code.highcharts.com/highcharts.js"></script>
+		<script src="https://code.highcharts.com/modules/drilldown.js"></script>
+		<title>2007-2016 Overall Overall Crop Failures due to Floods and Droughts in China</title>
+		<style type="text/css">
+			#container {
+			//	min-width: 300px;
+				height: 205px;
+				margin: 0 auto;
+			}
+	
+			footer {
+				font-family:Arial;
+			}	
+		</style>
+	</head>
+	<body>
+		<div id="container"></div>
+	
+		<script type="text/javascript">
+			Highcharts.chart('container', {
+				credits: {
+					enabled: false
+				},					
+				chart: {
+					style: {
+						fontFamily: 'Arial',
+						fontSize: '10px'
+					},
+					alignTicks: false,					
+					spacingTop: 0,
+					spacingRight: 0,
+					spacingBottom: 0,
+					spacingLeft: 0,
+					backgroundColor: null
+				},
+				title: {
+					text: '',
+					align: 'left',
+					style: {
+						color: 'black',
+						fontSize: '12px',
+						fontWeight: 'bold'
+					}
+				},
+				xAxis: {
+					className: 'x-axis',
+					type: 'category',
+					tickInterval: 1,					
+					labels: {
+						style: {
+							color: 'black',
+							fontSize:'7px'
+						}
+					},
+					lineColor: 'transparent',
+					tickLength: 0					
+			//		categories: ['2000', '2005', '2010', '2015', '2020', '2025', '2030']
+				},
+				yAxis: [{
+					className: 'y-axis-0',
+					visible: false,
+					labels: {
+					//	formatter: function() {
+					//	   return this.value;
+					//	},						
+						style: {
+							color: 'black',
+							fontSize:'10px'
+						}
+					},
+					gridLineWidth: 0,
+					gridLineColor: '#D3D3D3',
+					tickInterval: 100,
+		//			min: 0,
+		//			max: 3300,
+					title: {
+						text: 'Unit: 1,000 hectares'
+					}
+				}],				
+				tooltip: {
+					headerFormat: '<b>{series.name}</b><br/>',
+					pointFormat: '{point.y:.1f} (1,000 ha)',
+					borderColor: 'black',
+					hideDelay: 0
+				},
+		//		labels: {
+		//			items: [{
+		//				html: '2014',
+		//				style: {
+		//					left: '610px',
+		//					top: '75px',
+		//					color: 'black',
+		//					fontSize: '15px',
+		//					fontWeight: 'bold'
+		//				}
+		//			}]
+		//		},
+				legend: {
+						itemStyle: {
+					//		'cursor': 'default',
+							color: 'black',
+							fontSize:'10px',
+							fontWeight: null
+						},
+						enabled: true,
+					    layout: 'vertical',
+					    align: 'right',
+					    verticalAlign: 'top',
+					            floating: true
+				},
+				plotOptions: {
+					column: {
+					//	animation: false,
+					//	stacking: 'normal',
+						fillOpacity: 1,
+					//	enableMouseTracking: false,
+						marker: {
+							enabled: false,
+							symbol: 'circle',
+							radius: 2,
+							states: {
+								hover: {
+									enabled: true
+								}
+							}							
+						},        
+					//	events: {
+					//		legendItemClick: function () {
+					//			return false; 
+					//		}
+					//	}
+					},
+					series: {
+						label: {
+							connectorAllowed: false
+						},
+					//	pointStart: 2007,
+						stickyTracking: false,
+						pointPadding: 0,
+               					groupPadding: 0.1
+					},
+					spline: {
+					//	animation: false,
+					//	enableMouseTracking: false,
+						marker: {
+							enabled: false
+						}
+					}					
+				},				
+				series: [{
+					type: 'column',
+					name: 'Crop failures due to Droughts',
+					data: [	{
+						name: '2007',
+						y: 3190,
+						drilldown: '2007-d'
+					}, {
+						name: '2008',
+						y: 811.8,
+						drilldown: '2008-d'
+					}, {
+						name: '2009',
+						y: 3268.8,
+						drilldown: '2009-d'
+					}, {
+						name: '2010',
+						y: 2672.3,
+						drilldown: '2010-d'
+					}, {
+						name: '2011',
+						y: 1505.4,
+						drilldown: '2011-d'
+					}, {
+						name: '2012',
+						y: 374,
+						drilldown: '2012-d'
+					}, {
+						name: '2013',
+						y: 1416.1,
+						drilldown: '2013-d'
+					}, {
+						name: '2014',
+						y: 1484.7,
+						drilldown: '2014-d'
+					}, {
+						name: '2015',
+						y: 1046.1,
+						drilldown: '2015-d'
+					}, {
+						name: '2016',
+						y: 1018.3,
+						drilldown: '2016-d'
+					}],
+					color: '#DAB83C'				
+				}, {
+					type: 'column',
+					name: 'Crop failures due to Floods',
+						data: [	{
+						name: '2007',
+						y: 1642,
+						drilldown: '2007-f'
+					}, {
+						name: '2008',
+						y: 756,
+						drilldown: '2008-f'
+					}, {
+						name: '2009',
+						y: 780.9,
+						drilldown: '2009-f'
+					}, {
+						name: '2010',
+						y: 1657.5,
+						drilldown: '2010-f'
+					}, {
+						name: '2011',
+						y: 872.8,
+						drilldown: '2011-f'
+					}, {
+						name: '2012',
+						y: 1095.3,
+						drilldown: '2012-f'
+					}, {
+						name: '2013',
+						y: 1828.9,
+						drilldown: '2013-f'
+					}, {
+						name: '2014',
+						y: 976.9,
+						drilldown: '2014-f'
+					}, {
+						name: '2015',
+						y: 841,
+						drilldown: '2015-f'
+					}, {
+						name: '2016',
+						y: 1442.4,
+						drilldown: '2016-f'
+					}],
+					color: '#091825'					
+				}],
+				drilldown: {
+					activeAxisLabelStyle: {
+							color: 'black',
+							fontSize:'10px',
+							textDecoration: 'none'
+					},				
+					series: [{
+						type: 'column',
+						name: '2007',
+						id: '2007-f',
+						data: [	
+							['Beijing',0],
+							['Tianjin',0],
+							['Hebei',13],
+							['Shanxi',31],
+							['Inner Mongolia',15],
+							['Liaoning',4],
+							['Jilin',6],
+							['Heilongjiang',6],
+							['Shanghai',0],
+							['Jiangsu',54],
+							['Zhejiang',2],
+							['Anhui',526],
+							['Fujian',6],
+							['Jiangxi',25],
+							['Shandong',53],
+							['Henan',165],
+							['Hubei',169],
+							['Hunan',106],
+							['Guangdong',16],
+							['Guangxi',29],
+							['Hainan',0],
+							['Chongqing',74],
+							['Sichuan',105],
+							['Guizhou',44],
+							['Yunnan',60],
+							['Tibet',1],
+							['Shaanxi',63],
+							['Gansu',35],
+							['Qinghai',1],
+							['Ningxia',10],
+							['Xinjiang',14],
+						]
+					}, {
+						type: 'column',
+						name: '2008',
+						id: '2008-f',
+						data: [	
+							['Beijing',0],
+							['Tianjin',0],
+							['Hebei',10.6],
+							['Shanxi',10.7],
+							['Inner Mongolia',50],
+							['Liaoning',10.7],
+							['Jilin',4.5],
+							['Heilongjiang',6.6],
+							['Shanghai',0],
+							['Jiangsu',20.3],
+							['Zhejiang',16.5],
+							['Anhui',28],
+							['Fujian',2.7],
+							['Jiangxi',125.1],
+							['Shandong',28],
+							['Henan',2.1],
+							['Hubei',142.5],
+							['Hunan',88.7],
+							['Guangdong',46.6],
+							['Guangxi',76.4],
+							['Hainan',8.3],
+							['Chongqing',8.5],
+							['Sichuan',16.3],
+							['Guizhou',21],
+							['Yunnan',13],
+							['Tibet',0.1],
+							['Shaanxi',9.3],
+							['Gansu',8],
+							['Qinghai',0.1],
+							['Ningxia',0.8],
+							['Xinjiang',0.7]
+						]
+					}, {
+						type: 'column',
+						name: '2009',
+						id: '2009-f',
+						data: [	
+							['Beijing',0],
+							['Tianjin',0],
+							['Hebei',4.3],
+							['Shanxi',8],
+							['Inner Mongolia',34.4],
+							['Liaoning',0.5],
+							['Jilin',6.1],
+							['Heilongjiang',220.1],
+							['Shanghai',0],
+							['Jiangsu',19.1],
+							['Zhejiang',11.9],
+							['Anhui',28.5],
+							['Fujian',0],
+							['Jiangxi',34.7],
+							['Shandong',66.5],
+							['Henan',6.1],
+							['Hubei',100.7],
+							['Hunan',36.1],
+							['Guangdong',0],
+							['Guangxi',39.9],
+							['Hainan',0],
+							['Chongqing',20.2],
+							['Sichuan',76.6],
+							['Guizhou',13.6],
+							['Yunnan',28.3],
+							['Tibet',2.1],
+							['Shaanxi',10.2],
+							['Gansu',10.1],
+							['Qinghai',0.4],
+							['Ningxia',0.8],
+							['Xinjiang',1.6]
+						]
+					}, {
+						type: 'column',
+						name: '2010',
+						id: '2010-f',
+						data: [		
+							['Beijing',0],
+							['Tianjin',0],
+							['Hebei',14.1],
+							['Shanxi',9.5],
+							['Inner Mongolia',35.3],
+							['Liaoning',115.4],
+							['Jilin',105.7],
+							['Heilongjiang',42.7],
+							['Shanghai',0],
+							['Jiangsu',10],
+							['Zhejiang',12.6],
+							['Anhui',99.3],
+							['Fujian',46.8],
+							['Jiangxi',188.3],
+							['Shandong',142.9],
+							['Henan',79.6],
+							['Hubei',177.3],
+							['Hunan',215.6],
+							['Guangdong',22.3],
+							['Guangxi',16],
+							['Hainan',42.7],
+							['Chongqing',28.1],
+							['Sichuan',119.7],
+							['Guizhou',29.6],
+							['Yunnan',18.2],
+							['Tibet',0],
+							['Shaanxi',51.7],
+							['Gansu',16.3],
+							['Qinghai',3.3],
+							['Ningxia',6.9],
+							['Xinjiang',7.3]
+						]
+					}, {
+						type: 'column',
+						name: '2011',
+						id: '2011-f',		
+						data: [
+							['Beijing',3.6],
+							['Tianjin',0.3],
+							['Hebei',8.7],
+							['Shanxi',21.6],
+							['Inner Mongolia',130],
+							['Liaoning',49.3],
+							['Jilin',9.8],
+							['Heilongjiang',11],
+							['Shanghai',2.7],
+							['Jiangsu',17],
+							['Zhejiang',40.9],
+							['Anhui',30.4],
+							['Fujian',2.5],
+							['Jiangxi',41.7],
+							['Shandong',31.3],
+							['Henan',10],
+							['Hubei',63.8],
+							['Hunan',56],
+							['Guangdong',22.2],
+							['Guangxi',24.8],
+							['Hainan',50.1],
+							['Chongqing',19],
+							['Sichuan',102.1],
+							['Guizhou',15.5],
+							['Yunnan',17],
+							['Tibet',0],
+							['Shaanxi',65.4],
+							['Gansu',15.6],
+							['Qinghai',2.5],
+							['Ningxia',0.3],
+							['Xinjiang',6]
+						]
+					}, {
+						type: 'column',
+						name: '2012',
+						id: '2012-f',		
+						data: [
+							['Beijing',4.8],
+							['Tianjin',13.9],
+							['Hebei',49.2],
+							['Shanxi',48.4],
+							['Inner Mongolia',283.6],
+							['Liaoning',27],
+							['Jilin',2.5],
+							['Heilongjiang',33.3],
+							['Shanghai',1.9],
+							['Jiangsu',34.1],
+							['Zhejiang',41.4],
+							['Anhui',36.7],
+							['Fujian',11.3],
+							['Jiangxi',37.1],
+							['Shandong',75.3],
+							['Henan',19.4],
+							['Hubei',63.6],
+							['Hunan',55],
+							['Guangdong',21.8],
+							['Guangxi',19.4],
+							['Hainan',12],
+							['Chongqing',43],
+							['Sichuan',24.5],
+							['Guizhou',31.2],
+							['Yunnan',26.2],
+							['Tibet',1.1],
+							['Shaanxi',28.1],
+							['Gansu',33.9],
+							['Qinghai',2.1],
+							['Ningxia',4.7],
+							['Xinjiang',8.8]
+						]
+					}, {
+						type: 'column',
+						name: '2013',
+						id: '2013-f',		
+						data: [	
+							['Beijing',0.3],
+							['Tianjin',0],
+							['Hebei',41.9],
+							['Shanxi',18.8],
+							['Inner Mongolia',131.1],
+							['Liaoning',58.1],
+							['Jilin',61.9],
+							['Heilongjiang',815.1],
+							['Shanghai',1.6],
+							['Jiangsu',1.3],
+							['Zhejiang',81.5],
+							['Anhui',11.3],
+							['Fujian',19.7],
+							['Jiangxi',11.6],
+							['Shandong',141.7],
+							['Henan',0.2],
+							['Hubei',22.5],
+							['Hunan',46.4],
+							['Guangdong',117.3],
+							['Guangxi',7.3],
+							['Hainan',57],
+							['Chongqing',8.9],
+							['Sichuan',57.2],
+							['Guizhou',13.3],
+							['Yunnan',16.9],
+							['Tibet',1.2],
+							['Shaanxi',49],
+							['Gansu',22.4],
+							['Qinghai',0.4],
+							['Ningxia',5.7],
+							['Xinjiang',5.7]
+						]
+					}, {
+						type: 'column',
+						name: '2014',
+						id: '2014-f',		
+						data: [
+							['Beijing',0],
+							['Tianjin',0],
+							['Hebei',4.5],
+							['Shanxi',13.7],
+							['Inner Mongolia',24.3],
+							['Liaoning',1.4],
+							['Jilin',6.1],
+							['Heilongjiang',68.8],
+							['Shanghai',0],
+							['Jiangsu',0.3],
+							['Zhejiang',13.6],
+							['Anhui',5.4],
+							['Fujian',10.9],
+							['Jiangxi',42.1],
+							['Shandong',2.9],
+							['Henan',3.7],
+							['Hubei',36.1],
+							['Hunan',182.9],
+							['Guangdong',158.8],
+							['Guangxi',58.9],
+							['Hainan',110.8],
+							['Chongqing',31],
+							['Sichuan',52.1],
+							['Guizhou',65.1],
+							['Yunnan',41.2],
+							['Tibet',1.1],
+							['Shaanxi',27],
+							['Gansu',8],
+							['Qinghai',2.8],
+							['Ningxia',0],
+							['Xinjiang',3.4]
+						]
+					}, {
+						type: 'column',
+						name: '2015',
+						id: '2015-f',		
+						data: [	
+							['Beijing',0],
+							['Tianjin',0],
+							['Hebei',31.1],
+							['Shanxi',6.7],
+							['Inner Mongolia',21.2],
+							['Liaoning',0.9],
+							['Jilin',3.9],
+							['Heilongjiang',40.2],
+							['Shanghai',1.1],
+							['Jiangsu',33.4],
+							['Zhejiang',58],
+							['Anhui',141],
+							['Fujian',26.4],
+							['Jiangxi',38.6],
+							['Shandong',8.4],
+							['Henan',2.8],
+							['Hubei',74.4],
+							['Hunan',88],
+							['Guangdong',73.9],
+							['Guangxi',28.9],
+							['Hainan',3.7],
+							['Chongqing',7.6],
+							['Sichuan',33.3],
+							['Guizhou',20.7],
+							['Yunnan',42],
+							['Tibet',1.2],
+							['Shaanxi',19.7],
+							['Gansu',7],
+							['Qinghai',3.8],
+							['Ningxia',1.8],
+							['Xinjiang',21.3]
+						]	
+					}, {
+						type: 'column',
+						name: '2016',
+						id: '2016-f',		
+						data: [
+							['Beijing',1.5],
+							['Tianjin',0.1],
+							['Hebei',103.3],
+							['Shanxi',16.6],
+							['Inner Mongolia',14.7],
+							['Liaoning',10.2],
+							['Jilin',21.7],
+							['Heilongjiang',57.2],
+							['Shanghai',0.6],
+							['Jiangsu',4.9],
+							['Zhejiang',15.1],
+							['Anhui',390.8],
+							['Fujian',25.7],
+							['Jiangxi',55.5],
+							['Shandong',6.1],
+							['Henan',38.4],
+							['Hubei',319.2],
+							['Hunan',85.3],
+							['Guangdong',24.6],
+							['Guangxi',8.5],
+							['Hainan',26.6],
+							['Chongqing',17.3],
+							['Sichuan',23.9],
+							['Guizhou',32.2],
+							['Yunnan',44.9],
+							['Tibet',6.4],
+							['Shaanxi',16.5],
+							['Gansu',19],
+							['Qinghai',1.5],
+							['Ningxia',3.7],
+							['Xinjiang',50.4]
+						]
+					}, {
+						type: 'column',
+						name: '2007',
+						id: '2007-d',		
+						data: [
+							['Beijing',7],
+							['Tianjin',0],
+							['Hebei',252],
+							['Shanxi',83],
+							['Inner Mongolia',798],
+							['Liaoning',95],
+							['Jilin',326],
+							['Heilongjiang',555],
+							['Shanghai',0],
+							['Jiangsu',4],
+							['Zhejiang',3],
+							['Anhui',0],
+							['Fujian',9],
+							['Jiangxi',113],
+							['Shandong',11],
+							['Henan',42],
+							['Hubei',34],
+							['Hunan',194],
+							['Guangdong',25],
+							['Guangxi',64],
+							['Hainan',4],
+							['Chongqing',8],
+							['Sichuan',81],
+							['Guizhou',7],
+							['Yunnan',45],
+							['Tibet',0],
+							['Shaanxi',84],
+							['Gansu',240],
+							['Qinghai',1],
+							['Ningxia',76],
+							['Xinjiang',17]
+						]
+					}, {
+						type: 'column',
+						name: '2008',
+						id: '2008-d',		
+						data: [					
+							['Beijing',0],
+							['Tianjin',0.7],
+							['Hebei',53],
+							['Shanxi',153.2],
+							['Inner Mongolia',30],
+							['Liaoning',45.3],
+							['Jilin',39],
+							['Heilongjiang',53],
+							['Shanghai',0],
+							['Jiangsu',0],
+							['Zhejiang',1.8],
+							['Anhui',0],
+							['Fujian',1.2],
+							['Jiangxi',7.1],
+							['Shandong',6.4],
+							['Henan',35.3],
+							['Hubei',0],
+							['Hunan',42],
+							['Guangdong',6.5],
+							['Guangxi',17.1],
+							['Hainan',1.5],
+							['Chongqing',4.3],
+							['Sichuan',3.3],
+							['Guizhou',0.5],
+							['Yunnan',42],
+							['Tibet',0],
+							['Shaanxi',24.5],
+							['Gansu',54],
+							['Qinghai',5.7],
+							['Ningxia',41.9],
+							['Xinjiang',142.5]
+						]
+					}, {
+						type: 'column',
+						name: '2009',
+						id: '2009-d',		
+						data: [						
+							['Beijing',0.4],
+							['Tianjin',0],
+							['Hebei',418],
+							['Shanxi',262],
+							['Inner Mongolia',660],
+							['Liaoning',486.2],
+							['Jilin',446.3],
+							['Heilongjiang',271.7],
+							['Shanghai',0],
+							['Jiangsu',12.6],
+							['Zhejiang',1.3],
+							['Anhui',0],
+							['Fujian',1.6],
+							['Jiangxi',29.2],
+							['Shandong',79.4],
+							['Henan',27.2],
+							['Hubei',18.9],
+							['Hunan',61.8],
+							['Guangdong',8.9],
+							['Guangxi',32.8],
+							['Hainan',0.2],
+							['Chongqing',17.1],
+							['Sichuan',26.4],
+							['Guizhou',45.3],
+							['Yunnan',73],
+							['Tibet',0.9],
+							['Shaanxi',50.6],
+							['Gansu',174.3],
+							['Qinghai',0],
+							['Ningxia',31.8],
+							['Xinjiang',17.2]					
+						]
+					}, {
+						type: 'column',
+						name: '2010',
+						id: '2010-d',		
+						data: [						
+							['Beijing',0],
+							['Tianjin',0],
+							['Hebei',137.3],
+							['Shanxi',105.9],
+							['Inner Mongolia',511.1],
+							['Liaoning',0],
+							['Jilin',119.5],
+							['Heilongjiang',36.1],
+							['Shanghai',0],
+							['Jiangsu',3.6],
+							['Zhejiang',0],
+							['Anhui',0],
+							['Fujian',0],
+							['Jiangxi',0],
+							['Shandong',4.1],
+							['Henan',0],
+							['Hubei',4.7],
+							['Hunan',48.1],
+							['Guangdong',0],
+							['Guangxi',41.9],
+							['Hainan',5.4],
+							['Chongqing',8.6],
+							['Sichuan',47.5],
+							['Guizhou',615.3],
+							['Yunnan',881.7],
+							['Tibet',6.4],
+							['Shaanxi',29.6],
+							['Gansu',63.8],
+							['Qinghai',0],
+							['Ningxia',0],
+							['Xinjiang',0.9]
+						]
+					}, {
+						type: 'column',
+						name: '2011',
+						id: '2011-d',		
+						data: [
+							['Beijing',0],
+							['Tianjin',0],
+							['Hebei',27.5],
+							['Shanxi',28.8],
+							['Inner Mongolia',129],
+							['Liaoning',0],
+							['Jilin',11.5],
+							['Heilongjiang',30],
+							['Shanghai',0],
+							['Jiangsu',20],
+							['Zhejiang',0],
+							['Anhui',3.3],
+							['Fujian',1.7],
+							['Jiangxi',25.3],
+							['Shandong',16.7],
+							['Henan',12.9],
+							['Hubei',49],
+							['Hunan',177.5],
+							['Guangdong',2.6],
+							['Guangxi',20.9],
+							['Hainan',0.7],
+							['Chongqing',23.1],
+							['Sichuan',58],
+							['Guizhou',487.2],
+							['Yunnan',207.4],
+							['Tibet',0],
+							['Shaanxi',4.9],
+							['Gansu',113.3],
+							['Qinghai',8.4],
+							['Ningxia',43.3],
+							['Xinjiang',1.4]
+						]
+					}, {
+						type: 'column',
+						name: '2012',
+						id: '2012-d',		
+						data: [
+							['Beijing',0],
+							['Tianjin',0],
+							['Hebei',25],
+							['Shanxi',5.4],
+							['Inner Mongolia',10.5],
+							['Liaoning',0],
+							['Jilin',9.3],
+							['Heilongjiang',63.2],
+							['Shanghai',0],
+							['Jiangsu',9.3],
+							['Zhejiang',0],
+							['Anhui',21.5],
+							['Fujian',0],
+							['Jiangxi',0],
+							['Shandong',7.4],
+							['Henan',2.7],
+							['Hubei',39.5],
+							['Hunan',0],
+							['Guangdong',0],
+							['Guangxi',2.5],
+							['Hainan',0],
+							['Chongqing',1],
+							['Sichuan',16.7],
+							['Guizhou',1.7],
+							['Yunnan',106.7],
+							['Tibet',0],
+							['Shaanxi',6.5],
+							['Gansu',15.6],
+							['Qinghai',1.1],
+							['Ningxia',0],
+							['Xinjiang',28.4]
+						]
+					}, {
+						type: 'column',
+						name: '2013',
+						id: '2013-d',		
+						data: [	
+							['Beijing',0],
+							['Tianjin',0],
+							['Hebei',7.4],
+							['Shanxi',33.9],
+							['Inner Mongolia',24.3],
+							['Liaoning',4.3],
+							['Jilin',0],
+							['Heilongjiang',0],
+							['Shanghai',0],
+							['Jiangsu',11.7],
+							['Zhejiang',58.4],
+							['Anhui',117.7],
+							['Fujian',0.8],
+							['Jiangxi',68.7],
+							['Shandong',0],
+							['Henan',72],
+							['Hubei',110],
+							['Hunan',424.7],
+							['Guangdong',0.4],
+							['Guangxi',5.6],
+							['Hainan',0],
+							['Chongqing',26.5],
+							['Sichuan',31.9],
+							['Guizhou',271.4],
+							['Yunnan',97.7],
+							['Tibet',0],
+							['Shaanxi',10],
+							['Gansu',19.2],
+							['Qinghai',0],
+							['Ningxia',10.6],
+							['Xinjiang',3.7]
+						]
+					}, {
+						type: 'column',
+						name: '2014',
+						id: '2014-d',		
+						data: [
+							['Beijing',6.8],
+							['Tianjin',0],
+							['Hebei',107.8],
+							['Shanxi',41.4],
+							['Inner Mongolia',183.5],
+							['Liaoning',543.7],
+							['Jilin',97.3],
+							['Heilongjiang',10.8],
+							['Shanghai',0],
+							['Jiangsu',34.5],
+							['Zhejiang',0],
+							['Anhui',16.5],
+							['Fujian',0],
+							['Jiangxi',0],
+							['Shandong',60],
+							['Henan',203.8],
+							['Hubei',21.8],
+							['Hunan',0],
+							['Guangdong',0],
+							['Guangxi',0.2],
+							['Hainan',0],
+							['Chongqing',1.1],
+							['Sichuan',21.3],
+							['Guizhou',0],
+							['Yunnan',19.1],
+							['Tibet',1.5],
+							['Shaanxi',42.7],
+							['Gansu',13.9],
+							['Qinghai',0.1],
+							['Ningxia',12.9],
+							['Xinjiang',44]
+						]
+					}, {
+						type: 'column',
+						name: '2015',
+						id: '2015-d',		
+						data: [						
+							['Beijing',0.2],
+							['Tianjin',0],
+							['Hebei',81.7],
+							['Shanxi',126],
+							['Inner Mongolia',254],
+							['Liaoning',233],
+							['Jilin',60],
+							['Heilongjiang',0],
+							['Shanghai',0],
+							['Jiangsu',0],
+							['Zhejiang',0],
+							['Anhui',0],
+							['Fujian',0],
+							['Jiangxi',0],
+							['Shandong',65.4],
+							['Henan',0],
+							['Hubei',12.1],
+							['Hunan',0],
+							['Guangdong',19],
+							['Guangxi',3.1],
+							['Hainan',0],
+							['Chongqing',0],
+							['Sichuan',10.7],
+							['Guizhou',2.2],
+							['Yunnan',47.9],
+							['Tibet',0.3],
+							['Shaanxi',38.1],
+							['Gansu',47.5],
+							['Qinghai',5.4],
+							['Ningxia',22.6],
+							['Xinjiang',6.8]
+						]
+					}, {
+						type: 'column',
+						name: '2016',
+						id: '2016-d',		
+						data: [
+							['Beijing',0],
+							['Tianjin',0],
+							['Hebei',0.7],
+							['Shanxi',4.4],
+							['Inner Mongolia',489.4],
+							['Liaoning',5.3],
+							['Jilin',52.3],
+							['Heilongjiang',172.3],
+							['Shanghai',0],
+							['Jiangsu',0],
+							['Zhejiang',0],
+							['Anhui',17.6],
+							['Fujian',0],
+							['Jiangxi',6.5],
+							['Shandong',15.3],
+							['Henan',18.9],
+							['Hubei',39],
+							['Hunan',0.4],
+							['Guangdong',0],
+							['Guangxi',1.2],
+							['Hainan',1.3],
+							['Chongqing',5.5],
+							['Sichuan',15],
+							['Guizhou',0.8],
+							['Yunnan',1.9],
+							['Tibet',0],
+							['Shaanxi',22.5],
+							['Gansu',99.9],
+							['Qinghai',0],
+							['Ningxia',46.9],
+							['Xinjiang',1.2]
+						]
+					}
+				]}
+			});
+		</script>
+	</body>
+	<!--
+	<footer><font size='1'><em>Sources: China Water Risk, China Environment Statistical Yearbook, China Statistical Yearbook</em>
+	</font>
+	</footer>
+	-->
+</html>

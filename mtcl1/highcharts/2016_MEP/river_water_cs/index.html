@@ -1,0 +1,157 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<script src="https://code.highcharts.com/highcharts.js"></script>
+		<script src="https://code.highcharts.com/modules/annotations.js"></script>
+		<title>Water Quality of China's Major River Basins 2016</title>
+		<style type="text/css">
+
+			#container {
+			//	min-width: 300px;
+				height: 400px;
+				margin: 0 auto;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="container"></div>
+	
+		<script type="text/javascript">
+			Highcharts.chart('container', {
+				credits: {
+					enabled: false
+				},				
+				colors: ['black', '#7C8388', '#0D77B9', '#9F171E'],				
+				chart: {
+					style: {
+						fontFamily: 'serif'
+					},
+					alignTicks: false,
+					spacingTop: 0,
+					spacingRight: 0,
+					spacingBottom: 0,
+					spacingLeft: 0
+				},
+				title: {
+					text: "Water Quality of China's Major River Basins 2016",
+					align: 'left',
+					style: {
+						color: 'black',
+						fontSize: '20px',
+						fontWeight: 'bold'
+					}
+				},
+				xAxis: {
+					className: 'x-axis',
+					labels: {
+						style: {
+							color: 'black',
+							fontSize:'12px'
+						}
+					},
+					lineColor: 'black',
+					tickLength: 0,					
+					categories: ['Yangtze', 'Pearl', 'Yellow', 'Songhua', 'Huai', 'Hai', 'Liao']
+				},
+				yAxis: [{
+					className: 'y-axis-0',
+					labels: {
+						formatter: function() {
+						   return this.value+"%";
+						},						
+						style: {
+							color: 'black',
+							fontSize:'12px'
+						}
+					},
+					gridLineColor: '#D3D3D3',
+					tickInterval: 20,
+					min: 0,
+					max: 100,
+					title: {
+						text: ''
+					}
+				}, {
+					className: 'y-axis-1',
+					opposite: true,
+					tickInterval: 20,
+					min: 0,
+					max: 100,
+					visible: false
+				}],
+				legend : {
+					itemStyle: {
+						color: 'black',
+						fontSize: '15px',
+						fontWeight: null
+					}
+				},
+				tooltip: {
+					headerFormat: '<b>{point.x}</b><br/>',
+					pointFormat: '{series.name}: {point.y:.1f}%',
+					borderColor: 'black'
+				},		
+				plotOptions: {
+					column: {
+						stacking: 'normal',
+						pointPadding: 0,
+						borderWidth: 0,						
+						dataLabels: {
+							enabled: false
+						}
+					},
+					spline: {
+						marker: {
+							enabled: false
+						}
+					}
+				},
+				series: [{				
+					name: 'Grade V+',
+					type: 'column',
+					data: [3.5, 3.6, 13.9, 6.5, 7.2, 41, 15.1]
+				}, {					
+					name: 'Grade IV-V',
+					type: 'column',
+					data: [14.1, 6.6, 27, 33.3, 39.5, 21.7, 39.6]
+				}, {					
+					name: 'Grade I-III',
+					type: 'column',
+					data: [82.3, 89.6, 59.1, 60.2, 53.3, 37.3, 45.3]
+				}, {
+					name: 'Target',
+					type: 'spline',			
+					yAxis: 1,
+					data: [{
+							y: 70
+						},{
+							y: 70
+						},{
+							y: 70
+						},{
+							y: 70
+						},{
+							y: 70
+						},{
+							y: 70
+						},{
+							y: 70,
+							dataLabels: {
+								enabled: true,
+								format: 'Water Ten 2020 Target of 70%',
+								color: '#9F171E',
+								style: {
+									color: '#9F171E',
+									fontSize: '12px',
+									textOutline: false ,
+									fontWeight: null
+								}
+							}
+						}]
+				}]
+			});
+		</script>
+	</body>
+</html>

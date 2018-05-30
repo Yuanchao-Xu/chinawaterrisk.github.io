@@ -1,0 +1,149 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<script src="https://code.highcharts.com/highcharts.js"></script>
+		<title>1950-2016 Farmlands Affected by Floods and Droughts in China</title>
+		<style type="text/css">
+			#container {
+			//	min-width: 300px;
+				height: 300px;
+				margin: 0 auto;
+			}
+			
+			footer {
+				font-family:Arial;
+			}			
+		</style>
+	</head>
+	<body>
+		<div id="container"></div>
+	
+		<script type="text/javascript">
+			Highcharts.chart('container', {
+				credits: {
+					enabled: false
+				},					
+				chart: {
+					style: {
+						fontFamily: 'Arial',
+						fontSize: '10px'
+					},
+					alignTicks: false,					
+					spacingTop: 0,
+					spacingRight: 0,
+					spacingBottom: 0,
+					spacingLeft: 0
+				},
+				title: {
+					text: '1950-2016 Farmlands Affected by Floods and Droughts in China',
+					align: 'left',
+					style: {
+						color: 'black',
+						fontSize: '12px',
+						fontWeight: 'bold'
+					}
+				},
+				xAxis: {
+					className: 'x-axis',
+					tickInterval: 1,					
+					labels: {
+						style: {
+							color: 'black',
+							fontSize:'10px'
+						}
+					},
+					lineColor: 'black',
+					tickLength: 0					
+			//		categories: ['2000', '2005', '2010', '2015', '2020', '2025', '2030']
+				},
+				yAxis: [{
+					className: 'y-axis-0',
+					labels: {
+					//	formatter: function() {
+					//	   return this.value;
+					//	},						
+						style: {
+							color: 'black',
+							fontSize:'10px'
+						}
+					},
+					gridLineWidth: 0,
+					gridLineColor: '#D3D3D3',
+					tickInterval: 5000,
+					min: 0,
+					max: 35000,
+					title: {
+						text: 'Unit: 1,000 hectares'
+					}
+				}],				
+				tooltip: {
+					headerFormat: '<b>{series.name}</b><br/>',
+					pointFormat: '{point.x}: {point.y:.1f}',
+					borderColor: 'black'
+				},
+		//		labels: {
+		//			items: [{
+		//				html: '2014',
+		//				style: {
+		//					left: '610px',
+		//					top: '75px',
+		//					color: 'black',
+		//					fontSize: '15px',
+		//					fontWeight: 'bold'
+		//				}
+		//			}]
+		//		},
+				legend: {
+						itemStyle: {
+						//	'cursor': 'default',
+							color: 'black',
+							fontSize:'10px',
+							fontWeight: null
+						}					
+				},		
+				plotOptions: {
+					area: {
+						stacking: 'normal',
+						fillOpacity: 1,					
+						marker: {
+							enabled: false,
+							symbol: 'circle',
+							radius: 2,
+							states: {
+								hover: {
+									enabled: true
+								}
+							}							
+						}
+					},
+					series: {
+						label: {
+							connectorAllowed: false
+						},
+						pointStart: 1950
+					},
+					spline: {
+						marker: {
+							enabled: false
+						}
+					}					
+				},				
+				series: [{
+					type: 'area',
+					name: 'Area Affected by Droughts',
+					data: [	589,	2299,	2565,	1341,	560,	4024,	2051,	7400,	5031,	11173,	16177,	18654,	8691,	9021,	1423,	8107,	8106,	3065,	7929,	3442,	1931,	5319,	13605,	3928,	2296,	5318,	7849,	7005,	17969,	9316,	12485,	12134,	9972,	7586,	7015,	10063,	14765,	13033,	15303,	15262,	7805.33,	10558.67,	17048.67,	8658.67,	17048.67,	10374,	6247.33,	20010,	5068,	16614,	26783.33,	23702,	13247.33,	14470,	7950.67,	8479.33,	13411.33,	16170,	6797.52,	13197.1,	8986.47,	6598.6,	3508.53,	6971.17,	5677.1,	5577.04,	6130.85],					
+					color: '#7C8388'				
+				}, {
+					type: 'area',
+					name: 'Area Affected by Floods',
+					data: [	4710,	1476,	1547,	3285,	11305,	3067,	10905,	6032,	1441,	1817,	4975,	5356,	6318,	10479,	10038,	2813,	950,	1407,	1659,	3265,	1234,	1481,	1259,	2577,	2737,	3467,	1329,	4989,	924,	2870,	5025,	3973,	4463,	5747,	5361,	8949,	5601,	4104,	6128,	5917,	5605,	14614,	4464,	8610.4,	11489.5,	8000.8,	11823.3,	6514.6,	13785,	5389.12,	5396.03,	4253.39,	7439.01,	12999.8,	4017.1,	8216.68,	5592.42,	5969.02,	4537.58,	3795.79,	8727.89,	3393.02,	5871.41,	6540.81,	2829.99,	3053.84,	5063.49],
+					color: '#0D77B9'					
+				}]
+			});
+		</script>
+	</body>
+	<footer><font size='1'><em>Sources: China Water Risk, the Ministry of Water Resources (MWR)</em>
+	</font>
+	</footer>	
+</html>

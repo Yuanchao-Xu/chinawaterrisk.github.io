@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<script src="https://code.highcharts.com/highcharts.js"></script>
+		<title>2015 Agricultural Production in Inner Mongolia</title>
+		<style type="text/css">
+			#container {
+			//	min-width: 300px;
+				height: 400px;
+				margin: 0 auto;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="container"></div>
+	
+		<script type="text/javascript">
+			Highcharts.chart('container', {
+				credits: {
+					enabled: false
+				},					
+				chart: {
+					type: 'pie',
+					style: {
+						fontFamily: 'Arial'
+					},
+					spacingTop: 0,
+					spacingRight: 0,
+					spacingBottom: 0,
+					spacingLeft: 0
+				},
+				title: {
+					text: '2015 Agricultural Production in Inner Mongolia',
+					align: 'center',
+					style: {
+						color: 'black',
+						fontSize: '20px',
+						fontWeight: 'bold'
+					}
+				},
+				tooltip: {
+					headerFormat: '<b>{point.name}</b><br/>',
+					pointFormat: '<b>{point.name}</b>: {point.y:.1f}%',
+					borderColor: 'black'
+				},
+				plotOptions: {
+					pie: {
+						allowPointSelect: true,
+						borderWidth: 2,		
+						innerSize: '40%',						
+						dataLabels: {
+							enabled: true,
+							distance: 10,
+							format: '<b>{point.name}</b>: {point.y:.1f}%',
+							style: {
+								fontSize: '8px'
+							}
+						}
+					}
+				},
+				series: [{
+					data: [
+							{name: 'Corn', y: 49.6, color: '#6B8033'},
+							{name: 'Vegetables', y: 31.8, color: '#798734'},
+							{name: 'Fiber Crops', y: 5.1, color: '#878E35'},
+							{name: 'Wheat', y: 3.5, color: '#959536'},
+							{name: 'Tubers', y: 3.2, color: '#A39C38'},
+							{name: 'Helianthus', y: 2.4, color: '#B0A339'},
+							{name: 'Beans', y: 2.3, color: '#BEAA3A'},
+							{name: 'Rice', y: 1.2, color: '#CCB13B'},
+							{name: 'Others', y: 1.0, color: '#DAB83C'},
+					]
+				}]
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<script src="https://code.highcharts.com/highcharts.js"></script>
+		<script src="https://code.highcharts.com/modules/annotations.js"></script>
+		<title>Sown and Irrigation Area in China</title>
+		<style type="text/css">
+
+			#container {
+			//	min-width: 300px;
+			//	height: 300px;
+				margin: 0 auto;
+			}
+			
+			footer {
+				font-family:Arial;
+				color:white;
+			}			
+			
+		</style>
+	</head>
+	<body>
+		<div id="container"></div>
+	
+		<script type="text/javascript">
+
+			Highcharts.chart('container', {
+				credits: {
+					enabled: false
+				},						
+				chart: {
+					style: {
+						fontFamily: 'Arial',
+						fontSize: '10px'
+					},
+					alignTicks: false,
+					spacingTop: 0,
+					spacingRight: 0,
+					spacingBottom: 0,
+					spacingLeft: 0,
+					backgroundColor: null
+				},
+				title: {
+					text: "Sown and Irrigation Area in China",
+					align: 'left',
+					style: {
+						color: 'white',
+						fontSize: '12px',
+						fontWeight: 'bold'
+					}
+				},
+				xAxis: {
+					className: 'x-axis',
+					tickInterval: 5,					
+					labels: {
+						style: {
+							color: 'white',
+							fontSize:'10px',
+						}
+					},
+					lineColor: 'white',
+					tickLength: 0,					
+				},
+				yAxis: [{
+					className: 'y-axis-0',
+					labels: {					
+						style: {
+							color: 'white',
+							fontSize:'10px'
+						}
+					},
+					gridLineWidth: 0,					
+					gridLineColor: '#D3D3D3',
+					tickInterval: 30000,
+					min: 0,
+					max: 180000,
+					title: {
+						text: 'Unit: 1,000 hectares',
+						style: {
+							color: 'white',
+							fontSize:'10px'							
+						}
+					}
+				}, {
+					className: 'y-axis-1',
+					labels: {					
+						style: {
+							color: 'white',
+							fontSize:'10px'
+						},
+						formatter: function() {
+						   return this.value*100 + '%';
+						}					
+				},
+					opposite: true,
+					gridLineColor: null,
+					tickInterval: 0.2,
+					min: 0,
+					max: 1,
+					visible: true,
+					title: {
+						text: ''
+					}					
+				}],
+				legend : {
+					enabled: false,
+					itemStyle: {
+						color: 'white',
+					//	'cursor': 'default',						
+						fontSize: '10px',
+						fontWeight: null
+					}
+				},
+				tooltip: {
+					headerFormat: '<b>{series.name}</b><br/>',
+					pointFormat: '{point.x}: {point.y:.2f}',
+					borderColor: 'black',
+					hideDelay: 0
+				},		
+				plotOptions: {
+					line: {			
+					//	animation: false,
+					//	enableMouseTracking: false,	
+						marker: {
+							enabled: false,
+							symbol: 'circle',
+							radius: 2,
+							states: {
+								hover: {
+									enabled: true
+								}
+							}							
+						}
+					//	events: {
+					//		legendItemClick: function () {
+					//			return false; 
+					//		}
+					//	}						
+					},
+					series: {
+						stickyTracking: false,						
+						label: {
+							connectorAllowed: false
+						},
+						pointStart: 1949,
+						pointPadding: -0.1			
+					}					
+				},
+				series: [{				
+					name: 'Total Sown Areas of Farm Crops',
+					type: 'line',
+					data: [124286,	128826,	132860,	141256,	144035.33,	147925.33,	151081.33,	159172.67,	157244,	151994.67,	142404.67,	150642,	143214,	140228.67,	140218,	143531.33,	143290.67,	146828.67,	144942.67,	139827.33,	140944,	143487.33,	145684,	147918.67,	148547.33,	148635.33,	149545.33,	149722.67,	149333.33,	150104.07,	148476.87,	146379.53,	145157.07,	144754.6,	143993.47,	144221.33,	143625.87,	144204,	144956.53,	144868.93,	146553.93,	148362.27,	149585.8,	149007.1,	147740.7,	148240.6,	149879.3,	152380.6,	153969.2,	155705.7,	156372.81,	156299.85,	155707.86,	154635.51,	152414.96,	153552.55,	155487.73,	152149,	153463.93,	156265.7,	158613.55,	160674.81,	162283.22,	163415.67,	164626.93,	165446.25,	166373.81,	
+					{x: 2016, 
+					 y: 166649.55, 								
+					 dataLabels: {
+									enabled: true,
+									format: 'Total Sown Areas of Farm Crops',
+									color: 'white',
+									style: {
+										color: 'white',
+										fontSize: '12px',
+										textOutline: false ,
+										fontWeight: null
+									}
+								}
+					}],
+					color: 'white'
+					}, {				
+					name: 'Irrigated Area',
+					type: 'line',
+					data: [15900,	NaN,	NaN,	19959,	NaN,	NaN,	NaN,	NaN,	27339,	32791,	35010,	35083,	32078,	30545,	30060,	31518,	33055,	NaN,	NaN,	NaN,	NaN,	36000,	36441,	38005,	39223,	41269,	43284,	44981,	44999,	44965,	45003.13,	44888.07,	44573.8,	44176.87,	44644.07,	44453,	44035.9,	44225.8,	44403,	44375.91,	44917.2,	47403.1,	47822.07,	48590.1,	48727.9,	48759.1,	49281.2,	50381,	51239,	52296,	53158,	53820.33,	54249.39,	54355,	54014,	54478,	55029.34,	55750.5,	56518.34,	58471.68,	59261.4,	60347.7,	61681.56,	62490.52,	63473.3,	64539.53,	65872.64,	
+					{x: 2016,
+					 y:67140.62, 								
+					 dataLabels: {
+									enabled: true,
+									format: 'Irrigated Area',
+									color: '#7C8388',
+									style: {
+										color: '#7C8388',
+										fontSize: '12px',
+										textOutline: false ,
+										fontWeight: null
+									},
+									y: 27
+								}
+					}],
+					color: '#7C8388'
+					}, {			
+					name: 'Percentage of total sown areas irrigated (RHS)',
+					type: 'line',	
+					yAxis: 1,					
+					data: [0.127930740389103,	NaN,	NaN,	0.141296652885541,	NaN,	NaN,	NaN,	NaN,	0.173863549642594,	0.215737828175159,	0.245848678979418,0.232889897903639,	0.223986481768542,	0.217822789020248,	0.214380464704959,	0.219589688188635,	0.230684942711204,	NaN,	NaN,	NaN,	NaN,	0.25089323217597,	0.250137283435381,	0.256931731471085,	0.264043789948968,	0.277652695358499,	0.289437323118014,	0.300428786101664,	0.301332596011888,	0.299558832748506,	0.303098590373032,	0.306655377292166,	0.307072883187846,	0.305184567537059,	0.310042323447029,	0.308227638727226,	0.306601450003401,	0.306689134836759,	0.306319418656062,	0.306317648649714,	0.306489222090462,	0.319509131263629,	0.319696588847337,	0.326092515054652,	0.329820421860733,	0.328918663308162,	0.328805912490918,	0.330626077072803,	0.332787336688117,	0.335864390320971,	0.339944009447678,	0.344340253685464,	0.348404955279714,	0.351503998014428,	0.354387784506193,	0.354784078805595,	0.353914357100718,	0.366420416828241,	0.368284195510958,	0.374181154277618,	0.373621295280258,	0.375589054687539,	0.380085877024131,	0.382402250653196,	0.385558425951331,	0.390093640683908,	0.395931547158775,	
+					{x: 2016,
+					 y: 0.40288509629939,
+					 dataLabels: {
+									enabled: true,
+									format: 'Percentage of total sown areas irrigated (RHS)',
+									color: '#0D77B9',
+									style: {
+										color: '#0D77B9',
+										fontSize: '12px',
+										textOutline: false ,
+										fontWeight: null
+									}
+								}
+					}],
+					color: '#0D77B9',
+					dashStyle: 'dash'
+					}]
+			});
+		</script>
+	</body>
+	<footer><font size='1'><em>Sources: China Water Risk, China Compendium of Statistics, NBSC Website</em>
+	</font>
+	</footer>	
+</html>

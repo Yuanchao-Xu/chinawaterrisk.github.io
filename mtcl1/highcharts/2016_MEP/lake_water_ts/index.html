@@ -1,0 +1,111 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<script src="https://code.highcharts.com/highcharts.js"></script>
+		<title>Water Quality of Key Lakes & Reservoirs 2012-2016</title>
+		<style type="text/css">
+
+			#container {
+			//	min-width: 300px;
+				height: 400px;
+				margin: 0 auto;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="container"></div>
+	
+		<script type="text/javascript">
+			Highcharts.chart('container', {
+				credits: {
+					enabled: false
+				},				
+				colors: ['black', '#7C8388', '#0D77B9'],			
+				chart: {
+					type: 'column',
+					style: {
+						fontFamily: 'serif'
+					},
+					spacingTop: 0,
+					spacingRight: 0,
+					spacingBottom: 0,
+					spacingLeft: 0
+				},
+				title: {
+					text: 'Water Quality of Key Lakes & Reservoirs 2012-2016',
+					align: 'left',
+					style: {
+						color: 'black',
+						fontSize:'20px',
+						fontWeight: 'bold'
+					}
+				},
+				xAxis: {
+					className: 'x-axis',
+					labels: {
+						style: {
+							color: 'black',
+							fontSize:'12px'
+						}
+					},
+					lineColor: 'black',
+					tickLength: 0,					
+					categories: ['2012', '2013', '2014', '2015', '2016']
+				},
+				yAxis: {
+					className: 'y-axis',
+					labels: {
+						formatter: function() {
+						   return this.value+"%";
+						},						
+						style: {
+							color: 'black',
+							fontSize:'12px'
+						}
+					},
+					gridLineColor: '#D3D3D3',
+					tickInterval: 20,
+					min: 0,
+					max: 100,
+					title: {
+						text: ''
+					}
+				},
+				legend : {
+					itemStyle: {
+						color: 'black',
+						fontSize: '15px',
+						fontWeight: null
+					}
+				},
+				tooltip: {
+					headerFormat: '<b>{point.x}</b><br/>',
+					pointFormat: '{series.name}: {point.y:.1f}%',
+					borderColor: 'black'
+				},
+				plotOptions: {
+					column: {
+						stacking: 'normal',
+						pointPadding: 0,
+						borderWidth: 0,						
+						dataLabels: {
+							enabled: false
+						}
+					}
+				},
+				series: [{
+					name: 'Grade V+',
+					data: [11.3, 11.5, 8, 8, 8]
+				}, {
+					name: 'Grade IV-V',
+					data: [27.4, 27.8, 30.6, 22.6, 25.9]
+				}, {
+					name: 'Grade I-III',
+					data: [61.3, 60.7, 61.3, 69.4, 66]
+				}]
+			});
+		</script>
+	</body>
+</html>

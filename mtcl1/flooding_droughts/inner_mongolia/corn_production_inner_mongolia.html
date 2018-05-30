@@ -1,0 +1,221 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<script src="https://code.highcharts.com/highcharts.js"></script>
+		<script src="https://code.highcharts.com/modules/annotations.js"></script>
+		<title>2006-2015 Corn Production in Inner Mongolia</title>
+		<style type="text/css">
+			#container {
+			//	min-width: 300px;
+				height: 400px;
+				margin: 0 auto;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="container"></div>
+	
+		<script type="text/javascript">
+			Highcharts.chart('container', {
+				credits: {
+					enabled: false
+				},				
+				colors: ['#FFDDDD', '#6B8033', '#DAB83C'],			
+				chart: {
+					style: {
+						fontFamily: 'Arial'
+					},
+					alignTicks: false,
+					spacingTop: 0,
+					spacingRight: 0,
+					spacingBottom: 0,
+					spacingLeft: 0
+				},			
+				title: {
+					text: "2006-2015 Corn Production in Inner Mongolia",
+					align: 'left',
+					style: {
+						color: 'black',
+						fontSize: '20px',
+						fontWeight: 'bold'
+					}
+				},
+				xAxis: {
+					className: 'x-axis',
+					tickInterval: 2,					
+					labels: {
+						style: {
+							color: 'black',
+							fontSize:'12px'
+						//	rotation: -90,
+						}
+					},
+					lineColor: 'black',
+					tickLength: 0				
+			//		categories: ['2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015']
+				},
+				yAxis: [{
+					className: 'y-axis-0',
+					tickInterval: 500,
+					min: 1000,
+					max: 2500,
+					gridLineWidth: 0,
+					gridLineColor: '#D3D3D3',					
+					labels: {						
+						style: {
+							color: 'black',
+							fontSize:'12px'
+						}
+					},
+					title: {
+						text: 'Unit: 10,000 tons'
+					}					
+				}, {
+					className: 'y-axis-1',
+					opposite: true,			
+					tickInterval: 2,
+					min: 7,
+					max: 11,
+					gridLineWidth: 0,
+					gridLineColor: '#D3D3D3',					
+					labels: {						
+						style: {
+							color: 'black',
+							fontSize:'12px'
+						},
+						formatter: function() {
+						   return this.value + '%';
+						}						
+					},
+					title: {
+						text: ''
+					}					
+				}],
+				legend : {
+					itemStyle: {
+						color: 'black',
+						fontSize: '15px',
+						fontWeight: null
+					}
+				},
+				tooltip: {
+					headerFormat: '<b>{point.x}</b><br/>',
+					pointFormat: '{series.name}: {point.y:.1f}',
+					borderColor: 'black'
+				},		
+				plotOptions: {
+					column: {
+						stacking: 'normal',
+						pointPadding: 0,
+						borderWidth: 0,						
+						dataLabels: {
+							enabled: false
+						},
+						tooltip: {
+							headerFormat: '<b>{point.x}</b><br/>',
+							pointFormat: '{series.name}',
+							borderColor: 'black'
+						}						
+					},
+					line: {
+						marker: {
+							enabled: false,
+							symbol: 'circle',
+							radius: 2,
+							states: {
+								hover: {
+									enabled: true
+								}
+							}
+						},
+					},
+					series: {
+						groupPadding: 0,
+						label: {
+							connectorAllowed: false
+						},
+						pointStart: 2006						
+					}					
+				},
+				series: [{				
+					name: 'Severe Crop Failure due to Droughts',
+					type: 'column',
+					yAxis: 1,					
+					data: [0, {y: 12,
+								dataLabels: {
+									enabled: false,
+									format: 'First in<br>2007',
+									color: '#9F171E',
+									style: {
+										color: '#9F171E',
+										fontSize: '5px',
+										textOutline: false ,
+										fontWeight: 'bold'
+									},
+									y: -180
+								}}, 0, {y: 12,
+								dataLabels: {
+									enabled: false,
+									format: 'First in<br>2009',
+									color: '#9F171E',
+									style: {
+										color: '#9F171E',
+										fontSize: '5px',
+										textOutline: false ,
+										fontWeight: 'bold'
+									},
+									y: -180
+								}}, {y: 12,
+								dataLabels: {
+									enabled: false,
+									format: 'Third in<br>2010',
+									color: '#9F171E',
+									style: {
+										color: '#9F171E',
+										fontSize: '5px',
+										textOutline: false ,
+										fontWeight: 'bold'
+									},
+									y: -180
+								}},
+								 0, 0, 0, {y: 12,
+								dataLabels: {
+									enabled: false,
+									format: 'Third in<br>2014',
+									color: '#9F171E',
+									style: {
+										color: '#9F171E',
+										fontSize: '5px',
+										textOutline: false ,
+										fontWeight: 'bold'
+									},
+									y: -180
+								}}, {y: 12,
+								dataLabels: {
+									enabled: false,
+									format: 'First in<br>2010',
+									color: '#9F171E',
+									style: {
+										color: '#9F171E',
+										fontSize: '5px',
+										textOutline: false ,
+										fontWeight: 'bold'
+									},
+									y: -180
+								}}]
+				}, {
+					name: 'Corn Production',
+					type: 'line',			
+					data: [1130,	1155.31,	1410.7,	1341.27,	1465.69,	1632.13,	1784.39,	2069.71,	2186.07,	2250.78]
+				}, {
+					name: 'Corn Production (% of China, RHS)',
+					type: 'line',
+					yAxis: 1,					
+					data: [7.5,	7.6,	8.5,	8.2,	8.3,	8.5,	8.7,	9.5,	10.1,	10]				
+				}]
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<script src="https://code.highcharts.com/highcharts.js"></script>
+		<title>2006-2015 Droughts Tackling Measures in China</title>
+		<style type="text/css">
+			#container {
+			//	min-width: 300px;
+				height: 400px;
+				margin: 0 auto;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="container"></div>
+	
+		<script type="text/javascript">
+			Highcharts.chart('container', {
+				credits: {
+					enabled: false
+				},					
+				chart: {
+					style: {
+						fontFamily: 'Arial'
+					},
+					alignTicks: false,					
+					spacingTop: 0,
+					spacingRight: 0,
+					spacingBottom: 0,
+					spacingLeft: 0
+				},
+				title: {
+					text: '2006-2015 Droughts Tackling Measures in China',
+					align: 'left',
+					style: {
+						color: 'black',
+						fontSize: '20px',
+						fontWeight: 'bold'
+					}
+				},
+				xAxis: {
+					className: 'x-axis',
+					tickInterval: 1,					
+					labels: {
+						style: {
+							color: 'black',
+							fontSize:'12px'
+						}
+					},
+					lineColor: 'black',
+					tickLength: 0					
+			//		categories: ['2000', '2005', '2010', '2015', '2020', '2025', '2030']
+				},
+				yAxis: [{
+					className: 'y-axis-0',
+					labels: {
+						formatter: function() {
+						   return this.value;
+						},						
+						style: {
+							color: 'black',
+							fontSize:'12px'
+						}
+					},
+					gridLineColor: '#D3D3D3',
+					tickInterval: 100000/4,
+					min: 0,
+					max: 111862,
+					title: {
+						text: 'Unit: 1,000 hectares'
+					}
+				}],				
+				tooltip: {
+					headerFormat: '<b>{series.name}</b><br/>',
+					pointFormat: '{point.x}: {point.y:.1f}',
+					borderColor: 'black'
+				},
+		//		labels: {
+		//			items: [{
+		//				html: '2014',
+		//				style: {
+		//					left: '610px',
+		//					top: '75px',
+		//					color: 'black',
+		//					fontSize: '15px',
+		//					fontWeight: 'bold'
+		//				}
+		//			}]
+		//		},				
+				plotOptions: {
+					series: {
+						label: {
+							connectorAllowed: false
+						},
+						pointStart: 2006
+					},
+					spline: {
+						marker: {
+							enabled: false,
+							symbol: 'circle',
+							radius: 2,
+							states: {
+								hover: {
+									enabled: true
+								}
+							}							
+						}
+					}					
+				},				
+				series: [{
+					type: 'spline',
+					name: 'Water-saving Irrigated Area',
+					data: [22426,	23489,	24435.52,	25755,	27314,	29179,	31217,	27109,	29019,	31060],
+					color: '#094677'					
+				}, {
+					type: 'spline',
+					name: 'Area of Soil Erosion under Control ',
+					data: [97491,	99871,	101587.03,	104544.85,	106800,	109663,	111862,	106890,	111610,	115547],
+					color: '#091825'				
+				}]
+			});
+		</script>
+	</body>
+</html>

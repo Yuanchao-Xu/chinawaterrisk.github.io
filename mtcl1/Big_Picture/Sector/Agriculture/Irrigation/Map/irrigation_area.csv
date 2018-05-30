@@ -1,0 +1,345 @@
+City_Eng_Trim,num
+Shijiazhuang,512.61
+Xinji,64.2
+Chengde,122.3
+Zhangjiakou,252.55
+Qinhuangdao,126.73
+Tangshan,456.09
+Langfang,230.49
+Baoding,653.37
+Dingzhou,85.66
+Cangzhou,498.18
+Hengshui,480.47
+Xingtai,577.39
+Handan,537.8
+Changzhi,132.7527273
+Datong,132.7527273
+Jincheng,132.7527273
+Jinzhong,132.7527273
+Linfen,132.7527273
+Luliang,132.7527273
+Shuozhou,132.7527273
+Taiyuan,132.7527273
+Xinzhou,132.7527273
+Yangquan,132.7527273
+Yuncheng,132.7527273
+Hohhot,210.34
+Baotou,127.64
+Hulunbuir,254.41
+Xing'an,324.46
+Tongliao,644.43
+Chifeng,412.29
+Xilin Gol,34.21
+Ulaan Chab,175.04
+Ordos,244.3
+Baynnur,652.72
+Wuhai,7.06
+Alxa,
+Shenyang,261.74
+Dalian,73.6
+Anshan,74.41
+Fushun,40.42
+Benxi,17.17
+Dandong,79.17
+Jinzhou,181.8648
+Yingkou,73.71
+Fuxin,138.89
+Liaoyang,72.46
+Panjin,96.17
+Tieling,172.19
+Chaoyang,168.191
+Huludao,70.32
+Changchun,251.4
+Jilin,159.7
+Siping,206.3
+Liaoyuan,23
+Tonghua,5.1
+Baishan,1.9
+Songyuan,460.2
+Baicheng,520.2
+Yanbian Korean,68.6
+Harbin,745.7
+Qiqihar,675.1
+Jixi,161.5
+Hegang,145.4
+Shuangyashan,96.66
+Daqing,462.3
+Yichun,48.77
+Jiamusi,458.67
+Qitaihe,19.6
+Mudanjiang,92.2
+Heihe,84.15
+Suihua,520.02
+Daxing'anling,4.1
+Changzhou,304.0384615
+Huai'an,304.0384615
+Lianyungang,304.0384615
+Nanjing,304.0384615
+Nantong,304.0384615
+Suqian,304.0384615
+Suzhou,304.0384615
+Taizhou,304.0384615
+Wuxi,304.0384615
+Xuzhou,304.0384615
+Yancheng,304.0384615
+Yangzhou,304.0384615
+Zhenjiang,304.0384615
+Hangzhou,154.94
+Ningbo,175.7
+Jiaxing,183.47
+Huzhou,136.53
+Shaoxing,155.96
+Zhoushan,15.11
+Wenzhou,114.19
+Jinhua,167.28
+Quzhou,104.83
+Taizhou,125.96
+Lishui,98.19
+Hefei,458.4
+Huaibei,142.87
+Bozhou,459.54
+Suzhou,421.99
+Bengbu,237.15
+Fuyang,425.08
+Huainan,283.18
+Chuzhou,490.05
+Lu'an,428.57
+Ma'anshan,147.85
+Wuhu,196.58
+Xuancheng,200.66
+Tongling,81.69
+Chizhou,105.68
+Anqing,269.83
+Huangshan,51.23
+Fuzhou,117.9666667
+Longyan,117.9666667
+Nanping,117.9666667
+Ningde,117.9666667
+Putian,117.9666667
+Quanzhou,117.9666667
+Sanming,117.9666667
+Xiamen,117.9666667
+Zhangzhou,117.9666667
+Nanchang,189
+Jingdezhen,52
+Pingxiang,43
+Jiujiang,203
+Xinyu,53
+Yingtan,53
+Ganzhou,285
+Ji'an,294
+Yichun,309
+Fuzhou,241
+Shangrao,306
+Jinan,256.14
+Qingdao,323.41
+Zibo,129.17
+Zaozhuang,170.73
+Dongying,186.48
+Yantai,246.09
+Weifang,529.27
+Jining,470.64
+Tai'an,239.22
+Weihai,120.64
+Rizhao,104.14
+Laiwu,36.7
+Linyi,360.2
+Dezhou,489.76
+Liaocheng,463.22
+Binzhou,372.42
+Heze,628.55
+Zhengzhou,191.09
+Kaifeng,336.16
+Luoyang,145.18
+Pingdingshan,197.87
+Anyang,294.59
+Hebi,89.36
+Xinxiang,360.25
+Jiaozuo,167.22
+Puyang,226.06
+Xuchang,246.32
+Luohe,142.4
+Sanmenxia,47.92
+Nanyang,481.34
+Shangqiu,591.45
+Xinyang,499.14
+Zhoukou,575.31
+Zhumadian,595.73
+Jiyuan shi,23.25
+Wuhan,150.27
+Huangshi,55.56
+Shiyan,36.86
+Jingzhou,422.96
+Yichang,121.92
+Xiangfan,281.89
+Ezhou,27.73
+Jingmen,215.28
+Xiaogan,242.56
+Huanggang,259.05
+Xianning,93.35
+Suizhou Shi,125.92
+Enshi Tujia and Miao,71.61
+Xiantao,82.32
+Tianmen,109.93
+Qianjiang,62.24
+Shennongjia,0.15
+Changsha,224.16
+Zhuzhou,163.07
+Xiangtan,140.2
+Hengyang,287.12
+Shaoyang,284.89
+Yueyang,316.24
+Changde,469.11
+Zhangjiajie,53.19
+Yiyang,236.63
+Chenzhou,190.32
+Yongzhou,289.43
+Huaihua,195.67
+Loudi,94.92
+Xiangxi Tujia and Miao,168.37
+Chaozhou,84.34761905
+Dongguan,84.34761905
+Foshan,84.34761905
+Guangzhou,84.34761905
+Heyuan,84.34761905
+Huizhou,84.34761905
+Jiangmen,84.34761905
+Jieyang,84.34761905
+Maoming,84.34761905
+Meizhou,84.34761905
+Qingyuan,84.34761905
+Shantou,84.34761905
+Shanwei,84.34761905
+Shaoguan,84.34761905
+Shenzhen,84.34761905
+Yangjiang,84.34761905
+Yunfu,84.34761905
+Zhanjiang,84.34761905
+Zhaoqing,84.34761905
+Zhongshan,84.34761905
+Zhuhai,84.34761905
+Nanning,258.814
+Liuzhou,89.74
+Guilin,218.23
+Wuzhou,72.167
+Beihai,50.5
+Fangchenggang,30.136
+Qinzhou,81.4
+Guigang,150.2
+Yulin,141.01
+Baise,108.38
+Hezhou,65.49
+Hechi,85.099
+Laibin,99.68
+Chongzuo,88.29
+Haikou,16.228
+Sanya,8.061
+Hainan,182.237
+Chengdu,313.39
+Zigong,93.01
+Panzhihua,36.78
+Luzhou,141.87
+Deyang,149.45
+Mianyang,217.3
+Guangyuan,87.41
+Suining,118.58
+Neijiang,125.37
+Leshan,137.47
+Nanchong,199
+Meishan,167.52
+Yibin,171.43
+Guang'an,95.23
+Dazhou,156.35
+Ya'an,54.56
+Bazhong,88.2
+Ziyang,175.34
+Ngawa Tibetan and Qiang,20.07
+Garze Tibetan,22.61
+Liangshan Yi,164.15
+Anshun,118.3777778
+Bijie,118.3777778
+Guiyang,118.3777778
+Liupanshui,118.3777778
+Qiandongnan Miao and Dong,118.3777778
+Qiannan Buyei and Miao,118.3777778
+Qianxinan Buyei and Miao,118.3777778
+Tongren,118.3777778
+Zunyi,118.3777778
+Kunming,124.1
+Qujing,192.2
+Yuxi,71.1
+Baoshan,145.7
+Zhaotong,112
+Lijiang,65.7
+Pu'er,130.7
+Lincang,121.5
+Chuxiong Yi,94.3
+Honghe Hani and Yi,180.5
+Wenshan Zhuang and Miao,156
+Xishuangbanna Dai,51.6
+Dali Bai,164.1
+Dehong Dai and Jingpo,117.2
+Nujiang Lisu,16.3
+Deqen Tibetan,14.7
+Chamdo,20.717
+Lhasa,31.965
+Nagchu,
+Ngari,1.501
+Nyingtri,16.002
+Shannan,29.651
+Shigatse,71.951
+Xi'an,168.29
+Tongchuan,18.6
+Baoji,150.36
+Xianyang,229.98
+Weinan,328.54
+Yan'an,30.46
+Hanzhong,109.32
+Yulin,130.48
+Ankang,42.81
+Shangluo,22.36
+Lanzhou,81.08
+Jiayuguan,3.48
+Jinchang,60.71
+Baiyin,101.37
+Tianshui,35.55
+Wuwei,187.08
+Zhangye,185.91
+Pingliang,43.17
+Jiuquan,159.49
+Qingyang,51.71
+Dingxi,68.64
+Longnan,63.38
+Linxia Hui,55.52
+Gannan Tibetan,6.11
+Golog Tibetan,24.625
+Gyegu Tibetan,24.625
+Haibei Tibetan,24.625
+Haidong,24.625
+Hainan Tibetan,24.625
+Haixi Mongol and Tibetan,24.625
+Huangnan Tibetan,24.625
+Xining,24.625
+Guyuan,101.3
+Shizuishan,101.3
+Wuzhong,101.3
+Yinchuan,101.3
+Zhongwei,101.3
+Urumqi,6.4
+Karamay,19.65
+Turfan,59.12
+Hami,70.68
+Changji Hui,384.4
+Ili Kazakh,258.39
+Tacheng,433.86
+Altay,183.53
+Bortala Mongol,111.34
+Bayin'gholin Mongol,315.27
+Aksu,263.29
+Kizilsu Kirghiz,15.92
+Kashgar,161.49
+Khotan,135.61
+Beijing,137.4
+Tianjin,308.9
+Chongqing,687.2
+Shanghai,188.2

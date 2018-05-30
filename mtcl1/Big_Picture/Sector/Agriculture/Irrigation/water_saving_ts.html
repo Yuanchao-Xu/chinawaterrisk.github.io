@@ -1,0 +1,199 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<script src="https://code.highcharts.com/highcharts.js"></script>
+		<script src="https://code.highcharts.com/modules/annotations.js"></script>
+		<title>Water-saving Irrigation in China</title>
+		<style type="text/css">
+
+			#container {
+			//	min-width: 300px;
+			//	height: 300px;
+				margin: 0 auto;
+			}
+			
+			footer {
+				font-family:Arial;
+			}			
+			
+		</style>
+	</head>
+	<body>
+		<div id="container"></div>
+	
+		<script type="text/javascript">
+
+			Highcharts.chart('container', {
+				credits: {
+					enabled: false
+				},						
+				chart: {
+					style: {
+						fontFamily: 'Arial',
+						fontSize: '10px'
+					},
+					alignTicks: false,
+					spacingTop: 0,
+					spacingRight: 0,
+					spacingBottom: 0,
+					spacingLeft: 0,
+					backgroundColor: null
+				},
+				title: {
+					text: "Water-saving Irrigation in China",
+					align: 'left',
+					style: {
+						color: 'black',
+						fontSize: '12px',
+						fontWeight: 'bold'
+					}
+				},
+				xAxis: {
+					className: 'x-axis',
+					tickInterval: 1,					
+					labels: {
+						style: {
+							color: 'black',
+							fontSize:'10px',
+						}
+					},
+					lineColor: 'black',
+					tickLength: 0,					
+					
+				},
+				yAxis: [{
+					className: 'y-axis-0',
+					labels: {					
+						style: {
+							color: 'black',
+							fontSize:'10px'
+						}
+					},
+					gridLineWidth: 0,					
+					gridLineColor: '#D3D3D3',
+					tickInterval: 5000,
+					min: 0,
+					max: 35000,
+					title: {
+						text: 'Unit: 1,000 hectares',
+						style: {
+							color: 'black',
+							fontSize:'10px'							
+						}						
+					}
+				}, {
+					className: 'y-axis-1',
+					labels: {					
+						style: {
+							color: 'black',
+							fontSize:'10px'
+						},
+						formatter: function() {
+						   return this.value*100 + '%';
+						}						
+					},
+					opposite: true,
+					gridLineColor: null,
+					tickInterval: 0.2,
+					min: 0,
+					max: 1,
+					visible: true,
+					title: {
+						text: ''
+					}					
+				}],
+				legend : {
+					itemStyle: {
+						color: 'black',
+					//	'cursor': 'default',						
+						fontSize: '10px',
+						fontWeight: null
+					}
+				},
+				tooltip: {
+					headerFormat: '<b>{series.name}</b><br/>',
+					pointFormat: '{point.x}: {point.y:.2f}',
+					borderColor: 'black',
+					hideDelay: 0
+				},		
+				plotOptions: {
+					column: {				
+					//	animation: false,
+					//	enableMouseTracking: false,						
+						stacking: 'normal',
+						fillOpacity: 1,					
+						marker: {
+							enabled: false,
+							symbol: 'circle',
+							radius: 2,
+							states: {
+								hover: {
+									enabled: true
+								}
+							}
+						},
+						pointPadding: 0,
+						borderWidth: 0,
+					//	events: {
+					//		legendItemClick: function () {
+					//			return false; 
+					//		}
+					//	}						
+					},
+					spline: {			
+					//	animation: false,
+					//	enableMouseTracking: false,	
+						marker: {
+							enabled: false
+						},
+					//	events: {
+					//		legendItemClick: function () {
+					//			return false; 
+					//		}
+					//	}						
+					},
+					series: {
+						stickyTracking: false,						
+						label: {
+							connectorAllowed: false
+						},
+						pointStart: 2001,
+						pointPadding: -0.1			
+					}					
+				},
+				series: [{
+					name: 'Canal lining',
+					type: 'column',			
+					data: [6925.3,	7570.88,	8071.47,	8561.95,	9133.16,	9593.65,	10058.12,	10447.7,	11166.1,	11580.3,	12175,	12823.4,	12837.7,	12904.5,	13136.6,	NaN],
+					color: '#0D77B9'
+					}, {				
+					name: 'Low-pressure pipe irrigation',
+					type: 'column',
+					data: [3903.69,	4156.77,	4476.17,	4706.29,	4991.84,	5263.75,	5573.92,	5873,	6249.4,	6680,	7130.4,	7526,	7424.2,	8271,	8911.8,	NaN],
+					color: '#0F5D91'
+					}, {				
+					name: 'Mirco-irrigation',
+					type: 'column',
+					data: [215.39,	278.76,	371.1,	479.64,	621.76,	754.89,	976.98,	1249.6,	1669.3,	2115.7,	2613.9,	3226.3,	3856.5,	4681.5,	5263.6,	NaN],
+					color: '#105584'
+					}, {			
+					name: 'Sprinkler',
+					type: 'column',			
+					data: [2364.21,	2473.21,	2633.67,	2674.83,	2746.28,	2823.84,	2876.47,	2821.2,	2926.7,	3025.4,	3181.8,	3373.5,	2990.6,	3162,	3748,	NaN],
+					color: '#10456A'
+					}, {				
+					name: 'Percentage of irrigated area equipped with water-saving techniques (RHS)',
+					type: 'spline',
+					yAxis: 1,
+					data: [0.247165728499436,	0.26638910863766,	0.287936646054727,	0.301451411578986,	0.317882787618387,	0.330690666451422,	0.34475587924203,	0.348750027363674,	0.371427269689882,	0.387779484553678,	0.4069400968458,	0.431257413124423,	0.427092966648969,	0.449631411942417,	0.471515943493384,	0.489226938923114],
+					color: '#091825'
+					}]
+			});
+		</script>
+	</body>
+	<footer><font size='1'><em>Sources: China Water Risk, China Agriculture Yearbook<br>
+	Note: Canal lining from 2013 to 2015 are estimated values</em>
+	</font>
+	</footer>	
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<script src="https://code.highcharts.com/highcharts.js"></script>
+		<script src="https://code.highcharts.com/modules/annotations.js"></script>
+		<title>Water Quality of China's Major River Basins 2016</title>
+		<style type="text/css">
+
+			#container {
+				min-width: 300px;
+				height: 400px;
+				margin: 0 auto;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="container"></div>
+	
+		<script type="text/javascript">
+		//	var categories =  ['2000', '2005', '2010', '2015', '2020F'];
+			Highcharts.chart('container', {
+				credits: {
+					enabled: false
+				},				
+				colors: ['#aec670', '#6B8033', '#0D77B9', '#9F171E'],				
+				chart: {
+					style: {
+						fontFamily: 'serif'
+					},
+					alignTicks: false,
+					spacingTop: 0,
+					spacingRight: 0,
+					spacingBottom: 0,
+					spacingLeft: 0
+
+					
+				},
+				title: {
+					text: "2000-2020F China's Installed Capacity of Solar and Wind",
+					align: 'left',
+					style: {
+						color: 'black',
+						fontSize: '20px',
+						fontWeight: 'bold'
+					}
+				},
+				xAxis: {
+					className: 'x-axis',
+					labels: {
+						style: {
+							color: 'black',
+							fontSize:'12px',
+						}
+				//		formatter: function() {
+				//			return categories[this.value];
+				//		}
+					},
+					lineColor: 'black',
+					tickLength: 0,					
+					
+				},
+				yAxis: [{
+					className: 'y-axis-0',
+					labels: {					
+						style: {
+							color: 'black',
+							fontSize:'12px'
+						}
+					},
+					gridLineColor: '#D3D3D3',
+					tickInterval: 100,
+					min: 0,
+					max: 800,
+					title: {
+						text: 'Unit: bn USD'
+					}
+				}, {
+					className: 'y-axis-1',
+					labels: {					
+						style: {
+							color: 'black',
+							fontSize:'12px'
+						}
+					},					
+					opposite: true,
+					gridLineColor: null,
+					tickInterval: 20,
+					min: 0,
+					max: 120,
+					visible: true,
+					title: {
+						text: 'Unit: bn USD'
+					}					
+				}],
+				legend : {
+					itemStyle: {
+						color: 'black',
+						fontSize: '15px',
+						fontWeight: null
+					}
+				},
+				tooltip: {
+					headerFormat: '<b>{series.name}</b><br/>',
+					pointFormat: '{point.x}: {point.y:.1f}',
+					borderColor: 'black'
+				},		
+				plotOptions: {
+					area: {
+						stacking: 'normal',
+						fillOpacity: 1,
+						marker: {
+							enabled: false,
+							symbol: 'circle',
+							radius: 2,
+							states: {
+								hover: {
+									enabled: true
+								}
+							}
+						},
+						pointPadding: 0,
+						borderWidth: 0					
+					},
+					spline: {
+						marker: {
+							enabled: false
+						}
+					},
+					series: {
+						label: {
+							connectorAllowed: false
+						},
+						pointStart: 2000
+					}					
+				},
+				series: [{
+					name: 'Solar',
+					type: 'area',
+					data: [null,	null,	null,	null,	null,	null,	null,	null,	null,	0,	0.2,	2.2,	3.4,	15.9,	24.9,	43,	58,	70.9,	91,	116.8,	150]
+					}, {					
+					name: 'Wind',
+					type: 'area',
+					data: [null,	null,	null,	null,	null,	1.1,	2.1,	4.2,	8.4,	17.6,	29.6,	46.2,	61.4,	76.5,	96.6,	120,	140,	155,	170,	185,	200]
+					}, {					
+					name: 'Hydropower',
+					type: 'area',
+					data: [79.4,	83,	86.1,	94.9,	105.2,	116.5,	130.3,	148.2,	172.6,	196.3,	216.1,	233,	249.5,	280.4,	304.9,	320,	325.8,	331.7,	337.7,	343.8,	350]
+					}, {
+					name: 'Investment in clean energy excl. large hydro (RHS)',
+					type: 'spline',			
+					yAxis: 1,
+					data: [null,	null,	null,	null,	3.42,	8.72,	11.45,	17.25,	26.06,	39.6,	43.8,	52.07,	67.07,	67.87,	94.36,	110.52,	null,	null,	null,	null,	null]
+				}]
+			});
+		</script>
+	</body>
+</html>

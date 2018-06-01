@@ -93,7 +93,7 @@
 						.domain([minValue, maxValue])
 						.range([5, 31]);								
 							
-		d3.json('simplified_smoothed_provinces.json', function(error, provinces){
+		d3.json('https://raw.githubusercontent.com/chinawaterrisk/chinawaterrisk.github.io/master/resources/json/china/province/simplified_smoothed_cleaned_provinces.json', function(error, provinces){
 			d3.csv('sown_area.csv', function(error, data){
 			d3.csv('dry_11.csv', function(error, dataDry){
 			

@@ -117,7 +117,7 @@
 						.range(["#DAB83C", "#9F171E"])
 						.interpolate(d3.interpolateHcl);
 		//link of json (border of the map), can be a relative link
-		d3.json('simplified_smoothed_provinces.json', function(error, provinces){
+		d3.json('https://raw.githubusercontent.com/chinawaterrisk/chinawaterrisk.github.io/master/resources/json/china/province/simplified_smoothed_cleaned_provinces.json', function(error, provinces){
 			//link of csv (data of the map), can be a relative link
 			d3.csv('drought_crop_failure.csv', function(error, data){
 				

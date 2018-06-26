@@ -1,5 +1,5 @@
 
-		var ValueByProvince = d3.map();
+		//var ValueByProvince = d3.map();
 
 		var formatTotal = d3.format(',.0f');
 
@@ -41,36 +41,66 @@
 						.domain([minValue, maxValue])
 						.range([5, 50]);
 
-		d3.json('simplified_smoothed_cleaned_wri.json', function(error, wri){
-		d3.json('simplified_smoothed_cleaned_provinces.json', function(error, provinces){
-			d3.csv('droughts_crop_failure.csv', function(error, data){
+	  var wri_json_url='https://raw.githubusercontent.com/chinawaterrisk/chinawaterrisk.github.io/master/resources/json/china/wri/simplified_smoothed_cleaned_wri.json'
+		var provinces_json_url='https://raw.githubusercontent.com/chinawaterrisk/chinawaterrisk.github.io/master/resources/json/china/province/simplified_smoothed_cleaned_provinces_sd.geojson'
+		var droughts_crop_failure_csv_url='https://raw.githubusercontent.com/chinawaterrisk/chinawaterrisk.github.io/master/instances/coal_bubbles/droughts_crop_failure.csv'
+		var water_resources_csv_url='https://raw.githubusercontent.com/chinawaterrisk/chinawaterrisk.github.io/master/resources/csv/water_resources.csv'
+
+		d3.json(wri_json_url, function(error, wri){
+		d3.json(provinces_json_url, function(error, provinces){
+		d3.csv(droughts_crop_failure_csv_url, function(error, data){
+		d3.csv(water_resources_csv_url, function(error, data_water_resources){
 
 				var value = {};
 
 				data.forEach(function(d){
 					value[d.Province] = +d.Cumulative;
-					ValueByProvince.set(d.Province, d);
+					//ValueByProvince.set(d.Province, d);
 				});
+
+				var value_water_resources = {};
+
+				//load data
+				data_water_resources.forEach(function(d){
+					value_water_resources[d.Province] = +d.Cumulative;
+					//ValueByProvince.set(d.Province, d);
+				});
+
 
 				svg.selectAll('#wri')
 					.data(wri.features)
 					.enter()
 					.append('path')
 					.attr('id', 'wri')
+					.attr('class','wri-g')
 					.attr('d', path)
 					.style('fill', function(d){
 												return colorWri(d.properties.BWS_s);
 										});
 
-				svg.selectAll('#province')
+				svg.selectAll('#province_border')
 					.data(provinces.features)
 					.enter()
 					.append('path')
-					.attr('id', 'province')
+					.attr('id', 'province_border')
+					.attr('class','province-border-g')
 					.attr('d', path)
 					.style('fill', 'transparent')
 					.style('stroke', '#CFD8DC')
 					.style('stroke-width', 1);
+
+
+					svg.selectAll('#province_fill')
+						.data(provinces.features)
+						.enter()
+						.append('path')
+						.attr('id', 'province_fill')
+						.attr('class','province-fill-g')
+						.attr('d', path)
+						.style('fill', function(d){
+													return d.color})
+						.style('stroke', 'transparent');
+
 
 				svg.selectAll('#bubble')
 					.data(provinces.features)
@@ -92,6 +122,9 @@
 					.attr('id', 'bubble-text')
 					.attr('transform', function(d) { return 'translate(' + path.centroid(d) + ')'; })
 					.text(function(d) { return d.properties.NAME_1; });
+
+
+
 
 				var legend2 = svg.append("g")
 									.attr("class", "legend2");
@@ -128,6 +161,7 @@
 
 				var legend3 = svg.append("g")
 									.attr("class", "legend3")
+									.attr("class", "wri-g")
 
 					legend3.append("text")
 							.attr("class", "legend3-header")
@@ -157,9 +191,32 @@
 							.text(function(d) { return d; });
 
 
-				console.log(value);
-				console.log(ValueByProvince.get('Beijing'));
+				// Baseline selector
+				setView = function(view) {
+						var wri = svg.selectAll(".wri-g");
+						var provinces = svg.selectAll(".provinces-g");
+
+						if (view === "wri") {
+								wri.style("display", "inherit");
+								provinces.style("display", "none");
+						} else if (view === "provinces") {
+								wri.style("display", "none");
+								provinces.style("display", "inherit");
+						}
+				}
+
+
+				//Set button toggle for view state
+        d3.selectAll("input[name='basemap']")
+            .on("click", function() {
+                view = d3.select(this).attr("val");
+                setView(view);
+            });
+
+				setView("wri")
+
 
 			});
+		});
 		});
 		});

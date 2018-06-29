@@ -7,7 +7,22 @@
 
 		#main{
 		//	width:960px;
-			max-width: 960px;
+			max-width: 800px;
+
+			margin:0 auto;
+		}
+
+		#map_wrapper{
+		//	width:960px;
+			max-width: 800px;
+			max-height: 583px;//800*700/960
+			margin:0 auto;
+		}
+
+		#map .svg-container{
+		//	width:960px;
+			max-width: 800px;
+			max-height: 583px;//800*700/960
 			margin:0 auto;
 		}
 
@@ -15,40 +30,61 @@
 			margin-bottom:10px;
 		}
 
-		#header p{
+		#header .title{
 			font-family:Arial;
-			float:left;
-			margin-left:10px;
+			font-size:12px;
+			font-weight: bold;
+			margin-left:12px;
+			margin-top:0px;
+		}
+
+		#header .subtitle{
+			font-family:Arial;
+			font-size:10px;
+			font-weight: 300;
+			margin-left:12px;
 			margin-top:0px;
 		}
 
 		footer {
 			font-family:Arial;
+			font-size: 10px;
+			font-style: italic;
 		}
 
-		.legend2 .legend2-header{
+		form {
+			font-family:Arial;
+			font-size:10px;
+			margin-left:12px;
+		}
+
+		.legend {
+			font-family:Arial;
+		}
+
+		.legend-bubbled .legend-header{
 			font-family:Arial;
 			font-weight:bold;
 			font-size:12px;
 		}
 
-		.legend2 .legend2-bubble {
+		.legend-bubbled .legend-bubble {
 		  fill: none;
 		  stroke: black;
 		}
 
-		.legend2 .legend2-label {
+		.legend-bubbled .legend-label {
 			font-size:11px;
 			font-family:Arial;
 		}
 
-		.legend3 .legend3-header{
+		.legend-squared .legend-header{
 			font-family:Arial;
 			font-weight:bold;
 			font-size:12px;
 		}
 
-		.legend3 .legend3-label{
+		.legend-squared .legend-label{
 			font-size:11px;
 			font-family:Arial;
 		}
@@ -75,6 +111,7 @@
 		.svg-content {
 			display: inline-block;
 			position: absolute;
+			max-height: 583px;//800*700/960
 			top: 0;
 			left: 0;
 		}
@@ -85,24 +122,26 @@
 	<div id = 'header'>
 
 	<!--title-->
-	<p style = 'font-size: 12px'><b>Cumulative Crop Failures In China Due To Droughts</b><br>
-
+	<span class="title">Cumulative Crop Failures In China Due To Droughts</span><br>
 	<!--sub-title-->
-	<font size = '1'>From 2007 to 2016</font></p>
+  <span class="subtitle">From 2007 to 2016</span>
 
 	</div>
+	<div>
 	<form>
-			<input type="radio" name="basemap" val="wri" checked="checked">Baseline Water Stress </input>
-			<input type="radio" name="basemap" val="provinces">Water Availability </input>
+			<input type="radio" name="basemap" val="wri" checked="checked"> Baseline Water Stress </input><br>
+			<input type="radio" name="basemap" val="province-water"> Water Availability </input>
 	</form>
-	
+</div>
+	<div id='map_wrapper'>
 	<div id = 'map' class="svg-container"></div>
+</div>
 
 
 
 	<!--footer-->
 	<footer>
-	<font size='1'><em>	Sources: China Water Risk, WRI Baseline Water Stress<br>Note: Taiwan Province, HKSAR, MSAR and South China Sea are not shown because of no data</em>
+	Sources: China Water Risk based on NBSC, World Resources Institute
 	</footer>
 
 

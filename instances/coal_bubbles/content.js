@@ -56,7 +56,7 @@ var radius = d3.scaleSqrt()
 var wri_json_url='https://raw.githubusercontent.com/chinawaterrisk/chinawaterrisk.github.io/master/resources/json/china/wri/wri_china_simplified_sd.geojson'
 var provinces_json_url='https://raw.githubusercontent.com/chinawaterrisk/chinawaterrisk.github.io/master/resources/json/china/province/simplified_smoothed_cleaned_provinces_sd.geojson'
 var provinces_centroids_json_url='https://raw.githubusercontent.com/chinawaterrisk/chinawaterrisk.github.io/master/resources/json/china/province/provinces_centroids.geojson'
-var coal_resources_csv_url='https://raw.githubusercontent.com/chinawaterrisk/chinawaterrisk.github.io/master/resources/csv/coal_resources.csv'
+var coal_resources_csv_url='https://raw.githubusercontent.com/chinawaterrisk/chinawaterrisk.github.io/master/resources/csv/coal_resources_mn_tonnes.csv'
 var water_resources_csv_url='https://raw.githubusercontent.com/chinawaterrisk/chinawaterrisk.github.io/master/resources/csv/water_resources.csv'
 
 d3.json(wri_json_url, function(error, wri){
@@ -69,6 +69,8 @@ d3.json(wri_json_url, function(error, wri){
 
 					data_coal_resources.forEach(function(d){
 						value_coal_resources[d.Province] = parseFloat(d[2016]);
+						value_coal_resources[d.Region] = parseFloat(d[2016]); // waiting for github to refresh. Delete once done
+
 					});
 
 					var value_water_resources = {};

@@ -23,19 +23,23 @@ var svg = d3.select('#map')
 .classed("svg-content", true);
 
 //specify values for legend
-var maxValue = 100000;
-var minValue = 0;
+var maxValueCoal = 100000;
+var minValueCoal = 10;
+
+var maxValueSown = 15000;
+var minValueSown = 100;
 
 //specify color for legend
-var colorBubble = d3.scaleLinear()
-.domain([minValue, maxValue])
-.range(["#CFD8DC"])
+var colorBubbleCoal = d3.scaleLinear()
+.domain([minValueCoal, maxValueCoal])
+.range(["#000000"])
 .interpolate(d3.interpolateHcl);
 
-// var colorWri = d3.scaleLinear()
-// 				.domain([0.00000, 1.24386, 2.92478, 3.14784, 4.63197, 5.00000])
-// 				.range(["#ffffa3", "#ffe600", "#ff9900", "#ff1900", "#bb0007", "#505050"])
-// 				.interpolate(d3.interpolateHcl);
+var colorBubbleSown = d3.scaleLinear()
+.domain([minValueSown, maxValueSown])
+.range(["#69F052"])
+.interpolate(d3.interpolateHcl);
+
 
 colorWri = function(firstLetter){
 
@@ -49,60 +53,68 @@ colorWri = function(firstLetter){
 	return dict[firstLetter];
 
 }
-var radius = d3.scaleSqrt()
-.domain([minValue, maxValue])
+var radiusCoal = d3.scaleSqrt()
+.domain([minValueCoal, maxValueCoal])
 .range([5, 50]);
+
+var radiusSown = d3.scaleSqrt()
+.domain([minValueSown, maxValueSown])
+.range([2, 50]);
 
 var wri_json_url='https://raw.githubusercontent.com/chinawaterrisk/chinawaterrisk.github.io/master/resources/json/china/wri/wri_china_simplified_sd.geojson'
 var provinces_json_url='https://raw.githubusercontent.com/chinawaterrisk/chinawaterrisk.github.io/master/resources/json/china/province/simplified_smoothed_cleaned_provinces_sd.geojson'
 var provinces_centroids_json_url='https://raw.githubusercontent.com/chinawaterrisk/chinawaterrisk.github.io/master/resources/json/china/province/provinces_centroids.geojson'
 var coal_resources_csv_url='https://raw.githubusercontent.com/chinawaterrisk/chinawaterrisk.github.io/master/resources/csv/coal_resources_mn_tonnes.csv'
+var sown_area_csv_url='https://raw.githubusercontent.com/chinawaterrisk/chinawaterrisk.github.io/master/resources/csv/agriculture/sown_area_2016.csv'
 var water_resources_csv_url='https://raw.githubusercontent.com/chinawaterrisk/chinawaterrisk.github.io/master/resources/csv/water_resources.csv'
 
 d3.json(wri_json_url, function(error, wri){
 	d3.json(provinces_json_url, function(error, provinces){
 		d3.json(provinces_centroids_json_url, function(error, centroids){
 			d3.csv(coal_resources_csv_url, function(error, data_coal_resources){
-				d3.csv(water_resources_csv_url, function(error, data_water_resources){
+				d3.csv(sown_area_csv_url, function(error, data_sown_area){
+					d3.csv(water_resources_csv_url, function(error, data_water_resources){
 
-					var value_coal_resources = {};
+						//load data
+						var value_coal_resources = {};
+						data_coal_resources.forEach(function(d){
+							value_coal_resources[d.Province] = parseFloat(d[2016]);
+							value_coal_resources[d.Region] = parseFloat(d[2016]); // waiting for github to refresh. Delete once done
+						});
 
-					data_coal_resources.forEach(function(d){
-						value_coal_resources[d.Province] = parseFloat(d[2016]);
-						value_coal_resources[d.Region] = parseFloat(d[2016]); // waiting for github to refresh. Delete once done
+						var value_sown_area = {};
+						data_sown_area.forEach(function(d){
+							value_sown_area[d.Province] = parseFloat(d['Total Sown Areas of Farm Crops(1000 hectares)']);
+						});
 
-					});
+						var value_water_resources = {};
+						var color_water_resources = {}
+						data_water_resources.forEach(function(d){
+							value_water_resources[d.Province] = d.Cumulative; //TODO
+							color_water_resources[d.Province] = d.Color;
+						});
 
-					var value_water_resources = {};
-					var color_water_resources = {}
+						svg.selectAll('#wri')
+						.data(wri.features)
+						.enter()
+						.append('path')
+						.attr('id', 'wri')
+						.attr('class','wri-g')
+						.attr('d', path)
+						.style('fill', function(d){
+							return colorWri(d.properties.BWS_cat.charAt(0));
+						});
 
-					//load data
-					data_water_resources.forEach(function(d){
-						value_water_resources[d.Province] = d.Cumulative; //TODO
-						color_water_resources[d.Province] = d.Color;
-					});
-
-
-					svg.selectAll('#wri')
-					.data(wri.features)
-					.enter()
-					.append('path')
-					.attr('id', 'wri')
-					.attr('class','wri-g')
-					.attr('d', path)
-					.style('fill', function(d){
-						return colorWri(d.properties.BWS_cat.charAt(0));
-					});
-
-					svg.selectAll('#province_fill')
-					.data(provinces.features)
-					.enter()
-					.append('path')
-					.attr('id', 'province_fill')
-					.attr('class','province-fill-g')
-					.attr('d', path)
-					.style('fill', function(d){
-						return color_water_resources[d.properties.NAME_1]})
+						svg.selectAll('#province_fill')
+						.data(provinces.features)
+						.enter()
+						.append('path')
+						.attr('id', 'province_fill')
+						.attr('class','province-fill-g')
+						.attr('d', path)
+						.style('fill', function(d){
+							return color_water_resources[d.properties.NAME_1]
+						})
 						.style('stroke', 'transparent');
 
 
@@ -118,25 +130,47 @@ d3.json(wri_json_url, function(error, wri){
 						.style('stroke-width', 1);
 
 
-						svg.selectAll('#bubble')
+						svg.selectAll('#bubble_coal')
 						.data(centroids.features)
 						.enter()
 						.append('circle')
-						.attr('id', 'bubble')
+						.attr('id', 'bubble_coal')
+						.attr('class', 'coal-g')
 						.attr('transform', function(d) { return 'translate(' + path.centroid(d) + ')'; })
 						.attr('r', function(d){
-							return radius(value_coal_resources[d.properties.NAME_1]);
+							return radiusCoal(value_coal_resources[d.properties.NAME_1]);
 						})
 						.style('fill', function(d) {
-							return colorBubble(value_coal_resources[d.properties.NAME_1]);
-						});
+							return colorBubbleCoal(value_coal_resources[d.properties.NAME_1]);
+						})
+						.style('fill-opacity',0.7)
+						.style('stroke','black');
+
+						svg.selectAll('#bubble_sown')
+						.data(centroids.features)
+						.enter()
+						.append('circle')
+						.attr('id', 'bubble_sown')
+						.attr('class', 'sown-g')
+						.attr('transform', function(d) { return 'translate(' + path.centroid(d) + ')'; })
+						.attr('r', function(d){
+							return radiusSown(value_sown_area[d.properties.NAME_1]);
+						})
+						.style('fill', function(d) {
+							return colorBubbleSown(value_sown_area[d.properties.NAME_1]);
+						})
+						.style('fill-opacity',0.7)
+						.style('stroke','#69F052');
+
 
 						svg.selectAll('#bubble-text')
+						.style("text-anchor", "middle")
 						.data(centroids.features)
 						.enter()
 						.append('text')
 						.attr('id', 'bubble-text')
 						.attr('transform', function(d) { return 'translate(' + path.centroid(d) + ')'; })
+						.style('fill','#FFFFFF')
 						.text(function(d) { return d.properties.NAME_1; });
 
 
@@ -149,30 +183,30 @@ d3.json(wri_json_url, function(error, wri){
 						.attr("class", "legend-header")
 						.attr("x", width - 95)
 						.attr("y", height - 297)
-						.text("Crop Failure");
+						.text("Coal reserves");
 
 						legend_bubbled.append("text")
 						.attr("class", "legend-header")
 						.attr("x", width - 87)
 						.attr("y", height - 284)
-						.text("(1,000 ha)");
+						.text("(mn tonnes)");
 
 						legend_bubbled.selectAll(".legend-bubble")
-						.data([minValue, (maxValue + minValue) / 3, maxValue])
+						.data([minValueCoal, (maxValueCoal + minValueCoal) / 3, maxValueCoal])
 						.enter()
 						.append("circle")
 						.attr("class", "legend-bubble")
 						.attr("cx", width - 60)
-						.attr("cy", function(d) { return height - radius(d) - 162; })
-						.attr("r", function(d) { return radius(d); });
+						.attr("cy", function(d) { return height - radiusCoal(d) - 162; })
+						.attr("r", function(d) { return radiusCoal(d); });
 
 						legend_bubbled.selectAll(".legend-label")
-						.data([minValue, (maxValue + minValue) / 3, maxValue])
+						.data([minValueCoal, (maxValueCoal + minValueCoal) / 3, maxValueCoal])
 						.enter()
 						.append("text")
 						.attr("class", "legend-label")
 						.attr("x", width - 65)
-						.attr("y", function(d) { return (height - 2 * radius(d) - 162) - 1; })
+						.attr("y", function(d) { return (height - 2 * radiusCoal(d) - 162) - 1; })
 						.text(d3.format(".1s"));
 
 						var legend_wri = svg.append("g")
@@ -206,8 +240,8 @@ d3.json(wri_json_url, function(error, wri){
 						.text(function(d) { return d; });
 
 
-						// Baseline selector
-						setView = function(view) {
+						// Selectors
+						setBasemap = function(view) {
 							var wri = svg.selectAll(".wri-g");
 							var provinces = svg.selectAll(".province-fill-g");
 
@@ -220,18 +254,37 @@ d3.json(wri_json_url, function(error, wri){
 							}
 						}
 
+						setBubbles = function(view) {
+							var coal = svg.selectAll(".coal-g");
+							var sown = svg.selectAll(".sown-g");
+
+							if (view === "coal") {
+								coal.style("display", "inherit");
+								sown.style("display", "none");
+							} else if (view === "sown") {
+								coal.style("display", "none");
+								sown.style("display", "inherit");
+							}
+						}
 
 						//Set button toggle for view state
 						d3.selectAll("input[name='basemap']")
 						.on("click", function() {
 							view = d3.select(this).attr("val");
-							setView(view);
+							setBasemap(view);
 						});
 
-						setView("wri")
+						d3.selectAll("input[name='bubbles']")
+						.on("click", function() {
+							view = d3.select(this).attr("val");
+							setBubbles(view);
+						});
 
+						setBasemap("wri")
+						setBubbles("coal")
 					});
 				});
 			});
 		});
 	});
+});

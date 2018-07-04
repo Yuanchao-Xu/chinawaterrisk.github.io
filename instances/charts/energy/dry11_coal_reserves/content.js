@@ -1,4 +1,5 @@
 
+$( document ).ready(function() {
 // Create the chart
 chart = new Highcharts.Chart({
   chart: {
@@ -51,3 +52,4 @@ chart = new Highcharts.Chart({
       }
     }]
   });
+}

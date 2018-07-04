@@ -7,7 +7,8 @@ chart = new Highcharts.Chart({
     type: 'pie',
     style: {
       fontFamily: 'Arial Narrow'
-       }
+    },
+    height:'80%'
   },
   title: {
     text: 'China vs RoW'

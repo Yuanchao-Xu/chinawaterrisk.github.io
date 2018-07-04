@@ -6,7 +6,7 @@ chart = new Highcharts.Chart({
     type: 'pie'
   },
   title: {
-    text: 'Top-5 Coal Reserves'
+    text: 'China vs RoW'
   },
   plotOptions: {
     pie: {

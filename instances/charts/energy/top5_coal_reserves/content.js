@@ -2,7 +2,7 @@
 // Create the chart
 chart = new Highcharts.Chart({
   chart: {
-    renderTo: 'container',
+    renderTo: 'top5_coal_reserves_container',
     type: 'pie'
   },
   title: {
@@ -38,7 +38,7 @@ chart = new Highcharts.Chart({
     }
   },
   series: [{
-    name: 'Browsers',
+    name: 'Coal reserves',
     data: [
       ["Shanxi",91.619],
       ["Inner Mongolia",51.027],

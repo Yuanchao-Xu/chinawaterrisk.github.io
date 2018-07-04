@@ -20,7 +20,14 @@ chart = new Highcharts.Chart({
           enabled: true,
           format: '<b>{point.name}</b><br>{point.percentage:.1f} %',
           distance: 10,
+          //color: 'white',
           connectorWidth:0,
+          style: {
+            //color:'white',
+            fontSize: 10,
+            fontWeight:300,
+            textOutline: false
+          }
       }
     }
   },

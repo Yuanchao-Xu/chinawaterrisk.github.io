@@ -57,8 +57,8 @@ colorWri = function(firstLetter){
 }
 
 colorTws = d3.scaleLinear()
-	.domain([-4,0,4])
-	.range(['red', 'beige','blue'])
+	.domain([-2,-1,0,1,2])
+	.range(['#d7191c', '#fdae61','#ffffbf','#abd9e9','#2c7bb6'])
 	.interpolate(d3.interpolateHcl);
 
 var radiusCoal = d3.scaleSqrt()

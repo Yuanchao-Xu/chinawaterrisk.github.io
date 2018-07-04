@@ -52,4 +52,4 @@ chart = new Highcharts.Chart({
       }
     }]
   });
-}
+});

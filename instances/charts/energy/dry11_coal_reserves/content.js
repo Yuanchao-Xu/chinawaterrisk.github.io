@@ -6,7 +6,7 @@ chart = new Highcharts.Chart({
     renderTo: 'dry11_coal_reserves_container',
     type: 'pie',
     style: {
-           fontFamily: 'Arial'
+      fontFamily: 'Arial Narrow'
        }
   },
   title: {
@@ -24,7 +24,7 @@ chart = new Highcharts.Chart({
           connectorWidth:0,
           style: {
             //color:'white',
-            fontSize: 10,
+            fontSize: '10px',
             fontWeight:300,
             textOutline: false
           }

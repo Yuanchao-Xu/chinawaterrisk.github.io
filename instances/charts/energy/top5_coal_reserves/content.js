@@ -7,10 +7,12 @@ chart = new Highcharts.Chart({
     type: 'pie',
     style: {
            fontFamily: 'Arial Narrow'
-       }
+       },
+    height:'80%'
   },
   title: {
-    text: 'Top-5 Coal Reserves'
+    text: 'Top-5 Coal Reserves',
+    margin: 0
   },
   plotOptions: {
     pie: {

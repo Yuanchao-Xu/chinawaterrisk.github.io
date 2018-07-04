@@ -4,7 +4,10 @@ $( document ).ready(function() {
 chart = new Highcharts.Chart({
   chart: {
     renderTo: 'dry11_coal_reserves_container',
-    type: 'pie'
+    type: 'pie',
+    style: {
+           fontFamily: 'Arial'
+       }
   },
   title: {
     text: 'Exposure'

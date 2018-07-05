@@ -8,7 +8,7 @@ chart = new Highcharts.Chart({
     style: {
       fontFamily: 'Arial Narrow'
        },
-    height:'80%'
+    height:'95%'
   },
   title: {
     text: 'Exposure'
@@ -25,7 +25,7 @@ chart = new Highcharts.Chart({
           connectorWidth:0,
           style: {
             //color:'white',
-            fontSize: '10px',
+            fontSize: '12px',
             fontWeight:300,
             textOutline: false
           }

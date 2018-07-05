@@ -8,7 +8,7 @@ chart = new Highcharts.Chart({
     style: {
            fontFamily: 'Arial Narrow'
        },
-    height:'80%'
+    height:'95%'
   },
   title: {
     text: 'Top-5 Coal Reserves',
@@ -21,12 +21,12 @@ chart = new Highcharts.Chart({
       dataLabels: {
           enabled: true,
           format: '<b>{point.name}</b><br />{point.percentage:.1f} %',
-          distance: 10,
+          distance: 5,
           //color: 'white',
           connectorWidth:0,
           style: {
             //color:'white',
-            fontSize: '10px',
+            fontSize: '12px',
             fontWeight:300,
             textOutline: false
           }

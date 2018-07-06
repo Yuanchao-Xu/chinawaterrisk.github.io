@@ -9,10 +9,12 @@ var width = 960,
 height = 700;
 
 // legends positions
-var leg_bubble_top = height - 330;
-var leg_bubble_left = width - 115;
+var leg_bubble1_top = height - 170;
+var leg_bubble1_left = width - 115;
+var offset_legend_bubble2 = -200;
+
 var leg_basemap_top = height - 145;
-var leg_basemap_left = width - 115;
+var leg_basemap_left = 10;
 var leg_square_size = 15
 
 var value_coal_resources = {};
@@ -22,6 +24,13 @@ var color_water_resources = {};
 
 var selected_bubbles;
 
+var offsetLegendBubble2 = function(){
+  if(selected_bubbles=='both'){
+      return offset_legend_bubble2;
+  }else{
+    return 0;
+  }
+}
 
 //projection
 var projection = d3.geoMercator()
@@ -265,18 +274,18 @@ d3.json(wri_json_url, function(error, wri){
 
 
 							var legend_bubbled_coal = svg.append("g")
-							.attr("class", "legend legend-bubbled coal-g");
+							.attr("class", "legend legend-bubble coal-g");
 
-							legend_bubbled_coal.append("text")
+							var leg1 = legend_bubbled_coal.append("text")
 							.attr("class", "legend-header")
-							.attr("x", leg_bubble_left)
-							.attr("y", leg_bubble_top)
+							.attr("x", leg_bubble1_left)
+							.attr("y", leg_bubble1_top + offsetLegendBubble2())
 							.text("Coal reserves");
 
 							legend_bubbled_coal.append("text")
 							.attr("class", "legend-unit")
-							.attr("x", leg_bubble_left)
-							.attr("y", leg_bubble_top)
+							.attr("x", leg_bubble1_left)
+							.attr("y", leg_bubble1_top)
 							.attr("dy","1em")
 							.text("[mn tonnes]");
 
@@ -287,8 +296,8 @@ d3.json(wri_json_url, function(error, wri){
 							.attr("class", "legend-bubble")
 							.attr("fill", "#000000")
               .attr("opacity",0.3)
-							.attr("cx", leg_bubble_left + radiusCoal(maxValueCoal))
-							.attr("cy", function(d) { return leg_bubble_top - radiusCoal(d) + 140; })
+							.attr("cx", leg_bubble1_left + radiusCoal(maxValueCoal))
+							.attr("cy", function(d) { return leg_bubble1_top - radiusCoal(d) + 140; })
 							.attr("r", function(d) { return radiusCoal(d); });
 
 							legend_bubbled_coal.selectAll(".legend-label")
@@ -296,23 +305,25 @@ d3.json(wri_json_url, function(error, wri){
 							.enter()
 							.append("text")
 							.attr("class", "legend-label")
-							.attr("x", leg_bubble_left + radiusCoal(maxValueCoal) - 7)
-							.attr("y", function(d) { return (leg_bubble_top +135 - 2 * radiusCoal(d)); })
+							.attr("x", leg_bubble1_left + radiusCoal(maxValueCoal) - 7)
+							.attr("y", function(d) { return (leg_bubble1_top +135 - 2 * radiusCoal(d)); })
 							.text(d3.format(".1s"));
 
+
+
 							var legend_bubbled_sown = svg.append("g")
-							.attr("class", "legend legend-bubbled sown-g");
+							.attr("class", "legend legend-bubble sown-g");
 
 							legend_bubbled_sown.append("text")
-							.attr("class", "legend-header")
-							.attr("x", leg_bubble_left)
-							.attr("y", leg_bubble_top)
+							.attr("class", "legend-header sown-g")
+							.attr("x", leg_bubble1_left)
+							.attr("y", leg_bubble1_top)
 							.text("Sown area");
 
 							legend_bubbled_sown.append("text")
-							.attr("class", "legend-unit")
-							.attr("x", leg_bubble_left)
-							.attr("y", leg_bubble_top)
+							.attr("class", "legend-unit sown-g")
+							.attr("x", leg_bubble1_left)
+							.attr("y", leg_bubble1_top)
 							.attr("dy","1em")
 							.text("[1,000 hectares]");
 
@@ -320,20 +331,20 @@ d3.json(wri_json_url, function(error, wri){
 							.data([minValueSown, (maxValueSown + minValueSown) / 3, maxValueSown])
 							.enter()
 							.append("circle")
-							.attr("class", "legend-bubble")
-							.attr("fill", "#000000")
+							.attr("class", "legend-bubble sown-g")
+							.attr("fill", "#69F052")
 							.attr("opacity",0.3)
-							.attr("cx", leg_bubble_left + radiusSown(maxValueSown))
-							.attr("cy", function(d) { return leg_bubble_top - radiusSown(d) + 140; })
+							.attr("cx", leg_bubble1_left + radiusSown(maxValueSown))
+							.attr("cy", function(d) { return leg_bubble1_top - radiusSown(d) + 140; })
 							.attr("r", function(d) { return radiusSown(d); });
 
 							legend_bubbled_sown.selectAll(".legend-label")
 							.data([minValueSown, (maxValueSown + minValueSown) / 3, maxValueSown])
 							.enter()
 							.append("text")
-							.attr("class", "legend-label")
-							.attr("x", leg_bubble_left + radiusSown(maxValueSown) - 7)
-							.attr("y", function(d) { return (leg_bubble_top +135 - 2 * radiusSown(d)); })
+							.attr("class", "legend-label sown-g")
+							.attr("x", leg_bubble1_left + radiusSown(maxValueSown) - 7)
+							.attr("y", function(d) { return (leg_bubble1_top +135 - 2 * radiusSown(d)); })
 							.text(d3.format(".1s"));
 
 							var legend_wri = svg.append("g")
@@ -478,14 +489,34 @@ d3.json(wri_json_url, function(error, wri){
                 selected_bubbles = view
 								var coal = svg.selectAll(".coal-g");
 								var sown = svg.selectAll(".sown-g");
+								var sown_legend = svg.selectAll(".legend.sown-g");
 
 								if (view === "coal") {
+                  sown_legend.attr("transform", "translate(0,0)");
+
 									coal.style("display", "inherit");
 									sown.style("display", "none");
 								} else if (view === "sown") {
+                  sown_legend.attr("transform", "translate(0,0)");
 									coal.style("display", "none");
 									sown.style("display", "inherit");
-								}
+								} else if (view === 'both'){
+                  coal.style("display", "inherit");
+                  sown.style("display", "inherit");
+                  // coal.transition().attr("x",0);
+                  // d3.select(".coal-g").transition().attr("x",0);
+
+                  sown_legend.attr("transform", "translate(0,-200)");
+                  //       .duration(500)
+                  //       .attr("x",0);
+                  //       legend_bubbled_sown.enter().transition()
+                  //             .duration(500)
+                  //             .attr("y",0);
+                  // to_move = sown.data(sown.data());
+                  // to_move.transition()
+                  //       .attr("y",0);
+
+                }
 							}
 
 							//Set button toggle for view state

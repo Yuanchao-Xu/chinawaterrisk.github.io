@@ -11,7 +11,8 @@ chart = new Highcharts.Chart({
     height:'95%'
   },
   title: {
-    text: 'Top-5 Sown Land',
+    text:'',
+    //text: 'Top-5 Sown Land',
     margin: 0
   },
   plotOptions: {

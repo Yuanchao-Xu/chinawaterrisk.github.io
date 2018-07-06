@@ -11,7 +11,8 @@ chart = new Highcharts.Chart({
     height:'95%'
   },
   title: {
-    text: 'China vs RoW'
+    text:'',
+    //text: 'China vs RoW'
   },
   plotOptions: {
     pie: {

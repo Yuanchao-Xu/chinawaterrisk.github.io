@@ -11,11 +11,13 @@ chart = new Highcharts.Chart({
     height:'95%'
   },
   title: {
-    text: 'Exposure'
+    text:'',
+    //text: 'Exposure'
   },
   plotOptions: {
     pie: {
-      borderColor: null,
+      //borderColor: null,
+      borderWidth: 0.5,
       shadow: false,
       colors: ["#7C8388","#094677","#0D77B9"],
       dataLabels: {

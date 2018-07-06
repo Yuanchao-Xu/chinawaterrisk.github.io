@@ -11,7 +11,8 @@ chart = new Highcharts.Chart({
     height:'95%'
   },
   title: {
-    text: 'Top-5 Coal Reserves',
+    text:'',
+    //text: 'Top-5 Coal Reserves',
     margin: 0
   },
   plotOptions: {

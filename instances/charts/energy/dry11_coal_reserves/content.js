@@ -11,7 +11,8 @@ chart = new Highcharts.Chart({
     height:'95%'
   },
   title: {
-    text: 'Exposure'
+    text:'',
+    //text: 'Exposure'
   },
   plotOptions: {
     pie: {

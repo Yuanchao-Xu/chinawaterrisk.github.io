@@ -1,22 +1,22 @@
-
 jQuery( document ).ready(function() {
+
 // Create the chart
 chart = new Highcharts.Chart({
   chart: {
-    renderTo: 'dry11_sown_land_container',
+    renderTo: 'china_vs_row_sown_land_container',
     type: 'pie',
     style: {
       fontFamily: 'Arial Narrow'
-       },
+    },
     height:'95%'
   },
   title: {
-    text: 'Exposure'
+    text: 'China vs RoW'
   },
   plotOptions: {
     pie: {
       shadow: false,
-      colors: ["#7C8388","#094677","#0D77B9"],
+      colors: ["#560008","#ac0010","#c54d58","#d68088","#e6b3b7","#BDBFC3"],
       dataLabels: {
           enabled: true,
           format: '<b>{point.name}</b><br>{point.percentage:.1f} %',
@@ -47,32 +47,22 @@ chart = new Highcharts.Chart({
       return '<b>'+ this.point.name +'</b>: '+ this.y +' bn tonnes';
     }
   },
+  series: [{
+    name: 'Sown land',
 
-
-series: [{
-  name: 'Coal reserves2',
-  data: [
-    {name:"<500",y:40083.42, color:"#9F171E"},
-    {name:"500-1000",y:15994.86, color:"#7C8388"},
-    {name:"1000-2000",y:57744.81, color:"#094677"},
-    {name:">2000",y:52826.46, color:"#0D77B9"}],
-  size: '60%',
-  innerSize: '50%',
-  dataLabels: {
-    enabled:false
-    }
-  },{
-  name: 'Coal reserves',
-  data: [
-    ["Dry 11",56078.28],
-    ["At Risk 7",43043.83],
-    ["Safe 13",67527.44]],
-    size: '68%',
-    innerSize: '65%',
-    showInLegend:true,
-    dataLabels: {
-      enabled: true
-    }
-  }],
+    data: [
+      ["China",527833],
+      ["United States",405862.5],
+      ["Australia",365913],
+      ["Brazil",282589],
+      ["Russia",217721.82],
+      ["Others",3069070.18]],
+      size: '60%',
+      innerSize: '50%',
+      showInLegend:true,
+      dataLabels: {
+        enabled: true
+      }
+    }]
   });
-});
+  });

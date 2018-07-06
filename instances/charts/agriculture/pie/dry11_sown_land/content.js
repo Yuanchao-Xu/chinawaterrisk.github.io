@@ -49,20 +49,22 @@ chart = new Highcharts.Chart({
   },
 
 
+
+
 series: [{
-  name: 'Coal reserves2',
+  name: 'Sown land2',
   data: [
     {name:"<500",y:40083.42, color:"#9F171E"},
     {name:"500-1000",y:15994.86, color:"#7C8388"},
-    {name:"1000-2000",y:57744.81, color:"#094677"},
-    {name:">2000",y:52826.46, color:"#0D77B9"}],
+    {name:"1000-2000",y:43043.83, color:"#094677"},
+    {name:">2000",y:67527.44, color:"#0D77B9"}],
   size: '60%',
   innerSize: '50%',
   dataLabels: {
     enabled:false
     }
   },{
-  name: 'Coal reserves',
+  name: 'Sown land',
   data: [
     ["Dry 11",56078.28],
     ["At Risk 7",43043.83],

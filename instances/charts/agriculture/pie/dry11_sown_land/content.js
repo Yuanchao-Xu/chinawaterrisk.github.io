@@ -1,5 +1,5 @@
 
-$( document ).ready(function() {
+jQuery( document ).ready(function() {
 // Create the chart
 chart = new Highcharts.Chart({
   chart: {

@@ -145,9 +145,9 @@
 	</div>
 	<div>
 		<form>
-			<input type="radio" name="basemap" val="wri" checked="checked"> Baseline Water Stress </input><br>
-			<input type="radio" name="basemap" val="province-water"> Water Availability </input><br>
-			<input type="radio" name="basemap" val="tws"> Groundwater Depletion </input>
+			<input type="radio" name="basemap" id="input_wri" val="wri" checked="checked"/><label for="input_wri">Baseline Water Stress</label><br>
+			<input type="radio" name="basemap" id="input_avail" val="avail"/><label for="input_avail">Water Availability</label><br>
+			<input type="radio" name="basemap" id="input_tws" val="tws"/><label for="input_tws">Trends in Water Storage</label>
 		</form>
 	</div>
 	<div>
@@ -164,7 +164,7 @@
 
 	<!--footer-->
 	<footer>
-		Sources: China Water Risk based on NBSC, World Resources Institute, Nature 557 pp 651–659 (2018) 
+		Sources: China Water Risk based on NBSC, World Resources Institute, Nature 557 pp 651–659 (2018)
 	</footer>
 
 

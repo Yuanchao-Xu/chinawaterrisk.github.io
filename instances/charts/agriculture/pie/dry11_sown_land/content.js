@@ -15,6 +15,7 @@ chart = new Highcharts.Chart({
   },
   plotOptions: {
     pie: {
+      borderColor: null,
       shadow: false,
       colors: ["#7C8388","#094677","#0D77B9"],
       dataLabels: {

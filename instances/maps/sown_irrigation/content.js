@@ -79,7 +79,7 @@ function showMapTooltipIrrigated(d) {
       var mouse = d3.mouse(svg.node())
         .map( function(d) { return parseInt(d); } );
       	tooltip.style("display", "inherit")
-        .attr("class", "map-tooltip coal-g")
+        .attr("class", "map-tooltip irrigated-g")
         .attr("style", "left:"+x+"px;top:"+y+"px")
         .html("<b>"+province_name+"</b><br /> "+mn_tonnes+" mn tonnes" );
 }
@@ -100,7 +100,7 @@ function showMapTooltipSown(d) {
 }
 
 function showMapTooltip(d){
-  if(selected_bubbles=='coal'){
+  if(selected_bubbles=='irrigated'){
     return showMapTooltipIrrigated(d);
   }else if(selected_bubbles=='sown'){
     return showMapTooltipSown(d);
@@ -224,12 +224,12 @@ d3.json(wri_json_url, function(error, wri){
 							.style('stroke-width', 1);
 
 
-							svg.selectAll('#bubble_coal')
+							svg.selectAll('#bubble_irrigated')
 							.data(centroids.features)
 							.enter()
 							.append('circle')
-							.attr('id', 'bubble_coal')
-							.attr('class', 'coal-g')
+							.attr('id', 'bubble_irrigated')
+							.attr('class', 'irrigated-g')
 							.attr('transform', function(d) { return 'translate(' + path.centroid(d) + ')'; })
 							.attr('r', function(d){
 								return radiusIrrigated(value_irrigated_area[d.properties.NAME_1]);
@@ -275,23 +275,23 @@ d3.json(wri_json_url, function(error, wri){
               .on("mouseout", function(d){ tooltip.style("display", "none");});
 
 
-							var legend_bubbled_coal = svg.append("g")
-							.attr("class", "legend legend-bubble coal-g");
+							var legend_bubbled_irrigated = svg.append("g")
+							.attr("class", "legend legend-bubble irrigated-g");
 
-							var leg1 = legend_bubbled_coal.append("text")
+							var leg1 = legend_bubbled_irrigated.append("text")
 							.attr("class", "legend-header")
 							.attr("x", leg_bubble1_left)
 							.attr("y", leg_bubble1_top + offsetLegendBubble2())
 							.text("Irrigated area");
 
-							legend_bubbled_coal.append("text")
+							legend_bubbled_irrigated.append("text")
 							.attr("class", "legend-unit")
 							.attr("x", leg_bubble1_left)
 							.attr("y", leg_bubble1_top)
 							.attr("dy","1em")
 							.text("[1,000 hectares]");
 
-							legend_bubbled_coal.selectAll(".legend-bubble")
+							legend_bubbled_irrigated.selectAll(".legend-bubble")
 							.data([minValueIrrigated, (maxValueIrrigated + minValueIrrigated) / 3, maxValueIrrigated])
 							.enter()
 							.append("circle")
@@ -302,7 +302,7 @@ d3.json(wri_json_url, function(error, wri){
 							.attr("cy", function(d) { return leg_bubble1_top - radiusIrrigated(d) + 140; })
 							.attr("r", function(d) { return radiusIrrigated(d); });
 
-							legend_bubbled_coal.selectAll(".legend-label")
+							legend_bubbled_irrigated.selectAll(".legend-label")
 							.data([minValueIrrigated, (maxValueIrrigated + minValueIrrigated) / 3, maxValueIrrigated])
 							.enter()
 							.append("text")
@@ -489,24 +489,24 @@ d3.json(wri_json_url, function(error, wri){
 
 							setBubbles = function(view) {
                 selected_bubbles = view
-								var coal = svg.selectAll(".coal-g");
+								var irrigated = svg.selectAll(".irrigated-g");
 								var sown = svg.selectAll(".sown-g");
 								var sown_legend = svg.selectAll(".legend.sown-g");
 
-								if (view === "coal") {
+								if (view === "irrigated") {
                   sown_legend.attr("transform", "translate(0,0)");
 
-									coal.style("display", "inherit");
+									irrigated.style("display", "inherit");
 									sown.style("display", "none");
 								} else if (view === "sown") {
                   sown_legend.attr("transform", "translate(0,0)");
-									coal.style("display", "none");
+									irrigated.style("display", "none");
 									sown.style("display", "inherit");
 								} else if (view === 'both'){
-                  coal.style("display", "inherit");
+                  irrigated.style("display", "inherit");
                   sown.style("display", "inherit");
-                  // coal.transition().attr("x",0);
-                  // d3.select(".coal-g").transition().attr("x",0);
+                  // irrigated.transition().attr("x",0);
+                  // d3.select(".irrigated-g").transition().attr("x",0);
 
                   sown_legend.attr("transform", "translate(0,-200)");
                   //       .duration(500)
@@ -535,7 +535,7 @@ d3.json(wri_json_url, function(error, wri){
 							});
 
 							setBasemap("wri")
-							setBubbles("coal")
+							setBubbles("irrigated")
 
 						});
 					});

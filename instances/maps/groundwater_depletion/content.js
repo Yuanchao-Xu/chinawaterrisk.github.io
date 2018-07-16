@@ -1,6 +1,6 @@
 
 //var ValueByProvince = d3.map();
-var map_id='groundwater_depletion_map'
+var groundwater_depletion_map_id='groundwater_depletion_map'
 
 var formatTotal = d3.format(',.0f');
 
@@ -28,19 +28,19 @@ var projection = d3.geoMercator()
 var path = d3.geoPath()
 .projection(projection);
 
-var svg = d3.select("#"+map_id)
+var svg = d3.select("#"+groundwater_depletion_map_id)
 .append('svg')
 .attr("preserveAspectRatio", "xMinYMin meet")
 .attr("viewBox", "0 0 960 700")
 .classed("svg-content", true);
 
-var tooltip = d3.select("#"+map_id)
+var tooltip = d3.select("#"+groundwater_depletion_map_id)
 .append("div")
 .style("position", "absolute")
 .attr("class", "map-tooltip")
 .attr("id","map_tooltip");
-var offsetL = document.getElementById(map_id).offsetLeft+10;
-var offsetT = document.getElementById(map_id).offsetTop+10;
+var offsetL = document.getElementById(groundwater_depletion_map_id).offsetLeft+10;
+var offsetT = document.getElementById(groundwater_depletion_map_id).offsetTop+10;
 
 //specify values for legend
 var maxValueCoal = 100000;

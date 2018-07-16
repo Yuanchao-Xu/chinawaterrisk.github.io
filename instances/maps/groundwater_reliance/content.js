@@ -1,6 +1,6 @@
 
 //var ValueByProvince = d3.map();
-var map_id='map'
+var map_id='groundwater_reliance_map'
 
 var formatTotal = d3.format(',.0f');
 

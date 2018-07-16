@@ -1,6 +1,6 @@
 
 //var ValueByProvince = d3.map();
-var map_id='map'
+var map_id='groundwater_depletion_map'
 
 var formatTotal = d3.format(',.0f');
 
@@ -145,7 +145,7 @@ d3.json(provinces_json_url, function(error, provinces){
       d3.csv(water_use_csv_url, function(error, data_water_use){
 
         data_water_use.forEach(function(d){
-          data_groundwater_reliance[d.Province] = [d['Total Amount of Groundwater Supply'],d['Total Amount of Surface Water Supply'],d['Total Amount of Other Water Supply']]; //TODO
+          data_groundwater_reliance[d.Province] = [d['Total Amount of Groundwater Supply']/d['Total Amount of Surface Water Supply'],d['Total Amount of Other Water Supply']]; //TODO
         });
 
         svg.selectAll('#tws')

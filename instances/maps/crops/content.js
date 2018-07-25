@@ -60,6 +60,24 @@ var ns_crops = {
         color:"#69F052",
         data:{}
       },
+      'soy':{
+        name:'Soy Output',
+        unit:'10,000 tonnes',
+        column:'Output of Soja(10000 tons)',
+        min:2,
+        max:360,
+        color:"#69F052",
+        data:{}
+      },
+      'potato':{
+        name:'Potatoes Output',
+        unit:'10,000 tonnes',
+        column:'Output of Potato(10000 tons)',
+        min:2,
+        max:360,
+        color:"#69F052",
+        data:{}
+      },
     }
 
 

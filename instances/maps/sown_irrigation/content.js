@@ -8,6 +8,9 @@ var formatTotal = d3.format(',.0f');
 var width = 960,
 height = 700;
 
+var color_irrigated="#6B8033"
+var color_sown="#0F1C11"
+
 // legends positions
 var leg_bubble1_top = height - 170;
 var leg_bubble1_left = width - 115;
@@ -61,12 +64,12 @@ var minValueSown = 100;
 //specify color for legend
 var colorBubbleIrrigated = d3.scaleLinear()
 .domain([minValueIrrigated, maxValueIrrigated])
-.range(["#000000"])
+.range([color_irrigated])
 .interpolate(d3.interpolateHcl);
 
 var colorBubbleSown = d3.scaleLinear()
 .domain([minValueSown, maxValueSown])
-.range(["#69F052"])
+.range([color_sown])
 .interpolate(d3.interpolateHcl);
 
 function showMapTooltipIrrigated(d) {
@@ -237,8 +240,8 @@ d3.json(wri_json_url, function(error, wri){
 							.style('fill', function(d) {
 								return colorBubbleIrrigated(value_irrigated_area[d.properties.NAME_1]);
 							})
-							.style('fill-opacity',0.7)
-							.style('stroke','black')
+							.style('fill-opacity',1)
+							.style('stroke',color_irrigated)
 							.on("mousemove", showMapTooltipIrrigated)
 							.on("mouseout", function(d){ tooltip.style("display", "none");});
 
@@ -256,8 +259,8 @@ d3.json(wri_json_url, function(error, wri){
 							.style('fill', function(d) {
 								return colorBubbleSown(value_sown_area[d.properties.NAME_1]);
 							})
-							.style('fill-opacity',0.7)
-							.style('stroke','#69F052')
+							.style('fill-opacity',1)
+							.style('stroke','color_sown')
 							.on("mousemove", showMapTooltipSown)
 							.on("mouseout", function(d){ tooltip.style("display", "none");});
 
@@ -296,7 +299,7 @@ d3.json(wri_json_url, function(error, wri){
 							.enter()
 							.append("circle")
 							.attr("class", "legend-bubble")
-							.attr("fill", "#000000")
+							.attr("fill", color_irrigated)
               .attr("opacity",0.3)
 							.attr("cx", leg_bubble1_left + radiusIrrigated(maxValueIrrigated))
 							.attr("cy", function(d) { return leg_bubble1_top - radiusIrrigated(d) + 140; })
@@ -334,7 +337,7 @@ d3.json(wri_json_url, function(error, wri){
 							.enter()
 							.append("circle")
 							.attr("class", "legend-bubble sown-g")
-							.attr("fill", "#69F052")
+							.attr("fill", color_sown)
 							.attr("opacity",0.3)
 							.attr("cx", leg_bubble1_left + radiusSown(maxValueSown))
 							.attr("cy", function(d) { return leg_bubble1_top - radiusSown(d) + 140; })

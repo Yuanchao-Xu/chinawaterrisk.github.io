@@ -264,6 +264,24 @@ d3.json(wri_json_url, function(error, wri){
 							.on("mousemove", showMapTooltipSown)
 							.on("mouseout", function(d){ tooltip.style("display", "none");});
 
+              svg.selectAll('#bubble_irrigated')
+              .data(centroids.features)
+              .enter()
+              .append('circle')
+              .attr('id', 'bubble_irrigated')
+              .attr('class', 'irrigated-g')
+              .attr('transform', function(d) { return 'translate(' + path.centroid(d) + ')'; })
+              .attr('r', function(d){
+                return radiusIrrigated(value_irrigated_area[d.properties.NAME_1]);
+              })
+              .style('fill', function(d) {
+                return colorBubbleIrrigated(value_irrigated_area[d.properties.NAME_1]);
+              })
+              .style('fill-opacity',1)
+              .style('stroke',color_irrigated)
+              .on("mousemove", showMapTooltipIrrigated)
+              .on("mouseout", function(d){ tooltip.style("display", "none");});
+
 
 							svg.selectAll('#bubble_text')
 							.style("text-anchor", "middle")

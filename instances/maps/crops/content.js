@@ -81,6 +81,36 @@ var ns_crops = {
     }
 
 
+    var value_livestocks =
+    {
+      'beef':{
+        name:'Beef Output',
+        unit:'10,000 tonnes',
+        column:'Output of Beef(10000 tons)',
+        min:5,
+        max:1000,
+        color:"#141C28",
+        data:{}
+      },
+      'pork':{
+        name:'Pork Output',
+        unit:'10,000 tonnes',
+        column:'Output of Pork(10000 tons)',
+        min:5,
+        max:1000,
+        color:"#141C28",
+        data:{}
+      },
+      'mutton':{
+        name:'Mutton Output',
+        unit:'10,000 tonnes',
+        column:'Output of Mutton(10000 tons)',
+        min:5,
+        max:1000,
+        color:"#141C28",
+        data:{}
+      }
+    }
     var value_water_resources = {};
     var color_water_resources = {};
 
@@ -208,12 +238,19 @@ var ns_crops = {
 
     }
 
+    for (var livestock in value_livestocks) {
+      value_livestocks[livestock]['radius'] =  d3.scaleSqrt()
+      .domain([value_livestocks[livestock].min, value_livestocks[livestock].max])
+      .range([5, 50]);
+    }
+
 
     var wri_json_url='https://raw.githubusercontent.com/chinawaterrisk/chinawaterrisk.github.io/master/resources/json/china/wri/wri_china_simplified_sd.geojson'
     var provinces_json_url='https://raw.githubusercontent.com/chinawaterrisk/chinawaterrisk.github.io/master/resources/json/china/province/simplified_smoothed_cleaned_provinces_sd.geojson'
     var provinces_centroids_json_url='https://raw.githubusercontent.com/chinawaterrisk/chinawaterrisk.github.io/master/resources/json/china/province/provinces_centroids.geojson'
 
     var crops_output_csv_url='https://raw.githubusercontent.com/chinawaterrisk/chinawaterrisk.github.io/master/resources/csv/agriculture/crop_output_2016.csv'
+    var livestock_output_csv_url='https://raw.githubusercontent.com/chinawaterrisk/chinawaterrisk.github.io/master/resources/csv/agriculture/livestock_output_2016.csv'
 
     var water_resources_csv_url='https://raw.githubusercontent.com/chinawaterrisk/chinawaterrisk.github.io/master/resources/csv/water_resources.csv'
     var tws_url='https://raw.githubusercontent.com/chinawaterrisk/chinawaterrisk.github.io/master/resources/json/china/tws/tws_china.geojson'
@@ -223,411 +260,429 @@ var ns_crops = {
         d3.json(provinces_centroids_json_url, function(error, centroids){
           d3.json(tws_url, function(error, tws){
             d3.csv(crops_output_csv_url, function(error, data_crops){
-              d3.csv(water_resources_csv_url, function(error, data_water_resources){
+              d3.csv(livestock_output_csv_url, function(error, data_livestocks){
+                d3.csv(water_resources_csv_url, function(error, data_water_resources){
 
-                //load data
-                data_crops.forEach(function(d){
-                  for (var crop in value_crops) {
+                  //load data
+                  data_crops.forEach(function(d){
+                    for (var crop in value_crops) {
                       value_crop = value_crops[crop];
                       value_crops[crop]['data'][d.Province] = parseFloat(d[value_crop.column]) || 0;
+                    }
+                  });
+
+                  data_livestocks.forEach(function(d){
+                    for (var livestock in value_livestocks) {
+                      value_livestock = value_livestocks[livestock];
+                      value_livestocks[livestock]['data'][d.Province] = parseFloat(d[value_livestock.column]) || 0;
+                    }
+                  });
+
+                  data_water_resources.forEach(function(d){
+                    value_water_resources[d.Province] = d['Water Resources Per Capita (cum/year)']; //TODO
+                    color_water_resources[d.Province] = d.Color;
+                  });
+
+                  svg.selectAll('#wri')
+                  .data(wri.features)
+                  .enter()
+                  .append('path')
+                  .attr('id', 'wri')
+                  .attr('class','wri-g')
+                  .attr('d', path)
+                  .style('fill', function(d){
+                    return colorWri(d.properties.BWS_cat.charAt(0));
+                  });
+
+                  svg.selectAll('#province_fill')
+                  .data(provinces.features)
+                  .enter()
+                  .append('path')
+                  .attr('id', 'province_fill')
+                  .attr('class','avail-g')
+                  .attr('d', path)
+                  .style('fill', function(d){
+                    return colorAvail(value_water_resources[d.properties.NAME_1]);
+                  })
+                  .style('stroke', 'transparent');
+
+                  svg.selectAll('#tws')
+                  .data(tws.features)
+                  .enter()
+                  .append('path')
+                  .attr('id', 'tws')
+                  .attr('class','tws-g')
+                  .attr('d', path)
+                  .style('fill', function(d){
+                    return colorTws(d.properties.tws);
+                  });
+
+
+                  svg.selectAll('#province_border')
+                  .data(provinces.features)
+                  .enter()
+                  .append('path')
+                  .attr('id', 'province_border')
+                  .attr('class','province-border-g')
+                  .attr('d', path)
+                  .style('fill', 'transparent')
+                  .style('stroke', '#CFD8DC')
+                  .style('stroke-width', 1);
+
+
+
+
+                  // bubbles and legend for each item
+                  var value_to_items = function(value_dict,item){
+
+                    svg.selectAll('#bubble_'+item)
+                    .data(centroids.features)
+                    .enter()
+                    .append('circle')
+                    .attr('id', 'bubble_'+item)
+                    .attr('class', item+'-g')
+                    .attr('transform', function(d) { return 'translate(' + path.centroid(d) + ')'; })
+                    .attr('r', function(d){
+                      return value_dict.radius(value_dict.data[d.properties.NAME_1]);
+                    })
+                    .style('fill', function(d) {
+                      return value_dict.color;
+                    })
+                    .style('fill-opacity',0.7)
+                    .style('stroke',value_dict.color)
+                    //.on("mouseover", showMapTooltipCoal)
+                    //.on("mousemove", showMapTooltipCoal)
+                    //.on("mouseout", function(d){ tooltip.style("display", "none");});
+
+                    var legend_bubbled_crop = svg.append("g")
+                    .attr("class", "legend legend-bubble "+item+"-g");
+
+                    var leg1 = legend_bubbled_crop.append("text")
+                    .attr("class", "legend-header")
+                    .attr("x", leg_bubble1_left)
+                    .attr("y", leg_bubble1_top + offsetLegendBubble2())
+                    .text(value_dict.name);
+
+                    legend_bubbled_crop.append("text")
+                    .attr("class", "legend-unit")
+                    .attr("x", leg_bubble1_left)
+                    .attr("y", leg_bubble1_top)
+                    .attr("dy","1em")
+                    .text("["+value_dict.unit+"]");
+
+                    legend_bubbled_crop.selectAll(".legend-bubble")
+                    .data([value_dict.min, (value_dict.max + value_dict.min) / 3, value_dict.max])
+                    .enter()
+                    .append("circle")
+                    .attr("class", "legend-bubble")
+                    .attr("fill", value_dict.color)
+                    .attr("opacity",0.3)
+                    .attr("cx", leg_bubble1_left + value_dict.radius(value_dict.max))
+                    .attr("cy", function(d) { return leg_bubble1_top - value_dict.radius(d) + 140; })
+                    .attr("r", function(d) { return value_dict.radius(d); });
+
+                    legend_bubbled_crop.selectAll(".legend-label")
+                    .data([value_dict.min, (value_dict.max + value_dict.min) / 3, value_dict.max])
+                    .enter()
+                    .append("text")
+                    .attr("class", "legend-label")
+                    .attr("x", leg_bubble1_left + value_dict.radius(value_dict.max) - 7)
+                    .attr("y", function(d) { return (leg_bubble1_top +135 - 2 * value_dict.radius(d)); })
+                    .text(d3.format(".1s"));
                   }
-                });
-
-                data_water_resources.forEach(function(d){
-                  value_water_resources[d.Province] = d['Water Resources Per Capita (cum/year)']; //TODO
-                  color_water_resources[d.Province] = d.Color;
-                });
-
-                svg.selectAll('#wri')
-                .data(wri.features)
-                .enter()
-                .append('path')
-                .attr('id', 'wri')
-                .attr('class','wri-g')
-                .attr('d', path)
-                .style('fill', function(d){
-                  return colorWri(d.properties.BWS_cat.charAt(0));
-                });
-
-                svg.selectAll('#province_fill')
-                .data(provinces.features)
-                .enter()
-                .append('path')
-                .attr('id', 'province_fill')
-                .attr('class','avail-g')
-                .attr('d', path)
-                .style('fill', function(d){
-                  return colorAvail(value_water_resources[d.properties.NAME_1]);
-                })
-                .style('stroke', 'transparent');
-
-                svg.selectAll('#tws')
-                .data(tws.features)
-                .enter()
-                .append('path')
-                .attr('id', 'tws')
-                .attr('class','tws-g')
-                .attr('d', path)
-                .style('fill', function(d){
-                  return colorTws(d.properties.tws);
-                });
 
 
-                svg.selectAll('#province_border')
-                .data(provinces.features)
-                .enter()
-                .append('path')
-                .attr('id', 'province_border')
-                .attr('class','province-border-g')
-                .attr('d', path)
-                .style('fill', 'transparent')
-                .style('stroke', '#CFD8DC')
-                .style('stroke-width', 1);
+
+                  for (var crop in value_crops) {
+                    value_crop = value_crops[crop];
+                    value_to_items(value_crop, crop);
+                  }
+
+                  for (var livestock in value_livestocks) {
+                    value_livestock = value_livestocks[livestock];
+                    value_to_items(value_livestock, livestock);
+                  }
+
+                  //
+                  //
+                  // svg.selectAll('#bubble_sown')
+                  // .data(centroids.features)
+                  // .enter()
+                  // .append('circle')
+                  // .attr('id', 'bubble_sown')
+                  // .attr('class', 'sown-g')
+                  // .attr('transform', function(d) { return 'translate(' + path.centroid(d) + ')'; })
+                  // .attr('r', function(d){
+                  //   return radiusSown(value_sown_area[d.properties.NAME_1]);
+                  // })
+                  // .style('fill', function(d) {
+                  //   return colorBubbleSown(value_sown_area[d.properties.NAME_1]);
+                  // })
+                  // .style('fill-opacity',0.7)
+                  // .style('stroke','#69F052')
+                  // .on("mousemove", showMapTooltipSown)
+                  // .on("mouseout", function(d){ tooltip.style("display", "none");});
 
 
-                for (var crop in value_crops) {
-
-                  value_crop = value_crops[crop];
-
-                  svg.selectAll('#bubble_'+crop)
+                  svg.selectAll('#bubble_text')
+                  .style("text-anchor", "middle")
                   .data(centroids.features)
                   .enter()
-                  .append('circle')
-                  .attr('id', 'bubble_'+crop)
-                  .attr('class', crop+'-g')
+                  .append('text')
+                  .attr('id', 'bubble_text')
                   .attr('transform', function(d) { return 'translate(' + path.centroid(d) + ')'; })
-                  .attr('r', function(d){
-                    return value_crop.radius(value_crop.data[d.properties.NAME_1]);
-                  })
-                  .style('fill', function(d) {
-                    return value_crop.color;
-                  })
-                  .style('fill-opacity',0.7)
-                  .style('stroke',value_crop.color)
-                  //.on("mouseover", showMapTooltipCoal)
-                  //.on("mousemove", showMapTooltipCoal)
+                  .style('fill','#FFFFFF')
+                  .text(function(d) { return d.properties.NAME_1; })
+                  //.on("mousemove", showMapTooltip)
                   //.on("mouseout", function(d){ tooltip.style("display", "none");});
 
 
-                  var legend_bubbled_crop = svg.append("g")
-                  .attr("class", "legend legend-bubble "+crop+"-g");
 
-                  var leg1 = legend_bubbled_crop.append("text")
+                  //
+                  //
+                  //
+                  // var legend_bubbled_sown = svg.append("g")
+                  // .attr("class", "legend legend-bubble sown-g");
+                  //
+                  // legend_bubbled_sown.append("text")
+                  // .attr("class", "legend-header sown-g")
+                  // .attr("x", leg_bubble1_left)
+                  // .attr("y", leg_bubble1_top)
+                  // .text("Sown area");
+                  //
+                  // legend_bubbled_sown.append("text")
+                  // .attr("class", "legend-unit sown-g")
+                  // .attr("x", leg_bubble1_left)
+                  // .attr("y", leg_bubble1_top)
+                  // .attr("dy","1em")
+                  // .text("[1,000 hectares]");
+                  //
+                  // legend_bubbled_sown.selectAll(".legend-bubble")
+                  // .data([minValueSown, (maxValueSown + minValueSown) / 3, maxValueSown])
+                  // .enter()
+                  // .append("circle")
+                  // .attr("class", "legend-bubble sown-g")
+                  // .attr("fill", "#69F052")
+                  // .attr("opacity",0.3)
+                  // .attr("cx", leg_bubble1_left + radiusSown(maxValueSown))
+                  // .attr("cy", function(d) { return leg_bubble1_top - radiusSown(d) + 140; })
+                  // .attr("r", function(d) { return radiusSown(d); });
+                  //
+                  // legend_bubbled_sown.selectAll(".legend-label")
+                  // .data([minValueSown, (maxValueSown + minValueSown) / 3, maxValueSown])
+                  // .enter()
+                  // .append("text")
+                  // .attr("class", "legend-label sown-g")
+                  // .attr("x", leg_bubble1_left + radiusSown(maxValueSown) - 7)
+                  // .attr("y", function(d) { return (leg_bubble1_top +135 - 2 * radiusSown(d)); })
+                  // .text(d3.format(".1s"));
+
+                  var legend_wri = svg.append("g")
+                  .attr("class", "legend legend-squared wri-g");
+
+                  legend_wri.append("text")
                   .attr("class", "legend-header")
-                  .attr("x", leg_bubble1_left)
-                  .attr("y", leg_bubble1_top + offsetLegendBubble2())
-                  .text(value_crop.name);
+                  .attr("x", leg_basemap_left)
+                  .attr("y", leg_basemap_top)
+                  .text("Water Stress");
 
-                  legend_bubbled_crop.append("text")
-                  .attr("class", "legend-unit")
-                  .attr("x", leg_bubble1_left)
-                  .attr("y", leg_bubble1_top)
-                  .attr("dy","1em")
-                  .text("["+value_crop.unit+"]");
-
-                  legend_bubbled_crop.selectAll(".legend-bubble")
-                  .data([value_crop.min, (value_crop.max + value_crop.min) / 3, value_crop.max])
+                  legend_wri.selectAll(".legend-square")
+                  .data(['1','2','3','4','5','A'])
                   .enter()
-                  .append("circle")
-                  .attr("class", "legend-bubble")
-                  .attr("fill", value_crop.color)
-                  .attr("opacity",0.3)
-                  .attr("cx", leg_bubble1_left + value_crop.radius(value_crop.max))
-                  .attr("cy", function(d) { return leg_bubble1_top - value_crop.radius(d) + 140; })
-                  .attr("r", function(d) { return value_crop.radius(d); });
+                  .append("rect")
+                  .attr("class", "legend-square")
+                  .attr("x", leg_basemap_left)
+                  .attr("y", function(d, i) { return leg_basemap_top + 20 + i * 15 ; })
+                  .attr("width", 15)
+                  .attr("height", 15)
+                  .style("fill", function(d) { return colorWri(d); });
 
-                  legend_bubbled_crop.selectAll(".legend-label")
-                  .data([value_crop.min, (value_crop.max + value_crop.min) / 3, value_crop.max])
+                  legend_wri.selectAll(".legend-label")
+                  .data(['Low', 'Arid'])
                   .enter()
                   .append("text")
                   .attr("class", "legend-label")
-                  .attr("x", leg_bubble1_left + value_crop.radius(value_crop.max) - 7)
-                  .attr("y", function(d) { return (leg_bubble1_top +135 - 2 * value_crop.radius(d)); })
-                  .text(d3.format(".1s"));
+                  .attr("x", leg_basemap_left + 20)
+                  .attr("y", function(d, i) { return leg_basemap_top + 20 + 12 + i * (15 * 5); })
+                  .text(function(d) { return d; });
 
+                  var legend_avail = svg.append("g")
+                  .attr("class", "legend legend-squared avail-g");
 
-                }
+                  legend_avail.append("text")
+                  .attr("class", "legend-header")
+                  .attr("x", leg_basemap_left)
+                  .attr("y", leg_basemap_top)
+                  .text("Water Resources");
 
-                //
-                //
-                // svg.selectAll('#bubble_sown')
-                // .data(centroids.features)
-                // .enter()
-                // .append('circle')
-                // .attr('id', 'bubble_sown')
-                // .attr('class', 'sown-g')
-                // .attr('transform', function(d) { return 'translate(' + path.centroid(d) + ')'; })
-                // .attr('r', function(d){
-                //   return radiusSown(value_sown_area[d.properties.NAME_1]);
-                // })
-                // .style('fill', function(d) {
-                //   return colorBubbleSown(value_sown_area[d.properties.NAME_1]);
-                // })
-                // .style('fill-opacity',0.7)
-                // .style('stroke','#69F052')
-                // .on("mousemove", showMapTooltipSown)
-                // .on("mouseout", function(d){ tooltip.style("display", "none");});
+                  legend_avail.append("text")
+                  .attr("class", "legend-header")
+                  .attr("x", leg_basemap_left)
+                  .attr("y", leg_basemap_top)
+                  .attr("dy", "1em") // you can vary how far apart it shows up
+                  .text("Per Capita");
 
+                  legend_avail.append("text")
+                  .attr("class", "legend-unit")
+                  .attr("x", leg_basemap_left)
+                  .attr("y", leg_basemap_top)
+                  .attr("dy", "2em") // you can vary how far apart it shows up
+                  .text("[cum/pax/year]");
 
-                svg.selectAll('#bubble_text')
-                .style("text-anchor", "middle")
-                .data(centroids.features)
-                .enter()
-                .append('text')
-                .attr('id', 'bubble_text')
-                .attr('transform', function(d) { return 'translate(' + path.centroid(d) + ')'; })
-                .style('fill','#FFFFFF')
-                .text(function(d) { return d.properties.NAME_1; })
-                //.on("mousemove", showMapTooltip)
-                //.on("mouseout", function(d){ tooltip.style("display", "none");});
+                  legend_avail.selectAll(".legend-square")
+                  .data(['499','999','1999','2001'])
+                  .enter()
+                  .append("rect")
+                  .attr("class", "legend-square")
+                  .attr("x", leg_basemap_left)
+                  .attr("y", function(d, i) { return leg_basemap_top + 40 + i * leg_square_size ; })
+                  .attr("width", leg_square_size)
+                  .attr("height", leg_square_size)
+                  .style("fill", function(d) { return colorAvail(d); });
 
+                  legend_avail.selectAll(".legend-label")
+                  .data(['<500', '500-1000', '1000-2000','>2000'])
+                  .enter()
+                  .append("text")
+                  .attr("class", "legend-label")
+                  .attr("x", leg_basemap_left + 20)
+                  .attr("y", function(d, i) { return leg_basemap_top + 40 + 12 + i * (leg_square_size); })
+                  .text(function(d) { return d; });
 
+                  var legend_tws = svg.append("g")
+                  .attr("class", "legend legend-squared tws-g");
 
-                //
-                //
-                //
-                // var legend_bubbled_sown = svg.append("g")
-                // .attr("class", "legend legend-bubble sown-g");
-                //
-                // legend_bubbled_sown.append("text")
-                // .attr("class", "legend-header sown-g")
-                // .attr("x", leg_bubble1_left)
-                // .attr("y", leg_bubble1_top)
-                // .text("Sown area");
-                //
-                // legend_bubbled_sown.append("text")
-                // .attr("class", "legend-unit sown-g")
-                // .attr("x", leg_bubble1_left)
-                // .attr("y", leg_bubble1_top)
-                // .attr("dy","1em")
-                // .text("[1,000 hectares]");
-                //
-                // legend_bubbled_sown.selectAll(".legend-bubble")
-                // .data([minValueSown, (maxValueSown + minValueSown) / 3, maxValueSown])
-                // .enter()
-                // .append("circle")
-                // .attr("class", "legend-bubble sown-g")
-                // .attr("fill", "#69F052")
-                // .attr("opacity",0.3)
-                // .attr("cx", leg_bubble1_left + radiusSown(maxValueSown))
-                // .attr("cy", function(d) { return leg_bubble1_top - radiusSown(d) + 140; })
-                // .attr("r", function(d) { return radiusSown(d); });
-                //
-                // legend_bubbled_sown.selectAll(".legend-label")
-                // .data([minValueSown, (maxValueSown + minValueSown) / 3, maxValueSown])
-                // .enter()
-                // .append("text")
-                // .attr("class", "legend-label sown-g")
-                // .attr("x", leg_bubble1_left + radiusSown(maxValueSown) - 7)
-                // .attr("y", function(d) { return (leg_bubble1_top +135 - 2 * radiusSown(d)); })
-                // .text(d3.format(".1s"));
+                  legend_tws.append("text")
+                  .attr("class", "legend-header")
+                  .attr("x", leg_basemap_left)
+                  .attr("y", leg_basemap_top)
+                  .text("Trends in");
 
-                var legend_wri = svg.append("g")
-                .attr("class", "legend legend-squared wri-g");
+                  legend_tws.append("text")
+                  .attr("class", "legend-header")
+                  .attr("x", leg_basemap_left)
+                  .attr("y", leg_basemap_top)
+                  .attr("dy", "1em") // you can vary how far apart it shows up
+                  .text("Water Storage");
 
-                legend_wri.append("text")
-                .attr("class", "legend-header")
-                .attr("x", leg_basemap_left)
-                .attr("y", leg_basemap_top)
-                .text("Water Stress");
+                  legend_tws.append("text")
+                  .attr("class", "legend-unit")
+                  .attr("x", leg_basemap_left)
+                  .attr("y", leg_basemap_top)
+                  .attr("dy", "2em") // you can vary how far apart it shows up
+                  .text("[cm/year]");
 
-                legend_wri.selectAll(".legend-square")
-                .data(['1','2','3','4','5','A'])
-                .enter()
-                .append("rect")
-                .attr("class", "legend-square")
-                .attr("x", leg_basemap_left)
-                .attr("y", function(d, i) { return leg_basemap_top + 20 + i * 15 ; })
-                .attr("width", 15)
-                .attr("height", 15)
-                .style("fill", function(d) { return colorWri(d); });
+                  legend_tws.selectAll(".legend-square")
+                  .data(['-2','-1','0','1','2'])
+                  .enter()
+                  .append("rect")
+                  .attr("class", "legend-square")
+                  .attr("x", leg_basemap_left)
+                  .attr("y", function(d, i) { return leg_basemap_top + 40 + i * 15 ; })
+                  .attr("width", 15)
+                  .attr("height", 15)
+                  .style("fill", function(d) { return colorTws(d); });
 
-                legend_wri.selectAll(".legend-label")
-                .data(['Low', 'Arid'])
-                .enter()
-                .append("text")
-                .attr("class", "legend-label")
-                .attr("x", leg_basemap_left + 20)
-                .attr("y", function(d, i) { return leg_basemap_top + 20 + 12 + i * (15 * 5); })
-                .text(function(d) { return d; });
+                  legend_tws.selectAll(".legend-label")
+                  .data(['-2', '0', '2'])
+                  .enter()
+                  .append("text")
+                  .attr("class", "legend-label")
+                  .attr("x", leg_basemap_left + 20)
+                  .attr("y", function(d, i) { return leg_basemap_top + 40 + 12 + i * (15 *2); })
+                  .text(function(d) { return d; });
 
-                var legend_avail = svg.append("g")
-                .attr("class", "legend legend-squared avail-g");
+                  // Selectors
+                  setBasemap = function(view) {
+                    var wri = svg.selectAll(".wri-g");
+                    var provinces = svg.selectAll(".avail-g");
+                    var tws = svg.selectAll(".tws-g");
 
-                legend_avail.append("text")
-                .attr("class", "legend-header")
-                .attr("x", leg_basemap_left)
-                .attr("y", leg_basemap_top)
-                .text("Water Resources");
-
-                legend_avail.append("text")
-                .attr("class", "legend-header")
-                .attr("x", leg_basemap_left)
-                .attr("y", leg_basemap_top)
-                .attr("dy", "1em") // you can vary how far apart it shows up
-                .text("Per Capita");
-
-                legend_avail.append("text")
-                .attr("class", "legend-unit")
-                .attr("x", leg_basemap_left)
-                .attr("y", leg_basemap_top)
-                .attr("dy", "2em") // you can vary how far apart it shows up
-                .text("[cum/pax/year]");
-
-                legend_avail.selectAll(".legend-square")
-                .data(['499','999','1999','2001'])
-                .enter()
-                .append("rect")
-                .attr("class", "legend-square")
-                .attr("x", leg_basemap_left)
-                .attr("y", function(d, i) { return leg_basemap_top + 40 + i * leg_square_size ; })
-                .attr("width", leg_square_size)
-                .attr("height", leg_square_size)
-                .style("fill", function(d) { return colorAvail(d); });
-
-                legend_avail.selectAll(".legend-label")
-                .data(['<500', '500-1000', '1000-2000','>2000'])
-                .enter()
-                .append("text")
-                .attr("class", "legend-label")
-                .attr("x", leg_basemap_left + 20)
-                .attr("y", function(d, i) { return leg_basemap_top + 40 + 12 + i * (leg_square_size); })
-                .text(function(d) { return d; });
-
-                var legend_tws = svg.append("g")
-                .attr("class", "legend legend-squared tws-g");
-
-                legend_tws.append("text")
-                .attr("class", "legend-header")
-                .attr("x", leg_basemap_left)
-                .attr("y", leg_basemap_top)
-                .text("Trends in");
-
-                legend_tws.append("text")
-                .attr("class", "legend-header")
-                .attr("x", leg_basemap_left)
-                .attr("y", leg_basemap_top)
-                .attr("dy", "1em") // you can vary how far apart it shows up
-                .text("Water Storage");
-
-                legend_tws.append("text")
-                .attr("class", "legend-unit")
-                .attr("x", leg_basemap_left)
-                .attr("y", leg_basemap_top)
-                .attr("dy", "2em") // you can vary how far apart it shows up
-                .text("[cm/year]");
-
-                legend_tws.selectAll(".legend-square")
-                .data(['-2','-1','0','1','2'])
-                .enter()
-                .append("rect")
-                .attr("class", "legend-square")
-                .attr("x", leg_basemap_left)
-                .attr("y", function(d, i) { return leg_basemap_top + 40 + i * 15 ; })
-                .attr("width", 15)
-                .attr("height", 15)
-                .style("fill", function(d) { return colorTws(d); });
-
-                legend_tws.selectAll(".legend-label")
-                .data(['-2', '0', '2'])
-                .enter()
-                .append("text")
-                .attr("class", "legend-label")
-                .attr("x", leg_basemap_left + 20)
-                .attr("y", function(d, i) { return leg_basemap_top + 40 + 12 + i * (15 *2); })
-                .text(function(d) { return d; });
-
-                // Selectors
-                setBasemap = function(view) {
-                  var wri = svg.selectAll(".wri-g");
-                  var provinces = svg.selectAll(".avail-g");
-                  var tws = svg.selectAll(".tws-g");
-
-                  if (view === "wri") {
-                    wri.style("display", "inherit");
-                    provinces.style("display", "none");
-                    tws.style("display", "none");
-                  } else if (view === "avail") {
-                    wri.style("display", "none");
-                    tws.style("display", "none");
-                    provinces.style("display", "inherit");
-                  } else if (view === "tws") {
-                    wri.style("display", "none");
-                    provinces.style("display", "none");
-                    tws.style("display", "inherit");
-                  }
-                }
-
-                setBubbles = function(selected_crop) {
-                  selected_bubbles = selected_crop;
-
-                  for (var crop in value_crops) {
-
-                    if(crop==selected_crop){
-                      svg.selectAll("."+crop+"-g").style("display", "inherit");
-                    }else{
-                      svg.selectAll("."+crop+"-g").style("display", "none");
+                    if (view === "wri") {
+                      wri.style("display", "inherit");
+                      provinces.style("display", "none");
+                      tws.style("display", "none");
+                    } else if (view === "avail") {
+                      wri.style("display", "none");
+                      tws.style("display", "none");
+                      provinces.style("display", "inherit");
+                    } else if (view === "tws") {
+                      wri.style("display", "none");
+                      provinces.style("display", "none");
+                      tws.style("display", "inherit");
                     }
                   }
 
-                  //
-                  // var coal = svg.selectAll(".coal-g");
-                  // var sown = svg.selectAll(".sown-g");
-                  // //var sown_legend = svg.selectAll(".legend.sown-g");
-                  //
-                  // for
-                  //
-                  // if (view === "coal") {
-                  //   sown_legend.attr("transform", "translate(0,0)");
-                  //
-                  //   coal.style("display", "inherit");
-                  //   sown.style("display", "none");
-                  // } else if (view === "sown") {
-                  //   sown_legend.attr("transform", "translate(0,0)");
-                  //   coal.style("display", "none");
-                  //   sown.style("display", "inherit");
-                  // } else if (view === 'both'){
-                  //   coal.style("display", "inherit");
-                  //   sown.style("display", "inherit");
-                  //   // coal.transition().attr("x",0);
-                  //   // d3.select(".coal-g").transition().attr("x",0);
-                  //
-                  //   sown_legend.attr("transform", "translate(0,-200)");
-                  //   //       .duration(500)
-                  //   //       .attr("x",0);
-                  //   //       legend_bubbled_sown.enter().transition()
-                  //   //             .duration(500)
-                  //   //             .attr("y",0);
-                  //   // to_move = sown.data(sown.data());
-                  //   // to_move.transition()
-                  //   //       .attr("y",0);
-                  //
-                  // }
-                }
+                  setBubbles = function(selected) {
+                    selected_bubbles = selected;
+                    all_values = Object.assign({}, value_crops,value_livestocks);
 
-                //Set button toggle for view state
-                d3.selectAll("input[name='basemap']")
-                .on("click", function() {
-                  view = d3.select(this).attr("val");
-                  setBasemap(view);
+                    for (var item in all_values) {
+                      if(item==selected_bubbles){
+                        svg.selectAll("."+item+"-g").style("display", "inherit");
+                      }else{
+                        svg.selectAll("."+item+"-g").style("display", "none");
+                      }
+                    }
+
+                    //
+                    // var coal = svg.selectAll(".coal-g");
+                    // var sown = svg.selectAll(".sown-g");
+                    // //var sown_legend = svg.selectAll(".legend.sown-g");
+                    //
+                    // for
+                    //
+                    // if (view === "coal") {
+                    //   sown_legend.attr("transform", "translate(0,0)");
+                    //
+                    //   coal.style("display", "inherit");
+                    //   sown.style("display", "none");
+                    // } else if (view === "sown") {
+                    //   sown_legend.attr("transform", "translate(0,0)");
+                    //   coal.style("display", "none");
+                    //   sown.style("display", "inherit");
+                    // } else if (view === 'both'){
+                    //   coal.style("display", "inherit");
+                    //   sown.style("display", "inherit");
+                    //   // coal.transition().attr("x",0);
+                    //   // d3.select(".coal-g").transition().attr("x",0);
+                    //
+                    //   sown_legend.attr("transform", "translate(0,-200)");
+                    //   //       .duration(500)
+                    //   //       .attr("x",0);
+                    //   //       legend_bubbled_sown.enter().transition()
+                    //   //             .duration(500)
+                    //   //             .attr("y",0);
+                    //   // to_move = sown.data(sown.data());
+                    //   // to_move.transition()
+                    //   //       .attr("y",0);
+                    //
+                    // }
+                  }
+
+                  //Set button toggle for view state
+                  d3.selectAll("input[name='basemap']")
+                  .on("click", function() {
+                    view = d3.select(this).attr("val");
+                    setBasemap(view);
+                  });
+
+                  d3.selectAll("input[name='bubbles']")
+                  .on("click", function() {
+                    view = d3.select(this).attr("val");
+                    setBubbles(view);
+                  });
+
+                  setBasemap("wri")
+                  setBubbles("wheat")
+
                 });
-
-                d3.selectAll("input[name='bubbles']")
-                .on("click", function() {
-                  view = d3.select(this).attr("val");
-                  setBubbles(view);
-                });
-
-                setBasemap("wri")
-                setBubbles("wheat")
-
               });
             });
           });
         });
       });
     });
-
 
     function tooltip_chart_coal(d, container_id){
       return tooltip_chart(d,value_coal_resources_years,'Coal reserves','',container_id);

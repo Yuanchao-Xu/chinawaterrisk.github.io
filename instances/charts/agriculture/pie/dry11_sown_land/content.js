@@ -8,7 +8,7 @@ chart = new Highcharts.Chart({
     style: {
       fontFamily: 'Arial Narrow'
        },
-    height:'95%',
+    height:'100%',
     backgroundColor:"transparent"
   },
   title: {

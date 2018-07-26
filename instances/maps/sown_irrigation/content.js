@@ -1,4 +1,7 @@
 
+var ns_irrigation_map = {
+
+  init: function(){
 //var ValueByProvince = d3.map();
 var map_id='sown_irrigation_map_container'
 
@@ -72,42 +75,36 @@ var colorBubbleSown = d3.scaleLinear()
 .range([color_sown])
 .interpolate(d3.interpolateHcl);
 
-function showMapTooltipIrrigated(d) {
+function showMapTooltipAll(d) {
       province_name = d.properties.NAME_1;
-			mn_tonnes = value_irrigated_area[province_name];
+			irrigated_area = value_irrigated_area[province_name];
+			sown_area = value_sown_area[province_name];
 
-			x=(d3.event.layerX - 30)
+      svg_width = parseInt(svg.style("width"))
+
+      if(d3.event.layerX > svg_width)
+			x=(d3.event.layerX +30)
 			y=(d3.event.layerY - 70)
 
       var mouse = d3.mouse(svg.node())
         .map( function(d) { return parseInt(d); } );
-      	tooltip.style("display", "inherit")
-        .attr("class", "map-tooltip irrigated-g")
-        .attr("style", "left:"+x+"px;top:"+y+"px")
-        .html("<b>"+province_name+"</b><br /> "+mn_tonnes+" mn tonnes" );
+    	tooltip.style("display", "inherit")
+      .attr("class", "map-tooltip irrigated-g")
+      .attr("style", "left:"+x+"px;top:"+y+"px")
+      .html("<b>"+province_name+"</b><br/> "+
+            "Sown area: "+sown_area+" x 1,000 hectares<br/>"+
+            "Irrigated area: "+parseInt(parseFloat(irrigated_area)/parseFloat(sown_area)*100)+"%");
 }
 
-function showMapTooltipSown(d) {
-      province_name = d.properties.NAME_1;
-			area = value_sown_area[province_name];
 
-			x=(d3.event.layerX - 30)
-			y=(d3.event.layerY - 70)
-
-      var mouse = d3.mouse(svg.node())
-        .map( function(d) { return parseInt(d); } );
-      	tooltip.style("display", "inherit")
-        .attr("class", "map-tooltip sown-g")
-        .attr("style", "left:"+x+"px;top:"+y+"px")
-        .html("<b>"+province_name+"</b><br /> "+area+" x 1,000 hectares" );
-}
 
 function showMapTooltip(d){
-  if(selected_bubbles=='irrigated'){
-    return showMapTooltipIrrigated(d);
-  }else if(selected_bubbles=='sown'){
-    return showMapTooltipSown(d);
-  }
+  showMapTooltipAll(d);
+  // if(selected_bubbles=='irrigated'){
+  //   return showMapTooltipIrrigated(d);
+  // }else if(selected_bubbles=='sown'){
+  //   return showMapTooltipSown(d);
+  // }
 }
 
 colorAvail = function(cum){
@@ -242,7 +239,7 @@ d3.json(wri_json_url, function(error, wri){
 							})
 							.style('fill-opacity',1)
 							.style('stroke','color_sown')
-							.on("mousemove", showMapTooltipSown)
+							.on("mousemove", showMapTooltip)
 							.on("mouseout", function(d){ tooltip.style("display", "none");});
 
               svg.selectAll('#bubble_irrigated')
@@ -260,7 +257,7 @@ d3.json(wri_json_url, function(error, wri){
               })
               .style('fill-opacity',1)
               .style('stroke',color_irrigated)
-              .on("mousemove", showMapTooltipIrrigated)
+              .on("mousemove", showMapTooltip)
               .on("mouseout", function(d){ tooltip.style("display", "none");});
 
 
@@ -546,3 +543,7 @@ d3.json(wri_json_url, function(error, wri){
 		});
 	});
 });
+}
+}
+
+ns_irrigation_map.init();

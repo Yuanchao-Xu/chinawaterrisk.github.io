@@ -18,6 +18,8 @@ var leg_basemap_left = 10;
 var leg_square_size = 15
 
 var value_coal_resources = {};
+var value_coal_resources_years = {};
+
 var value_sown_area = {};
 var value_water_resources = {};
 var color_water_resources = {};
@@ -47,7 +49,11 @@ var svg = d3.select("#"+map_id)
 .attr("viewBox", "0 0 960 700")
 .classed("svg-content", true);
 
-var tooltip = d3.select("#"+map_id).append("div").attr("class", "map-tooltip");
+var tooltip = d3.select("#"+map_id)
+  .append("div")
+  .style("position", "absolute")
+  .attr("class", "map-tooltip")
+  .attr("id","map_tooltip");
 var offsetL = document.getElementById(map_id).offsetLeft+10;
 var offsetT = document.getElementById(map_id).offsetTop+10;
 
@@ -76,12 +82,25 @@ function showMapTooltipCoal(d) {
 			x=(d3.event.layerX - 30)
 			y=(d3.event.layerY - 70)
 
-      var mouse = d3.mouse(svg.node())
-        .map( function(d) { return parseInt(d); } );
-      	tooltip.style("display", "inherit")
-        .attr("class", "map-tooltip coal-g")
-        .attr("style", "left:"+x+"px;top:"+y+"px")
-        .html("<b>"+province_name+"</b><br /> "+mn_tonnes+" mn tonnes" );
+      tooltip.attr("class", "map-tooltip coal-g");
+      tooltip.style("display", "inherit");
+      tooltip.style("top", y + "px").style("left",(x+50)+ "px");
+      //tooltip.style("top", (d3.event.pageY) + "px").style("left",(d3.event.pageX +20) + "px");
+
+      console.log(d3.event.type)
+      if(d3.event.type=="mouseover"){
+        tooltip_chart_coal(d,'map_tooltip');
+      }
+      //
+      // var mouse = d3.mouse(svg.node())
+      //   .map( function(d) { return parseInt(d); } );
+      //
+      // 	tooltip.style("display", "inherit")
+      //   .attr("class", "map-tooltip coal-g")
+      //   .attr("style", "left:"+x+"px;top:"+y+"px");
+      //   //.html("<b>"+province_name+"</b><br /> "+mn_tonnes+" mn tonnes" );
+
+
 }
 
 function showMapTooltipSown(d) {
@@ -147,7 +166,7 @@ var wri_json_url='https://raw.githubusercontent.com/chinawaterrisk/chinawaterris
 var provinces_json_url='https://raw.githubusercontent.com/chinawaterrisk/chinawaterrisk.github.io/master/resources/json/china/province/simplified_smoothed_cleaned_provinces_sd.geojson'
 var provinces_centroids_json_url='https://raw.githubusercontent.com/chinawaterrisk/chinawaterrisk.github.io/master/resources/json/china/province/provinces_centroids.geojson'
 var coal_resources_csv_url='https://raw.githubusercontent.com/chinawaterrisk/chinawaterrisk.github.io/master/resources/csv/coal_resources_mn_tonnes.csv'
-var sown_area_csv_url='https://raw.githubusercontent.com/chinawaterrisk/chinawaterrisk.github.io/master/resources/csv/agriculture/sown_area_2016.csv'
+var sown_area_csv_url='https://raw.githubusercontent.com/chinawaterrisk/chinawaterrisk.github.io/master/resources/csv/agriculture/sown_area_years_1000ha.csv'
 var water_resources_csv_url='https://raw.githubusercontent.com/chinawaterrisk/chinawaterrisk.github.io/master/resources/csv/water_resources.csv'
 var tws_url='https://raw.githubusercontent.com/chinawaterrisk/chinawaterrisk.github.io/master/resources/json/china/tws/tws_china.geojson'
 
@@ -161,12 +180,13 @@ d3.json(wri_json_url, function(error, wri){
 
 							//load data
 							data_coal_resources.forEach(function(d){
-								value_coal_resources[d.Province] = parseFloat(d[2016]);
-								value_coal_resources[d.Region] = parseFloat(d[2016]); // waiting for github to refresh. Delete once done
+								value_coal_resources[d.Province] = parseFloat(d['2016']);
+								value_coal_resources[d.Region] = parseFloat(d['2016']); // waiting for github to refresh. Delete once done
+								value_coal_resources_years[d.Province] = d; // waiting for github to refresh. Delete once done
 							});
 
 							data_sown_area.forEach(function(d){
-								value_sown_area[d.Province] = parseFloat(d['Total Sown Areas of Farm Crops(1000 hectares)']);
+								value_sown_area[d.Province] = parseFloat(d['2016']);
 							});
 
 
@@ -237,6 +257,7 @@ d3.json(wri_json_url, function(error, wri){
 							})
 							.style('fill-opacity',0.7)
 							.style('stroke','black')
+							.on("mouseover", showMapTooltipCoal)
 							.on("mousemove", showMapTooltipCoal)
 							.on("mouseout", function(d){ tooltip.style("display", "none");});
 
@@ -542,3 +563,151 @@ d3.json(wri_json_url, function(error, wri){
 		});
 	});
 });
+
+
+function tooltip_chart_coal(d, container_id){
+  return tooltip_chart(d,value_coal_resources_years,'Coal reserves','',container_id);
+}
+
+
+function tooltip_chart(d, data_years, title, unit, container_id){
+  var data_dict = data_years[d.properties.NAME_1]
+  var keys=Object.keys(data_dict).filter(function(item) { return item !== "Province"});
+  var data = keys.map(function(v) { return [parseInt(v),parseFloat(data_dict[v])]; });
+
+  Highcharts.chart(container_id, {
+  				credits: {
+  					enabled: false
+  				},
+  				chart: {
+            width:200,
+            height:160,
+  					style: {
+  						fontFamily: 'Arial Narrow'
+  					},
+  					alignTicks: false,
+  					spacingTop: 5,
+  					spacingRight: 5,
+  					spacingBottom: 5,
+  					spacingLeft: 5,
+            backgroundColor:"transparent"
+
+  				},
+  				title: {
+  					text: title,
+  					align: 'left',
+  					style: {
+  						color: 'black',
+  						fontSize: '14px',
+  						fontWeight: 'bold'
+  					}
+  				},
+  				xAxis: {
+  					className: 'x-axis',
+  					tickInterval: 2,
+  					labels: {
+  						style: {
+  							color: 'black',
+  							fontSize:'10px'
+  						}
+  					},
+  					//lineColor: 'black',
+  					tickLength: 0
+  			//		categories: ['2000', '2005', '2010', '2015', '2020', '2025', '2030']
+  				},
+  				yAxis: [{
+  					className: 'y-axis',
+  					labels: {
+  						formatter: function() {
+  						   return this.value;
+  						},
+  						style: {
+  							color: 'black',
+  							fontSize:'10px'
+  						}
+  					},
+  					gridLineColor: '#F3F3F3',
+  					// tickInterval: 10000,
+  					min: 0,
+  					// max: 70000,
+  					 title: {
+  					 	text: ''
+  					 }
+  				}],
+  				tooltip: {
+  					headerFormat: '<b>{series.name}</b><br/>',
+  					pointFormat: '{point.x}: {point.y:.1f}',
+  					borderColor: 'black'
+  				},
+
+  				plotOptions: {
+  					series: {
+  						label: {
+  							connectorAllowed: false
+  						},
+  						pointStart: 2006
+  					},
+  					spline: {
+  						marker: {
+  							enabled: false,
+  							symbol: 'circle',
+  							radius: 2,
+  							states: {
+  								hover: {
+  									enabled: true
+  								}
+  							}
+  						}
+  					},
+  					line: {
+              animation: false,
+  						marker: {
+  							enabled: false,
+  							symbol: 'circle',
+  							radius: 2,
+  							states: {
+  								hover: {
+  									enabled: true
+  								}
+  							}
+  						}
+  					}
+  				},
+  				legend: {
+  					enabled: false
+  				},
+  				credits: {
+  					enabled: false
+  				},
+  				exporting: {
+  					enabled: false
+  				},
+  				series: [{
+  					//type: 'spline',
+  					name: 'Irrigation efficiency',
+  					data: data,
+            //
+            // [[	2000,7185	],
+            // [	2001,7185	],
+            // [	2002,6975	],
+            // [	2003,6450	],
+            // [	2004,6750	],
+            // [	2005,6720	],
+            // [	2006,6735	],
+            // [	2007,6510	],
+            // [	2008,6525	],
+            // [	2009,6465	],
+            // [	2010,6315	],
+            // [	2011,6225	],
+            // [	2012,6060	],
+            // [	2013,6270	],
+            // [	2014,6030	],
+            // [	2015,5910	],
+            // [	2016,5700	]],
+  					color: '#094677'
+  				}]
+  			});
+
+
+
+}

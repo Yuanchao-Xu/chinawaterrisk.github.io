@@ -80,9 +80,6 @@ function showMapTooltipAll(d) {
 			irrigated_area = value_irrigated_area[province_name];
 			sown_area = value_sown_area[province_name];
 
-      svg_width = parseInt(svg.style("width"))
-
-      if(d3.event.layerX > svg_width)
 			x=(d3.event.layerX +30)
 			y=(d3.event.layerY - 70)
 
@@ -222,25 +219,6 @@ d3.json(wri_json_url, function(error, wri){
 							.style('fill', 'transparent')
 							.style('stroke', '#CFD8DC')
 							.style('stroke-width', 1);
-
-
-							svg.selectAll('#bubble_irrigated')
-							.data(centroids.features)
-							.enter()
-							.append('circle')
-							.attr('id', 'bubble_irrigated')
-							.attr('class', 'irrigated-g')
-							.attr('transform', function(d) { return 'translate(' + path.centroid(d) + ')'; })
-							.attr('r', function(d){
-								return radiusIrrigated(value_irrigated_area[d.properties.NAME_1]);
-							})
-							.style('fill', function(d) {
-								return colorBubbleIrrigated(value_irrigated_area[d.properties.NAME_1]);
-							})
-							.style('fill-opacity',1)
-							.style('stroke',color_irrigated)
-							.on("mousemove", showMapTooltipIrrigated)
-							.on("mouseout", function(d){ tooltip.style("display", "none");});
 
 
 							svg.selectAll('#bubble_sown')

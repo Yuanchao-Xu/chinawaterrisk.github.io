@@ -1,0 +1,17 @@
+{
+"type": "FeatureCollection",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "River": "Hainan" }, "geometry": { "type": "Point", "coordinates": [ 109.735504341630389, 19.188474674957845 ] } },
+{ "type": "Feature", "properties": { "River": "Pearl" }, "geometry": { "type": "Point", "coordinates": [ 109.812849954972194, 23.974100113707962 ] } },
+{ "type": "Feature", "properties": { "River": "Hai" }, "geometry": { "type": "Point", "coordinates": [ 115.615638743824789, 39.013421125865442 ] } },
+{ "type": "Feature", "properties": { "River": "Huai" }, "geometry": { "type": "Point", "coordinates": [ 117.240716929667329, 34.248049632296727 ] } },
+{ "type": "Feature", "properties": { "River": "Southeast" }, "geometry": { "type": "Point", "coordinates": [ 118.984905421115968, 27.522038012310603 ] } },
+{ "type": "Feature", "properties": { "River": "Liao" }, "geometry": { "type": "Point", "coordinates": [ 121.778292911427087, 42.36437842379442 ] } },
+{ "type": "Feature", "properties": { "River": "Songhua" }, "geometry": { "type": "Point", "coordinates": [ 125.247324930103744, 47.630887030729035 ] } },
+{ "type": "Feature", "properties": { "River": "Northwest" }, "geometry": { "type": "Point", "coordinates": [ 91.158898070968007, 39.500171664349772 ] } },
+{ "type": "Feature", "properties": { "River": "Southwest" }, "geometry": { "type": "Point", "coordinates": [ 93.398675700491111, 28.627624950107805 ] } },
+{ "type": "Feature", "properties": { "River": "Yangtze" }, "geometry": { "type": "Point", "coordinates": [ 107.015882868555707, 30.130280955135024 ] } },
+{ "type": "Feature", "properties": { "River": "Yellow" }, "geometry": { "type": "Point", "coordinates": [ 107.028316524056322, 36.737853967273772 ] } }
+]
+}

@@ -548,7 +548,7 @@ var ns_heavymetal_crops = {
                       }
 
                       if(selected_bubbles=='all'){
-                        $('.legend.heavymetals-g').css('transform', 'translate(0, -180px)');
+                        jQuery('.legend.heavymetals-g').css('transform', 'translate(0, -180px)');
                       }
                     }
 

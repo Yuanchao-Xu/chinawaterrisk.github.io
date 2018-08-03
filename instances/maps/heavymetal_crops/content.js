@@ -600,8 +600,8 @@ var ns_heavymetal_crops = {
                     setBubbles(view);
                   });
 
-                  setBasemap("wri")
-                  setBubbles("all")
+                  setBasemap(jQuery("input[name='basemap']:checked").val())
+                  setBubbles(jQuery("input[name='bubbles']:checked").val())
 
                 });
               });

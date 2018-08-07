@@ -1,0 +1,35 @@
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.47.0/mapbox-gl.js'></script>
+<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.47.0/mapbox-gl.css' rel='stylesheet' />
+
+<style type="text/css">
+.map-container {
+  max-width: 860px;
+  margin: auto;
+  height: 500px;
+  margin: 0 auto;
+}
+
+.prec-g{
+
+  opacity: 0.65;
+}
+
+</style>
+
+
+<div id='map' class="map-container"></div>
+
+
+<div class="map-forms map-forms-inline">
+  <form>
+    <input type="checkbox" name="basemap" id="input_rivers" value="rivers" /><label for="input_rivers">Rivers</label><br>
+    <input type="checkbox" name="basemap" id="input_prec" value="prec" checked/><label for="input_avail">Precipitation</label><br>
+    <input type="checkbox" name="basemap" id="input_tws" value="tws"/><label for="input_tws">Trends in Water Storage</label>
+  </form>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+
+
+<script src="content_mapbox.js"></script>

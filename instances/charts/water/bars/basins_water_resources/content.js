@@ -39,25 +39,27 @@ chart = new Highcharts.Chart({
     }
   },
   yAxis: {
-    lineWidth: 1,
-        tickWidth: 1,
+    visible: true,
+    lineWidth: 0,
+        tickWidth: 0,
         title: {
             align: 'high',
             offset: 0,
             useHtml: true,
             text: "mm/year",
             rotation: 0,
-            y: -10
+            y: 0,
+            x: -5
         },
 
         endOnTick: false,
                 //max: 1000,
-    lineWidth: 1,
     labels:{
-      enabled: true
+      enabled: false
     },
-    tickAmount: 5,
+    tickAmount: 0,
     gridLineWidth: 0,
+    max: 1591
   },
   xAxis: {
     lineWidth: 0,

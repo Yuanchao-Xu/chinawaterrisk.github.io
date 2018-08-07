@@ -7,7 +7,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiY2hpbmF3YXRlcnJpc2siLCJhIjoiY2prYXVienJqMmR6b
 var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/chinawaterrisk/cjkauhqyv2fut2ro2lkp822x8',
-    center: [110, 39.5],
+    center: [110, 36.5],
     zoom: 2.8
 });
 

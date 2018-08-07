@@ -18,14 +18,14 @@ var input = document.createElement
 jQuery("input[name='basemap']")
 .on("change", function() {
 //input.addEventListener('change', function(e) {
-    map.setLayoutProperty($(this).val(), 'visibility',
-        $(this).is(':checked') ? 'visible' : 'none');
+    map.setLayoutProperty(jQuery(this).val(), 'visibility',
+        jQuery(this).is(':checked') ? 'visible' : 'none');
 });
 
 map.on('load', function() {
 jQuery("input[name='basemap']").each(function(){
   map.setLayoutProperty($(this).val(), 'visibility',
-      $(this).is(':checked') ? 'visible' : 'none');
+      jQuery(this).is(':checked') ? 'visible' : 'none');
 });
 });
 

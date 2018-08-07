@@ -51,7 +51,6 @@ chart = new Highcharts.Chart({
         },
 
         endOnTick: false,
-                max: 1000,
     lineWidth: 1,
     labels:{
       enabled: true
@@ -87,7 +86,7 @@ chart = new Highcharts.Chart({
     name: 'Water resources',
     data: [
 
-      {name:"Songhua",y:423.7.4, color: "#0D77B9"},
+      {name:"Songhua",y:423.7, color: "#0D77B9"},
       {name:"Liao",y:602.9, color: "#0D77B9"},
       {name:"Hai",y:614.2, color: "#0D77B9"},
       {name:"Yellow",y:482.4, color: "#0D77B9"},

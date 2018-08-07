@@ -8,7 +8,7 @@ var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/chinawaterrisk/cjkauhqyv2fut2ro2lkp822x8',
     center: [110, 39.5],
-    zoom: 3.1
+    zoom: 2.8
 });
 
 

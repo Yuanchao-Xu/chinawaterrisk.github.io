@@ -21,7 +21,7 @@ var ns_watersources_map = {
           .size([width, height]);
 
       var zoom = d3.zoom()
-          .scaleExtent([1 << 12, 1 << 12])
+          .scaleExtent([1 << 8, 1 << 15])
           .on("zoom", zoomed);
 
       //var svg = d3.select("svg")
@@ -125,6 +125,35 @@ var ns_watersources_map = {
               .attr("width", 256)
               .attr("height", 256);
 
+              var image_prec = raster
+                  .attr("transform", stringify(tiles.scale, tiles.translate))
+                  .selectAll("image")
+                  .data(tiles, function(d) {
+                      return d;
+                  });
+
+              image_prec.exit()//.remove();
+              // enter:
+              var entered = image_prec.enter().append("image");
+              // update:
+              image_prec = entered.merge(image_prec)
+                  .attr('xlink:href', function(d) {
+                      // return 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Shaded_Relief/MapServer/tile/' + d.z + '/' + d.y + '/' + d.x + '.png';
+                      // return 'https://api.mapbox.com/styles/v1/chinawaterrisk/cjkdq4sks6bv12rlhj80xs6sd/tiles/256/'+ d.z
+                      return 'https://api.mapbox.com/v4/chinawaterrisk.b69jkhaz/'
+                       + d.z +'/'+ d.x +'/'+ d.y+'.png32?access_token=pk.eyJ1IjoiY2hpbmF3YXRlcnJpc2siLCJhIjoiY2prYXVienJqMmR6bjNrbWU2bnFwd3Q2bCJ9.oNhqTOCTIyovQdJgCb91Eg'
+
+                  })
+                  .attr('x', function(d) {
+                      return d.x * 256;
+                  })
+                  .attr('y', function(d) {
+                      return d.y * 256;
+                  })
+                  .attr("width", 256)
+                  .attr("height", 256)
+                  .attr("class","prec-g");
+
         vector.selectAll("path")
           .attr("transform", "translate(" + [transform.x, transform.y] + ")scale(" + transform.k + ")")
           .style("stroke-width", 1 / transform.k);
@@ -135,6 +164,22 @@ var ns_watersources_map = {
               r = scale % 1 ? Number : Math.round;
           return "translate(" + r(translate[0] * scale) + "," + r(translate[1] * scale) + ") scale(" + k + ")";
       }
-}
+
+
+      d3.selectAll("input[name='basemap']")
+      .on("click", function() {
+        view = d3.select(this).attr("val");
+        show = d3.select(this).property("checked");
+        if(show){
+            jQuery("."+view+"-g").show()
+        }else{
+          jQuery("."+view+"-g").hide()
+        }
+      });
+
+      //setBasemap(jQuery("input[name='basemap']:checked").attr('val'))
+
+
+  }
 }
 ns_watersources_map.init();

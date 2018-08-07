@@ -1,3 +1,8 @@
+var ns_watersources_map = {
+
+  init: function(){
+
+
 mapboxgl.accessToken = 'pk.eyJ1IjoiY2hpbmF3YXRlcnJpc2siLCJhIjoiY2prYXVienJqMmR6bjNrbWU2bnFwd3Q2bCJ9.oNhqTOCTIyovQdJgCb91Eg';
 var map = new mapboxgl.Map({
     container: 'map',
@@ -16,3 +21,8 @@ jQuery("input[name='basemap']")
     map.setLayoutProperty($(this).val(), 'visibility',
         $(this).is(':checked') ? 'visible' : 'none');
 });
+
+}
+}
+
+ns_watersources_map.init();

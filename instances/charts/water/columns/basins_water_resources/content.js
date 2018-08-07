@@ -23,7 +23,7 @@ chart = new Highcharts.Chart({
       dataLabels: {
           enabled: true,
           //format: '<center><b>{point.name}</b><br /><center>{point.y}</center></center>',
-          format: '<b>{point.name}</b>',
+          format: '{point.y:,.0f}',
           //distance: 5,
           //color: 'white',
           //connectorWidth:0,
@@ -51,6 +51,7 @@ chart = new Highcharts.Chart({
         },
 
         endOnTick: false,
+                //max: 1000,
     lineWidth: 1,
     labels:{
       enabled: true
@@ -61,8 +62,10 @@ chart = new Highcharts.Chart({
   xAxis: {
     lineWidth: 0,
     labels:{
-      enabled: false
+      enabled: true
     },
+     type: "category",
+    //categories : ["Songhua","Liao","Hai","Yellow","Huai","Yangtze","Southeast","Pearl","Southwest","Northwest"],
     // tickAmount: 0,
     tickWidth:0,
     // gridLineWidth: 0
@@ -86,16 +89,21 @@ chart = new Highcharts.Chart({
     name: 'Water resources',
     data: [
 
-      {name:"Songhua",y:423.7, color: "#0D77B9"},
-      {name:"Liao",y:602.9, color: "#0D77B9"},
-      {name:"Hai",y:614.2, color: "#0D77B9"},
-      {name:"Yellow",y:482.4, color: "#0D77B9"},
-      {name:"Huai",y:893.3, color: "#0D77B9"},
-      {name:"Yangtze",y:1205.3, color: "#0D77B9"},
-      {name:"Southeast",y:2249.3, color: "#0D77B9"},
-      {name:"Pearl",y:1822.2, color: "#0D77B9"},
-      {name:"Southwest",y:1124.8, color: "#0D77B9"},
-      {name:"Northwest",y:206.3, color: "#0D77B9"},
+
+
+      {name:"Continental",y:151.41, color: "#0D77B9"},
+      {name:"Irak",y:216, color: "#141C28"},
+
+      {name:"Yellow",y:471.5, color: "#0D77B9"},
+      {name:"Hai",y:475.0, color: "#0D77B9"},
+      {name:"Songhua & Liao",y:502.3, color: "#0D77B9"},
+      {name:"Southwest",y:613.3, color: "#0D77B9"},
+
+      {name:"Huai",y:832.5, color: "#0D77B9"},
+      {name:"South Sudan",y:900, color: "#141C28"},
+      {name:"Yangtze",y:1030.5, color: "#0D77B9"},
+      {name:"Pearl",y:1501.6, color: "#0D77B9"},
+      {name:"Southeast",y:1591.4, color: "#0D77B9"},
 
     ],
       // ["Population",38],

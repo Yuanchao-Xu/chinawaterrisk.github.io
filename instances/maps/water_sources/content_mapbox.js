@@ -22,6 +22,11 @@ jQuery("input[name='basemap']")
         $(this).is(':checked') ? 'visible' : 'none');
 });
 
+jQuery("input[name='basemap']").each(function(){
+  map.setLayoutProperty($(this).val(), 'visibility',
+      $(this).is(':checked') ? 'visible' : 'none');
+});
+
 }
 }
 

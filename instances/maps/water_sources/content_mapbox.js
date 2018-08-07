@@ -23,10 +23,63 @@ jQuery("input[name='basemap']")
 });
 
 map.on('load', function() {
-jQuery("input[name='basemap']").each(function(){
-  map.setLayoutProperty($(this).val(), 'visibility',
-      jQuery(this).is(':checked') ? 'visible' : 'none');
-});
+
+  map.addLayer({
+    id: 'prec',
+    type: 'raster',
+    source: {
+      type: 'raster',
+      tiles: ['https://api.mapbox.com/v4/chinawaterrisk.b69jkhaz/{z}/{x}/{y}.png?access_token='+mapboxgl.accessToken],
+    },
+    minzoom: 0,
+    maxzoom: 22
+  },'rivers');
+
+
+  jQuery("input[name='basemap']").each(function(){
+    map.setLayoutProperty($(this).val(), 'visibility',
+        jQuery(this).is(':checked') ? 'visible' : 'none');
+  });
+
+
+  // Create a popup, but don't add it to the map yet.
+    var popup = new mapboxgl.Popup({
+      closeButton: false,
+      closeOnClick: false
+    });
+
+    function showPopup(e) {
+      // Updates the cursor to a hand (interactivity)
+      map.getCanvas().style.cursor = 'pointer';
+
+      // Show the popup at the coordinates with some data
+      // popup.setLngLat(e.features[0].geometry.coordinates)
+      popup.setLngLat(e.lngLat)
+        .setHTML(checkEmpty(e.features[0].properties.River))
+        .addTo(map);
+    }
+
+    function hidePopup() {
+      map.getCanvas().style.cursor = '';
+      popup.remove();
+    }
+
+    function updatePopup(e){
+      popup.setLngLat(e.lngLat)
+        .setHTML("<div class='tooltip'>"+e.features[0].properties.River+"</div>")
+    }
+
+    function checkEmpty(info) {
+      return (info) ? info : "No data";
+    }
+
+  // CHANGE: Add layer names that need to be interactive
+
+    map.on('mouseover', 'basins', showPopup);
+    map.on('mouseleave', 'basins', hidePopup);
+    map.on('mousemove', 'basins', updatePopup);
+
+
 });
 
 }

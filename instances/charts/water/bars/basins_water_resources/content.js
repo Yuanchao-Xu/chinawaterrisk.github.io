@@ -6,7 +6,7 @@ chart = new Highcharts.Chart({
     renderTo: 'basins_water_resources',
     type: 'bar',
     style: {
-           fontFamily: 'Arial Narrow'
+           fontFamily: 'Arial Narrow',
        },
     backgroundColor:"transparent",
     spacingTop: 30
@@ -64,7 +64,8 @@ chart = new Highcharts.Chart({
   xAxis: {
     lineWidth: 0,
     labels:{
-      enabled: true
+      enabled: true,
+
     },
      type: "category",
     //categories : ["Songhua","Liao","Hai","Yellow","Huai","Yangtze","Southeast","Pearl","Southwest","Northwest"],

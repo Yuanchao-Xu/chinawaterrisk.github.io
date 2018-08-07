@@ -22,12 +22,16 @@ jQuery("input[name='basemap']")
         $(this).is(':checked') ? 'visible' : 'none');
 });
 
+map.on('load', function() {
 jQuery("input[name='basemap']").each(function(){
   map.setLayoutProperty($(this).val(), 'visibility',
       $(this).is(':checked') ? 'visible' : 'none');
+});
 });
 
 }
 }
 
-ns_watersources_map.init();
+jQuery( document ).ready(function() {
+  ns_watersources_map.init();
+});

@@ -24,7 +24,7 @@ var ns_irrigatedarea = {
     .attr("viewBox", "0 0 960 700")
     .classed("svg-content", true);
 
-    var maxValue = 750;
+    var maxValue = 500;
     var minValue = 0.1;
 
     var color = d3.scaleLinear()
@@ -32,14 +32,14 @@ var ns_irrigatedarea = {
     .range(["#0D77B9", "#091825"])
     .interpolate(d3.interpolateHcl);
 
-    d3.json('https://raw.githubusercontent.com/chinawaterrisk/chinawaterrisk.github.io/master/resources/json/china/province/cities.geojson', function(error, cities){
+    d3.json('https://raw.githubusercontent.com/chinawaterrisk/chinawaterrisk.github.io/master/resources/json/china/cities/cities.geojson', function(error, cities){
       d3.json('https://raw.githubusercontent.com/chinawaterrisk/chinawaterrisk.github.io/master/resources/json/china/province/simplified_smoothed_cleaned_provinces.json', function(error, provinces){
         d3.csv('https://raw.githubusercontent.com/chinawaterrisk/chinawaterrisk.github.io/master/instances/maps/irrigated_area/irrigation_area.csv', function(error, data){
 
           var value = {};
 
           data.forEach(function(d){
-            value[d.City_Eng_Trim] = +d.num;
+            value[d.City_Eng_Trim] = +d["irrigated_area_rel"];
             ValueByProvince.set(d.City_Eng_Trim, d);
           });
 

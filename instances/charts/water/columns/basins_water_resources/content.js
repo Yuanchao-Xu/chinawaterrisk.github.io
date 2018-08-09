@@ -89,9 +89,7 @@ chart = new Highcharts.Chart({
     name: 'Water resources',
     data: [
 
-
-
-      {name:"Continental",y:151.41, color: "#0D77B9"},
+      {name:"Northwest",y:151.41, color: "#0D77B9"},
       {name:"Irak",y:216, color: "#141C28"},
 
       {name:"Yellow",y:471.5, color: "#0D77B9"},

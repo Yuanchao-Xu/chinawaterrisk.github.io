@@ -24,6 +24,7 @@ var ns_irrigatedarea = {
     .attr("viewBox", "0 0 960 700")
     .classed("svg-content", true);
 
+
     var maxValue = 500;
     var minValue = 0.1;
 
@@ -80,12 +81,12 @@ var ns_irrigatedarea = {
           .attr("class", "legend-header")
           .attr("x", width - 80)
           .attr("y", height - 225)
-          .text("Irrigated Area");
+          .text("Irrigation Intensity");
           legend.append("text")
           .attr("class", "legend-header")
           .attr("x", width - 80)
           .attr("y", height - 210)
-          .text("(1,000 ha)");
+          .text("");
 
           legend.selectAll(".legend-square")
           .data([minValue, (maxValue - minValue) / 4, (maxValue - minValue) / 3, (maxValue - minValue) / 2, maxValue])

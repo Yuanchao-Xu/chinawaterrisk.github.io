@@ -122,7 +122,7 @@ Highcharts.chart('irrigation_efficiency_container', {
 				},
 				series: [{
 					//type: 'spline',
-					name: 'Irrigation efficiency',
+					name: 'Unit Irrigation Water Use',
 					data: [[	2000,7185	],
           [	2001,7185	],
           [	2002,6975	],

@@ -110,6 +110,15 @@ var ns_irrigatedarea = {
         });
       });
     });
+
+    // Legend
+    const legend_irr = document.getElementById('legend_irr_scale');
+    scales = Array.from(Array(10).keys());
+    colors = scales.map(x => color(minValue+(maxValue-minValue)*x/9));
+
+    //legend.style.backgroundImage = `linear-gradient(to right, ${grad(0)}, ${grad(14)})`;
+    legend_irr.style.backgroundImage = `linear-gradient(to right, `+colors.join(', ')+`)`;
+
   }
 }
 

@@ -14,13 +14,14 @@ Highcharts.chart('irrigation_efficiency_container', {
 					spacingLeft: 0
 				},
 				title: {
-					text: '2000-2016 Irrigation efficiency',
+					text: 'China\'s unit irrigation water use declining',
 					align: 'left',
 					style: {
 						color: 'black',
 						fontSize: '20px',
 						fontWeight: 'bold'
-					}
+					},
+					margin: 25
 				},
 				xAxis: {
 					className: 'x-axis',
@@ -48,11 +49,17 @@ Highcharts.chart('irrigation_efficiency_container', {
 					},
 					gridLineColor: '#D3D3D3',
 					// tickInterval: 10000,
-					// min: 0,
+					min: 0,
 					// max: 70000,
-					 title: {
-					 	text: ''
-					 }
+					title: {
+	            align: 'high',
+	            offset: 0,
+	            useHtml: true,
+	            text: "Unit: m<sup>3</sup>/ha",
+	            rotation: 0,
+	            y: -18,
+							x: 2
+	        },
 				}],
 				tooltip: {
 					headerFormat: '<b>{series.name}</b><br/>',

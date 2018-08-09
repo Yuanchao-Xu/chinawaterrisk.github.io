@@ -18,7 +18,7 @@ Highcharts.chart('irrigation_efficiency_container', {
 					align: 'left',
 					style: {
 						color: 'black',
-						fontSize: '20px',
+						fontSize: '16px',
 						fontWeight: 'bold'
 					},
 					margin: 25

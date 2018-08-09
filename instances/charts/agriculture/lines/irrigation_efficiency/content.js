@@ -25,7 +25,7 @@ Highcharts.chart('irrigation_efficiency_container', {
 				},
 				xAxis: {
 					className: 'x-axis',
-					tickInterval: 2,
+					tickInterval: 16,
 					labels: {
 						style: {
 							color: 'black',
@@ -38,15 +38,20 @@ Highcharts.chart('irrigation_efficiency_container', {
 				},
 				yAxis: [{
 					className: 'y-axis',
+					opposite: true,
 					labels: {
 						formatter: function() {
 						   return this.value;
 						},
+						align: 'left',
+
 						style: {
-							color: 'black',
+							color: '#AAAAAA',
 							fontSize:'12px'
-						}
+						},
+						enabled:true
 					},
+					//	offset: -50,
 					gridLineColor: '#D3D3D3',
 					// tickInterval: 10000,
 					min: 0,
@@ -58,7 +63,7 @@ Highcharts.chart('irrigation_efficiency_container', {
 	            text: "Unit: m<sup>3</sup>/ha",
 	            rotation: 0,
 	            y: -18,
-							x: 2
+							x: -12
 	        },
 				}],
 				tooltip: {

@@ -7,7 +7,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiY2hpbmF3YXRlcnJpc2siLCJhIjoiY2prYXVienJqMmR6b
 var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/chinawaterrisk/cjkauhqyv2fut2ro2lkp822x8',
-    center: [110, 36.5],
+    center: [110, 34.5],
     zoom: 2.8
 });
 
@@ -31,8 +31,8 @@ map.on('load', function() {
       type: 'raster',
       tiles: ['https://api.mapbox.com/v4/chinawaterrisk.b69jkhaz/{z}/{x}/{y}.png?access_token='+mapboxgl.accessToken],
     },
-    minzoom: 0,
-    maxzoom: 22
+    minzoom: 2.8,
+    maxzoom: 2.8
   },'rivers');
 
 

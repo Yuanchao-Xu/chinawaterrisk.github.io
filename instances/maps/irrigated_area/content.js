@@ -70,42 +70,42 @@ var ns_irrigatedarea = {
           .style('stroke', 'white')
           .style('stroke-width', 0.5);
 
-          var legend = svg.append("g")
-          .attr("class", "legend");
-          legend.append("text")
-          .attr("class", "legend-header")
-          .attr("x", width - 80)
-          .attr("y", height - 240)
-          .text("");
-          legend.append("text")
-          .attr("class", "legend-header")
-          .attr("x", width - 120)
-          .attr("y", height - 225)
-          .text("Irrigation Intensity");
-          legend.append("text")
-          .attr("class", "legend-header")
-          .attr("x", width - 120)
-          .attr("y", height - 210)
-          .text("");
-
-          legend.selectAll(".legend-square")
-          .data([minValue, (maxValue - minValue) / 4, (maxValue - minValue) / 3, (maxValue - minValue) / 2, maxValue])
-          .enter()
-          .append("rect")
-          .attr("x", width - 80)
-          .attr("y", function(d, i) { return height - i * 15 - 140; })
-          .attr("class", "legend-square")
-          .attr("width", 15)
-          .attr("height", 15)
-          .style("fill", function(d) { return color(d); })
-          legend.selectAll(".tick-label")
-          .data(['low', 'high'])
-          .enter()
-          .append("text")
-          .attr("class", "tick-label")
-          .attr("x", width - 60)
-          .attr("y", function(d, i) { return height - i * (15 * 4) - 145 + 15; })
-          .text(function(d) {return d });
+          // var legend = svg.append("g")
+          // .attr("class", "legend");
+          // legend.append("text")
+          // .attr("class", "legend-header")
+          // .attr("x", width - 80)
+          // .attr("y", height - 240)
+          // .text("");
+          // legend.append("text")
+          // .attr("class", "legend-header")
+          // .attr("x", width - 120)
+          // .attr("y", height - 225)
+          // .text("Irrigation Intensity");
+          // legend.append("text")
+          // .attr("class", "legend-header")
+          // .attr("x", width - 120)
+          // .attr("y", height - 210)
+          // .text("");
+          //
+          // legend.selectAll(".legend-square")
+          // .data([minValue, (maxValue - minValue) / 4, (maxValue - minValue) / 3, (maxValue - minValue) / 2, maxValue])
+          // .enter()
+          // .append("rect")
+          // .attr("x", width - 80)
+          // .attr("y", function(d, i) { return height - i * 15 - 140; })
+          // .attr("class", "legend-square")
+          // .attr("width", 15)
+          // .attr("height", 15)
+          // .style("fill", function(d) { return color(d); })
+          // legend.selectAll(".tick-label")
+          // .data(['low', 'high'])
+          // .enter()
+          // .append("text")
+          // .attr("class", "tick-label")
+          // .attr("x", width - 60)
+          // .attr("y", function(d, i) { return height - i * (15 * 4) - 145 + 15; })
+          // .text(function(d) {return d });
 
         });
       });
@@ -116,10 +116,17 @@ var ns_irrigatedarea = {
     scales = Array.from(Array(10).keys());
     colors = scales.map(x => color(minValue+(maxValue-minValue)*x/9));
 
-    //legend.style.backgroundImage = `linear-gradient(to right, ${grad(0)}, ${grad(14)})`;
-    legend_irr.style.backgroundImage = `linear-gradient(to right, `+colors.join(', ')+`)`;
+    if(typeof(legend_irr)!="undefined"){
+      //legend.style.backgroundImage = `linear-gradient(to right, ${grad(0)}, ${grad(14)})`;
+      legend_irr.style.backgroundImage = `linear-gradient(to right, `+colors.join(', ')+`)`;
+      jQuery(".legend").hide();
+    }
+
+
 
   }
 }
 
+jQuery( document ).ready(function() {
 ns_irrigatedarea.init();
+});

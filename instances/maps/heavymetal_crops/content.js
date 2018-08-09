@@ -29,7 +29,7 @@ var ns_heavymetal_crops = {
         unit:'10,000 tonnes',
         column:'Output of Rice(10000 tons)',
         min:5,
-        max:3000,
+        max:4000,
         color:"#69F052",
         data:{}
       },
@@ -41,7 +41,7 @@ var ns_heavymetal_crops = {
         unit: 'kg',
         column: 'Heavy Metals (kg)',
         min:0,
-        max:25000,
+        max:28000,
         color:"#111",
         data:{}
       },

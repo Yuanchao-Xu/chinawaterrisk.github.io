@@ -458,7 +458,7 @@ var ns_heavymetal_crops = {
                   .append("rect")
                   .attr("class", "legend-square")
                   .attr("x", leg_basemap_left)
-                  .attr("y", function(d, i) { return leg_basemap_top + 40 + i * leg_square_size ; })
+                  .attr("y", function(d, i) { return leg_basemap_top + 50 + i * leg_square_size ; })
                   .attr("width", leg_square_size)
                   .attr("height", leg_square_size)
                   .style("fill", function(d) { return colorAvail(d); });
@@ -469,7 +469,7 @@ var ns_heavymetal_crops = {
                   .append("text")
                   .attr("class", "legend-label")
                   .attr("x", leg_basemap_left + 20)
-                  .attr("y", function(d, i) { return leg_basemap_top + 40 + 12 + i * (leg_square_size); })
+                  .attr("y", function(d, i) { return leg_basemap_top + 50 + 12 + i * (leg_square_size); })
                   .text(function(d) { return d; });
 
                   var legend_tws = svg.append("g")

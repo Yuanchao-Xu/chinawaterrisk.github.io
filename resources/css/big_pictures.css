@@ -1,5 +1,6 @@
 /* Text */
 
+/*
 body {
     font-family: "Arial Narrow";
     font-size: 20px;
@@ -18,8 +19,11 @@ h2{
 
 h4{
     font-size: 18px;
-}
+}*/
 
+.bp-text{
+  font-family: "Arial Narrow";
+}
 
 .bp-title{
     font-size: 1.36em;
@@ -61,6 +65,7 @@ h4{
 .bp-largenumber{
     font-size:1.82em;
     color: #9F171E;
+    text-decoration: none;
 }
 
 .bp-bright-blue{

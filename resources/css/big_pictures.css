@@ -1,0 +1,283 @@
+/* Text */
+
+body {
+    font-family: "Arial Narrow";
+    font-size: 20px;
+    -webkit-font-smoothing: antialiased;
+    color: black !important;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+     font-family: "Arial Narrow";
+}
+
+h2{
+    font-size: 32px;
+}
+
+h4{
+    font-size: 18px;
+}
+
+
+.bp-title{
+    font-size: 1.36em;
+    text-transform: capitalize;
+    margin-bottom: 0px !important;
+    margin-top:auto;
+}
+
+.bp-subtitle {
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.bp-category {
+    background-color: black;
+    color: white;
+    height:30px;
+    font-size: 0.82em;
+    text-transform: uppercase;
+}
+
+.bp-category .fl-module-content {
+    margin-bottom: auto;
+    margin-top: 3px;
+    margin-left: 20px;
+}
+
+.bp-source {
+    font-size: 0.82em;
+    color: #606060;
+    font-style: italic;
+}
+
+.bp-furtherreading{
+    background:#0D77B9;
+    color: white;
+}
+
+.bp-largenumber{
+    font-size:1.82em;
+    color: #9F171E;
+}
+
+.bp-bright-blue{
+  color: #0D77B9
+}
+
+.bp-paragraph-title{
+  font-size: 1.36em;
+}
+
+.bp-paragraph-text{
+  font-size: 1em;
+}
+
+.bp-ml-text{
+    font-size:24px;
+    color: #9F171E;
+}
+
+.bp-small{
+  font-size: 0.82em;
+}
+
+.map-note{
+    font-size: 16px;
+    color: #606060;
+    font-style: italic;
+}
+
+/* Maps elements */
+
+
+	.legend {
+		font-family:"Arial Narrow";
+	}
+
+	.legend-bubbled .legend-bubble {
+		fill: none;
+		stroke: black;
+	}
+
+	.legend-bubbled .legend-label {
+		font-size:0.5em;
+		font-family:Arial;
+	}
+
+	.legend-header{
+		font-weight:500;
+		font-size:0.9em;
+		fill: #505050;
+	}
+
+	.legend-unit{
+		font-size:0.9em;
+		fill: #505050;
+	}
+
+	.legend-label{
+		font-size:0.8em;
+		fill: #505050;
+	}
+
+
+/* Maps forms: select basemap, layers */
+
+.map-forms{
+    z-index:1000;
+    position: relative;
+}
+
+.map-forms form,
+.map-forms form div{
+    display:  inline-block;
+    vertical-align: top;
+    margin-right: 10px;
+    position: relative;
+    z-index:1000;
+    width: 100%;
+}
+
+.map-forms-inline{
+
+    display: inline-flex;
+}
+
+.map-forms form {
+		font-family:Arial Narrow;
+		font-size:12px;
+		margin-left:12px;
+	}
+
+.map-forms .grid-item{
+    width: 28%;
+    cursor: pointer;
+    margin-bottom: 15px;
+    text-align: center;
+}
+.map-forms .grid-item input{
+    display: none;
+}
+
+.map-forms label{
+    font-weight: inherit;
+    padding-left: 0.5em;
+}
+
+.map-forms{
+    border: solid 1px lightgray;
+    border-radius: 7px;
+}
+.map-forms button {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.map-tooltip {
+    color: #222;
+    background: #fff;
+    border-radius: 3px;
+    box-shadow: 0px 0px 2px 0px #a6a6a6;
+    padding: .2em;
+    text-shadow: #f5f5f5 0 1px 0;
+    opacity: 0.9;
+    position: absolute;
+  }
+
+/* Rows */
+
+.bp-furtherreading h1,
+.bp-furtherreading h2,
+.bp-furtherreading h3,
+.bp-furtherreading h4,
+.bp-furtherreading h5{
+    color:white;
+}
+
+.bp-furtherreading a:visited{
+    color:white;
+}
+
+
+.blue-bg{
+    color: #FFFFFF !important;
+    background-color: #0D77B9;
+}
+
+.blue-bg a:visited,
+.blue-bg a{
+    color: #FFFFFF !important;
+}
+
+
+.entry-title,
+.entry-meta{
+    display:none;
+}
+
+.grid-container {
+    margin-top: 6px;
+    display: grid;
+    grid-row-gap: 25px;
+}
+
+input[type="radio"]:checked+label,
+input[type="checkbox"]:checked+label{
+    color: #0D77B9;
+    font-weight: bold;
+}
+
+.legend-subtitle{
+    font-weight: bold;
+    padding-top:12px;
+    padding-bottom:6px;
+    font-size: 12px;
+}
+
+.crop-icon{
+    height: 30px;
+    padding: 0;
+    cursor: pointer;
+}
+
+.bp-toprow {
+
+    margin-top: auto;
+    position: relative;
+}
+
+.bp-toprow:after {
+	content: '';
+	position: absolute;
+	bottom: 0px;
+	left: 50%;
+	width: 50%;
+	border-bottom: 3px solid #020303;
+}
+.bp-toprow:before {
+	content: '';
+	position: absolute;
+	bottom: 0px;
+	left: 0%;
+	width: 50%;
+	border-bottom: 3px solid #0D77B9;
+}
+
+.bp-toprow .fl-row-content-wrap{
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+    margin-bottom: -8px;
+}
+
+.bp-logo .fl-module-content{
+    margin-left: 5px;
+    margin-top: 7px;
+}
+.bp-toprow .fl-module{
+    margin-top: auto;
+    margin-bottom:auto;
+}

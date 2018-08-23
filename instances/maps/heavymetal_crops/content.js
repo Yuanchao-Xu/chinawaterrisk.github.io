@@ -45,6 +45,51 @@ var ns_heavymetal_crops = {
         color:"#111",
         data:{}
       },
+      'arsenic':{
+        name : 'Arsenic',
+        unit: 'kg',
+        column: 'Arsenic Emission in Waste Water (kg)',
+        min:0,
+        max:28000,
+        color:"#111",
+        data:{}
+      },
+      'chromium':{
+        name : 'Chromium',
+        unit: 'kg',
+        column: 'Total Chromium Emission in Waste Water (kg)',
+        min:0,
+        max:28000,
+        color:"#111",
+        data:{}
+      },
+      'cadnium':{
+        name : 'Cadnium',
+        unit: 'kg',
+        column: 'Cadmium Emission in Waste Water (kg)',
+        min:0,
+        max:28000,
+        color:"#111",
+        data:{}
+      },
+      'mercury':{
+        name : 'Mercury',
+        unit: 'kg',
+        column: 'Mercury Emission in Waste Water (kg)',
+        min:0,
+        max:28000,
+        color:"#111",
+        data:{}
+      },
+      'lead':{
+        name : 'Lead',
+        unit: 'kg',
+        column: 'Plumbum Emission in Waste Water(kg)',
+        min:0,
+        max:28000,
+        color:"#111",
+        data:{}
+      },
     };
 
     var value_water_resources = {};
@@ -172,9 +217,11 @@ var ns_heavymetal_crops = {
       .range([5, 50]);
     }
 
-    value_heavymetals['heavymetals']['radius'] =  d3.scaleSqrt()
-    .domain([value_heavymetals['heavymetals'].min, value_heavymetals['heavymetals'].max])
-    .range([5, 50]);
+    for (var heavymetal in value_heavymetals) {
+      value_heavymetals[heavymetal]['radius'] =  d3.scaleSqrt()
+      .domain([value_heavymetals[heavymetal].min, value_heavymetals[heavymetal].max])
+      .range([5, 50]);
+    }
 
 
     var wri_json_url='https://raw.githubusercontent.com/chinawaterrisk/chinawaterrisk.github.io/master/resources/json/china/wri/wri_china_simplified_sd.geojson'
@@ -204,7 +251,10 @@ var ns_heavymetal_crops = {
                   });
 
                   data_pollutants.forEach(function(d){
-                      value_heavymetals['heavymetals']['data'][d.Province] = parseFloat(d['Heavy Metals (kg)']) || 0;
+                    for (var pollutant in value_heavymetals) {
+                      value_pollutant= value_heavymetals[pollutant];
+                      value_heavymetals[pollutant]['data'][d.Province] = parseFloat(d[value_pollutant.column]) || 0;
+                    }
                   });
 
                   data_water_resources.forEach(function(d){
@@ -323,7 +373,12 @@ var ns_heavymetal_crops = {
                     value_to_items(value_crop, crop);
                   }
 
-                  value_to_items(value_heavymetals['heavymetals'], 'heavymetals');
+                  for (var heavymetal in value_heavymetals) {
+                    value_heavymetal = value_heavymetals[heavymetal];
+                    value_to_items(value_heavymetal, heavymetal);
+                  }
+
+//                  value_to_items(value_heavymetals['heavymetals'], 'heavymetals');
 
 
                   //
@@ -537,6 +592,7 @@ var ns_heavymetal_crops = {
                   }
 
                   setBubbles = function(selected) {
+
                     selected_bubbles = selected;
                     all_values = Object.assign({}, value_crops,value_heavymetals);
 
@@ -545,11 +601,14 @@ var ns_heavymetal_crops = {
                         svg.selectAll("."+item+"-g").style("display", "inherit");
                       }else{
                         svg.selectAll("."+item+"-g").style("display", "none");
+                        svg.selectAll(".rice-g").style("display", "inherit");
                       }
 
-                      if(selected_bubbles=='all'){
-                        jQuery('.legend.heavymetals-g').css('transform', 'translate(0, -180px)');
-                      }
+
+                    }
+
+                    if(selected_bubbles!='rice'){
+                      jQuery('.legend.'+selected_bubbles+'-g').css('transform', 'translate(0, -180px)');
                     }
 
                     //

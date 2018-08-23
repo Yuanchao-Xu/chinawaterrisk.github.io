@@ -26,6 +26,10 @@ h4{
   color: black;
 }
 
+
+
+
+
 .bp-title{
     font-size: 1.36em;
     text-transform: capitalize;
@@ -58,10 +62,7 @@ h4{
     font-style: italic;
 }
 
-.bp-furtherreading{
-    background:#0D77B9;
-    color: white;
-}
+
 
 .bp-largenumber{
     font-size:1.82em;
@@ -71,6 +72,12 @@ h4{
 
 .bp-bright-blue{
   color: #0D77B9
+}
+
+.bp-section-title{
+    font-weight:bold;
+    font-size: 1.36em;
+    margin-bottom:10px;
 }
 
 .bp-paragraph-title{
@@ -95,6 +102,35 @@ h4{
     color: #606060;
     font-style: italic;
 }
+
+.bp-bp-link::before{
+    content:">> ";
+}
+
+.bp-bp-link, .bp-bp-link:visited{
+    color: #094677;
+    font-style: inherit;
+    font-weight: inherit;
+    white-space: nowrap;
+}
+
+.bp-exclamation::before{
+    content: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NS4yOSA2NS4yOSI+PGRlZnM+PHN0eWxlPi5jbHMtMXtmaWxsOiMwZTIwMzI7fS5jbHMtMntmaWxsOm5vbmU7c3Ryb2tlOiMwZTIwMzI7c3Ryb2tlLXdpZHRoOjIuNzhweDt9PC9zdHlsZT48L2RlZnM+PHRpdGxlPmV4LWN3ci1ibGFjazwvdGl0bGU+PGcgaWQ9IkxheWVyXzIiIGRhdGEtbmFtZT0iTGF5ZXIgMiI+PGcgaWQ9IkxheWVyXzEtMiIgZGF0YS1uYW1lPSJMYXllciAxIj48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yOC43NCw0Ny44M2g3LjgxdjcuMzFIMjguNzRabS4zOC0yNS44OVYxMC4xNWg3LjA1VjIxLjkzbC0xLjcsMjEuMzVIMzAuODJaIi8+PGNpcmNsZSBjbGFzcz0iY2xzLTIiIGN4PSIzMi42NCIgY3k9IjMyLjY0IiByPSIzMS4yNSIvPjwvZz48L2c+PC9zdmc+");
+    position:absolute;
+    top: 5px;
+    width: 20px;
+    height: 20px;
+    margin: 0px;
+    left: 0px;
+}
+
+.bp-exclamation{
+    padding-left: 30px;
+    text-indent: -0px;
+    position: relative;
+    margin-bottom: 20px;
+}
+
 
 /* Maps elements */
 
@@ -147,6 +183,11 @@ h4{
     width: 100%;
 }
 
+.map-forms-indicator{
+    color: lightgray;
+    font-weight: 300;
+}
+
 .map-forms-inline{
 
     display: inline-flex;
@@ -177,6 +218,7 @@ h4{
     border: solid 1px lightgray;
     border-radius: 7px;
 }
+
 .map-forms button {
     display: inline-block;
     vertical-align: top;
@@ -207,6 +249,10 @@ h4{
     color:white;
 }
 
+.bp-furtherreading{
+    background:#EFEFEF;
+    color: #020303;
+}
 
 .blue-bg{
     color: #FFFFFF !important;

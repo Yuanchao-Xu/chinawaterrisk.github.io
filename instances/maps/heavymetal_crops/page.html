@@ -255,20 +255,28 @@
 		<span class="subtitle"></span>
 
 	</div>
-	<div>
-		<form>
-			<input type="radio" name="basemap" id="input_wri" val="wri" checked="checked"/><label for="input_wri">Baseline Water Stress</label><br>
-			<input type="radio" name="basemap" id="input_avail" val="avail"/><label for="input_avail">Water Availability</label><br>
+
+	<div class="map-forms-indicator">Click here to select what to show on the map</div>
+	<div class="map-forms map-forms-inline">
+		<form style="display:none">
+			<input type="radio" name="basemap" id="input_wri" val="wri" /><label for="input_wri">Baseline Water Stress</label><br>
+			<input type="radio" name="basemap" id="input_avail" val="avail" checked/><label for="input_avail">Water Availability</label><br>
 			<input type="radio" name="basemap" id="input_tws" val="tws"/><label for="input_tws">Trends in Water Storage</label>
 		</form>
-	</div>
-	<div>
+
 		<form>
-			<input type="radio" name="bubbles"id="input_rice" val="rice" /> <label for="input_rice">Rice</label><br>
-			<input type="radio" name="bubbles" id="input_heavymetals" val="heavymetals" /> <label for="input_heavymetals">Heavy Metals</label><br>
-			<input type="radio" name="bubbles" id="input_all" val="all" checked/> <label for="input_all">Both</label><br>
+			<div class="grid-container" style="margin-top:25px">
+          <div class="grid-item" style="display:none"><input type="radio" name="bubbles" id="input_rice" val="rice" checked /> <label for="input_rice"><img class="crop-icon" src="https://app-1527242896.000webhostapp.com/wp-content/uploads/2018/07/rice.svg" alt="rice" itemprop="image" title="agriculture"><br/>Rice</label></div>
+          <div class="grid-item"><input type="radio" name="bubbles" id="input_mercury" val="mercury" /> <label for="input_mercury"><img class="bp-element-icon" src="https://app-1527242896.000webhostapp.com/wp-content/uploads/2018/08/element_mercury.svg" alt="mercury" itemprop="image"></label></div>
+          <div class="grid-item"><input type="radio" name="bubbles" id="input_lead" val="lead" /> <label for="input_lead"><img class="bp-element-icon" src="https://app-1527242896.000webhostapp.com/wp-content/uploads/2018/08/element_lead.svg" alt="lead" itemprop="image"></label></div>
+          <div class="grid-item"><input type="radio" name="bubbles" id="input_cadnium" val="cadnium" /> <label for="input_cadnium"><img class="bp-element-icon" src="https://app-1527242896.000webhostapp.com/wp-content/uploads/2018/08/element_cadnium.svg" alt="cadnium" itemprop="image"></label></div>
+          <div class="grid-item"><input type="radio" name="bubbles" id="input_chromium" val="chromium" /> <label for="input_chromium"><img class="bp-element-icon" src="https://app-1527242896.000webhostapp.com/wp-content/uploads/2018/08/element_chromium.svg" alt="chromium" itemprop="image"></label></div>
+          <div class="grid-item"><input type="radio" name="bubbles" id="input_arsenic" val="arsenic" /> <label for="input_arsenic"><img class="bp-element-icon" src="https://app-1527242896.000webhostapp.com/wp-content/uploads/2018/08/element_arsenic.svg" alt="arsenic" itemprop="image"></label></div>
+          <div class="grid-item"><input type="radio" name="bubbles" id="input_all" val="heavymetals" /> <label for="input_all"><img class="bp-element-icon" src="https://app-1527242896.000webhostapp.com/wp-content/uploads/2018/08/element_all.svg" alt="all" itemprop="image"></label></div>
+          </div>
 		</form>
 	</div>
+
 	<div id='map_wrapper'>
 		<div id = 'map' class="svg-container"></div>
 	</div>

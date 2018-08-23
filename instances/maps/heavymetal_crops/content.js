@@ -37,7 +37,7 @@ var ns_heavymetal_crops = {
 
     var value_heavymetals = {
       'heavymetals':{
-        name : 'Heavy Metals',
+        name : 'Heavy Metals Emission',
         unit: 'kg',
         column: 'Heavy Metals (kg)',
         min:0,
@@ -46,7 +46,7 @@ var ns_heavymetal_crops = {
         data:{}
       },
       'arsenic':{
-        name : 'Arsenic',
+        name : 'Arsenic Emission',
         unit: 'kg',
         column: 'Arsenic Emission in Waste Water (kg)',
         min:0,
@@ -55,7 +55,7 @@ var ns_heavymetal_crops = {
         data:{}
       },
       'chromium':{
-        name : 'Chromium',
+        name : 'Chromium Emission',
         unit: 'kg',
         column: 'Total Chromium Emission in Waste Water (kg)',
         min:0,
@@ -64,7 +64,7 @@ var ns_heavymetal_crops = {
         data:{}
       },
       'cadnium':{
-        name : 'Cadnium',
+        name : 'Cadnium Emission',
         unit: 'kg',
         column: 'Cadmium Emission in Waste Water (kg)',
         min:0,
@@ -73,7 +73,7 @@ var ns_heavymetal_crops = {
         data:{}
       },
       'mercury':{
-        name : 'Mercury',
+        name : 'Mercury Emission',
         unit: 'kg',
         column: 'Mercury Emission in Waste Water (kg)',
         min:0,
@@ -82,7 +82,7 @@ var ns_heavymetal_crops = {
         data:{}
       },
       'lead':{
-        name : 'Lead',
+        name : 'Lead Emission',
         unit: 'kg',
         column: 'Plumbum Emission in Waste Water(kg)',
         min:0,

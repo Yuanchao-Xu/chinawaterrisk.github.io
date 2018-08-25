@@ -9,7 +9,7 @@ jQuery( document ).ready(function() {
   // Create the chart
   chart = new Highcharts.Chart({
     chart: {
-      renderTo: 'agriculture_top5_countries_fertiliser_use',
+      renderTo: 'agriculture_top5_countries_fertilizer_use',
       type: 'column',
       style: {
         fontFamily: 'Arial Narrow'

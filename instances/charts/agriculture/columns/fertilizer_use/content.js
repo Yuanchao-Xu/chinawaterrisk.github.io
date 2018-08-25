@@ -1,5 +1,11 @@
 jQuery( document ).ready(function() {
 
+  function shadeHexColor(color, percent) {
+      var f=parseInt(color.slice(1),16),t=percent<0?0:255,p=percent<0?percent*-1:percent,R=f>>16,G=f>>8&0x00FF,B=f&0x0000FF;
+      return "#"+(0x1000000+(Math.round((t-R)*p)+R)*0x10000+(Math.round((t-G)*p)+G)*0x100+(Math.round((t-B)*p)+B)).toString(16).slice(1);
+  }
+
+  colors = ["#9F171E","#390B61","#0D77B9","#AB80DB","#AAAAAA"]
   // Create the chart
   chart = new Highcharts.Chart({
     chart: {
@@ -41,32 +47,35 @@ jQuery( document ).ready(function() {
     yAxis: [{
       lineWidth: 1,
       tickWidth: 1,
+      tickLength: 5,
       title: {
         align: 'high',
-        offset: 0,
+        offset: 10,
         useHtml: true,
-        text: "Fertilizer Use Per Area (kg/ha)",
+        text: "Fertilizer Use<br>Per Area (kg/ha)",
         rotation: 0,
-        y: -10
+        y: -10,
+        x:10
       },
       endOnTick: false,
       //max: 1000,
-      lineWidth: 1,
       labels:{
         enabled: true
       },
-      tickAmount: 5,
+      //tickAmount: 5,
       gridLineWidth: 0,
     },{
       lineWidth: 1,
       tickWidth: 1,
+      tickLength: 5,
       title: {
         align: 'high',
-        offset: 0,
+        offset: 10,
         useHtml: true,
-        text: "Total Fertilizer Use (tonne)",
+        text: "Total Fertilizer<br>Use (tonne)",
         rotation: 0,
         y: -10,
+        x: -10
       },
       opposite: true,
       endOnTick: false,
@@ -75,7 +84,7 @@ jQuery( document ).ready(function() {
       labels:{
         enabled: true
       },
-      tickAmount: 5,
+      //tickAmount: 5,
       gridLineWidth: 0,
 
     }],
@@ -99,28 +108,63 @@ jQuery( document ).ready(function() {
       enabled: false
     },
     tooltip: {
-      enabled: false
-      // formatter: function() {
-      //   return '<b>'+ this.point.name +'</b>: '+ this.y +' bn tonnes';
-      // }
+      enabled: true,
+      formatter: function() {
+         return '<b>'+ this.series.name +'</b>: '+ this.y;
+      },
+      valueDecimals:2
     },
     series: [{
+      color: colors[0],
       name: 'Fertilizer Use Per Area (kg/ha)',
-      data: [446.12,157.86,133.7,133.72,16.25],
-      showInLegend:true,
-      dataLabels: {
-        enabled: false,
-      }
-    },{
-      name: 'Total Fertilizer Use (mn tonnes)',
-      data: [60.226999,26.752600,20.864116,4.179136,2.026990],
-      yAxis: 1,
-      dataLabels:{
-        enabled: false,
-        format: '{y} mn'
-      }
-    }
-  ],
+      data: [{
+        y: 446.12,
+        color: colors[0]
+      },{
+        y:157.86,
+        color: colors[1]
+      },{
+        y:133.7,
+        color: colors[2]
+      },{
+        y:133.72,
+        color: colors[3]
+      },{
+        y:16.25,
+        color: colors[4]
+      }],
 
-})
+        showInLegend:true,
+        dataLabels: {
+          enabled: false,
+        }
+      },{
+        color: shadeHexColor(colors[0],0.4),
+        name: 'Total Fertilizer Use (mn tonnes)',
+        data: [{
+          y: 60.23,
+          color: shadeHexColor(colors[0],0.4)
+        },{
+          y:26.75,
+          color: shadeHexColor(colors[1],0.4)
+        },{
+          y:20.86,
+          color: shadeHexColor(colors[2],0.4)
+        },{
+          y:4.18,
+          color: shadeHexColor(colors[3],0.4)
+        },{
+          y:2.03,
+          color: shadeHexColor(colors[4],0.4)
+        }],
+
+        yAxis: 1,
+        dataLabels:{
+          enabled: false,
+          format: '{y} mn'
+        }
+      }
+    ],
+
+  })
 });

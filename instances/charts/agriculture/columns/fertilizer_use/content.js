@@ -9,7 +9,7 @@ jQuery( document ).ready(function() {
   // Create the chart
   chart = new Highcharts.Chart({
     chart: {
-      renderTo: 'agriculture_top5_countries_fertilizer_use',
+      renderTo: 'agriculture_top5_countries_fertiliser_use',
       type: 'column',
       style: {
         fontFamily: 'Arial Narrow'
@@ -52,7 +52,7 @@ jQuery( document ).ready(function() {
         align: 'high',
         offset: 10,
         useHtml: true,
-        text: "Fertilizer Use<br>Per Area (kg/ha)",
+        text: "Fertiliser Use<br>Per Area (kg/ha)",
         rotation: 0,
         y: -10,
         x:10
@@ -72,7 +72,7 @@ jQuery( document ).ready(function() {
         align: 'high',
         offset: 10,
         useHtml: true,
-        text: "Total Fertilizer<br>Use (tonne)",
+        text: "Total Fertiliser<br>Use (tonne)",
         rotation: 0,
         y: -10,
         x: -10
@@ -116,7 +116,7 @@ jQuery( document ).ready(function() {
     },
     series: [{
       color: colors[0],
-      name: 'Fertilizer Use Per Area (kg/ha)',
+      name: 'Fertiliser Use Per Area (kg/ha)',
       data: [{
         y: 446.12,
         color: colors[0]
@@ -140,7 +140,7 @@ jQuery( document ).ready(function() {
         }
       },{
         color: shadeHexColor(colors[0],0.4),
-        name: 'Total Fertilizer Use (mn tonnes)',
+        name: 'Total Fertiliser Use (mn tonnes)',
         data: [{
           y: 60.23,
           color: shadeHexColor(colors[0],0.4)

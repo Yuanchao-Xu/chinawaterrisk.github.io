@@ -197,10 +197,8 @@ var ns_watersources_map = {
 
 jQuery( document ).ready(function() {
   ns_watersources_map.init();
+
+  // Legend
+  const legend = document.getElementById('legend_prec_scale');
+  legend.style.backgroundImage = `linear-gradient(to right, #4d0d04, #931019,#d21e32,#e76f62,#f5af90,#f6ccb9,#f7e9e3,#e8f0f4,#c9e0ec,#a9d1e4,#87bfdb,#5ca5cd,#308bbe,#0571b0)`;
 });
-
-// Legend
-const legend = document.getElementById('legend_prec_scale');
-
-
-legend.style.backgroundImage = `linear-gradient(to right, #4d0d04, #931019,#d21e32,#e76f62,#f5af90,#f6ccb9,#f7e9e3,#e8f0f4,#c9e0ec,#a9d1e4,#87bfdb,#5ca5cd,#308bbe,#0571b0)`;

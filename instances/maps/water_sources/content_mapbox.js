@@ -104,8 +104,7 @@ var ns_watersources_map = {
       jQuery( "#basins-infos" ).append(basins_infos[basin]);
     }
 
-
-
+    jQuery(".basin-info").hide();
 
 
 

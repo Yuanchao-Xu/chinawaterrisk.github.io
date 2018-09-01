@@ -7,58 +7,64 @@ var ns_watersources_map = {
     {
       'heilongjiang':"<div class='basin-info heilongjiang-info'>\
 					<h4>Heilongjiang River (黑龙江)</h4>\
+          <div class='bp-text bp-paragraph-text'>\
                     <p>This \"Black Dragon River\" marks the boundary between Russia and China and runs east across Northern China and empties into the Sea of Okhotsk. At over 4,300km, it is the 11<sup>th</sup> longest river in the world.</p>\
                       <p>Key Facts:<br>\
                     </p><ul>\
                     <li>Pollution from lack of water treatment by heavy industry</li>\
                     <li>Potential transnational tension with Russia</li>\
                     <li>Natural habitat of the Siberian Tiger, black bear and many rare bird species</li>\
-                   </ul><p></p>\
+                   </ul><p></p></div>\
 				</div>",
 
         'hai':"<div class=\"basin-info hai-info\">\
 					<h4>Hai River (海河)</h4>\
+          <div class='bp-text bp-paragraph-text'>\
                     <p>The longest tributary of this sediment-rich river runs 1,329km through Beijing and Tianjin before emptying into the Bohai Gulf of the Yellow Sea.</p>\
                      <p>Key Facts:<br>\
                     </p><ul>\
 					<li>Hai's flood control has a significant economic and environmental impact on Beijing and Tianjin</li>\
                     <li>Water treatment needed for a range of industrial pollution</li>\
                     <li>68.3% of the water quality is poor = not fit for human contact (Ministry of Environmental Protection, 2009 State of Environment Report). This has deteriorated from 65.6% in 2009.</li>\
-                    </ul><p></p>\
+                    </ul><p></p></div>\
 				</div>",
 
         'huai':"<div class=\"basin-info huai-info\">\
 					<h4>Huai River (淮河)</h4>\
+          <div class='bp-text bp-paragraph-text'>\
                     <p>The 1,078km Huai River originates in the Tongbai Mountain in Henan province and flows through northern Anhui, finally entering the Yangtze River at Jiangdu, Yangzhou.</p>\
                      <p>Key Facts:<br>\
                     </p><ul>\
 					<li>Investment in flood control</li>\
 					<li>58.1% of the water quality is poor = not fit for human contact (Ministry of Environmental Protection, 2009 State of Environment Report). This has improved from 62.7% in 2009.</li>\
-                    </ul><p></p>\
+                    </ul><p></p></div>\
 				</div>",
 
         'liao':"<div class=\"basin-info liao-info\">\
 					<h4>Liao River  (辽河)</h4>\
+          <div class='bp-text bp-paragraph-text'>\
                     <p>Also known as the 'Mother' River, the 1,390km Liao flows through Hebei, Inner Mongolia, Jilin and Liaoning provinces. It empties into the Bohai Sea with a drainage area of over 200,000km<sup>2</sup>.</p>\
                      <p>Key Facts:<br>\
                     </p><ul>\
                     <li>Pollution from lack of water treatment by heavy industry</li>\
                     <li>59.5% of the water quality is poor = not fit for human contact (Ministry of Environmental Protection, 2009 State of Environment Report)</li>\
-                    <li>Potential transnational tension with Russia</li></ul><p></p>\
+                    <li>Potential transnational tension with Russia</li></ul><p></p></div>\
 				</div>",
 
         'songhua':"<div class=\"basin-info songhua-info\">\
 					<h4>Songhua River (松花江)</h4>\
+          <div class='bp-text bp-paragraph-text'>\
                     <p>Also known as the Sungari, the Songhua River is 2,308km long. It is the largest tributary of the Heilongjiang River and flows from the Changbai Mountains.</p>\
 					 <p>Key Facts:<br>\
                     </p><ul>\
                     <li>Pollution from lack of water treatment by heavy industry</li>\
                     <li>54.8% of the waater quality is poor = not fit for human contact(Ministry of Environmental Protection, 2011 State of Environment Report). This has improved from 59.5% in 2009.</li>\
-                    <li>Potential transnational tension with Russia</li></ul><p></p>\
+                    <li>Potential transnational tension with Russia</li></ul><p></p></div>\
 				</div>",
 
         'yangtze':"<div class=\"basin-info yangtze-info\">\
 					<h4>Yangtze River (长江)</h4>\
+          <div class='bp-text bp-paragraph-text'>\
                     <p>The longest river in China and the third longest in the world at 6,300km, it originates in the Tibetan plateau and flows through Qinghai, Tibet, Yunnan, Sichuan, Hubei, Hunan, Jiangxi, Anhui and Jiangsu before entering the East China Sea in Shanghai. It has 8 major tributaries and a catchment area of 1.8million km<sup>2</sup>, equivalent to around 20% of China's land mass.</p>\
                      <p>Key Facts:<br>\
                     </p><ul>\
@@ -66,7 +72,7 @@ var ns_watersources_map = {
                     <li>Investments that bolster integrated water resource management</li>\
                     <li>Important source for transportation and irrigation</li>\
                     <li>Suffers from sewage and industrial waste dumping</li>\
-                    <li>19.1% of the water quality is poor = not fit for human contact (Ministry of Environmental Protection, 2009 State of Environment Report). This has deteriorated from 12.6% in 2009.</li></ul><p></p>\
+                    <li>19.1% of the water quality is poor = not fit for human contact (Ministry of Environmental Protection, 2009 State of Environment Report). This has deteriorated from 12.6% in 2009.</li></ul><p></p></div>\
 				</div>",
 
         'yellow':"<div class=\"basin-info yellow-info\">\
@@ -77,7 +83,7 @@ var ns_watersources_map = {
                     <li>Impact of agri-chemicals on the river in China’s agricultural heartland as it suffers from intense irrigation</li>\
                     <li>Water volumes decreasing and flows less predictable</li>\
 					<li>30.2% of the water quality is poor = not fit for human contact (Ministry of Environmental Protection, 2011 State of Environment Report)</li>\
-                    </ul><p></p>\
+                    </ul><p></p></div>\
 				</div>",
 
         'pearl':"<div class=\"basin-info pearl-info\">\
@@ -89,7 +95,7 @@ var ns_watersources_map = {
                     <li>Initiatives under way to clean up the Pearl River Delta</li>\
                     <li>Surrounded by fertile soil and abundant natural resources</li>\
                     <li>15.2% of the water quality is poor = not fit for human contact (Ministry of Environmental Protection, 2009 State of Environment Report)</li>\
-                    </ul><p></p>\
+                    </ul><p></p></div>\
 				</div>"
 
     }

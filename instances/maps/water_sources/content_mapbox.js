@@ -6,7 +6,7 @@ var ns_watersources_map = {
     basins_infos=
     {
       'heilongjiang':"<div class='basin-info heilongjiang-info'>\
-					<h2>Heilongjiang River (黑龙江)</h2>\
+					<h4>Heilongjiang River (黑龙江)</h4>\
                     <p>This \"Black Dragon River\" marks the boundary between Russia and China and runs east across Northern China and empties into the Sea of Okhotsk. At over 4,300km, it is the 11<sup>th</sup> longest river in the world.</p>\
                       <p>Key Facts:<br>\
                     </p><ul>\
@@ -17,7 +17,7 @@ var ns_watersources_map = {
 				</div>",
 
         'hai':"<div class=\"basin-info hai-info\">\
-					<h2>Hai River (海河)</h2>\
+					<h4>Hai River (海河)</h4>\
                     <p>The longest tributary of this sediment-rich river runs 1,329km through Beijing and Tianjin before emptying into the Bohai Gulf of the Yellow Sea.</p>\
                      <p>Key Facts:<br>\
                     </p><ul>\
@@ -28,7 +28,7 @@ var ns_watersources_map = {
 				</div>",
 
         'huai':"<div class=\"basin-info huai-info\">\
-					<h2>Huai River (淮河)</h2>\
+					<h4>Huai River (淮河)</h4>\
                     <p>The 1,078km Huai River originates in the Tongbai Mountain in Henan province and flows through northern Anhui, finally entering the Yangtze River at Jiangdu, Yangzhou.</p>\
                      <p>Key Facts:<br>\
                     </p><ul>\
@@ -38,7 +38,7 @@ var ns_watersources_map = {
 				</div>",
 
         'liao':"<div class=\"basin-info liao-info\">\
-					<h2>Liao River  (辽河)</h2>\
+					<h4>Liao River  (辽河)</h4>\
                     <p>Also known as the 'Mother' River, the 1,390km Liao flows through Hebei, Inner Mongolia, Jilin and Liaoning provinces. It empties into the Bohai Sea with a drainage area of over 200,000km<sup>2</sup>.</p>\
                      <p>Key Facts:<br>\
                     </p><ul>\
@@ -48,7 +48,7 @@ var ns_watersources_map = {
 				</div>",
 
         'songhua':"<div class=\"basin-info songhua-info\">\
-					<h2>Songhua River (松花江)</h2>\
+					<h4>Songhua River (松花江)</h4>\
                     <p>Also known as the Sungari, the Songhua River is 2,308km long. It is the largest tributary of the Heilongjiang River and flows from the Changbai Mountains.</p>\
 					 <p>Key Facts:<br>\
                     </p><ul>\
@@ -58,7 +58,7 @@ var ns_watersources_map = {
 				</div>",
 
         'yangtze':"<div class=\"basin-info yangtze-info\">\
-					<h2>Yangtze River (长江)</h2>\
+					<h4>Yangtze River (长江)</h4>\
                     <p>The longest river in China and the third longest in the world at 6,300km, it originates in the Tibetan plateau and flows through Qinghai, Tibet, Yunnan, Sichuan, Hubei, Hunan, Jiangxi, Anhui and Jiangsu before entering the East China Sea in Shanghai. It has 8 major tributaries and a catchment area of 1.8million km<sup>2</sup>, equivalent to around 20% of China's land mass.</p>\
                      <p>Key Facts:<br>\
                     </p><ul>\
@@ -70,7 +70,7 @@ var ns_watersources_map = {
 				</div>",
 
         'yellow':"<div class=\"basin-info yellow-info\">\
-					<h2>Yellow River (黄河)</h2>\
+					<h4>Yellow River (黄河)</h4>\
                     <p>The Yellow River is China's second longest river at almost 5,500km. The river is noted for its associations with ancient Chinese culture and civilization. Originating in the Bayanhar Mountains in Qinghai Province, it meanders across 9 provinces and reaches the ocean in Shandong Province.</p>\
                     <p>Key Facts:<br>\
                     </p><ul>\
@@ -80,8 +80,8 @@ var ns_watersources_map = {
                     </ul><p></p>\
 				</div>",
 
-        'pearl':"<div class=\"city_info\">\
-					<h2>Pearl River (珠江)</h2>\
+        'pearl':"<div class=\"basin-info pearl-info\">\
+					<h4>Pearl River (珠江)</h4>\
                     <p>The Pearl flows through dense population areas of Yunnan, Guizhou, Guangxi, Guandong and empties into the South China Sea between Hong Kong and Macau where it forms a delta. The river is 2,214km long and its basin is over 400,000km<sup>2</sup>.</p>\
                      <p>Key Facts:<br>\
                     </p><ul>\

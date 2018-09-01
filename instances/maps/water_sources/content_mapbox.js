@@ -25,16 +25,16 @@ jQuery("input[name='basemap']")
 
 map.on('load', function() {
 
-  map.addLayer({
-    id: 'prec',
-    type: 'raster',
-    source: {
-      type: 'raster',
-      tiles: ['https://api.mapbox.com/v4/chinawaterrisk.b69jkhaz/{z}/{x}/{y}.png?access_token='+mapboxgl.accessToken],
-    },
-    minzoom: 2.8,
-    maxzoom: 2.8
-  },'rivers');
+  // map.addLayer({
+  //   id: 'prec',
+  //   type: 'raster',
+  //   source: {
+  //     type: 'raster',
+  //     tiles: ['https://api.mapbox.com/v4/chinawaterrisk.b69jkhaz/{z}/{x}/{y}.png?access_token='+mapboxgl.accessToken],
+  //   },
+  //   minzoom: 2.8,
+  //   maxzoom: 2.8
+  // },'rivers');
 
 
   jQuery("input[name='basemap']").each(function(){

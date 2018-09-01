@@ -77,6 +77,8 @@ var ns_watersources_map = {
 
         'yellow':"<div class=\"basin-info yellow-info\">\
 					<h4>Yellow River (黄河)</h4>\
+          <div class='bp-text bp-paragraph-text'>\
+
                     <p>The Yellow River is China's second longest river at almost 5,500km. The river is noted for its associations with ancient Chinese culture and civilization. Originating in the Bayanhar Mountains in Qinghai Province, it meanders across 9 provinces and reaches the ocean in Shandong Province.</p>\
                     <p>Key Facts:<br>\
                     </p><ul>\
@@ -88,6 +90,8 @@ var ns_watersources_map = {
 
         'pearl':"<div class=\"basin-info pearl-info\">\
 					<h4>Pearl River (珠江)</h4>\
+          <div class='bp-text bp-paragraph-text'>\
+
                     <p>The Pearl flows through dense population areas of Yunnan, Guizhou, Guangxi, Guandong and empties into the South China Sea between Hong Kong and Macau where it forms a delta. The river is 2,214km long and its basin is over 400,000km<sup>2</sup>.</p>\
                      <p>Key Facts:<br>\
                     </p><ul>\

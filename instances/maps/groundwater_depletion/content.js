@@ -384,4 +384,4 @@ var ns_groundwater_depletion = {
 
 jQuery( document ).ready(function() {
   ns_groundwater_depletion.init();
-}
+});

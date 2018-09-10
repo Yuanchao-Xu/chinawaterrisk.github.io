@@ -350,4 +350,4 @@ var ns_groundwater_reliance = {
 
 jQuery( document ).ready(function() {
   ns_groundwater_reliance.init();
-}
+});

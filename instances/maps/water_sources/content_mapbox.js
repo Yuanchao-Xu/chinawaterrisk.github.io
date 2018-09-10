@@ -75,10 +75,23 @@ var ns_watersources_map = {
                     <li>19.1% of the water quality is poor = not fit for human contact (Ministry of Environmental Protection, 2009 State of Environment Report). This has deteriorated from 12.6% in 2009.</li></ul><p></p></div>\
 				</div>",
 
+        'pearl':"<div class=\"basin-info pearl-info\">\
+          <h4>Pearl River (珠江)</h4>\
+          <div class='bp-text bp-paragraph-text'>\
+                    <p>The Pearl flows through dense population areas of Yunnan, Guizhou, Guangxi, Guandong and empties into the South China Sea between Hong Kong and Macau where it forms a delta. The river is 2,214km long and its basin is over 400,000km<sup>2</sup>.</p>\
+                     <p>Key Facts:<br>\
+                    </p><ul>\
+          <li>Water treatment from a range of industries including textile</li>\
+                    <li>Initiatives under way to clean up the Pearl River Delta</li>\
+                    <li>Surrounded by fertile soil and abundant natural resources</li>\
+                    <li>15.2% of the water quality is poor = not fit for human contact (Ministry of Environmental Protection, 2009 State of Environment Report)</li>\
+                    </ul><p></p></div>\
+         </div>",
+
+
         'yellow':"<div class=\"basin-info yellow-info\">\
 					<h4>Yellow River (黄河)</h4>\
           <div class='bp-text bp-paragraph-text'>\
-
                     <p>The Yellow River is China's second longest river at almost 5,500km. The river is noted for its associations with ancient Chinese culture and civilization. Originating in the Bayanhar Mountains in Qinghai Province, it meanders across 9 provinces and reaches the ocean in Shandong Province.</p>\
                     <p>Key Facts:<br>\
                     </p><ul>\
@@ -88,19 +101,7 @@ var ns_watersources_map = {
                     </ul><p></p></div>\
 				</div>",
 
-        'pearl':"<div class=\"basin-info pearl-info\">\
-					<h4>Pearl River (珠江)</h4>\
-          <div class='bp-text bp-paragraph-text'>\
 
-                    <p>The Pearl flows through dense population areas of Yunnan, Guizhou, Guangxi, Guandong and empties into the South China Sea between Hong Kong and Macau where it forms a delta. The river is 2,214km long and its basin is over 400,000km<sup>2</sup>.</p>\
-                     <p>Key Facts:<br>\
-                    </p><ul>\
-					<li>Water treatment from a range of industries including textile</li>\
-                    <li>Initiatives under way to clean up the Pearl River Delta</li>\
-                    <li>Surrounded by fertile soil and abundant natural resources</li>\
-                    <li>15.2% of the water quality is poor = not fit for human contact (Ministry of Environmental Protection, 2009 State of Environment Report)</li>\
-                    </ul><p></p></div>\
-				</div>"
 
     }
 
@@ -192,7 +193,7 @@ var ns_watersources_map = {
       }
 
       // CHANGE: Add layer names that need to be interactive
- 
+
       // map.on('mouseover', 'basins', showPopup);
       // map.on('mouseleave', 'basins', hidePopup);
       // map.on('mousemove', 'basins', updatePopup);

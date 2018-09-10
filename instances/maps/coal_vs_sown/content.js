@@ -4,6 +4,12 @@ var map_id='map'
 
 var formatTotal = d3.format(',.0f');
 
+var neonGreen = "#69F052"
+var neonBlue = "#00B5FF"
+
+var colorSown = neonBlue
+//var colorSown = "#9ADFFF"
+
 //the size of the graph
 var width = 960,
 height = 700;
@@ -72,7 +78,7 @@ var colorBubbleCoal = d3.scaleLinear()
 
 var colorBubbleSown = d3.scaleLinear()
 .domain([minValueSown, maxValueSown])
-.range(["#69F052"])
+.range([colorSown])
 .interpolate(d3.interpolateHcl);
 
 function showMapTooltipCoal(d) {
@@ -255,7 +261,7 @@ d3.json(wri_json_url, function(error, wri){
 							.style('fill', function(d) {
 								return colorBubbleCoal(value_coal_resources[d.properties.NAME_1]);
 							})
-							.style('fill-opacity',0.7)
+							.style('fill-opacity',0.8)
 							.style('stroke','black')
 							.on("mouseover", showMapTooltipCoal)
 							.on("mousemove", showMapTooltipCoal)
@@ -276,7 +282,7 @@ d3.json(wri_json_url, function(error, wri){
 								return colorBubbleSown(value_sown_area[d.properties.NAME_1]);
 							})
 							.style('fill-opacity',0.7)
-							.style('stroke','#69F052')
+							.style('stroke',colorSown)
 							.on("mousemove", showMapTooltipSown)
 							.on("mouseout", function(d){ tooltip.style("display", "none");});
 
@@ -349,12 +355,14 @@ d3.json(wri_json_url, function(error, wri){
 							.text("[1,000 hectares]");
 
 							legend_bubbled_sown.selectAll(".legend-bubble")
-							.data([minValueSown, (maxValueSown + minValueSown) / 3, maxValueSown])
+							.data([maxValueSown, (maxValueSown + minValueSown) / 3, minValueSown])
 							.enter()
 							.append("circle")
 							.attr("class", "legend-bubble sown-g")
-							.attr("fill", "#69F052")
-							.attr("opacity",0.3)
+							.attr("fill", colorSown)
+							.attr("opacity",0.5)
+              .attr('stroke','white')
+              .attr('stroke-width',2)
 							.attr("cx", leg_bubble1_left + radiusSown(maxValueSown))
 							.attr("cy", function(d) { return leg_bubble1_top - radiusSown(d) + 140; })
 							.attr("r", function(d) { return radiusSown(d); });

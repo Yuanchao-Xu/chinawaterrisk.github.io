@@ -192,7 +192,7 @@ var ns_watersources_map = {
       }
 
       // CHANGE: Add layer names that need to be interactive
-
+ 
       // map.on('mouseover', 'basins', showPopup);
       // map.on('mouseleave', 'basins', hidePopup);
       // map.on('mousemove', 'basins', updatePopup);

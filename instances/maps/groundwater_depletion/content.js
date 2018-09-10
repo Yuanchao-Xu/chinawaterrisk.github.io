@@ -381,4 +381,7 @@ var ns_groundwater_depletion = {
   }
 }
 
-ns_groundwater_depletion.init();
+
+jQuery( document ).ready(function() {
+  ns_groundwater_depletion.init();
+}

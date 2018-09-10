@@ -347,4 +347,7 @@ var ns_groundwater_reliance = {
     }
   }
 }
-ns_groundwater_reliance.init();
+
+jQuery( document ).ready(function() {
+  ns_groundwater_reliance.init();
+}

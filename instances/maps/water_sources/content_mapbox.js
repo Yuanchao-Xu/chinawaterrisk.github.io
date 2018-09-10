@@ -199,6 +199,9 @@ var ns_watersources_map = {
       // map.on('mousemove', 'basins', updatePopup);
       map.on('click', 'basins', showBasinInfo);
 
+      map.dragPan.disable();
+
+
 
     });
 
@@ -207,6 +210,9 @@ var ns_watersources_map = {
 
 jQuery( document ).ready(function() {
   ns_watersources_map.init();
+
+  // Select a first basin
+  jQuery(".yellow-info").show();
 
   // Legend
   const legend = document.getElementById('legend_prec_scale');

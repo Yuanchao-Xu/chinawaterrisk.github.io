@@ -28,8 +28,6 @@ h4{
 
 
 
-
-
 .bp-title{
     font-size: 1.36em;
     text-transform: capitalize;
@@ -63,7 +61,12 @@ h4{
 }
 
 
-
+.bp-ul-2col{
+    columns: 2;
+  -webkit-columns: 2;
+  -moz-columns: 2;
+  list-style-position: inside;
+}
 .bp-largenumber{
     font-size:1.82em;
     color: #9F171E;
@@ -205,6 +208,7 @@ h4{
     margin-bottom: 15px;
     text-align: center;
 }
+
 .map-forms .grid-item input{
     display: none;
 }
@@ -254,6 +258,9 @@ h4{
     color: #020303;
 }
 
+.bp-grey-bg{
+  background-color: #f5f5f5;
+}
 .blue-bg{
     color: #FFFFFF !important;
     background-color: #0D77B9;
@@ -289,11 +296,20 @@ input[type="checkbox"]:checked+label{
     font-size: 12px;
 }
 
+
+.grid-item label{
+    display: flex;
+    color: #555;
+    font-weight: 300;
+    font-size: 12px;
+}
+
 .crop-icon{
-    height: 30px;
+    height: 25px;
     padding: 0;
     cursor: pointer;
 }
+
 
 .bp-toprow {
 

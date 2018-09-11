@@ -6,9 +6,9 @@ chart = new Highcharts.Chart({
     renderTo: 'grounwater_surfacewater',
     style: {
            fontFamily: 'Arial Narrow'
-       },
+    },
     backgroundColor:"transparent",
-    spacingTop: 30
+    //spacingTop: 30
   },
     series: [{
       type: 'treemap',
@@ -67,7 +67,7 @@ chart = new Highcharts.Chart({
       dataLabels: {
           enabled: true,
           useHTML: true,
-          format: '<center><b>{point.name}</b></br>{point.value} bn m<sup>3</sup></br>{point.percentage}</center>',
+          format: '<center>{point.name} supply   {point.percentage}</center>',
           //format: '{point.name}',
           //distance: 5,
           //color: 'white',
@@ -76,7 +76,7 @@ chart = new Highcharts.Chart({
           //verticalAlign: 'top',
           style: {
             //color:'white',
-            fontSize: '12px',
+            fontSize: '20px',
             //fontWeight:300,
             textOutline: false,
           }

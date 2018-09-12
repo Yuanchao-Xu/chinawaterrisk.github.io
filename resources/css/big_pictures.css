@@ -55,6 +55,8 @@ h4{
 }
 
 .bp-source {
+    margin-top: 20px;
+    margin-bottom: 20px;
     font-size: 0.82em;
     color: #606060;
     font-style: italic;
@@ -257,6 +259,11 @@ h4{
 .bp-furtherreading{
     background:#EFEFEF;
     color: #020303;
+}
+
+.bp-green-bg{
+  bagrkcound-color: #6b8033;
+  color:white;
 }
 
 .bp-grey-bg{

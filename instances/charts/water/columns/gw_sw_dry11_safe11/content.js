@@ -6,7 +6,8 @@ chart = new Highcharts.Chart({
     renderTo: 'gw_sw_dry11',
     type: 'column',
     style: {
-           fontFamily: 'Arial Narrow'
+           fontFamily: 'Arial Narrow',
+           fontSize: '12px'
        },
     backgroundColor:"transparent",
     spacingTop: 0
@@ -37,7 +38,7 @@ chart = new Highcharts.Chart({
             textOutline: false,
           }
       }
-    }
+    },
   },
   yAxis: {
     lineWidth: 0,
@@ -72,7 +73,8 @@ chart = new Highcharts.Chart({
     // gridLineWidth: 0
   },
   legend: {
-    enabled: false
+    enabled: true,
+    symbolRadius: 0
   },
   credits: {
     enabled: false

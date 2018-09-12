@@ -12,9 +12,16 @@ chart = new Highcharts.Chart({
     spacingTop: 30
   },
   title: {
-    text:'',
+    text:'Annual rainfall (mm/year)',
+    align:'left',
     //text: 'Top-5 Sown Land',
-    margin: 0
+    margin: 0,
+    style: {
+      //color:'white',
+      fontSize: '14px',
+      fontWeight:300,
+      textOutline: false,
+    }
   },
   plotOptions: {
     column: {
@@ -39,9 +46,11 @@ chart = new Highcharts.Chart({
     }
   },
   yAxis: {
-    lineWidth: 1,
-        tickWidth: 1,
+    enabled: false,
+    lineWidth: 0,
+        tickWidth: 0,
         title: {
+          enabled: false,
             align: 'high',
             offset: 0,
             useHtml: true,
@@ -52,9 +61,9 @@ chart = new Highcharts.Chart({
 
         endOnTick: false,
                 //max: 1000,
-    lineWidth: 1,
+    lineWidth: 0,
     labels:{
-      enabled: true
+      enabled: false
     },
     tickAmount: 5,
     gridLineWidth: 0,

@@ -23,9 +23,10 @@ var ns_watersources_map = {
                     <p>The longest tributary of this sediment-rich river runs 1,329km through Beijing and Tianjin before emptying into the Bohai Gulf of the Yellow Sea.</p>\
                      <p>Key Facts:<br>\
                     </p><ul>\
-					<li>Hai's flood control has a significant economic and environmental impact on Beijing and Tianjin</li>\
-                    <li>Water treatment needed for a range of industrial pollution</li>\
-                    <li>68.3% of the water quality is poor = not fit for human contact (Ministry of Environmental Protection, 2009 State of Environment Report). This has deteriorated from 65.6% in 2009.</li>\
+					<li>Hai's flood control has a significant economic and environmental impact on Beijing and Tianjin.   <a class=\"bp-bp-link\" href=\"http://chinawaterrisk.org/the-big-picture/extreme-weather-events/\">Extreme Weather Events</a></li>\
+          <li>Although being the river with the most Grade V+ (worst category) water, its proportion of Grade V+ water markedly improved from 41% to 32.9% In 2016-2017. <a class=\"bp-bp-link\" href=\"http://chinawaterrisk.org/the-big-picture/war-on-pollution/\">War on Pollution</a></li>\
+          <li>Grade I-III water (fit for human touch) also improved from 37.3% to 41.7%. It is its first time to reverse the trend of “more good water; but also more really bad water” since 2012.</li>\
+          </li>\
                     </ul><p></p></div>\
 				</div>",
 
@@ -35,8 +36,8 @@ var ns_watersources_map = {
                     <p>The 1,078km Huai River originates in the Tongbai Mountain in Henan province and flows through northern Anhui, finally entering the Yangtze River at Jiangdu, Yangzhou.</p>\
                      <p>Key Facts:<br>\
                     </p><ul>\
-					<li>Investment in flood control</li>\
-					<li>58.1% of the water quality is poor = not fit for human contact (Ministry of Environmental Protection, 2009 State of Environment Report). This has improved from 62.7% in 2009.</li>\
+					<li>Water pollution has been linked to cancer villages in the basin during  the 1980s & 1990s <a class=\"bp-bp-link\" href=\"http://chinawaterrisk.org/the-big-picture/hidden-risks/\">Hidden Risks</a></li>\
+          <li>In 2016-2017, Grade I-III water quality (fit for human touch) deteriorated from 53.3% to 46.1%. Grade V+ water quality (worst category) also slightly worsened from 7.2% to 8.3%. <a class=\"bp-bp-link\" href=\"http://chinawaterrisk.org/the-big-picture/war-on-pollution/\">War on Pollution</a></li>\
                     </ul><p></p></div>\
 				</div>",
 
@@ -46,9 +47,9 @@ var ns_watersources_map = {
                     <p>Also known as the 'Mother' River, the 1,390km Liao flows through Hebei, Inner Mongolia, Jilin and Liaoning provinces. It empties into the Bohai Sea with a drainage area of over 200,000km<sup>2</sup>.</p>\
                      <p>Key Facts:<br>\
                     </p><ul>\
-                    <li>Pollution from lack of water treatment by heavy industry</li>\
-                    <li>59.5% of the water quality is poor = not fit for human contact (Ministry of Environmental Protection, 2009 State of Environment Report)</li>\
-                    <li>Potential transnational tension with Russia</li></ul><p></p></div>\
+                    <li>In 2016-2017, Grade I-III (fit for human touch) water in Liao River improved from 45.3% to 49% but Grade V+ water (worst category) deteriorated from 15.1% to 18.9%. <a class=\"bp-bp-link\" href=\"http://chinawaterrisk.org/the-big-picture/war-on-pollution/\">War on Pollution</a></li>\
+                    <li>Basin-wide flooding is rare but localised flooding occurs almost every year. Since 1886, the basin has suffered around 50 flood disasters. <a class=\"bp-bp-link\" href=\"http://chinawaterrisk.org/the-big-picture/extreme-weather-events/\">Extreme Weather Events</a></li>\
+                    </ul><p></p></div>\
 				</div>",
 
         'songhua':"<div class=\"basin-info songhua-info\">\
@@ -57,9 +58,9 @@ var ns_watersources_map = {
                     <p>Also known as the Sungari, the Songhua River is 2,308km long. It is the largest tributary of the Heilongjiang River and flows from the Changbai Mountains.</p>\
 					 <p>Key Facts:<br>\
                     </p><ul>\
-                    <li>Pollution from lack of water treatment by heavy industry</li>\
-                    <li>54.8% of the waater quality is poor = not fit for human contact(Ministry of Environmental Protection, 2011 State of Environment Report). This has improved from 59.5% in 2009.</li>\
-                    <li>Potential transnational tension with Russia</li></ul><p></p></div>\
+                    <li>Since a decline in 2016, Songhua has improved markedly across all categories in 2017. Grade I-III (fit for human touch) water quality materially improved from 60% to 69%, almost reaching the Water Ten target of 70%. <a class=\"bp-bp-link\" href=\"http://chinawaterrisk.org/the-big-picture/war-on-pollution/\">War on Pollution</a></li>\
+                    <li>Grade V+ (worst category) water quality also improved from 6.5% to 5.6%.</li>\
+                    </ul><p></p></div>\
 				</div>",
 
         'yangtze':"<div class=\"basin-info yangtze-info\">\
@@ -67,12 +68,13 @@ var ns_watersources_map = {
           <div class='bp-text bp-paragraph-text'>\
                     <p>The longest river in China and the third longest in the world at 6,300km, it originates in the Tibetan plateau and flows through Qinghai, Tibet, Yunnan, Sichuan, Hubei, Hunan, Jiangxi, Anhui and Jiangsu before entering the East China Sea in Shanghai. It has 8 major tributaries and a catchment area of 1.8million km<sup>2</sup>, equivalent to around 20% of China's land mass.</p>\
                      <p>Key Facts:<br>\
-                    </p><ul>\
-					<li>Social &amp; environmental impacts of massive hydropower projects such as the Three Gorges Dam </li>\
-                    <li>Investments that bolster integrated water resource management</li>\
-                    <li>Important source for transportation and irrigation</li>\
-                    <li>Suffers from sewage and industrial waste dumping</li>\
-                    <li>19.1% of the water quality is poor = not fit for human contact (Ministry of Environmental Protection, 2009 State of Environment Report). This has deteriorated from 12.6% in 2009.</li></ul><p></p></div>\
+                    </p>\
+                    <ul>\
+					<li>Low water stress (4%) but high exposure to climate & water risks. <a class=\"bp-bp-link\" href=\"http://chinawaterrisk.org/the-big-picture/10-hkh-rivers/\">10 HKH Rivers</a> <a class=\"bp-bp-link\" href=\"http://chinawaterrisk.org/the-big-picture/river-resources/\">River Resources</a></li>\
+          <li>The Yangtze flows through nine provinces and two municipalities that form the Yangtze River Economic Belt (YREB), a region which contributes to 42% of China’s GDP and home to 456mn people. <a class=\"bp-bp-link\" href=\"http://chinawaterrisk.org/the-big-picture/yangtze-water-nomics/\">Yangtze Water-nomics</a></li>\
+          <li>Green development of the YREB was specifically mentioned by President Xi in his 14 points during the 19th National Congress of the Communist Party of China.</li>\
+          <li>The Yangtze River Delta is also one of the focus regions for the Water Ten plan. In 2016-2017, Grade I-III water quality (fit for human touch) improved from 82.3% in 2016 to 84.5%. Grade V+ water quality (worst category) also improved from 3.5% to 2.2%  <a class=\"bp-bp-link\" href=\"http://chinawaterrisk.org/the-big-picture/war-on-pollution/\">War on Pollution</a></li>\
+          </ul><p></p></div>\
 				</div>",
 
         'pearl':"<div class=\"basin-info pearl-info\">\
@@ -81,22 +83,25 @@ var ns_watersources_map = {
                     <p>The Pearl flows through dense population areas of Yunnan, Guizhou, Guangxi, Guandong and empties into the South China Sea between Hong Kong and Macau where it forms a delta. The river is 2,214km long and its basin is over 400,000km<sup>2</sup>.</p>\
                      <p>Key Facts:<br>\
                     </p><ul>\
-          <li>Water treatment from a range of industries including textile</li>\
-                    <li>Initiatives under way to clean up the Pearl River Delta</li>\
-                    <li>Surrounded by fertile soil and abundant natural resources</li>\
-                    <li>15.2% of the water quality is poor = not fit for human contact (Ministry of Environmental Protection, 2009 State of Environment Report)</li>\
-                    </ul><p></p></div>\
-         </div>",
+          <li>The Pearl River feeds the Greater Bay Area (GBA), a region earmarked by the Chinese government to become a globally competitive metropolis. The GBA already accounts for 5% of China’s entire population and 12% of national GDP.</li>\
+          <li>In 2016-2017, Grade I-III water quality (fit for human touch) deteriorated from 89.6% to 87.3%. Grade V+ (worst category water quality also slightly worsened from 3.6% to 4.2%. <a class=\"bp-bp-link\" href=\"http://chinawaterrisk.org/the-big-picture/war-on-pollution/\">War on Pollution</a></li>\
+        <li>88% of the Pearl River Delta’s GDP is generated by 6 cities in “water poverty”.\
+        The Pearl River Delta is one of the focus regions for the Water Ten plan.</li>\
+        <li>The Dongjiang River which feeds Hong Kong is a tributary of the Pearl River; 11% of water from the Dongjiang River was classified as Grade V+ water quality (worst category) in 2015.</li>\
+      </ul><p></p></div>\
+      </div>",
 
         'yellow':"<div class=\"basin-info yellow-info\">\
 					<h4>Yellow River (黄河)</h4>\
           <div class='bp-text bp-paragraph-text'>\
                     <p>The Yellow River is China's second longest river at almost 5,500km. The river is noted for its associations with ancient Chinese culture and civilization. Originating in the Bayanhar Mountains in Qinghai Province, it meanders across 9 provinces and reaches the ocean in Shandong Province.</p>\
                     <p>Key Facts:<br>\
-                    </p><ul>\
-                    <li>Impact of agri-chemicals on the river in China’s agricultural heartland as it suffers from intense irrigation</li>\
-                    <li>Water volumes decreasing and flows less predictable</li>\
-					<li>30.2% of the water quality is poor = not fit for human contact (Ministry of Environmental Protection, 2011 State of Environment Report)</li>\
+                    </p>\
+                    <ul>\
+                    <li>High water stress (63%) and high exposure to climate & water risks.  <a class=\"bp-bp-link\" href=\"http://chinawaterrisk.org/the-big-picture/10-hkh-rivers/\">10 HKH Rivers</a>  <a class=\"bp-bp-link\" href=\"http://chinawaterrisk.org/the-big-picture/river-resources/\">River Resources</a></li>\
+                    <li>Impact of agri-chemicals on the river in China’s agricultural heartland as it suffers from intense irrigation.</li>\
+                    <li>In 2016-2017, Grade I-III water quality (fit for human touch) deteriorated from 59.1% to 57.7%. Grade V+ (worst category) water quality also worsened from 13.9% to 16.1%. <a class=\"bp-bp-link\" href=\"http://chinawaterrisk.org/the-big-picture/war-on-pollution/\">War on Pollution</a></li>\
+                    <li>Changing river flows - runoffs from its upper reaches in 2016 were 30% less than an average year, the driest in recent 14 years.   <a class=\"bp-bp-link\" href=\"http://chinawaterrisk.org/the-big-picture/river-runoff-mix/\">River Runoff Mix</a></li>\
                     </ul><p></p></div>\
 				</div>",
 

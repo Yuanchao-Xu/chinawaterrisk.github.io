@@ -77,7 +77,7 @@ chart = new Highcharts.Chart({
       {name:"Water resources",y:7, color: "#0D77B9"},
       {name:"Agriculture output",y:36, color: "#6B8033"},
       {name:"Population",y:38, color: "#7C8388"},
-      {name:"GDP",y:43, color: "#151515"},
+      {name:"GRP",y:43, color: "#151515"},
     ],
       // ["Population",38],
       // ["GDP",43]],

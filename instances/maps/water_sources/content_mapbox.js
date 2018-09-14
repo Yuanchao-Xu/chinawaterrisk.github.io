@@ -100,30 +100,30 @@ var ns_watersources_map = {
                     </ul><p></p></div>\
 				</div>",
 
-        'upper-mekong': "<div class=\"basin-info upper-mekong-info\">\
-        					<h4>Upper Mekong River (澜沧江)</h4>\
-                            <p>The Mekong is the longest river in South East Asia at over 2,300km.\
-                            It starts in Qinghai leaving China in Yunnan, flowing through Laos and\ Cambodia and emptying out into the sea in south Vietnam.</p>\
-        					<p>Key Facts:<br>\
-                            </p><ul>\
-        					<li>Social and environmental impacts of dams and hydropower projects</li>\
-                            <li>River flow diversion from downstream countries - Vietnam in\ particular </li>\
-                            <li>Potential transnational tension with Cambodia, Laos and\ Vietnam</li>\
-                           </ul><p></p>\
-        				</div>",
-
-          'brahmaputra':
-                "<div class=\"basin-info brahmaputra-info\">\
-					<h4>Brahmaputra River (雅鲁藏布江)</h4>\
-                    <p>Starting from Tibet, the 2,900 km long river first flows east and then south through India and Bangladesh into the Indian Ocean. </p>\
-                     <p>Key Facts:<br>\
-                    </p><ul>\
-					<li>Important source for transportation and irrigation</li>\
-                    <li>Dam building and river diversion</li>\
-                    <li>Natural habitat of rare river dolphins</li>\
-                    <li>Potential transnational tension  with India and Bangladesh</li>\
-                    </ul><p></p>\
-				</div>"
+        // 'upper-mekong': "<div class=\"basin-info upper-mekong-info\">\
+        // 					<h4>Upper Mekong River (澜沧江)</h4>\
+        //                     <p>The Mekong is the longest river in South East Asia at over 2,300km.\
+        //                     It starts in Qinghai leaving China in Yunnan, flowing through Laos and\ Cambodia and emptying out into the sea in south Vietnam.</p>\
+        // 					<p>Key Facts:<br>\
+        //                     </p><ul>\
+        // 					<li>Social and environmental impacts of dams and hydropower projects</li>\
+        //                     <li>River flow diversion from downstream countries - Vietnam in\ particular </li>\
+        //                     <li>Potential transnational tension with Cambodia, Laos and\ Vietnam</li>\
+        //                    </ul><p></p>\
+        // 				</div>",
+        //
+        //   'brahmaputra':
+        //         "<div class=\"basin-info brahmaputra-info\">\
+				// 	<h4>Brahmaputra River (雅鲁藏布江)</h4>\
+        //             <p>Starting from Tibet, the 2,900 km long river first flows east and then south through India and Bangladesh into the Indian Ocean. </p>\
+        //              <p>Key Facts:<br>\
+        //             </p><ul>\
+				// 	<li>Important source for transportation and irrigation</li>\
+        //             <li>Dam building and river diversion</li>\
+        //             <li>Natural habitat of rare river dolphins</li>\
+        //             <li>Potential transnational tension  with India and Bangladesh</li>\
+        //             </ul><p></p>\
+				// </div>"
     }
 
     for(var basin in basins_infos) {

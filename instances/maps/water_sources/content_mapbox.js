@@ -241,7 +241,7 @@ jQuery( document ).ready(function() {
   ns_watersources_map.init();
 
   // Select a first basin
-  jQuery(".yellow-info").show();
+  jQuery(".yangtze-info").show();
 
   // Legend
   const legend = document.getElementById('legend_prec_scale');

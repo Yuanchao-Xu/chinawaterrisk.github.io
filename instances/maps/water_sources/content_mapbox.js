@@ -204,8 +204,14 @@ var ns_watersources_map = {
 
       function showBasinInfo(e){
           basin = e.features[0].properties.River.replace(/\s+/g, '-').toLowerCase();
-          jQuery(".basin-info").hide();
-          jQuery("."+basin+"-info").show();
+
+          // change only if basin exists
+          if( basin in basins_infos){
+            jQuery(".basin-info").hide();
+            jQuery("."+basin+"-info").show();
+          }
+
+
       }
 
       function checkEmpty(info) {

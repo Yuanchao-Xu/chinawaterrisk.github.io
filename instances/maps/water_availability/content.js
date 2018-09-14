@@ -1,4 +1,6 @@
+var ns_wateravailability_map = {
 
+  init: function(){
 //var ValueByProvince = d3.map();
 var map_id='map-avail'
 
@@ -396,3 +398,9 @@ var tws_url='https://raw.githubusercontent.com/chinawaterrisk/chinawaterrisk.git
 			//	});
 			});
 		});
+  }
+}
+
+jQuery( document ).ready(function() {
+  ns_wateravailability_map.init();
+});

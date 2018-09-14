@@ -235,6 +235,7 @@ var tws_url='https://raw.githubusercontent.com/chinawaterrisk/chinawaterrisk.git
 							.data(centroids.features)
 							.enter()
 							.append('text')
+              .attr('class','province-name-g')
 							.attr('id', 'bubble_text')
 							.attr('transform', function(d) { return 'translate(' + path.centroid(d) + ')'; })
 							.style('fill','#FFFFFF')

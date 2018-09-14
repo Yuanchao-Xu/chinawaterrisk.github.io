@@ -236,6 +236,7 @@ var tws_url='https://raw.githubusercontent.com/chinawaterrisk/chinawaterrisk.git
 							.enter()
 							.append('text')
               .attr('class','province-name-g')
+              .attr("text-anchor", "middle")
 							.attr('id', 'bubble_text')
 							.attr('transform', function(d) { return 'translate(' + path.centroid(d) + ')'; })
 							.style('fill','#FFFFFF')

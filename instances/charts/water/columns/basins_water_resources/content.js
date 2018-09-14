@@ -99,7 +99,7 @@ chart = new Highcharts.Chart({
     data: [
 
       {name:"Northwest",y:151.41, color: "#0D77B9"},
-      {name:"Irak",y:216, color: "#141C28"},
+      {name:"Iraq",y:216, color: "#141C28"},
 
       {name:"Yellow",y:471.5, color: "#0D77B9"},
       {name:"Hai",y:475.0, color: "#0D77B9"},

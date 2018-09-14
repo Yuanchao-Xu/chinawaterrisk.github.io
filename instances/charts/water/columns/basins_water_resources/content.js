@@ -72,7 +72,7 @@ chart = new Highcharts.Chart({
     lineWidth: 0,
     labels:{
       enabled: true,
-      autoRotation: -90
+      rotation: -90
     },
      type: "category",
     //categories : ["Songhua","Liao","Hai","Yellow","Huai","Yangtze","Southeast","Pearl","Southwest","Northwest"],

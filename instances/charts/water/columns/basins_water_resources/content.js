@@ -77,7 +77,8 @@ chart = new Highcharts.Chart({
       autoRotationLimit: 20,
       //autoRotation: -45,
       style:{
-        fontSize: '10px'
+        fontSize: '10px',
+        color: 'black'
       }
     },
      type: "category",

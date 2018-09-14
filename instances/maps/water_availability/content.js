@@ -27,6 +27,7 @@ var value_water_resources = {};
 var color_water_resources = {};
 
 var selected_bubbles;
+var tooltip_province;
 
 var offsetLegendBubble2 = function(){
   if(selected_bubbles=='both'){
@@ -77,6 +78,33 @@ var colorBubbleSown = d3.scaleLinear()
 .range(["#69F052"])
 .interpolate(d3.interpolateHcl);
 
+
+function showMapAvailability(d) {
+      province_name = d.properties.NAME_1;
+      tooltip_province = province_name;
+
+      province_water_avail = value_water_resources[province_name];
+
+			x=(d3.event.layerX - 30)
+			y=(d3.event.layerY - 90)
+
+      var width = d3.select("#"+map_id).node().getBoundingClientRect().width;
+
+      if(d3.event.layerX > width/2){
+
+        	x=(d3.event.layerX - 180)
+      }
+      var mouse = d3.mouse(svg.node())
+        .map( function(d) { return parseInt(d); } );
+      	tooltip.style("display", "inherit")
+        .attr("class", "map-tooltip")
+        .attr("style", "left:"+x+"px;top:"+y+"px")
+        .html("<b>"+province_name+"</b><br /> "+
+        +Math.round(province_water_avail)+" cubic meter / capita / year"+
+        "<br />Average 2005-2015");
+}
+
+
 function showMapTooltipCoal(d) {
       province_name = d.properties.NAME_1;
 			mn_tonnes = value_coal_resources[province_name];
@@ -121,11 +149,12 @@ function showMapTooltipSown(d) {
 }
 
 function showMapTooltip(d){
-  if(selected_bubbles=='coal'){
-    return showMapTooltipCoal(d);
-  }else if(selected_bubbles=='sown'){
-    return showMapTooltipSown(d);
-  }
+  // if(selected_bubbles=='coal'){
+  //   return showMapTooltipCoal(d);
+  // }else if(selected_bubbles=='sown'){
+  //   return showMapTooltipSown(d);
+  // }
+  showMapAvailability(d);
 }
 
 colorAvail = function(cum){
@@ -193,17 +222,10 @@ var tws_url='https://raw.githubusercontent.com/chinawaterrisk/chinawaterrisk.git
 							// 	return colorWri(d.properties.BWS_cat.charAt(0));
 							// });
 
-							svg.selectAll('#province_fill')
-							.data(provinces.features)
-							.enter()
-							.append('path')
-							.attr('id', 'province_fill')
-							.attr('class','avail-g')
-							.attr('d', path)
-							.style('fill', function(d){
-								return colorAvail(value_water_resources[d.properties.NAME_1]);
-							})
-							.style('stroke', 'transparent');
+
+
+              // .on("mousemove", showMapTooltip)
+              // .on("mouseout", function(d){ tooltip.style("display", "none");});
 
 							// svg.selectAll('#tws')
 							// .data(tws.features)
@@ -217,33 +239,70 @@ var tws_url='https://raw.githubusercontent.com/chinawaterrisk/chinawaterrisk.git
 							// });
               //
 
-							svg.selectAll('#province_border')
-							.data(provinces.features)
-							.enter()
-							.append('path')
-							.attr('id', 'province_border')
-							.attr('class','province-border-g')
-							.attr('d', path)
-							.style('fill', 'transparent')
-							.style('stroke', '#CFD8DC')
-							.style('stroke-width', 1);
 
 
 
-							svg.selectAll('#bubble_text')
-							.style("text-anchor", "middle")
-							.data(centroids.features)
-							.enter()
-							.append('text')
-              .attr('class','province-name-g')
-              .attr("text-anchor", "middle")
-							.attr('id', 'bubble_text')
-							.attr('transform', function(d) { return 'translate(' + path.centroid(d) + ')'; })
-							.style('fill','#FFFFFF')
-							.text(function(d) { return d.properties.NAME_1; })
+
+              // svg.selectAll('#province_fill')
+              // .data(provinces.features)
+              // .enter()
+              // .append('path')
+              // .attr('id', 'province_fill')
+              // .attr('class','avail-g')
+              // .attr('d', path)
+              // .style('fill', function(d){
+              //   return colorAvail(value_water_resources[d.properties.NAME_1]);
+              // })
+              // .style('stroke', 'transparent')
+              // .on("mouseover", showMapTooltip)
+              // //.on("mousemove", showMapTooltip)
+              // .on("mouseout", function(d){
+              //     if(d.properties.NAME_1 == tooltip_province){
+              //         tooltip.style("display", "none");
+              //     }
+              //   });
+
+
+
+              svg.selectAll('#province_border')
+              .data(provinces.features)
+              .enter()
+              .append('path')
+              .attr('id', 'province_border')
+              .attr('class','province-border-g')
+              .attr('d', path)
+              .style('fill', function(d){
+                return colorAvail(value_water_resources[d.properties.NAME_1]);
+              })
+              .style('stroke', '#CFD8DC')
+              .style('stroke-width', 1)
+              .on("mouseover", showMapTooltip)
               .on("mousemove", showMapTooltip)
-              .on("mouseout", function(d){ tooltip.style("display", "none");});
+              .on("mouseout", function(d){
+                      tooltip.style("display", "none");
+                });
 
+                svg.selectAll('#bubble_text')
+                .style("text-anchor", "middle")
+                .data(centroids.features)
+                .enter()
+                .append('text')
+                .attr('class','province-name-g')
+                .attr("text-anchor", "middle")
+                .attr('id', 'bubble_text')
+                .attr('transform', function(d) { return 'translate(' + path.centroid(d) + ')'; })
+                .style('fill','#FFFFFF')
+                .text(function(d) { return d.properties.NAME_1; })
+                .on("mouseover", showMapTooltip)
+                .on("mousemove", showMapTooltip)
+                .on("mouseout", function(d){
+                        tooltip.style("display", "none");
+                  });;
+
+
+
+              // .on("mousemove", showMapTooltip)
+              // .on("mouseout", function(d){ tooltip.style("display", "none");});
 
 							// var legend_wri = svg.append("g")
 							// .attr("class", "legend legend-squared wri-g");

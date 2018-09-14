@@ -1,6 +1,6 @@
 
 //var ValueByProvince = d3.map();
-var map_id='map'
+var map_id='map-avail'
 
 var formatTotal = d3.format(',.0f');
 

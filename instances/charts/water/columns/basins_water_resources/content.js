@@ -9,7 +9,9 @@ chart = new Highcharts.Chart({
            fontFamily: 'Arial Narrow'
        },
     backgroundColor:"transparent",
-    spacingTop: 30
+    spacingTop: 30,
+    spacingLeft:0,
+    spacingRight: 0
   },
   title: {
     text:'Annual rainfall (mm/year)',
@@ -72,7 +74,11 @@ chart = new Highcharts.Chart({
     lineWidth: 0,
     labels:{
       enabled: true,
-      rotation: -90
+      autoRotationLimit: 20,
+      //autoRotation: -45,
+      style:{
+        fontSize: '10px'
+      }
     },
      type: "category",
     //categories : ["Songhua","Liao","Hai","Yellow","Huai","Yangtze","Southeast","Pearl","Southwest","Northwest"],

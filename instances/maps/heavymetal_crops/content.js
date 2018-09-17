@@ -816,4 +816,7 @@ var ns_heavymetal_crops = {
   }
 }
 
-ns_heavymetal_crops.init();
+jQuery( document ).ready(function() {
+  ns_heavymetal_crops.init();
+
+});

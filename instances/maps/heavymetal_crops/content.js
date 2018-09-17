@@ -3,7 +3,7 @@ var ns_heavymetal_crops = {
   init: function(){
 
     //var ValueByProvince = d3.map();
-    var map_id='map'
+    var map_id='heavymetals-map'
 
     var formatTotal = d3.format(',.0f');
 

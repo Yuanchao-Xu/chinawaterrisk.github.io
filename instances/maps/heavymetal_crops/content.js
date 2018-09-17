@@ -408,6 +408,7 @@ var ns_heavymetal_crops = {
                   .enter()
                   .append('text')
                   .attr('id', 'bubble_text')
+                  .attr('class','province-name-g')
                   .attr('transform', function(d) { return 'translate(' + path.centroid(d) + ')'; })
                   .style('fill','#FFFFFF')
                   .text(function(d) { return d.properties.NAME_1; })

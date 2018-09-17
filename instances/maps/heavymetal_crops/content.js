@@ -37,7 +37,7 @@ var ns_heavymetal_crops = {
 
     var value_heavymetals = {
       'heavymetals':{
-        name : 'Heavy Metals Emission',
+        name : 'Heavy Metals',
         unit: 'kg',
         column: 'Heavy Metals (kg)',
         min:0,

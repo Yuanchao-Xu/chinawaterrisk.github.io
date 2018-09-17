@@ -64,9 +64,9 @@ h4{
 
 .bp-ul-2col{
     columns: 2;
-  -webkit-columns: 2;
-  -moz-columns: 2;
-  list-style-position: inside;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+    list-style-position: inside !important;
 }
 .bp-largenumber{
     font-size:1.82em;

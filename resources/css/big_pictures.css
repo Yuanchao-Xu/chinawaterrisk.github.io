@@ -177,6 +177,7 @@ h4{
 .province-name-g{
    font-family:"Arial Narrow";
    font-size: '12px';
+   text-anchor: middle;
 }
 
 .map-forms{

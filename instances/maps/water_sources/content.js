@@ -182,4 +182,7 @@ var ns_watersources_map = {
 
   }
 }
-ns_watersources_map.init();
+
+jQuery( document ).ready(function() {
+  ns_watersources_map.init();
+}

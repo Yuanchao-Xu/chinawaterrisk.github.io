@@ -830,4 +830,7 @@ var ns_crops = {
   }
 }
 
-ns_crops.init();
+
+jQuery( document ).ready(function() {
+  ns_crops.init();
+}

@@ -833,4 +833,4 @@ var ns_crops = {
 
 jQuery( document ).ready(function() {
   ns_crops.init();
-}
+});

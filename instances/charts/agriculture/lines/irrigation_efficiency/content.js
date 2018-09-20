@@ -153,8 +153,9 @@ var ns_line_irrigation = {
 		});
 
 	}
+}
 
 
-	jQuery( document ).ready(function() {
+	jQuery( document ).ready(function(){
 		ns_line_irrigation.init();
 	});

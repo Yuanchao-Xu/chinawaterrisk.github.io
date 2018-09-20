@@ -46,7 +46,7 @@ chart = new Highcharts.Chart({
     gridLineWidth: 0,
     tickWidth:0,
     title:null,
-    max:50
+    max:80
   },
   xAxis: {
     lineWidth: 0,

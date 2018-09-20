@@ -5,7 +5,7 @@
 chart = new Highcharts.Chart({
   chart: {
       marginTop: -20,
-    renderTo: 'dry11_mismatch_bar_container',
+    renderTo: 'safe13_mismatch_bar_container',
     type: 'bar',
     style: {
            fontFamily: 'Arial Narrow'
@@ -75,10 +75,10 @@ chart = new Highcharts.Chart({
   series: [{
     name: 'Dry11 mismatch',
     data: [
-      {name:"Water resources",y:7, color: "#0D77B9"},
-      {name:"Agriculture output",y:36, color: "#6B8033"},
-      {name:"Population",y:38, color: "#7C8388"},
-      {name:"GRP",y:43, color: "#151515"},
+      {name:"Water resources",y:71, color: "#0D77B9"},
+      {name:"Agriculture output",y:40, color: "#6B8033"},
+      {name:"Population",y:36, color: "#7C8388"},
+      {name:"GRP",y:30, color: "#151515"},
     ],
       // ["Population",38],
       // ["GDP",43]],

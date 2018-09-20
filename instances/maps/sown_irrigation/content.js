@@ -542,5 +542,6 @@ d3.json(wri_json_url, function(error, wri){
 });
 }
 }
-
-ns_irrigation_map.init();
+jQuery( document ).ready(function() {
+  ns_irrigation_map.init();
+});

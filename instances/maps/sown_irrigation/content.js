@@ -264,6 +264,7 @@ d3.json(wri_json_url, function(error, wri){
 							.enter()
 							.append('text')
 							.attr('id', 'bubble_text')
+              .attr('class','province-name-g')
 							.attr('transform', function(d) { return 'translate(' + path.centroid(d) + ')'; })
 							.style('fill','#FFFFFF')
 							.text(function(d) { return d.properties.NAME_1; })

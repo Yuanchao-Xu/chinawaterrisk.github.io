@@ -33,6 +33,15 @@ var ns_heavymetal_crops = {
         color:"#69F052",
         data:{}
       },
+      'wheat':{
+        name:'Wheat Output',
+        unit:'10,000 tonnes',
+        column:'Output of Wheat(10000 tons)',
+        min:5,
+        max:3000,
+        color:"#69F052",
+        data:{}
+      },
     }
 
     var value_heavymetals = {
@@ -592,58 +601,39 @@ var ns_heavymetal_crops = {
                     }
                   }
 
-                  setBubbles = function(selected) {
+                  setHeavymetalBubbles = function(selected) {
 
                     selected_bubbles = selected;
-                    all_values = Object.assign({}, value_crops,value_heavymetals);
+                    all_values = value_heavymetals; //Object.assign({}, value_crops,value_heavymetals);
 
                     for (var item in all_values) {
                       if(item==selected_bubbles || selected_bubbles=='all'){
                         svg.selectAll("."+item+"-g").style("display", "inherit");
                       }else{
                         svg.selectAll("."+item+"-g").style("display", "none");
-                        svg.selectAll(".rice-g").style("display", "inherit");
                       }
-
-
                     }
 
-                    if(selected_bubbles!='rice'){
+                    //if(selected_bubbles!='rice'){
                       jQuery('.legend.'+selected_bubbles+'-g').css('transform', 'translate(0, -180px)');
+                    //}
+                  }
+
+                  setCropBubbles = function(selected) {
+
+                    selected_bubbles = selected;
+                    all_values = value_crops;
+
+                    for (var item in all_values) {
+                      if(item==selected_bubbles || selected_bubbles=='all'){
+                        svg.selectAll("."+item+"-g").style("display", "inherit");
+                      }else{
+                        svg.selectAll("."+item+"-g").style("display", "none");
+                      }
                     }
 
-                    //
-                    // var coal = svg.selectAll(".coal-g");
-                    // var sown = svg.selectAll(".sown-g");
-                    // //var sown_legend = svg.selectAll(".legend.sown-g");
-                    //
-                    // for
-                    //
-                    // if (view === "coal") {
-                    //   sown_legend.attr("transform", "translate(0,0)");
-                    //
-                    //   coal.style("display", "inherit");
-                    //   sown.style("display", "none");
-                    // } else if (view === "sown") {
-                    //   sown_legend.attr("transform", "translate(0,0)");
-                    //   coal.style("display", "none");
-                    //   sown.style("display", "inherit");
-                    // } else if (view === 'both'){
-                    //   coal.style("display", "inherit");
-                    //   sown.style("display", "inherit");
-                    //   // coal.transition().attr("x",0);
-                    //   // d3.select(".coal-g").transition().attr("x",0);
-                    //
-                    //   sown_legend.attr("transform", "translate(0,-200)");
-                    //   //       .duration(500)
-                    //   //       .attr("x",0);
-                    //   //       legend_bubbled_sown.enter().transition()
-                    //   //             .duration(500)
-                    //   //             .attr("y",0);
-                    //   // to_move = sown.data(sown.data());
-                    //   // to_move.transition()
-                    //   //       .attr("y",0);
-                    //
+                    // if(selected_bubbles!='rice'){
+                    //   jQuery('.legend.'+selected_bubbles+'-g').css('transform', 'translate(0, -180px)');
                     // }
                   }
 
@@ -654,14 +644,21 @@ var ns_heavymetal_crops = {
                     setBasemap(view);
                   });
 
-                  d3.selectAll("input[name='bubbles']")
+                  d3.selectAll("input[name='heavymetal_bubbles']")
                   .on("click", function() {
                     view = d3.select(this).attr("val");
-                    setBubbles(view);
+                    setHeavymetalBubbles(view);
+                  });
+
+                  d3.selectAll("input[name='crop_bubbles']")
+                  .on("click", function() {
+                    view = d3.select(this).attr("val");
+                    setCropBubbles(view);
                   });
 
                   setBasemap(jQuery("input[name='basemap']:checked").attr('val'))
-                  setBubbles(jQuery("input[name='bubbles']:checked").attr('val'))
+                  setHeavymetalBubbles(jQuery("input[name='heavymetal_bubbles']:checked").attr('val'))
+                  setCropBubbles(jQuery("input[name='crop_bubbles']:checked").attr('val'))
 
                 });
               });

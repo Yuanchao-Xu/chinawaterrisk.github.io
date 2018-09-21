@@ -119,6 +119,61 @@ var ns_line_irrigation = {
 					}
 				}
 			},
+
+			annotations: [{
+			 labelOptions: {
+				 shape: 'rect',
+				 backgroundColor: 'rgba(0,0,0,0)',
+  		   borderWidth: 0,
+					align: 'right',
+					justify: false,
+					crop: true,
+					y: 20,
+					x: -10,
+					style: {
+						   color: '#094677',
+							fontSize: '1em',
+							//textOutline: '1px white'
+					}
+			 },
+			 labels: [{
+					 point: {
+							 xAxis: 0,
+							 yAxis: 0,
+							 x: 2016,
+							 y: 5000
+					 },
+					 text: 'United States'
+			 }]
+		 },
+
+		 {
+			labelOptions: {
+				shape: 'rect',
+				backgroundColor: 'rgba(0,0,0,0)',
+				borderWidth: 0,
+				 align: 'right',
+				 justify: false,
+				 crop: true,
+				 y: -5,
+				 x: 0,
+				 style: {
+					  color: '#9F171E',
+				 		fontSize: '1em',
+				 		//textOutline: '1px white'
+				 }
+			},
+			labels: [{
+					point: {
+							xAxis: 0,
+							yAxis: 0,
+							x: 2008,
+							y: 6525
+					},
+					text: 'China'
+			}]
+		}],
+
 			legend: {
 				enabled: false
 			},
@@ -148,13 +203,18 @@ var ns_line_irrigation = {
 				[	2014,6030	],
 				[	2015,5910	],
 				[	2016,5700	]],
+				color: '#9F171E'
+			},
+		  {
+				name:"US 2016",
+				type:"column",
+				data: [[ 2016,5000]],
 				color: '#094677'
 			}]
 		});
 
 	}
 }
-
 
 	jQuery( document ).ready(function(){
 		ns_line_irrigation.init();

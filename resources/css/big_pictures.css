@@ -241,7 +241,7 @@ h4{
 }
 
 .grid-container-3cols .grid-item{
-   width: 28%;
+   width: calc(33% - 15px);
 }
 
 .map-forms .grid-item input{

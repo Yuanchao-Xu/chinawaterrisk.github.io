@@ -4,9 +4,9 @@ var ns_waterquality_map = {
 
 
 
-   colorWaterQuality : function(t){
-      t2 = Math.pow(t,2);
-      return d3.interpolateRdBu(t2);
+  colorWaterQuality : function(t){
+    t2 = Math.pow(t,2);
+    return d3.interpolateRdBu(t2);
   },
 
 
@@ -78,7 +78,7 @@ var ns_waterquality_map = {
     var maxValueSown = 15000;
     var minValueSown = 100;
 
-   var surfacewater_quality = [];
+    var surfacewater_quality = [];
     function showTooltipWaterQuality(d) {
       river_name = d.properties.River;
 
@@ -300,151 +300,146 @@ var ns_waterquality_map = {
 
 
 
-function tooltip_river_highchart(river, surfacewater_quality){
+    function tooltip_river_highchart(river, surfacewater_quality){
 
 
-    var river_data = surfacewater_quality.filter(function(row){
-      return row['River']==river;
-    })
+      var river_data = surfacewater_quality.filter(function(row){
+        return row['River']==river;
+      })
 
-    var river_data_I_III =   river_data.filter(function(row) {
+      var river_data_I_III =   river_data.filter(function(row) {
         return row['Grade'] == 'Grade I-III';
       })
 
-    var river_data_I_III_years_dict = {}
+      var river_data_I_III_years_dict = {}
 
-    river_data_I_III.forEach(function(row){
-      river_data_I_III_years_dict[row['Year']] = row['Value'];
-    });
+      river_data_I_III.forEach(function(row){
+        river_data_I_III_years_dict[row['Year']] = row['Value'];
+      });
 
-    // var data_dict = data_years[d.properties.NAME_1]
-    var keys=Object.keys(river_data_I_III_years_dict);
-    var river_data_I_III_years_array = keys.map(function(v) { return [parseInt(v),parseFloat(river_data_I_III_years_dict[v])]; });
+      // var data_dict = data_years[d.properties.NAME_1]
+      var keys=Object.keys(river_data_I_III_years_dict);
+      var river_data_I_III_years_array = keys.map(function(v) { return [parseInt(v),parseFloat(river_data_I_III_years_dict[v])]; });
 
-    Highcharts.chart('map_tooltip', {
-    				credits: {
-    					enabled: false
-    				},
-    				chart: {
-              width:200,
-              height:160,
-    					style: {
-    						fontFamily: 'Arial Narrow'
-    					},
-    					alignTicks: false,
-    					spacingTop: 5,
-    					spacingRight: 5,
-    					spacingBottom: 5,
-    					spacingLeft: 5,
-              backgroundColor:"transparent"
+      Highcharts.chart('map_tooltip', {
+        credits: {
+          enabled: false
+        },
+        chart: {
+          width:200,
+          height:160,
+          style: {
+            fontFamily: 'Arial Narrow'
+          },
+          alignTicks: false,
+          spacingTop: 5,
+          spacingRight: 5,
+          spacingBottom: 5,
+          spacingLeft: 5,
+          backgroundColor:"transparent"
 
-    				},
-    				title: {
-    					text: 'Trends in water quality: '+river.charAt(0).toUpperCase() + river.substr(1),
-    					align: 'left',
-    					style: {
-    						color: 'black',
-    						fontSize: '14px',
-    						fontWeight: 'bold'
-    					}
-    				},
-    				xAxis: {
-    					className: 'x-axis',
-    					tickInterval: 2,
-    					labels: {
-    						style: {
-    							color: 'black',
-    							fontSize:'10px'
-    						}
-    					},
-    					//lineColor: 'black',
-    					tickLength: 0
-    			//		categories: ['2000', '2005', '2010', '2015', '2020', '2025', '2030']
-    				},
-    				yAxis: [{
-    					className: 'y-axis',
-    					labels: {
-    						formatter: function() {
-    						   return this.value;
-    						},
-    						style: {
-    							color: 'black',
-    							fontSize:'10px'
-    						}
-    					},
-    					gridLineColor: '#F3F3F3',
-    					// tickInterval: 10000,
-    					min: 0,
-    					// max: 70000,
-    					 title: {
-    					 	text: ''
-    					 }
-    				}],
-    				tooltip: {
-    					headerFormat: '<b>{series.name}</b><br/>',
-    					pointFormat: '{point.x}: {point.y:.1f}',
-    					borderColor: 'black'
-    				},
+        },
+        title: {
+          text: 'Trends in water quality: '+river.charAt(0).toUpperCase() + river.substr(1),
+          align: 'left',
+          style: {
+            color: 'black',
+            fontSize: '14px',
+            fontWeight: 'bold'
+          }
+        },
+        xAxis: {
+          className: 'x-axis',
+          tickInterval: 2,
+          labels: {
+            style: {
+              color: 'black',
+              fontSize:'10px'
+            }
+          },
+          //lineColor: 'black',
+          tickLength: 0
+          //		categories: ['2000', '2005', '2010', '2015', '2020', '2025', '2030']
+        },
+        yAxis: [{
+          className: 'y-axis',
+          labels: {
+            formatter: function() {
+              return this.value;
+            },
+            style: {
+              color: 'black',
+              fontSize:'10px'
+            }
+          },
+          gridLineColor: '#F3F3F3',
+          // tickInterval: 10000,
+          min: 0,
+          // max: 70000,
+          title: {
+            text: ''
+          }
+        }],
+        tooltip: {
+          headerFormat: '<b>{series.name}</b><br/>',
+          pointFormat: '{point.x}: {point.y:.1f}',
+          borderColor: 'black'
+        },
 
-    				plotOptions: {
-    					series: {
-    						label: {
-    							connectorAllowed: false
-    						},
-    						pointStart: 2006
-    					},
-    					spline: {
-    						marker: {
-    							enabled: false,
-    							symbol: 'circle',
-    							radius: 2,
-    							states: {
-    								hover: {
-    									enabled: true
-    								}
-    							}
-    						}
-    					},
-    					line: {
-                animation: false,
-    						marker: {
-    							enabled: false,
-    							symbol: 'circle',
-    							radius: 2,
-    							states: {
-    								hover: {
-    									enabled: true
-    								}
-    							}
-    						}
-    					}
-    				},
-    				legend: {
-    					enabled: false
-    				},
-    				credits: {
-    					enabled: false
-    				},
-    				exporting: {
-    					enabled: false
-    				},
-    				series: [{
-    					//type: 'spline',
-    					name: 'Grade I-III',
-    					data: river_data_I_III_years_array,
-    					color: '#094677'
-    				}]
-    			});
-
-
+        plotOptions: {
+          series: {
+            label: {
+              connectorAllowed: false
+            },
+            pointStart: 2006
+          },
+          spline: {
+            marker: {
+              enabled: false,
+              symbol: 'circle',
+              radius: 2,
+              states: {
+                hover: {
+                  enabled: true
+                }
+              }
+            }
+          },
+          line: {
+            animation: false,
+            marker: {
+              enabled: false,
+              symbol: 'circle',
+              radius: 2,
+              states: {
+                hover: {
+                  enabled: true
+                }
+              }
+            }
+          }
+        },
+        legend: {
+          enabled: false
+        },
+        credits: {
+          enabled: false
+        },
+        exporting: {
+          enabled: false
+        },
+        series: [{
+          //type: 'spline',
+          name: 'Grade I-III',
+          data: river_data_I_III_years_array,
+          color: '#094677'
+        }]
+      });
 
 
+    }
 
-}
-
-
-
-}
+  }
 
 }
 jQuery( document ).ready(function() {

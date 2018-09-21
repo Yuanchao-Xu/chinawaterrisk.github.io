@@ -235,10 +235,13 @@ h4{
 	}
 
 .map-forms .grid-item{
-    width: 28%;
     cursor: pointer;
     margin-bottom: 15px;
     text-align: center;
+}
+
+.grid-container-3cols .grid-item{
+   width: 28%;
 }
 
 .map-forms .grid-item input{
@@ -342,7 +345,7 @@ input[type="checkbox"]:checked+label{
 
 
 .grid-item label{
-    display: flex;
+    display: block;
     color: #555;
     font-weight: 300;
     font-size: 12px;

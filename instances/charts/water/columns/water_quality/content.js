@@ -44,7 +44,7 @@ chart = new Highcharts.Chart({
            fontFamily: 'Arial Narrow',
        },
     backgroundColor:"transparent",
-    spacingTop: 30
+    spacingTop: 0
   },
   title: {
     text:'',

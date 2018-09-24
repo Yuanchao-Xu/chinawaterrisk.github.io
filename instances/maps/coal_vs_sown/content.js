@@ -1,6 +1,6 @@
 
 //var ValueByProvince = d3.map();
-var map_id='map'
+var map_id='coal_sown_map'
 
 var formatTotal = d3.format(',.0f');
 

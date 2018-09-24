@@ -90,7 +90,7 @@ var ns_waterquality_map = {
       var width = d3.select("#"+map_id).node().getBoundingClientRect().width;
 
       if(d3.event.layerX > width/2){
-        x=(d3.event.layerX - 220)
+        x=(d3.event.layerX - 270)
       }else{
         x=(d3.event.layerX +20)
       }

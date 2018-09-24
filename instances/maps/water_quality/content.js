@@ -171,6 +171,7 @@ var ns_waterquality_map = {
           .enter()
           .append('text')
           .attr('class','basin-name-g')
+          .attr('class','province-name-g')
           .attr("text-anchor", "middle")
           .attr('id', 'basin_name')
           .attr('transform', function(d) { return 'translate(' + path.centroid(d) + ')'; })

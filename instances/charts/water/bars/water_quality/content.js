@@ -128,6 +128,8 @@ chart = new Highcharts.Chart({
     //   return '<b>'+ this.point.name +'</b>: '+ this.y +' bn tonnes';
     // }
   },
+  
+
   series: [{
         name: 'Grade V+',
         data: grade_VI_data,

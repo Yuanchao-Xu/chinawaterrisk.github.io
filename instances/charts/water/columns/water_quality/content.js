@@ -28,11 +28,12 @@ d3.csv(surfacewater_quality_csv_url, function(error, surfacewater_quality){
 
 // from dict to highcharts data
 grade_I_III_data = rivers.map(function(river){return surfacewater_grade_I_III_2016[river]})
-
 grade_IV_V_data = rivers.map(function(river){return surfacewater_grade_IV_V_2016[river]})
-
 grade_VI_data = rivers.map(function(river){return surfacewater_grade_VI_2016[river]})
 
+grade_VI_data.push(0);
+rivers_legend = rivers;
+rivers_legend.push(" ");
 
 // Create the chart
 chart = new Highcharts.Chart({
@@ -54,6 +55,12 @@ chart = new Highcharts.Chart({
     series: {
            stacking: 'normal'
        },
+       line: {
+         marker:{
+           enabled:false
+         },
+         lineWidth: 4
+       }
     // bar: {
     //   stacking: 'normal',
     //   shadow: false,
@@ -108,7 +115,7 @@ chart = new Highcharts.Chart({
 
     },
     // type: "category",
-    categories : rivers, // tickAmount: 0,
+    categories : rivers_legend, // tickAmount: 0,
     tickWidth:0,
     // gridLineWidth: 0
   },
@@ -128,6 +135,33 @@ chart = new Highcharts.Chart({
     //   return '<b>'+ this.point.name +'</b>: '+ this.y +' bn tonnes';
     // }
   },
+  annotations: [{
+   labelOptions: {
+     shape: 'rect',
+     backgroundColor: 'rgba(0,0,0,0)',
+     borderWidth: 0,
+      align: 'right',
+      justify: false,
+      crop: true,
+      y: 20,
+      x: -10,
+      style: {
+           color: '#9F171E',
+          fontSize: '1.2em',
+          //textOutline: '1px white'
+      }
+   },
+   labels: [{
+       point: {
+           xAxis: 0,
+           yAxis: 0,
+           x: 11.2,
+           y: 0.8
+       },
+       text: '2020 Target<br>70% in Grade I-III '
+   }]
+ }],
+
   series: [{
         name: 'Grade V+',
         data: grade_VI_data,
@@ -140,7 +174,13 @@ chart = new Highcharts.Chart({
         name: 'Grade I-III',
         data: grade_I_III_data,
         color: "#0D77B9"
-    }]
+    },
+  {
+    name: '2020 Target (Grade I-III)',
+    type: 'line',
+    color: "#9F171E",
+    data: [0.7,0.7,0.7,0.7,0.7,0.7,0.7,0.7,0.7,0.7,0.7,0.7]
+  }]
   });
   });
 })

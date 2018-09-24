@@ -1,4 +1,4 @@
-var ns_waterquality_map = {
+var ns_groundwaterquality_map = {
 
 
 
@@ -14,7 +14,7 @@ var ns_waterquality_map = {
 
   init: function(){
     //var ValueByProvince = d3.map();
-    var map_id='map-quality'
+    var map_id='groundwater-map-quality'
 
     var formatTotal = d3.format(',.0f');
 
@@ -32,7 +32,7 @@ var ns_waterquality_map = {
     var leg_square_size = 15
 
 
-    var surfacewater_grade_I_III_2016 = {}; // share of monitoring stations in Grade I-III
+    var groundwater_grade_I_III_2015 = {}; // share of monitoring stations in Grade I-III
 
 
     var selected_bubbles;
@@ -72,17 +72,12 @@ var ns_waterquality_map = {
     var offsetT = document.getElementById(map_id).offsetTop+10;
 
     //specify values for legend
-    var maxValueCoal = 100000;
-    var minValueCoal = 10;
 
-    var maxValueSown = 15000;
-    var minValueSown = 100;
-
-    var surfacewater_quality = [];
+    var groundwater_quality = [];
     function showTooltipWaterQuality(d) {
-      river_name = d.properties.River;
+      river_name = d.properties.NAME_1;
 
-      // grade_I_III = river_grade_I_III_2016[river_name];
+      // grade_I_III = river_grade_I_III_2015[river_name];
 
 
       y=(d3.event.layerY - 90)
@@ -106,10 +101,10 @@ var ns_waterquality_map = {
 
       if(d3.event.type=="mouseover"){
         //tooltip_chart_coal(d,'map_tooltip');
-        chart = tooltip_river_highchart(river_name, surfacewater_quality)
+        chart = tooltip_river_highchart(river_name, groundwater_quality)
       }
 
-      //chart = tooltip_river_highchart(river_name, surfacewater_quality)
+      //chart = tooltip_river_highchart(river_name, groundwater_quality)
     }
 
     function showMapTooltip(d){
@@ -118,44 +113,40 @@ var ns_waterquality_map = {
 
 
 
-    var basins_json_url='https://raw.githubusercontent.com/chinawaterrisk/chinawaterrisk.github.io/master/resources/json/china/rivers/9basins.geojson'
-    var basins_centroids_json_url='https://raw.githubusercontent.com/chinawaterrisk/chinawaterrisk.github.io/master/resources/json/china/rivers/9basins_centroids.geojson'
-    var surfacewater_quality_2016_csv_url='https://raw.githubusercontent.com/chinawaterrisk/chinawaterrisk.github.io/master/resources/csv/water_quality/surfacewater_quality_2016.csv'
+    var provinces_json_url='https://raw.githubusercontent.com/chinawaterrisk/chinawaterrisk.github.io/master/resources/json/china/province/simplified_smoothed_cleaned_provinces_sd.geojson'
+    var provinces_centroids_json_url='https://raw.githubusercontent.com/chinawaterrisk/chinawaterrisk.github.io/master/resources/json/china/province/provinces_centroids.geojson'
 
-    var surfacewater_quality_csv_url='https://raw.githubusercontent.com/chinawaterrisk/chinawaterrisk.github.io/master/resources/csv/water_quality/surfacewater_quality.csv'
+    var groundwater_quality_csv_url='https://raw.githubusercontent.com/chinawaterrisk/chinawaterrisk.github.io/master/resources/csv/water_quality/groundwater_quality.csv'
 
 
     //d3.json(wri_json_url, function(error, wri){
-    d3.json(basins_json_url, function(error, basins){
-      d3.json(basins_centroids_json_url, function(error, centroids){
+    d3.json(provinces_json_url, function(error, provinces){
+      d3.json(provinces_centroids_json_url, function(error, centroids){
         //		d3.json(tws_url, function(error, tws){
-        d3.csv(surfacewater_quality_csv_url, function(error, surfacewater_quality_tmp){
+        d3.csv(groundwater_quality_csv_url, function(error, groundwater_quality_tmp){
 
-          surfacewater_quality = surfacewater_quality_tmp;
-          surfacewater_grade_I_III = surfacewater_quality.filter(function(row) {
-            return row['Grade'] == 'Grade I-III';
+          groundwater_quality = groundwater_quality_tmp;
+
+          groundwater_2015 = groundwater_quality.filter(function(row) {
+            return (row['Year'] == '2015');
           })
 
-          surfacewater_grade_I_III_2016 = surfacewater_quality.filter(function(row) {
-            return (row['Grade'] == 'Grade I-III') && (row['Year'] == '2016');
-          })
+          river_grade_I_III_2015 = {}
+          river_grade_I_III_2015_color = {}
 
-          river_grade_I_III_2016 = {}
-          river_grade_I_III_2016_color = {}
-
-          surfacewater_grade_I_III.forEach(function(d){
-            river_grade_I_III_2016[d.River] = d['Value'];
+          groundwater_2015.forEach(function(d){
+            river_grade_I_III_2015[d.Province] = parseFloat(d['Grade I-III']);
           });
 
-          svg.selectAll('#basin_border')
-          .data(basins.features)
+          svg.selectAll('#province_border')
+          .data(provinces.features)
           .enter()
           .append('path')
-          .attr('id', 'basin_border')
-          .attr('class','basin-border-g')
+          .attr('id', 'province_border')
+          .attr('class','province-border-g')
           .attr('d', path)
           .style('fill', function(d){
-            return ns_waterquality_map.colorWaterQuality(river_grade_I_III_2016[d.properties.River]);
+            return ns_groundwaterquality_map.colorWaterQuality(river_grade_I_III_2015[d.properties.NAME_1]);
           })
           .style('stroke', '#CFD8DC')
           .style('stroke-width', 1)
@@ -165,18 +156,18 @@ var ns_waterquality_map = {
             tooltip.style("display", "none");
           });
 
-          svg.selectAll('#basin_name')
+          svg.selectAll('#province_name')
           .style("text-anchor", "middle")
           .data(centroids.features)
           .enter()
           .append('text')
-          .attr('class','basin-name-g')
+          .attr('class','province-name-g')
           .attr('class','province-name-g')
           .attr("text-anchor", "middle")
-          .attr('id', 'basin_name')
+          .attr('id', 'province_name')
           .attr('transform', function(d) { return 'translate(' + path.centroid(d) + ')'; })
           .style('fill','#FFFFFF')
-          .text(function(d) { return d.properties.River; })
+          .text(function(d) { return d.properties.NAME_1; })
           .on("mouseover", showMapTooltip)
           .on("mousemove", showMapTooltip)
           .on("mouseout", function(d){
@@ -264,7 +255,7 @@ var ns_waterquality_map = {
 
           // Selectors
           setBasemap = function(view) {
-            var basins = svg.selectAll(".avail-g");
+            var provinces = svg.selectAll(".avail-g");
 
             // if (view === "wri") {
             // 	wri.style("display", "inherit");
@@ -301,10 +292,10 @@ var ns_waterquality_map = {
 
 
 
-    function tooltip_river_highchart(river, surfacewater_quality){
+    function tooltip_river_highchart(river, groundwater_quality){
 
 
-      var river_data = surfacewater_quality.filter(function(row){
+      var river_data = groundwater_quality.filter(function(row){
         return row['River']==river;
       })
 
@@ -327,7 +318,7 @@ var ns_waterquality_map = {
           enabled: false
         },
         chart: {
-          width:250,
+          width:220,
           height:160,
           style: {
             fontFamily: 'Arial Narrow'
@@ -349,10 +340,6 @@ var ns_waterquality_map = {
             fontWeight: 'bold'
           }
         },
-        subtitle: {
-          text: 'Share of monitoring stations in Grade I-III',
-          align: 'left'
-        },
         xAxis: {
           className: 'x-axis',
           tickInterval: 2,
@@ -370,7 +357,7 @@ var ns_waterquality_map = {
           className: 'y-axis',
           labels: {
             formatter: function() {
-              return Math.round(this.value*100)+"%";
+              return this.value;
             },
             style: {
               color: 'black',
@@ -380,8 +367,7 @@ var ns_waterquality_map = {
           gridLineColor: '#F3F3F3',
           // tickInterval: 10000,
           min: 0,
-          softMax: 1,
-          endOnTick: false,
+          // max: 70000,
           title: {
             text: ''
           }
@@ -415,19 +401,14 @@ var ns_waterquality_map = {
             animation: false,
             marker: {
               enabled: false,
-            },
-            dataLabels : {
-                enabled : true,
-                formatter: function() {
-                  var first = this.series.data[0],
-                      last  = this.series.data[this.series.data.length - 1];
-                  if ((this.point.category === first.category && this.point.y === first.y) ||
-                      (this.point.category === last.category  && this.point.y === last.y)) {
-                    return Math.round(this.point.y*100)+"%";
-                  }
-                  return "";
+              symbol: 'circle',
+              radius: 2,
+              states: {
+                hover: {
+                  enabled: true
                 }
               }
+            }
           }
         },
         legend: {
@@ -454,13 +435,14 @@ var ns_waterquality_map = {
 
 }
 jQuery( document ).ready(function() {
-  ns_waterquality_map.init();
+  ns_groundwaterquality_map.init();
 
   // Legend
   const legend = document.getElementsByClassName('legend-prec-scale')[0];
+  if(typeof(legend)!="undefined"){
+    n_colors=10
+    colors = [...Array(n_colors).keys()].map(function(i){return ns_groundwaterquality_map.colorWaterQuality(i/n_colors)})
 
-  n_colors=10
-  colors = [...Array(n_colors).keys()].map(function(i){return ns_waterquality_map.colorWaterQuality(i/n_colors)})
-
-  legend.style.backgroundImage = 'linear-gradient(to right,'+colors.join(",")+')';
+    legend.style.backgroundImage = 'linear-gradient(to right,'+colors.join(",")+')';
+  }
 });

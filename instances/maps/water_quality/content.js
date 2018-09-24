@@ -447,7 +447,7 @@ jQuery( document ).ready(function() {
   ns_waterquality_map.init();
 
   // Legend
-  const legend = document.getElementById('legend_prec_scale');
+  const legend = document.getElementsByClassName('legend-prec-scale');
 
   n_colors=10
   colors = [...Array(n_colors).keys()].map(function(i){return ns_waterquality_map.colorWaterQuality(i/n_colors)})

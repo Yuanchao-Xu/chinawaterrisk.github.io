@@ -33,6 +33,7 @@ grade_VI_data = rivers.map(function(river){return surfacewater_grade_VI_2016[riv
 
 grade_VI_data.push(0);
 rivers_legend = rivers;
+rivers_legend.push(" ")
 rivers_legend.push(" ");
 
 // Create the chart
@@ -156,7 +157,7 @@ chart = new Highcharts.Chart({
        point: {
            xAxis: 0,
            yAxis: 0,
-           x: 11.2,
+           x: 12,
            y: 0.8
        },
        text: '2020 Target<br>70% in Grade I-III '
@@ -180,7 +181,7 @@ chart = new Highcharts.Chart({
     name: '2020 Target (Grade I-III)',
     type: 'line',
     color: "#9F171E",
-    data: [0.7,0.7,0.7,0.7,0.7,0.7,0.7,0.7,0.7,0.7,0.7,0.7]
+    data: [0.7,0.7,0.7,0.7,0.7,0.7,0.7,0.7,0.7,0.7,0.7,0.7,0.7]
   }]
   });
   });

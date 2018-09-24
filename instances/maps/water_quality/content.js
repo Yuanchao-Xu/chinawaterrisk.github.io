@@ -327,7 +327,7 @@ var ns_waterquality_map = {
           enabled: false
         },
         chart: {
-          width:200,
+          width:220,
           height:160,
           style: {
             fontFamily: 'Arial Narrow'

@@ -47,6 +47,7 @@ chart = new Highcharts.Chart({
     spacingTop: 0
   },
   title: {
+    enabled:false,
     text:'',
     //text: 'Top-5 Sown Land',
     margin: 0

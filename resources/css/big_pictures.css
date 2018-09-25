@@ -252,6 +252,10 @@ h4{
     text-align: center;
 }
 
+.grid-container-2cols .grid-item{
+   width: calc(50% - 15px);
+}
+
 .grid-container-3cols .grid-item{
    width: calc(33% - 15px);
 }

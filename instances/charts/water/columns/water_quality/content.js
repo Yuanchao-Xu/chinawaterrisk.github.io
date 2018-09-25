@@ -173,7 +173,7 @@ chart = new Highcharts.Chart({
        point: {
            xAxis: 0,
            yAxis: 0,
-           x: 12.2,
+           x: 12.4,
            y: 0.8
        },
        text: '2020 Target<br>70% in Grade I-III '

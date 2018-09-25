@@ -147,6 +147,9 @@ chart = new Highcharts.Chart({
   tooltip: {
     enabled: true,
     formatter: function(){
+      if(this.series.type=='line'){
+        return false;
+      }
       return '<b>'+ this.series.name +'</b>: '+ Math.round(this.y*1000)/10 +' %';
     }
   },

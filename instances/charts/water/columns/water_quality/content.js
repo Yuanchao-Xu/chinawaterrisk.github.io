@@ -1,7 +1,7 @@
 jQuery( document ).ready(function() {
 
 
-  rivers = ['Yellow','Yangtze','Pearl','Songhua','Huai','Hai','Liao','Northwest','Southwest','Southeast','National']
+  rivers = ['Yellow','Yangtze','Pearl','Songhua','Huai','Hai','Liao','Northwest','Southwest','Southeast','Major rivers']
 
 
 
@@ -39,7 +39,9 @@ grade_VI_data = rivers.map(function(river){return surfacewater_grade_VI_2017[riv
 
 grade_VI_data.push(0);
 rivers_legend = rivers;
+rivers_legend[rivers_legend.indexOf('Major rivers')]='Main Rivers';
 rivers_legend.push(" ")
+
 rivers_legend.push(" ");
 
 // Create the chart
@@ -61,35 +63,38 @@ chart = new Highcharts.Chart({
   },
   plotOptions: {
     series: {
-           stacking: 'normal'
+           stacking: 'normal',
+           marker:{
+               radius:0
+           }
        },
        line: {
          marker:{
            enabled:false
          },
          lineWidth: 4
-       }
-    // bar: {
-    //   stacking: 'normal',
-    //   shadow: false,
-    //   //colors: ["#560008","#ac0010","#c54d58","#d68088","#e6b3b7","#BDBFC3"],
-    //   dataLabels: {
-    //       enabled: true,
-    //       //format: '<center><b>{point.name}</b><br /><center>{point.y}</center></center>',
-    //       format: '{point.y:,.0f}',
-    //       //distance: 5,
-    //       //color: 'white',
-    //       //connectorWidth:0,
-    //       align: 'right',
-    //       //verticalAlign: 'top',
-    //       style: {
-    //         color:'white',
-    //         fontSize: '12px',
-    //         fontWeight:300,
-    //         textOutline: false,
-    //       }
-    //   }
-    // }
+       },
+    column: {
+      stacking: 'normal',
+      shadow: false,
+      //colors: ["#560008","#ac0010","#c54d58","#d68088","#e6b3b7","#BDBFC3"],
+      dataLabels: {
+          enabled: false,
+          //format: '<center><b>{point.name}</b><br /><center>{point.y}</center></center>',
+          format: '{point.percentage}',
+          //distance: 5,
+          //color: 'white',
+          //connectorWidth:0,
+          align: 'right',
+          //verticalAlign: 'top',
+          style: {
+            color:'white',
+            fontSize: '12px',
+            fontWeight:300,
+            textOutline: false,
+          }
+      }
+    }
   },
 
   yAxis: {
@@ -129,7 +134,9 @@ chart = new Highcharts.Chart({
   },
   legend: {
     enabled: true,
-    reversed: true
+    reversed: true,
+    symbolRadius:0
+
   },
   credits: {
     enabled: false
@@ -138,10 +145,10 @@ chart = new Highcharts.Chart({
     enabled: false
   },
   tooltip: {
-    enabled: false
-    // formatter: function() {
-    //   return '<b>'+ this.point.name +'</b>: '+ this.y +' bn tonnes';
-    // }
+    enabled: true,
+    formatter: function(){
+      return '<b>'+ this.series.name +'</b>: '+ Math.round(this.y*1000)/10 +' %';
+    }
   },
   annotations: [{
    labelOptions: {

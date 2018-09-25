@@ -140,8 +140,8 @@ var ns_line_irrigation = {
 					 point: {
 							 xAxis: 0,
 							 yAxis: 0,
-							 x: 2016,
-							 y: 5000
+							 x: 2013,
+							 y: 4876.9
 					 },
 					 text: 'United States'
 			 }]

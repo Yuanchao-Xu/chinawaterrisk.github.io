@@ -95,6 +95,16 @@ h4{
   font-size: 1em;
 }
 
+.bp-chart-title{
+   font-size: 1em;
+   font-style: bold;
+}
+
+.center{
+  margin-left:auto;
+  margin-right:auto;
+}
+
 .bp-ml-text{
     font-size:24px;
     color: #9F171E;

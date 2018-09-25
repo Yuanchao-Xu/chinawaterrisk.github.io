@@ -3,6 +3,8 @@ jQuery( document ).ready(function() {
 
   rivers = ['Yellow','Yangtze','Pearl','Songhua','Huai','Hai','Liao','Northwest','Southwest','Southeast','National']
 
+
+
 // Get water quality data
 var surfacewater_quality_csv_url='https://raw.githubusercontent.com/chinawaterrisk/chinawaterrisk.github.io/master/resources/csv/water_quality/surfacewater_quality.csv'
 
@@ -161,7 +163,7 @@ chart = new Highcharts.Chart({
        point: {
            xAxis: 0,
            yAxis: 0,
-           x: 12,
+           x: 12.2,
            y: 0.8
        },
        text: '2020 Target<br>70% in Grade I-III '

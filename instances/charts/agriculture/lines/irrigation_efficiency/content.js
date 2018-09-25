@@ -208,7 +208,7 @@ var ns_line_irrigation = {
 		  {
 				name:"US 2016",
 				type:"column",
-				data: [[ 2016,5000]],
+				data: [[ 2013,4876.9]],
 				color: '#094677'
 			}]
 		});

@@ -9,12 +9,12 @@ Yellow,2010,Grade V,0.068,Monitoring sections (%),MEP
 Yellow,2009,Grade I-III,0.682,Monitoring sections (%),MEP
 Yellow,2009,Grade IV,0.045,Monitoring sections (%),MEP
 Yellow,2009,Grade V,0.023,Monitoring sections (%),MEP
-Yellow,2009,Grade V+,0.250,Monitoring sections (%),MEP
+Yellow,2009,Grade V+,0.25,Monitoring sections (%),MEP
 Yellow,2009,Grade IV-V,0.068,Monitoring sections (%),MEP
 Yellow,2008,Grade I-III,0.682,Monitoring sections (%),MEP
 Yellow,2008,Grade IV,0.045,Monitoring sections (%),MEP
 Yellow,2008,Grade V,0.068,Monitoring sections (%),MEP
-Yellow,2008,Grade V+,0.210,Monitoring sections (%),MEP
+Yellow,2008,Grade V+,0.21,Monitoring sections (%),MEP
 Yellow,2008,Grade IV-V,0.113,Monitoring sections (%),MEP
 Yellow,2007,Grade I-III,0.637,Monitoring sections (%),MEP
 Yellow,2007,Grade IV,0.091,Monitoring sections (%),MEP
@@ -31,7 +31,7 @@ Pearl,2015,Grade I-III,0.945,Monitoring sections (%),MEP
 Pearl,2015,Grade IV-V,0.018,Monitoring sections (%),MEP
 Pearl,2015,Grade V+,0.037,Monitoring sections (%),MEP
 Songhua,2015,Grade I-III,0.651,Monitoring sections (%),MEP
-Songhua,2015,Grade IV-V,0.290,Monitoring sections (%),MEP
+Songhua,2015,Grade IV-V,0.29,Monitoring sections (%),MEP
 Songhua,2015,Grade V+,0.058,Monitoring sections (%),MEP
 Huai,2015,Grade I-III,0.543,Monitoring sections (%),MEP
 Huai,2015,Grade IV-V,0.361,Monitoring sections (%),MEP
@@ -39,7 +39,7 @@ Huai,2015,Grade V+,0.096,Monitoring sections (%),MEP
 Hai,2015,Grade I-III,0.422,Monitoring sections (%),MEP
 Hai,2015,Grade IV-V,0.187,Monitoring sections (%),MEP
 Hai,2015,Grade V+,0.391,Monitoring sections (%),MEP
-Liao,2015,Grade I-III,0.400,Monitoring sections (%),MEP
+Liao,2015,Grade I-III,0.4,Monitoring sections (%),MEP
 Liao,2015,Grade IV-V,0.455,Monitoring sections (%),MEP
 Liao,2015,Grade V+,0.145,Monitoring sections (%),MEP
 Yangtze,2014,Grade I-III,0.881,Monitoring sections (%),MEP
@@ -70,7 +70,7 @@ Yellow,2013,Grade I-III,0.581,Monitoring sections (%),MEP
 Yellow,2013,Grade IV-V,0.258,Monitoring sections (%),MEP
 Yellow,2013,Grade V+,0.161,Monitoring sections (%),MEP
 Pearl,2013,Grade I-III,0.944,Monitoring sections (%),MEP
-Pearl,2013,Grade IV-V,0.000,Monitoring sections (%),MEP
+Pearl,2013,Grade IV-V,0,Monitoring sections (%),MEP
 Pearl,2013,Grade V+,0.056,Monitoring sections (%),MEP
 Songhua,2013,Grade I-III,0.557,Monitoring sections (%),MEP
 Songhua,2013,Grade IV-V,0.386,Monitoring sections (%),MEP
@@ -89,11 +89,11 @@ Yangtze,2012,Grade IV-V,0.094,Monitoring sections (%),MEP
 Yangtze,2012,Grade V+,0.044,Monitoring sections (%),MEP
 Yellow,2012,Grade I-III,0.607,Monitoring sections (%),MEP
 Yellow,2012,Grade IV-V,0.213,Monitoring sections (%),MEP
-Yellow,2012,Grade V+,0.180,Monitoring sections (%),MEP
+Yellow,2012,Grade V+,0.18,Monitoring sections (%),MEP
 Pearl,2012,Grade I-III,0.907,Monitoring sections (%),MEP
 Pearl,2012,Grade IV-V,0.056,Monitoring sections (%),MEP
 Pearl,2012,Grade V+,0.037,Monitoring sections (%),MEP
-Songhua,2012,Grade I-III,0.580,Monitoring sections (%),MEP
+Songhua,2012,Grade I-III,0.58,Monitoring sections (%),MEP
 Songhua,2012,Grade IV-V,0.363,Monitoring sections (%),MEP
 Songhua,2012,Grade V+,0.057,Monitoring sections (%),MEP
 Huai,2012,Grade I-III,0.474,Monitoring sections (%),MEP
@@ -113,12 +113,12 @@ Yellow,2011,Grade IV-V,0.116,Monitoring sections (%),MEP
 Yellow,2011,Grade V+,0.186,Monitoring sections (%),MEP
 Pearl,2011,Grade I-III,0.848,Monitoring sections (%),MEP
 Pearl,2011,Grade IV-V,0.122,Monitoring sections (%),MEP
-Pearl,2011,Grade V+,0.030,Monitoring sections (%),MEP
+Pearl,2011,Grade V+,0.03,Monitoring sections (%),MEP
 Songhua,2011,Grade I-III,0.452,Monitoring sections (%),MEP
 Songhua,2011,Grade IV-V,0.405,Monitoring sections (%),MEP
 Songhua,2011,Grade V+,0.143,Monitoring sections (%),MEP
 Huai,2011,Grade I-III,0.419,Monitoring sections (%),MEP
-Huai,2011,Grade IV-V,0.430,Monitoring sections (%),MEP
+Huai,2011,Grade IV-V,0.43,Monitoring sections (%),MEP
 Huai,2011,Grade V+,0.151,Monitoring sections (%),MEP
 Hai,2011,Grade I-III,0.317,Monitoring sections (%),MEP
 Hai,2011,Grade IV-V,0.302,Monitoring sections (%),MEP
@@ -134,7 +134,7 @@ Yellow,2010,Grade IV-V,0.113,Monitoring sections (%),MEP
 Yellow,2010,Grade V+,0.205,Monitoring sections (%),MEP
 Pearl,2010,Grade I-III,0.849,Monitoring sections (%),MEP
 Pearl,2010,Grade IV-V,0.151,Monitoring sections (%),MEP
-Pearl,2010,Grade V+,0.000,Monitoring sections (%),MEP
+Pearl,2010,Grade V+,0,Monitoring sections (%),MEP
 Songhua,2010,Grade I-III,0.476,Monitoring sections (%),MEP
 Songhua,2010,Grade IV-V,0.405,Monitoring sections (%),MEP
 Songhua,2010,Grade V+,0.119,Monitoring sections (%),MEP
@@ -147,19 +147,19 @@ Hai,2010,Grade V+,0.403,Monitoring sections (%),MEP
 Liao,2010,Grade I-III,0.405,Monitoring sections (%),MEP
 Liao,2010,Grade IV-V,0.352,Monitoring sections (%),MEP
 Liao,2010,Grade V+,0.243,Monitoring sections (%),MEP
-Northwest,2014,Grade I-III,0.980,Monitoring sections (%),MEP
-Northwest,2014,Grade IV-V,0.000,Monitoring sections (%),MEP
-Northwest,2014,Grade V+,0.020,Monitoring sections (%),MEP
+Northwest,2014,Grade I-III,0.98,Monitoring sections (%),MEP
+Northwest,2014,Grade IV-V,0,Monitoring sections (%),MEP
+Northwest,2014,Grade V+,0.02,Monitoring sections (%),MEP
 Southwest,2014,Grade I-III,0.936,Monitoring sections (%),MEP
 Southwest,2014,Grade IV-V,0.032,Monitoring sections (%),MEP
 Southwest,2014,Grade V+,0.032,Monitoring sections (%),MEP
-Northwest,2015,Grade I-III,0.960,Monitoring sections (%),MEP
-Northwest,2015,Grade IV-V,0.040,Monitoring sections (%),MEP
-Northwest,2015,Grade V+,0.000,Monitoring sections (%),MEP
+Northwest,2015,Grade I-III,0.96,Monitoring sections (%),MEP
+Northwest,2015,Grade IV-V,0.04,Monitoring sections (%),MEP
+Northwest,2015,Grade V+,0,Monitoring sections (%),MEP
 Southwest,2015,Grade I-III,0.965,Monitoring sections (%),MEP
 Southwest,2015,Grade IV-V,0.035,Monitoring sections (%),MEP
-Southwest,2015,Grade V+,0.000,Monitoring sections (%),MEP
-Songhua,2013,Grade I,0.000,River length (%),MWR
+Southwest,2015,Grade V+,0,Monitoring sections (%),MEP
+Songhua,2013,Grade I,0,River length (%),MWR
 Songhua,2013,Grade II,0.102,River length (%),MWR
 Songhua,2013,Grade III,0.425,River length (%),MWR
 Songhua,2013,Grade IV,0.285,River length (%),MWR
@@ -167,12 +167,12 @@ Songhua,2013,Grade V,0.089,River length (%),MWR
 Songhua,2013,Grade V+,0.099,River length (%),MWR
 Liao,2013,Grade I,0.012,River length (%),MWR
 Liao,2013,Grade II,0.396,River length (%),MWR
-Liao,2013,Grade III,0.140,River length (%),MWR
+Liao,2013,Grade III,0.14,River length (%),MWR
 Liao,2013,Grade IV,0.164,River length (%),MWR
 Liao,2013,Grade V,0.082,River length (%),MWR
 Liao,2013,Grade V+,0.206,River length (%),MWR
 Hai,2013,Grade I,0.016,River length (%),MWR
-Hai,2013,Grade II,0.170,River length (%),MWR
+Hai,2013,Grade II,0.17,River length (%),MWR
 Hai,2013,Grade III,0.147,River length (%),MWR
 Hai,2013,Grade IV,0.084,River length (%),MWR
 Hai,2013,Grade V,0.102,River length (%),MWR
@@ -182,14 +182,14 @@ Yellow,2013,Grade II,0.357,River length (%),MWR
 Yellow,2013,Grade III,0.196,River length (%),MWR
 Yellow,2013,Grade IV,0.101,River length (%),MWR
 Yellow,2013,Grade V,0.048,River length (%),MWR
-Yellow,2013,Grade V+,0.250,River length (%),MWR
+Yellow,2013,Grade V+,0.25,River length (%),MWR
 Huai,2013,Grade I,0.005,River length (%),MWR
 Huai,2013,Grade II,0.095,River length (%),MWR
 Huai,2013,Grade III,0.286,River length (%),MWR
 Huai,2013,Grade IV,0.271,River length (%),MWR
 Huai,2013,Grade V,0.108,River length (%),MWR
 Huai,2013,Grade V+,0.235,River length (%),MWR
-Yangtze,2013,Grade I,0.060,River length (%),MWR
+Yangtze,2013,Grade I,0.06,River length (%),MWR
 Yangtze,2013,Grade II,0.479,River length (%),MWR
 Yangtze,2013,Grade III,0.205,River length (%),MWR
 Yangtze,2013,Grade IV,0.084,River length (%),MWR
@@ -197,33 +197,33 @@ Yangtze,2013,Grade V,0.056,River length (%),MWR
 Yangtze,2013,Grade V+,0.116,River length (%),MWR
 Southeast,2013,Grade I,0.029,River length (%),MWR
 Southeast,2013,Grade II,0.533,River length (%),MWR
-Southeast,2013,Grade III,0.280,River length (%),MWR
+Southeast,2013,Grade III,0.28,River length (%),MWR
 Southeast,2013,Grade IV,0.076,River length (%),MWR
-Southeast,2013,Grade V,0.030,River length (%),MWR
+Southeast,2013,Grade V,0.03,River length (%),MWR
 Southeast,2013,Grade V+,0.052,River length (%),MWR
 Pearl,2013,Grade I,0.032,River length (%),MWR
 Pearl,2013,Grade II,0.657,River length (%),MWR
 Pearl,2013,Grade III,0.178,River length (%),MWR
 Pearl,2013,Grade IV,0.039,River length (%),MWR
 Pearl,2013,Grade V,0.034,River length (%),MWR
-Pearl,2013,Grade V+,0.060,River length (%),MWR
+Pearl,2013,Grade V+,0.06,River length (%),MWR
 Southwest,2013,Grade I,0.039,River length (%),MWR
 Southwest,2013,Grade II,0.662,River length (%),MWR
 Southwest,2013,Grade III,0.256,River length (%),MWR
 Southwest,2013,Grade IV,0.021,River length (%),MWR
 Southwest,2013,Grade V,0.012,River length (%),MWR
-Southwest,2013,Grade V+,0.010,River length (%),MWR
+Southwest,2013,Grade V+,0.01,River length (%),MWR
 Northwest,2013,Grade I,0.166,River length (%),MWR
-Northwest,2013,Grade II,0.670,River length (%),MWR
+Northwest,2013,Grade II,0.67,River length (%),MWR
 Northwest,2013,Grade III,0.075,River length (%),MWR
-Northwest,2013,Grade IV,0.030,River length (%),MWR
+Northwest,2013,Grade IV,0.03,River length (%),MWR
 Northwest,2013,Grade V,0.017,River length (%),MWR
 Northwest,2013,Grade V+,0.042,River length (%),MWR
 Songhua,2014,Grade I,0.005,River length (%),MWR
 Songhua,2014,Grade II,0.176,River length (%),MWR
 Songhua,2014,Grade III,0.453,River length (%),MWR
 Songhua,2014,Grade IV,0.232,River length (%),MWR
-Songhua,2014,Grade V,0.050,River length (%),MWR
+Songhua,2014,Grade V,0.05,River length (%),MWR
 Songhua,2014,Grade V+,0.084,River length (%),MWR
 Liao,2014,Grade I,0.015,River length (%),MWR
 Liao,2014,Grade II,0.416,River length (%),MWR
@@ -240,7 +240,7 @@ Hai,2014,Grade V+,0.442,River length (%),MWR
 Yellow,2014,Grade I,0.053,River length (%),MWR
 Yellow,2014,Grade II,0.416,River length (%),MWR
 Yellow,2014,Grade III,0.191,River length (%),MWR
-Yellow,2014,Grade IV,0.080,River length (%),MWR
+Yellow,2014,Grade IV,0.08,River length (%),MWR
 Yellow,2014,Grade V,0.071,River length (%),MWR
 Yellow,2014,Grade V+,0.189,River length (%),MWR
 Huai,2014,Grade I,0.001,River length (%),MWR
@@ -252,14 +252,14 @@ Huai,2014,Grade V+,0.178,River length (%),MWR
 Yangtze,2014,Grade I,0.062,River length (%),MWR
 Yangtze,2014,Grade II,0.464,River length (%),MWR
 Yangtze,2014,Grade III,0.249,River length (%),MWR
-Yangtze,2014,Grade IV,0.090,River length (%),MWR
+Yangtze,2014,Grade IV,0.09,River length (%),MWR
 Yangtze,2014,Grade V,0.039,River length (%),MWR
 Yangtze,2014,Grade V+,0.096,River length (%),MWR
 Southeast,2014,Grade I,0.023,River length (%),MWR
 Southeast,2014,Grade II,0.536,River length (%),MWR
-Southeast,2014,Grade III,0.250,River length (%),MWR
+Southeast,2014,Grade III,0.25,River length (%),MWR
 Southeast,2014,Grade IV,0.093,River length (%),MWR
-Southeast,2014,Grade V,0.070,River length (%),MWR
+Southeast,2014,Grade V,0.07,River length (%),MWR
 Southeast,2014,Grade V+,0.028,River length (%),MWR
 Pearl,2014,Grade I,0.023,River length (%),MWR
 Pearl,2014,Grade II,0.644,River length (%),MWR
@@ -267,8 +267,8 @@ Pearl,2014,Grade III,0.192,River length (%),MWR
 Pearl,2014,Grade IV,0.052,River length (%),MWR
 Pearl,2014,Grade V,0.028,River length (%),MWR
 Pearl,2014,Grade V+,0.061,River length (%),MWR
-Southwest,2014,Grade I,0.020,River length (%),MWR
-Southwest,2014,Grade II,0.680,River length (%),MWR
+Southwest,2014,Grade I,0.02,River length (%),MWR
+Southwest,2014,Grade II,0.68,River length (%),MWR
 Southwest,2014,Grade III,0.262,River length (%),MWR
 Southwest,2014,Grade IV,0.022,River length (%),MWR
 Southwest,2014,Grade V,0.002,River length (%),MWR
@@ -281,7 +281,7 @@ Northwest,2014,Grade V,0.001,River length (%),MWR
 Northwest,2014,Grade V+,0.028,River length (%),MWR
 Songhua,2014,Grade I-III,0.634,River length (%),MWR
 Liao,2014,Grade I-III,0.578,River length (%),MWR
-Yellow,2014,Grade I-III,0.660,River length (%),MWR
+Yellow,2014,Grade I-III,0.66,River length (%),MWR
 Huai,2014,Grade I-III,0.461,River length (%),MWR
 Yangtze,2014,Grade I-III,0.775,River length (%),MWR
 Southeast,2014,Grade I-III,0.809,River length (%),MWR
@@ -289,12 +289,12 @@ Pearl,2014,Grade I-III,0.859,River length (%),MWR
 Southwest,2014,Grade I-III,0.962,River length (%),MWR
 Northwest,2014,Grade I-III,0.908,River length (%),MWR
 Songhua,2014,Grade IV-V,0.282,River length (%),MWR
-Liao,2014,Grade IV-V,0.230,River length (%),MWR
+Liao,2014,Grade IV-V,0.23,River length (%),MWR
 Yellow,2014,Grade IV-V,0.151,River length (%),MWR
 Huai,2014,Grade IV-V,0.361,River length (%),MWR
 Yangtze,2014,Grade IV-V,0.129,River length (%),MWR
 Southeast,2014,Grade IV-V,0.163,River length (%),MWR
-Pearl,2014,Grade IV-V,0.080,River length (%),MWR
+Pearl,2014,Grade IV-V,0.08,River length (%),MWR
 Southwest,2014,Grade IV-V,0.024,River length (%),MWR
 Northwest,2014,Grade IV-V,0.064,River length (%),MWR
 Hai,2014,Grade I-III,0.354,River length (%),MWR
@@ -314,7 +314,7 @@ Liao,2013,Grade IV-V,0.246,River length (%),MWR
 Hai,2013,Grade IV-V,0.186,River length (%),MWR
 Yellow,2013,Grade IV-V,0.149,River length (%),MWR
 Huai,2013,Grade IV-V,0.379,River length (%),MWR
-Yangtze,2013,Grade IV-V,0.140,River length (%),MWR
+Yangtze,2013,Grade IV-V,0.14,River length (%),MWR
 Southeast,2013,Grade IV-V,0.106,River length (%),MWR
 Pearl,2013,Grade IV-V,0.073,River length (%),MWR
 Southwest,2013,Grade IV-V,0.033,River length (%),MWR
@@ -330,34 +330,34 @@ Songhua,2011,Grade IV-V,0.252,River length (%),MWR
 Liao,2011,Grade I,0.056,River length (%),MWR
 Liao,2011,Grade II,0.318,River length (%),MWR
 Liao,2011,Grade III,0.114,River length (%),MWR
-Liao,2011,Grade IV,0.160,River length (%),MWR
-Liao,2011,Grade V,0.110,River length (%),MWR
+Liao,2011,Grade IV,0.16,River length (%),MWR
+Liao,2011,Grade V,0.11,River length (%),MWR
 Liao,2011,Grade V+,0.242,River length (%),MWR
 Liao,2011,Grade I-III,0.488,River length (%),MWR
-Liao,2011,Grade IV-V,0.270,River length (%),MWR
+Liao,2011,Grade IV-V,0.27,River length (%),MWR
 Hai,2011,Grade I,0.015,River length (%),MWR
 Hai,2011,Grade II,0.193,River length (%),MWR
 Hai,2011,Grade III,0.154,River length (%),MWR
 Hai,2011,Grade IV,0.058,River length (%),MWR
-Hai,2011,Grade V,0.070,River length (%),MWR
-Hai,2011,Grade V+,0.510,River length (%),MWR
+Hai,2011,Grade V,0.07,River length (%),MWR
+Hai,2011,Grade V+,0.51,River length (%),MWR
 Hai,2011,Grade I-III,0.362,River length (%),MWR
 Hai,2011,Grade IV-V,0.128,River length (%),MWR
 Yellow,2011,Grade I,0.022,River length (%),MWR
 Yellow,2011,Grade II,0.314,River length (%),MWR
 Yellow,2011,Grade III,0.158,River length (%),MWR
 Yellow,2011,Grade IV,0.141,River length (%),MWR
-Yellow,2011,Grade V,0.080,River length (%),MWR
+Yellow,2011,Grade V,0.08,River length (%),MWR
 Yellow,2011,Grade V+,0.285,River length (%),MWR
 Yellow,2011,Grade I-III,0.494,River length (%),MWR
 Yellow,2011,Grade IV-V,0.221,River length (%),MWR
 Huai,2011,Grade I,0.004,River length (%),MWR
 Huai,2011,Grade II,0.136,River length (%),MWR
-Huai,2011,Grade III,0.240,River length (%),MWR
+Huai,2011,Grade III,0.24,River length (%),MWR
 Huai,2011,Grade IV,0.269,River length (%),MWR
 Huai,2011,Grade V,0.107,River length (%),MWR
 Huai,2011,Grade V+,0.244,River length (%),MWR
-Huai,2011,Grade I-III,0.380,River length (%),MWR
+Huai,2011,Grade I-III,0.38,River length (%),MWR
 Huai,2011,Grade IV-V,0.376,River length (%),MWR
 Yangtze,2011,Grade I,0.051,River length (%),MWR
 Yangtze,2011,Grade II,0.394,River length (%),MWR
@@ -393,15 +393,15 @@ Southwest,2011,Grade I-III,0.956,River length (%),MWR
 Southwest,2011,Grade IV-V,0.025,River length (%),MWR
 Northwest,2011,Grade I,0.287,River length (%),MWR
 Northwest,2011,Grade II,0.593,River length (%),MWR
-Northwest,2011,Grade III,0.080,River length (%),MWR
+Northwest,2011,Grade III,0.08,River length (%),MWR
 Northwest,2011,Grade IV,0.029,River length (%),MWR
 Northwest,2011,Grade V,0.008,River length (%),MWR
 Northwest,2011,Grade V+,0.003,River length (%),MWR
-Northwest,2011,Grade I-III,0.960,River length (%),MWR
+Northwest,2011,Grade I-III,0.96,River length (%),MWR
 Northwest,2011,Grade IV-V,0.037,River length (%),MWR
 National,2011,Grade I,0.046,River length (%),MWR
 National,2011,Grade II,0.356,River length (%),MWR
-National,2011,Grade III,0.240,River length (%),MWR
+National,2011,Grade III,0.24,River length (%),MWR
 National,2011,Grade IV,0.129,River length (%),MWR
 National,2011,Grade V,0.057,River length (%),MWR
 National,2011,Grade V+,0.172,River length (%),MWR
@@ -411,7 +411,7 @@ Songhua,2012,Grade I,0.005,River length (%),MWR
 Songhua,2012,Grade II,0.166,River length (%),MWR
 Songhua,2012,Grade III,0.398,River length (%),MWR
 Songhua,2012,Grade IV,0.238,River length (%),MWR
-Songhua,2012,Grade V,0.070,River length (%),MWR
+Songhua,2012,Grade V,0.07,River length (%),MWR
 Songhua,2012,Grade V+,0.123,River length (%),MWR
 Songhua,2012,Grade I-III,0.569,River length (%),MWR
 Songhua,2012,Grade IV-V,0.308,River length (%),MWR
@@ -432,7 +432,7 @@ Hai,2012,Grade V+,0.461,River length (%),MWR
 Hai,2012,Grade I-III,0.346,River length (%),MWR
 Hai,2012,Grade IV-V,0.193,River length (%),MWR
 Yellow,2012,Grade I,0.029,River length (%),MWR
-Yellow,2012,Grade II,0.340,River length (%),MWR
+Yellow,2012,Grade II,0.34,River length (%),MWR
 Yellow,2012,Grade III,0.186,River length (%),MWR
 Yellow,2012,Grade IV,0.124,River length (%),MWR
 Yellow,2012,Grade V,0.047,River length (%),MWR
@@ -457,13 +457,13 @@ Yangtze,2012,Grade I-III,0.747,River length (%),MWR
 Yangtze,2012,Grade IV-V,0.132,River length (%),MWR
 Southeast,2012,Grade I,0.057,River length (%),MWR
 Southeast,2012,Grade II,0.462,River length (%),MWR
-Southeast,2012,Grade III,0.270,River length (%),MWR
+Southeast,2012,Grade III,0.27,River length (%),MWR
 Southeast,2012,Grade IV,0.099,River length (%),MWR
-Southeast,2012,Grade V,0.040,River length (%),MWR
+Southeast,2012,Grade V,0.04,River length (%),MWR
 Southeast,2012,Grade V+,0.072,River length (%),MWR
 Southeast,2012,Grade I-III,0.789,River length (%),MWR
 Southeast,2012,Grade IV-V,0.139,River length (%),MWR
-Pearl,2012,Grade I,0.030,River length (%),MWR
+Pearl,2012,Grade I,0.03,River length (%),MWR
 Pearl,2012,Grade II,0.643,River length (%),MWR
 Pearl,2012,Grade III,0.159,River length (%),MWR
 Pearl,2012,Grade IV,0.068,River length (%),MWR
@@ -474,12 +474,12 @@ Pearl,2012,Grade IV-V,0.097,River length (%),MWR
 Southwest,2012,Grade I,0.125,River length (%),MWR
 Southwest,2012,Grade II,0.655,River length (%),MWR
 Southwest,2012,Grade III,0.197,River length (%),MWR
-Southwest,2012,Grade IV,0.020,River length (%),MWR
-Southwest,2012,Grade V,0.000,River length (%),MWR
+Southwest,2012,Grade IV,0.02,River length (%),MWR
+Southwest,2012,Grade V,0,River length (%),MWR
 Southwest,2012,Grade V+,0.003,River length (%),MWR
 Southwest,2012,Grade I-III,0.977,River length (%),MWR
-Southwest,2012,Grade IV-V,0.020,River length (%),MWR
-Northwest,2012,Grade I,0.220,River length (%),MWR
+Southwest,2012,Grade IV-V,0.02,River length (%),MWR
+Northwest,2012,Grade I,0.22,River length (%),MWR
 Northwest,2012,Grade II,0.565,River length (%),MWR
 Northwest,2012,Grade III,0.123,River length (%),MWR
 Northwest,2012,Grade IV,0.046,River length (%),MWR
@@ -493,7 +493,7 @@ National,2012,Grade III,0.218,River length (%),MWR
 National,2012,Grade IV,0.118,River length (%),MWR
 National,2012,Grade V,0.055,River length (%),MWR
 National,2012,Grade V+,0.157,River length (%),MWR
-National,2012,Grade I-III,0.670,River length (%),MWR
+National,2012,Grade I-III,0.67,River length (%),MWR
 National,2012,Grade IV-V,0.173,River length (%),MWR
 Songhua,2010,Grade I,0.005,River length (%),MWR
 Songhua,2010,Grade II,0.084,River length (%),MWR
@@ -502,13 +502,13 @@ Songhua,2010,Grade IV,0.212,River length (%),MWR
 Songhua,2010,Grade V,0.088,River length (%),MWR
 Songhua,2010,Grade V+,0.192,River length (%),MWR
 Songhua,2010,Grade I-III,0.508,River length (%),MWR
-Songhua,2010,Grade IV-V,0.300,River length (%),MWR
+Songhua,2010,Grade IV-V,0.3,River length (%),MWR
 Liao,2010,Grade I,0.014,River length (%),MWR
 Liao,2010,Grade II,0.311,River length (%),MWR
 Liao,2010,Grade III,0.092,River length (%),MWR
 Liao,2010,Grade IV,0.073,River length (%),MWR
-Liao,2010,Grade V,0.170,River length (%),MWR
-Liao,2010,Grade V+,0.340,River length (%),MWR
+Liao,2010,Grade V,0.17,River length (%),MWR
+Liao,2010,Grade V+,0.34,River length (%),MWR
 Liao,2010,Grade I-III,0.417,River length (%),MWR
 Liao,2010,Grade IV-V,0.243,River length (%),MWR
 Hai,2010,Grade I,0.018,River length (%),MWR
@@ -528,7 +528,7 @@ Yellow,2010,Grade V+,0.339,River length (%),MWR
 Yellow,2010,Grade I-III,0.425,River length (%),MWR
 Yellow,2010,Grade IV-V,0.236,River length (%),MWR
 Huai,2010,Grade I,0.012,River length (%),MWR
-Huai,2010,Grade II,0.120,River length (%),MWR
+Huai,2010,Grade II,0.12,River length (%),MWR
 Huai,2010,Grade III,0.257,River length (%),MWR
 Huai,2010,Grade IV,0.257,River length (%),MWR
 Huai,2010,Grade V,0.132,River length (%),MWR
@@ -539,7 +539,7 @@ Yangtze,2010,Grade I,0.053,River length (%),MWR
 Yangtze,2010,Grade II,0.347,River length (%),MWR
 Yangtze,2010,Grade III,0.274,River length (%),MWR
 Yangtze,2010,Grade IV,0.112,River length (%),MWR
-Yangtze,2010,Grade V,0.080,River length (%),MWR
+Yangtze,2010,Grade V,0.08,River length (%),MWR
 Yangtze,2010,Grade V+,0.134,River length (%),MWR
 Yangtze,2010,Grade I-III,0.674,River length (%),MWR
 Yangtze,2010,Grade IV-V,0.192,River length (%),MWR
@@ -552,7 +552,7 @@ Southeast,2010,Grade V+,0.121,River length (%),MWR
 Southeast,2010,Grade I-III,0.757,River length (%),MWR
 Southeast,2010,Grade IV-V,0.122,River length (%),MWR
 Pearl,2010,Grade I,0.015,River length (%),MWR
-Pearl,2010,Grade II,0.340,River length (%),MWR
+Pearl,2010,Grade II,0.34,River length (%),MWR
 Pearl,2010,Grade III,0.353,River length (%),MWR
 Pearl,2010,Grade IV,0.144,River length (%),MWR
 Pearl,2010,Grade V,0.049,River length (%),MWR
@@ -576,7 +576,7 @@ Northwest,2010,Grade V+,0.003,River length (%),MWR
 Northwest,2010,Grade I-III,0.958,River length (%),MWR
 Northwest,2010,Grade IV-V,0.039,River length (%),MWR
 National,2010,Grade I,0.048,River length (%),MWR
-National,2010,Grade II,0.300,River length (%),MWR
+National,2010,Grade II,0.3,River length (%),MWR
 National,2010,Grade III,0.266,River length (%),MWR
 National,2010,Grade IV,0.131,River length (%),MWR
 National,2010,Grade V,0.078,River length (%),MWR
@@ -600,7 +600,7 @@ National,2014,Grade V+,0.117,River length (%),MWR
 National,2014,Grade I-III,0.728,River length (%),MWR
 National,2014,Grade IV-V,0.155,River length (%),MWR
 Major rivers,2015,Grade I-III,0.721,Monitoring sections (%),MEP
-Major rivers,2015,Grade IV-V,0.190,Monitoring sections (%),MEP
+Major rivers,2015,Grade IV-V,0.19,Monitoring sections (%),MEP
 Major rivers,2015,Grade V+,0.089,Monitoring sections (%),MEP
 National,2015,Grade I,0.081,River length (%),MWR
 National,2015,Grade II,0.443,River length (%),MWR
@@ -615,16 +615,16 @@ Southeast,2015,Grade II,0.311,Monitoring sections (%),MEP
 Southeast,2015,Grade III,0.533,Monitoring sections (%),MEP
 Southeast,2015,Grade IV,0.089,Monitoring sections (%),MEP
 Southeast,2015,Grade V,0.022,Monitoring sections (%),MEP
-Southeast,2015,Grade V+,0.000,Monitoring sections (%),MEP
+Southeast,2015,Grade V+,0,Monitoring sections (%),MEP
 Southeast,2015,Grade I-III,0.888,Monitoring sections (%),MEP
 Southeast,2015,Grade IV-V,0.111,Monitoring sections (%),MEP
-Southeast,2010,Grade V+,0.000,Monitoring sections (%),MEP
+Southeast,2010,Grade V+,0,Monitoring sections (%),MEP
 Southeast,2010,Grade I-III,0.806,Monitoring sections (%),MEP
 Southeast,2010,Grade IV-V,0.194,Monitoring sections (%),MEP
 Major rivers,2010,Grade I-III,0.599,Monitoring sections (%),MEP
 Major rivers,2010,Grade IV-V,0.237,Monitoring sections (%),MEP
 Major rivers,2010,Grade V+,0.164,Monitoring sections (%),MEP
-Major rivers,2011,Grade I-III,0.610,Monitoring sections (%),MEP
+Major rivers,2011,Grade I-III,0.61,Monitoring sections (%),MEP
 Major rivers,2011,Grade IV-V,0.253,Monitoring sections (%),MEP
 Major rivers,2011,Grade V+,0.137,Monitoring sections (%),MEP
 Major rivers,2012,Grade I-III,0.689,Monitoring sections (%),MEP
@@ -632,23 +632,23 @@ Major rivers,2012,Grade IV-V,0.209,Monitoring sections (%),MEP
 Major rivers,2012,Grade V+,0.102,Monitoring sections (%),MEP
 Major rivers,2013,Grade I-III,0.717,Monitoring sections (%),MEP
 Major rivers,2013,Grade IV-V,0.193,Monitoring sections (%),MEP
-Major rivers,2013,Grade V+,0.090,Monitoring sections (%),MEP
+Major rivers,2013,Grade V+,0.09,Monitoring sections (%),MEP
 Major rivers,2014,Grade I-III,0.712,Monitoring sections (%),MEP
 Major rivers,2014,Grade IV-V,0.198,Monitoring sections (%),MEP
-Major rivers,2014,Grade V+,0.090,Monitoring sections (%),MEP
-Southwest,2013,Grade V+,0.000,Monitoring sections (%),MEP
+Major rivers,2014,Grade V+,0.09,Monitoring sections (%),MEP
+Southwest,2013,Grade V+,0,Monitoring sections (%),MEP
 Southwest,2013,Grade I-III,1,Monitoring sections (%),MEP
 Southwest,2013,Grade IV-V,0,Monitoring sections (%),MEP
-Northwest,2013,Grade V+,0.020,Monitoring sections (%),MEP
-Northwest,2013,Grade I-III,0.980,Monitoring sections (%),MEP
-Northwest,2013,Grade IV-V,0.000,Monitoring sections (%),MEP
-Southwest,2012,Grade V+,0.000,Monitoring sections (%),MEP
+Northwest,2013,Grade V+,0.02,Monitoring sections (%),MEP
+Northwest,2013,Grade I-III,0.98,Monitoring sections (%),MEP
+Northwest,2013,Grade IV-V,0,Monitoring sections (%),MEP
+Southwest,2012,Grade V+,0,Monitoring sections (%),MEP
 Southwest,2012,Grade I-III,0.968,Monitoring sections (%),MEP
 Southwest,2012,Grade IV-V,0.032,Monitoring sections (%),MEP
-Northwest,2012,Grade V+,0.020,Monitoring sections (%),MEP
-Northwest,2012,Grade I-III,0.980,Monitoring sections (%),MEP
-Northwest,2012,Grade IV-V,0.000,Monitoring sections (%),MEP
-Southwest,2011,Grade V+,0.000,Monitoring sections (%),MEP
+Northwest,2012,Grade V+,0.02,Monitoring sections (%),MEP
+Northwest,2012,Grade I-III,0.98,Monitoring sections (%),MEP
+Northwest,2012,Grade IV-V,0,Monitoring sections (%),MEP
+Southwest,2011,Grade V+,0,Monitoring sections (%),MEP
 Southwest,2011,Grade I-III,0.941,Monitoring sections (%),MEP
 Southwest,2011,Grade IV-V,0.059,Monitoring sections (%),MEP
 Northwest,2011,Grade V+,0.043,Monitoring sections (%),MEP
@@ -656,7 +656,7 @@ Northwest,2011,Grade I-III,0.914,Monitoring sections (%),MEP
 Northwest,2011,Grade IV-V,0.043,Monitoring sections (%),MEP
 Southwest,2010,Grade V+,0.118,Monitoring sections (%),MEP
 Southwest,2010,Grade I-III,0.882,Monitoring sections (%),MEP
-Southwest,2010,Grade IV-V,0.000,Monitoring sections (%),MEP
+Southwest,2010,Grade IV-V,0,Monitoring sections (%),MEP
 Northwest,2010,Grade V+,0.036,Monitoring sections (%),MEP
 Northwest,2010,Grade I-III,0.928,Monitoring sections (%),MEP
 Northwest,2010,Grade IV-V,0.036,Monitoring sections (%),MEP
@@ -683,7 +683,7 @@ Yellow,2016,Grade IV,0.204,Monitoring sections (%),MEP
 Yellow,2016,Grade V,0.066,Monitoring sections (%),MEP
 Yellow,2016,Grade V+,0.139,Monitoring sections (%),MEP
 Yellow,2016,Grade I-III,0.591,Monitoring sections (%),MEP
-Yellow,2016,Grade IV-V,0.270,Monitoring sections (%),MEP
+Yellow,2016,Grade IV-V,0.27,Monitoring sections (%),MEP
 Pearl,2016,Grade I,0.024,Monitoring sections (%),MEP
 Pearl,2016,Grade II,0.624,Monitoring sections (%),MEP
 Pearl,2016,Grade III,0.248,Monitoring sections (%),MEP
@@ -692,7 +692,7 @@ Pearl,2016,Grade V,0.018,Monitoring sections (%),MEP
 Pearl,2016,Grade V+,0.036,Monitoring sections (%),MEP
 Pearl,2016,Grade I-III,0.896,Monitoring sections (%),MEP
 Pearl,2016,Grade IV-V,0.066,Monitoring sections (%),MEP
-Songhua,2016,Grade I,0.000,Monitoring sections (%),MEP
+Songhua,2016,Grade I,0,Monitoring sections (%),MEP
 Songhua,2016,Grade II,0.139,Monitoring sections (%),MEP
 Songhua,2016,Grade III,0.463,Monitoring sections (%),MEP
 Songhua,2016,Grade IV,0.296,Monitoring sections (%),MEP
@@ -700,7 +700,7 @@ Songhua,2016,Grade V,0.037,Monitoring sections (%),MEP
 Songhua,2016,Grade V+,0.062,Monitoring sections (%),MEP
 Songhua,2016,Grade I-III,0.602,Monitoring sections (%),MEP
 Songhua,2016,Grade IV-V,0.333,Monitoring sections (%),MEP
-Huai,2016,Grade I,0.000,Monitoring sections (%),MEP
+Huai,2016,Grade I,0,Monitoring sections (%),MEP
 Huai,2016,Grade II,0.072,Monitoring sections (%),MEP
 Huai,2016,Grade III,0.461,Monitoring sections (%),MEP
 Huai,2016,Grade IV,0.239,Monitoring sections (%),MEP
@@ -711,16 +711,16 @@ Huai,2016,Grade IV-V,0.395,Monitoring sections (%),MEP
 Hai,2016,Grade I,0.019,Monitoring sections (%),MEP
 Hai,2016,Grade II,0.193,Monitoring sections (%),MEP
 Hai,2016,Grade III,0.161,Monitoring sections (%),MEP
-Hai,2016,Grade IV,0.130,Monitoring sections (%),MEP
+Hai,2016,Grade IV,0.13,Monitoring sections (%),MEP
 Hai,2016,Grade V,0.087,Monitoring sections (%),MEP
-Hai,2016,Grade V+,0.410,Monitoring sections (%),MEP
+Hai,2016,Grade V+,0.41,Monitoring sections (%),MEP
 Hai,2016,Grade I-III,0.373,Monitoring sections (%),MEP
 Hai,2016,Grade IV-V,0.217,Monitoring sections (%),MEP
 Liao,2016,Grade I,0.019,Monitoring sections (%),MEP
 Liao,2016,Grade II,0.311,Monitoring sections (%),MEP
 Liao,2016,Grade III,0.123,Monitoring sections (%),MEP
 Liao,2016,Grade IV,0.226,Monitoring sections (%),MEP
-Liao,2016,Grade V,0.170,Monitoring sections (%),MEP
+Liao,2016,Grade V,0.17,Monitoring sections (%),MEP
 Liao,2016,Grade V+,0.151,Monitoring sections (%),MEP
 Liao,2016,Grade I-III,0.453,Monitoring sections (%),MEP
 Liao,2016,Grade IV-V,0.396,Monitoring sections (%),MEP
@@ -729,7 +729,7 @@ Southeast,2016,Grade II,0.536,Monitoring sections (%),MEP
 Southeast,2016,Grade III,0.376,Monitoring sections (%),MEP
 Southeast,2016,Grade IV,0.032,Monitoring sections (%),MEP
 Southeast,2016,Grade V,0.024,Monitoring sections (%),MEP
-Southeast,2016,Grade V+,0.000,Monitoring sections (%),MEP
+Southeast,2016,Grade V+,0,Monitoring sections (%),MEP
 Southeast,2016,Grade I-III,0.944,Monitoring sections (%),MEP
 Southeast,2016,Grade IV-V,0.056,Monitoring sections (%),MEP
 Northwest,2016,Grade I,0.048,Monitoring sections (%),MEP
@@ -737,7 +737,7 @@ Northwest,2016,Grade II,0.758,Monitoring sections (%),MEP
 Northwest,2016,Grade III,0.129,Monitoring sections (%),MEP
 Northwest,2016,Grade IV,0.048,Monitoring sections (%),MEP
 Northwest,2016,Grade V,0.016,Monitoring sections (%),MEP
-Northwest,2016,Grade V+,0.000,Monitoring sections (%),MEP
+Northwest,2016,Grade V+,0,Monitoring sections (%),MEP
 Northwest,2016,Grade I-III,0.935,Monitoring sections (%),MEP
 Northwest,2016,Grade IV-V,0.064,Monitoring sections (%),MEP
 Southwest,2016,Grade I,0.016,Monitoring sections (%),MEP
@@ -745,7 +745,7 @@ Southwest,2016,Grade II,0.794,Monitoring sections (%),MEP
 Southwest,2016,Grade III,0.095,Monitoring sections (%),MEP
 Southwest,2016,Grade IV,0.079,Monitoring sections (%),MEP
 Southwest,2016,Grade V,0.016,Monitoring sections (%),MEP
-Southwest,2016,Grade V+,0.000,Monitoring sections (%),MEP
+Southwest,2016,Grade V+,0,Monitoring sections (%),MEP
 Southwest,2016,Grade I-III,0.905,Monitoring sections (%),MEP
 Southwest,2016,Grade IV-V,0.095,Monitoring sections (%),MEP
 Major rivers,2017,Grade I,0.022,Monitoring sections (%),MEP
@@ -758,7 +758,7 @@ Major rivers,2017,Grade V+,0.084,Monitoring sections (%),MEP
 Major rivers,2017,Grade IV-V,0.198,Monitoring sections (%),MEP
 Yangtze,2017,Grade I,0.022,Monitoring sections (%),MEP
 Yangtze,2017,Grade II,0.443,Monitoring sections (%),MEP
-Yangtze,2017,Grade III,0.380,Monitoring sections (%),MEP
+Yangtze,2017,Grade III,0.38,Monitoring sections (%),MEP
 Yangtze,2017,Grade IV,0.102,Monitoring sections (%),MEP
 Yangtze,2017,Grade V,0.031,Monitoring sections (%),MEP
 Yangtze,2017,Grade V+,0.022,Monitoring sections (%),MEP
@@ -766,13 +766,13 @@ Yangtze,2017,Grade I-III,0.845,Monitoring sections (%),MEP
 Yangtze,2017,Grade IV-V,0.133,Monitoring sections (%),MEP
 Yellow,2017,Grade I,0.015,Monitoring sections (%),MEP
 Yellow,2017,Grade II,0.292,Monitoring sections (%),MEP
-Yellow,2017,Grade III,0.270,Monitoring sections (%),MEP
+Yellow,2017,Grade III,0.27,Monitoring sections (%),MEP
 Yellow,2017,Grade IV,0.161,Monitoring sections (%),MEP
 Yellow,2017,Grade V,0.102,Monitoring sections (%),MEP
 Yellow,2017,Grade V+,0.161,Monitoring sections (%),MEP
 Yellow,2017,Grade I-III,0.577,Monitoring sections (%),MEP
 Yellow,2017,Grade IV-V,0.263,Monitoring sections (%),MEP
-Pearl,2017,Grade I,0.030,Monitoring sections (%),MEP
+Pearl,2017,Grade I,0.03,Monitoring sections (%),MEP
 Pearl,2017,Grade II,0.564,Monitoring sections (%),MEP
 Pearl,2017,Grade III,0.279,Monitoring sections (%),MEP
 Pearl,2017,Grade IV,0.061,Monitoring sections (%),MEP
@@ -780,7 +780,7 @@ Pearl,2017,Grade V,0.024,Monitoring sections (%),MEP
 Pearl,2017,Grade V+,0.042,Monitoring sections (%),MEP
 Pearl,2017,Grade I-III,0.873,Monitoring sections (%),MEP
 Pearl,2017,Grade IV-V,0.085,Monitoring sections (%),MEP
-Songhua,2017,Grade I,0.000,Monitoring sections (%),MEP
+Songhua,2017,Grade I,0,Monitoring sections (%),MEP
 Songhua,2017,Grade II,0.148,Monitoring sections (%),MEP
 Songhua,2017,Grade III,0.537,Monitoring sections (%),MEP
 Songhua,2017,Grade IV,0.25,Monitoring sections (%),MEP
@@ -788,7 +788,7 @@ Songhua,2017,Grade V,0.009,Monitoring sections (%),MEP
 Songhua,2017,Grade V+,0.056,Monitoring sections (%),MEP
 Songhua,2017,Grade I-III,0.685,Monitoring sections (%),MEP
 Songhua,2017,Grade IV-V,0.259,Monitoring sections (%),MEP
-Huai,2017,Grade I,0.000,Monitoring sections (%),MEP
+Huai,2017,Grade I,0,Monitoring sections (%),MEP
 Huai,2017,Grade II,0.067,Monitoring sections (%),MEP
 Huai,2017,Grade III,0.394,Monitoring sections (%),MEP
 Huai,2017,Grade IV,0.367,Monitoring sections (%),MEP
@@ -799,7 +799,7 @@ Huai,2017,Grade IV-V,0.456,Monitoring sections (%),MEP
 Hai,2017,Grade I,0.019,Monitoring sections (%),MEP
 Hai,2017,Grade II,0.205,Monitoring sections (%),MEP
 Hai,2017,Grade III,0.193,Monitoring sections (%),MEP
-Hai,2017,Grade IV,0.130,Monitoring sections (%),MEP
+Hai,2017,Grade IV,0.13,Monitoring sections (%),MEP
 Hai,2017,Grade V,0.124,Monitoring sections (%),MEP
 Hai,2017,Grade V+,0.329,Monitoring sections (%),MEP
 Hai,2017,Grade I-III,0.417,Monitoring sections (%),MEP
@@ -810,8 +810,8 @@ Liao,2017,Grade III,0.226,Monitoring sections (%),MEP
 Liao,2017,Grade IV,0.245,Monitoring sections (%),MEP
 Liao,2017,Grade V,0.075,Monitoring sections (%),MEP
 Liao,2017,Grade V+,0.189,Monitoring sections (%),MEP
-Liao,2017,Grade I-III,0.490,Monitoring sections (%),MEP
-Liao,2017,Grade IV-V,0.320,Monitoring sections (%),MEP
+Liao,2017,Grade I-III,0.49,Monitoring sections (%),MEP
+Liao,2017,Grade IV-V,0.32,Monitoring sections (%),MEP
 Southeast,2017,Grade I,0.024,Monitoring sections (%),MEP
 Southeast,2017,Grade II,0.408,Monitoring sections (%),MEP
 Southeast,2017,Grade III,0.456,Monitoring sections (%),MEP
@@ -825,14 +825,17 @@ Northwest,2017,Grade II,0.774,Monitoring sections (%),MEP
 Northwest,2017,Grade III,0.064,Monitoring sections (%),MEP
 Northwest,2017,Grade IV,0.016,Monitoring sections (%),MEP
 Northwest,2017,Grade V,0.016,Monitoring sections (%),MEP
-Northwest,2017,Grade V+,0.000,Monitoring sections (%),MEP
+Northwest,2017,Grade V+,0,Monitoring sections (%),MEP
 Northwest,2017,Grade I-III,0.967,Monitoring sections (%),MEP
 Northwest,2017,Grade IV-V,0.032,Monitoring sections (%),MEP
 Southwest,2017,Grade I,0,Monitoring sections (%),MEP
 Southwest,2017,Grade II,0.794,Monitoring sections (%),MEP
 Southwest,2017,Grade III,0.159,Monitoring sections (%),MEP
 Southwest,2017,Grade IV,0.032,Monitoring sections (%),MEP
-Southwest,2017,Grade V,0.000,Monitoring sections (%),MEP
+Southwest,2017,Grade V,0,Monitoring sections (%),MEP
 Southwest,2017,Grade V+,0.016,Monitoring sections (%),MEP
 Southwest,2017,Grade I-III,0.953,Monitoring sections (%),MEP
 Southwest,2017,Grade IV-V,0.032,Monitoring sections (%),MEP
+National,2017,Grade V+,0.083,Monitoring sections (%),MEP
+National,2017,Grade I-III,0.679,Monitoring sections (%),MEP
+National,2017,Grade IV-V,0.238,Monitoring sections (%),MEP

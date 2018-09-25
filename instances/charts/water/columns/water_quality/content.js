@@ -6,30 +6,34 @@ jQuery( document ).ready(function() {
 // Get water quality data
 var surfacewater_quality_csv_url='https://raw.githubusercontent.com/chinawaterrisk/chinawaterrisk.github.io/master/resources/csv/water_quality/surfacewater_quality.csv'
 
-var surfacewater_grade_I_III_2016 = {};
-var surfacewater_grade_IV_V_2016 = {};
-var surfacewater_grade_VI_2016 = {};
+var surfacewater_grade_I_III_2017 = {};
+var surfacewater_grade_IV_V_2017 = {};
+var surfacewater_grade_VI_2017 = {};
 
 
 d3.csv(surfacewater_quality_csv_url, function(error, surfacewater_quality){
 
-      surfacewater_quality.forEach(function(row){
+    surfacewater_quality_2017 = surfacewater_quality.filter(function(row){
+      return row['Year']=='2017'
+    }
+    )
+      surfacewater_quality_2017.forEach(function(row){
         if(rivers.includes(row['River'])){
             if(row['Grade'] == 'Grade I-III'){
-              surfacewater_grade_I_III_2016[row['River']] = parseFloat(row['Value']);
+              surfacewater_grade_I_III_2017[row['River']] = parseFloat(row['Value']);
             }else if(row['Grade'] == 'Grade IV-V'){
-              surfacewater_grade_IV_V_2016[row['River']] = parseFloat(row['Value']);
+              surfacewater_grade_IV_V_2017[row['River']] = parseFloat(row['Value']);
             }else if(row['Grade'] == 'Grade V+'){
-              surfacewater_grade_VI_2016[row['River']] = parseFloat(row['Value']);
+              surfacewater_grade_VI_2017[row['River']] = parseFloat(row['Value']);
             }
         }
       })
 
 
 // from dict to highcharts data
-grade_I_III_data = rivers.map(function(river){return surfacewater_grade_I_III_2016[river]})
-grade_IV_V_data = rivers.map(function(river){return surfacewater_grade_IV_V_2016[river]})
-grade_VI_data = rivers.map(function(river){return surfacewater_grade_VI_2016[river]})
+grade_I_III_data = rivers.map(function(river){return surfacewater_grade_I_III_2017[river]})
+grade_IV_V_data = rivers.map(function(river){return surfacewater_grade_IV_V_2017[river]})
+grade_VI_data = rivers.map(function(river){return surfacewater_grade_VI_2017[river]})
 
 grade_VI_data.push(0);
 rivers_legend = rivers;

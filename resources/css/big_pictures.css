@@ -321,6 +321,11 @@ h4{
   display: inline-flex;
 }
 
+.bp-furtherreading ul{
+   margin-top: 10px;
+   style="line-height: 2;"
+}
+
 .bp-furtherreading h1,
 .bp-furtherreading h2,
 .bp-furtherreading h3,

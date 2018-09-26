@@ -18,6 +18,7 @@ chart = new Highcharts.Chart({
   plotOptions: {
     pie: {
       //borderColor: null,
+      size: '10%',
       borderWidth: 0.5,
       shadow: false,
       colors: ["#7C8388","#094677","#0D77B9"],
@@ -62,8 +63,8 @@ series: [{
     {name:"500-1000",y:15994.86, color:"#7C8388"},
     {name:"1000-2000",y:43043.83, color:"#094677"},
     {name:">2000",y:67527.44, color:"#0D77B9"}],
-  size: '60%',
-  innerSize: '50%',
+    size: 130,
+    innerSize: 100,
   dataLabels: {
     enabled:false
     }
@@ -73,8 +74,8 @@ series: [{
     ["Dry 11",56078.28],
     ["At Risk 7",43043.83],
     ["Safe 13",67527.44]],
-    size: '68%',
-    innerSize: '65%',
+    size: 170,
+    innerSize: 130,
     showInLegend:true,
     dataLabels: {
       enabled: true

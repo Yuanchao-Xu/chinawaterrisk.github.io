@@ -58,8 +58,8 @@ chart = new Highcharts.Chart({
       ["Sichuan",9728.61],
       ["Anhui",8893.61],
       ["Others",110155.29]],
-      size: '50%',
-      innerSize: '50%',
+      size: 170,
+      innerSize: 100,
       showInLegend:true,
       dataLabels: {
         enabled: true

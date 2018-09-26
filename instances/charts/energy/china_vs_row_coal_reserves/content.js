@@ -59,8 +59,8 @@ chart = new Highcharts.Chart({
       ["China",138819],
       ["India",97728],
       ["Others",1139331]],
-      size: '60%',
-      innerSize: '50%',
+      size: 170,
+      innerSize: 100,
       showInLegend:true,
       dataLabels: {
         enabled: true

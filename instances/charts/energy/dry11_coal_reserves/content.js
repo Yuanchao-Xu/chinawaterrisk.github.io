@@ -56,8 +56,8 @@ chart = new Highcharts.Chart({
       {name:"500-1000",y:6.444, color:"#7C8388"},
       {name:"1000",y:78.674, color:"#094677"},
       {name:">2000",y:47.73, color:"#0D77B9"}],
-    size: '60%',
-    innerSize: '50%',
+      size: 130,
+      innerSize: 100,
     dataLabels: {
       enabled:false
       }
@@ -67,8 +67,8 @@ chart = new Highcharts.Chart({
       ["Dry 11",122.823],
       ["At Risk 7",78.674],
       ["Safe 13",47.73]],
-      size: '68%',
-      innerSize: '65%',
+      size: 170,
+      innerSize: 130,
       showInLegend:true,
       dataLabels: {
         enabled: true

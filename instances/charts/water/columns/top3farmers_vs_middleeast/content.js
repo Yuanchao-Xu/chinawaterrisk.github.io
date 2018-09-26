@@ -31,7 +31,7 @@ chart = new Highcharts.Chart({
           //verticalAlign: 'top',
           style: {
             //color:'white',
-            fontSize: '12px',
+            fontSize: '10px',
             fontWeight:300,
             textOutline: false,
           }
@@ -44,7 +44,7 @@ chart = new Highcharts.Chart({
         title: {
             align: 'high',
             offset: 0,
-            useHtml: true,
+            useHTML: true,
             text: "m<sup>3</sup>/pax/year",
             rotation: 0,
             y: -10
@@ -78,10 +78,11 @@ chart = new Highcharts.Chart({
     enabled: false
   },
   tooltip: {
-    enabled: false
-    // formatter: function() {
-    //   return '<b>'+ this.point.name +'</b>: '+ this.y +' bn tonnes';
-    // }
+    enabled: true,
+    useHTML: true,
+    formatter: function() {
+      return this.y +' m<sup>3</sup>/pax/year';
+    }
   },
   series: [{
     name: 'Water resources',

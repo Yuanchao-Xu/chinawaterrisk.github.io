@@ -314,6 +314,13 @@ h4{
   margin-top: 40px;
 }
 
+.row.bp-further-reading{
+  width:100%;
+  background: #EFEFEF;
+  padding: 20px;
+  display: inline-flex;
+}
+
 .bp-furtherreading h1,
 .bp-furtherreading h2,
 .bp-furtherreading h3,

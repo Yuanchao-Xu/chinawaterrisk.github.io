@@ -656,9 +656,9 @@ var ns_heavymetal_crops = {
                     setCropBubbles(view);
                   });
 
-                  setBasemap(jQuery("input[name='basemap']:checked").attr('val'))
-                  setHeavymetalBubbles(jQuery("input[name='heavymetal_bubbles']:checked").attr('val'))
-                  setCropBubbles(jQuery("input[name='crop_bubbles']:checked").attr('val'))
+                  setBasemap(jQuery("input[name='basemap']:checked").attr('id').replace("input_",""));
+                  setHeavymetalBubbles(jQuery("input[name='heavymetal_bubbles']:checked").attr('id').replace("input_",""));
+                  setCropBubbles(jQuery("input[name='crop_bubbles']:checked").attr('id').replace("input_",""));
 
                 });
               });

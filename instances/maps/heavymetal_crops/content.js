@@ -640,19 +640,19 @@ var ns_heavymetal_crops = {
                   //Set button toggle for view state
                   d3.selectAll("input[name='basemap']")
                   .on("click", function() {
-                    view = d3.select(this).attr("val");
+                    view = d3.select(this).attr("id").replace("input_","");
                     setBasemap(view);
                   });
 
                   d3.selectAll("input[name='heavymetal_bubbles']")
                   .on("click", function() {
-                    view = d3.select(this).attr("val");
+                    view = d3.select(this).attr("id").replace("input_","");
                     setHeavymetalBubbles(view);
                   });
 
                   d3.selectAll("input[name='crop_bubbles']")
                   .on("click", function() {
-                    view = d3.select(this).attr("val");
+                    view = d3.select(this).attr("id").replace("input_","");
                     setCropBubbles(view);
                   });
 

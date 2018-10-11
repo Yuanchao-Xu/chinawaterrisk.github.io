@@ -555,13 +555,13 @@ var ns_coal_sown = {
                   //Set button toggle for view state
                   d3.selectAll("input[name='basemap']")
                   .on("click", function() {
-                    view = d3.select(this).attr("val");
+                    view = d3.select(this).attr("id").replace("input_","");
                     setBasemap(view);
                   });
 
                   d3.selectAll("input[name='bubbles']")
                   .on("click", function() {
-                    view = d3.select(this).attr("val");
+                    view = d3.select(this).attr("id").replace("input_","");
                     setBubbles(view);
                   });
 

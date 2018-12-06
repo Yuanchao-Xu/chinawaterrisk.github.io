@@ -565,7 +565,7 @@ var ns_coal_sown = {
                     setBubbles(view);
                   });
 
-                  setBasemap("wri")
+                  setBasemap(jQuery("input[name='basemap']:checked").attr("id").replace("input_",""))
                   setBubbles("coal")
 
                 });
